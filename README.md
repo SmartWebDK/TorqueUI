@@ -1,4 +1,4 @@
 furry-octo-ninja
 ================
 
-To build: bundle exec compass watch
+To build: Waiting for Grunt setup
