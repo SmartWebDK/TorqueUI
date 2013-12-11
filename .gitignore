@@ -1,3 +1,8 @@
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
+
 ### Compass ###
 .sass-cache
 
@@ -5,19 +10,26 @@
 ### SASS Ignores - "Sassy CSS" http://sass-lang.com/
 *.sass-cache
 
-### OSX ###
+# OS or Editor folders
 .DS_Store
-.AppleDouble
-.LSOverride
-Icon
-
-
-# Thumbnails
 ._*
-
-# Files that might appear on external disk
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
 .Spotlight-V100
 .Trashes
 
-# Compiled dir
-build
+# grunt-html-validation
+validation-status.json
+validation-report.json
+
+# Folders to ignore
+node_modules
+bower_components
