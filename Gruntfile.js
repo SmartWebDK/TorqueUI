@@ -23,7 +23,7 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'expanded',
                     environment: 'development',
-                    cssDir: 'prod/css',
+                    cssDir: 'dev/css',
                     watch: true
                 }
             }
