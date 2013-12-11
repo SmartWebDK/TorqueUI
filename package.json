@@ -1,0 +1,43 @@
+{
+  "name": "furry-octo-ninja",
+  "description": "Small and compact ui framework for fast development",
+  "version": "0.1.0",
+  "keywords": [
+    "js",
+    "css"
+  ],
+  "homepage": "http://www.smartweb.dk",
+  "author": "SmartWeb",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SmartWebDK/furry-octo-ninja.git"
+  },
+  "bugs": {
+    "url": "https://github.com/SmartWebDK/furry-octo-ninja/issues"
+  },
+  "licenses": [
+    {
+      "type": "Apache-2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0"
+    }
+  ],
+  "devDependencies": {
+    "btoa": "~1.1.1",
+    "grunt": "~0.4.2",
+    "grunt-banner": "~0.2.0",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-csslint": "~0.2.0",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-compass": "~0.7.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-csscomb": "~1.1.0",
+    "grunt-html-validation": "~0.1.6",
+    "grunt-jscs-checker": "~0.2.5",
+    "grunt-sed": "~0.1.1",
+    "regexp-quote": "~0.0.0",
+    "load-grunt-tasks": "~0.2.0"
+  }
+}
