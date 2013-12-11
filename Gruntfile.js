@@ -2,40 +2,36 @@ module.exports = function(grunt) {
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-        compass: {                  // Task
-            dist: {                   // Target
-                options: {              // Target options
-                    config: "config.rb",
+
+        compass: {
+            options : {
+                require: ['rubygems','bundler/setup','susy'],
+                httpPath: "/",
+                sassDir: 'sass',
+                relativeAssets: true,
+                bundleExec: true,
+            },
+            dist: {
+                options: {
                     outputStyle: 'compressed',
                     environment: 'production',
-                    bundleExec: true,
+                    cssDir: 'dist/css',
                     force: true
                 }
             },
-
-            dev: {                    // Another target
+            dev: {
                 options: {
-                    config: "config.rb",
                     outputStyle: 'expanded',
                     environment: 'development',
-                    bundleExec: true,
+                    cssDir: 'prod/css',
                     watch: true
                 }
             }
         },
-
-
-        // watch: { // for development run 'grunt watch'
-        //     compass: {
-        //         files: ['sass/*.scss'],
-        //         tasks: ['compass:dev']
-        //     }
-        // }
     });
 
     grunt.loadNpmTasks('grunt-contrib-compass');
-    grunt.loadNpmTasks('grunt-contrib-watch');
-
 
     grunt.registerTask('default', ['compass:dev']);
+    grunt.registerTask('dist', ['compass:dist']);
 };
