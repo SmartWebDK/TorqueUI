@@ -9,11 +9,12 @@ module.exports = function(grunt) {
                 httpPath: "/",
                 sassDir: 'sass',
                 relativeAssets: true,
+                raw: 'preferred_syntax = :scss\n',
                 bundleExec: true,
             },
             dist: {
                 options: {
-                    outputStyle: 'compressed',
+                    outputStyle: 'expanded',
                     environment: 'production',
                     cssDir: 'dist/css',
                     force: true
