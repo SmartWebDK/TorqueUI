@@ -1,10 +1,3 @@
-/*!
- * framework v0.1.0 (http://www.smartweb.dk)
- * Copyright 2013 SmartWeb
- * Licensed under http://www.apache.org/licenses/LICENSE-2.0
- */
-
-
 /*! normalize.css v2.1.3 | MIT License | git.io/normalize */
 article,
 aside,
@@ -39,7 +32,7 @@ template {
 
 html {
   font-family: sans-serif;
-      -ms-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -61,8 +54,8 @@ a:hover {
 }
 
 h1 {
-  margin: .67em 0;
   font-size: 2em;
+  margin: 0.67em 0;
 }
 
 abbr[title] {
@@ -79,14 +72,14 @@ dfn {
 }
 
 hr {
-  height: 0;
   -moz-box-sizing: content-box;
-       box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
 }
 
 mark {
-  color: #000;
   background: #ff0;
+  color: #000;
 }
 
 code,
@@ -111,18 +104,18 @@ small {
 
 sub,
 sup {
-  position: relative;
   font-size: 75%;
   line-height: 0;
+  position: relative;
   vertical-align: baseline;
 }
 
 sup {
-  top: -.5em;
+  top: -0.5em;
 }
 
 sub {
-  bottom: -.25em;
+  bottom: -0.25em;
 }
 
 img {
@@ -138,23 +131,23 @@ figure {
 }
 
 fieldset {
-  padding: .35em .625em .75em;
-  margin: 0 2px;
   border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
 }
 
 legend {
-  padding: 0;
   border: 0;
+  padding: 0;
 }
 
 button,
 input,
 select,
 textarea {
-  margin: 0;
   font-family: inherit;
   font-size: 100%;
+  margin: 0;
 }
 
 button,
@@ -188,9 +181,9 @@ input[type="radio"] {
 
 input[type="search"] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
   -webkit-box-sizing: content-box;
-     -moz-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -200,8 +193,8 @@ input[type="search"]::-webkit-search-decoration {
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-  padding: 0;
   border: 0;
+  padding: 0;
 }
 
 textarea {
@@ -210,68 +203,6 @@ textarea {
 }
 
 table {
-  border-spacing: 0;
   border-collapse: collapse;
-}
-
-.clearfix:before,
-.clearfix:after {
-  display: table;
-  content: " ";
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-.center-block {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.pull-right {
-  float: right !important;
-}
-
-.pull-left {
-  float: left !important;
-}
-
-.is-hidden {
-  display: none !important;
-  visibility: hidden !important;
-}
-
-.visuallyhidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  border: 0;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  position: static;
-  width: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  clip: auto;
-}
-
-.show {
-  display: block !important;
-}
-
-.invisible {
-  visibility: hidden;
-}
-
-.affix {
-  position: fixed;
+  border-spacing: 0;
 }
