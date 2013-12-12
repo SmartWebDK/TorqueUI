@@ -68,24 +68,7 @@ module.exports = function(grunt) {
 
         csslint: {
             options: {
-                csslintrc: {
-                    "adjoining-classes": false,
-                    "box-sizing": false,
-                    "box-model": false,
-                    "compatible-vendor-prefixes": false,
-                    "floats": false,
-                    "font-sizes": false,
-                    "gradients": false,
-                    "important": false,
-                    "known-properties": false,
-                    "outline-none": false,
-                    "qualified-headings": false,
-                    "regex-selectors": false,
-                    "text-indent": false,
-                    "unique-headings": false,
-                    "universal-selector": false,
-                    "unqualified-attributes": false
-                }
+                csslintrc: '.csslintrc'
             },
             src: ['dev/css/<%= pkg.name %>.css', 'dev/css/<%= pkg.name %>.min.css']
         },
