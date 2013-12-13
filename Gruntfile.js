@@ -17,7 +17,7 @@ module.exports = function(grunt) {
 
         concurrent: {
             dev: {
-                tasts: ['compass:dev', 'watch'],
+                tasks: ['watch',"compass:dev"],
                 options: {
                     logConcurrentOutput: true
                 }
@@ -25,8 +25,11 @@ module.exports = function(grunt) {
         },
 
         watch: {
+            options: {
+                atBegin: true
+            },
             jekyll: {
-                files: ['templates/*.html'],
+                files: ['templates/**/*.html'],
                 tasks: ['jekyll:dev']
             }
         },
@@ -44,7 +47,7 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'expanded',
                     environment: 'production',
-                    cssDir: 'dist/css',
+                    cssDir: './dist/css',
                     force: true
                 }
             },
@@ -52,7 +55,7 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'expanded',
                     environment: 'development',
-                    cssDir: 'dev/css',
+                    cssDir: './dev/css',
                     watch: true
                 }
             }
