@@ -36,6 +36,8 @@
     "grunt-csscomb": "~1.1.0",
     "load-grunt-tasks": "~0.2.0",
     "grunt-contrib-rename": "0.0.3",
-    "grunt-contrib-cssmin": "~0.7.0"
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-jekyll": "~0.4.1",
+    "grunt-concurrent": "~0.4.2"
   }
 }

@@ -15,6 +15,22 @@ module.exports = function(grunt) {
           dist: ['dist']
         },
 
+        concurrent: {
+            dev: {
+                tasts: ['compass:dev', 'watch'],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
+        },
+
+        watch: {
+            jekyll: {
+                files: ['templates/*.html'],
+                tasks: ['jekyll:dev']
+            }
+        },
+
         compass: {
             options : {
                 require: ['rubygems','bundler/setup','susy'],
@@ -41,7 +57,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-
 
         usebanner: {
             dist: {
@@ -94,6 +109,40 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        jekyll: {
+            options: {
+                bundleExec: true,
+                drafts: false,
+            },
+
+            server : {
+                dest: 'dev',
+                src : 'templates',
+                server : true,
+                server_port : 8000,
+                auto : true,
+                raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
+                     'environment: "dev"'
+            },
+
+            dist: {
+                options: {
+                    src : 'templates',
+                    dest: 'dist',
+                    raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
+                         'environment: "dist"'
+                }
+            },
+            dev: {
+                options: {
+                    src : 'templates',
+                    dest: 'dev',
+                    raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
+                         'environment: "dev"'
+                }
+            }
+        }
     });
 
 
@@ -103,15 +152,14 @@ module.exports = function(grunt) {
 
 
     // Distribution related task
-    grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-fonts']);
+    grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-fonts', 'dist-jekyll']);
     grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin', 'usebanner']);
     //grunt.registerTask('dist-js', ['concat', 'uglify']);
     grunt.registerTask('dist-js', []);
     grunt.registerTask('dist-fonts', ['copy']);
+    grunt.registerTask('dist-jekyll', ['']);
 
-    // Development related task
-    grunt.registerTask('dev', ['compass:dev']);
 
     // Default task
-    grunt.registerTask('default', ['dev']);
+    grunt.registerTask('default', ['concurrent:dev']);
 };
