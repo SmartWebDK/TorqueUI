@@ -148,10 +148,29 @@ module.exports = function(grunt) {
         }
     });
 
-
     // Use grunt-tasks to load modules instead of
     // grunt.loadNpmTasks('xxx');
     require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
+
+
+    // Create related task
+    // For when you wan't to create a new element / component in the framework
+    grunt.registerTask('create', 'A simple task for creating a new ui element or component', function () {
+        var config = grunt.config.get(),
+            name = grunt.option("name").replace(/\s/g, "-") || "unnamed",
+            templates_path = "./"+config.jekyll.dev.options.src+"/",
+            sass_path = "./"+config.compass.options.sassDir+"/modules/";
+
+        name = ( grunt.file.isFile(templates_path+name) ) ? name +"-"+ grunt.template.today("yyyymmdd-HHMMss") : name;
+        var template_file = templates_path +name+ ".html",
+            sass_file = sass_path +name+ ".scss";
+
+        grunt.file.write(template_file, "");
+        grunt.file.write(sass_file, "");
+
+        grunt.log.oklns("Created template file: " + template_file );
+        grunt.log.oklns("Created sass file: " + sass_file);
+    });
 
 
     // Distribution related task
