@@ -15,6 +15,25 @@ module.exports = function(grunt) {
           dist: ['dist']
         },
 
+        concurrent: {
+            dev: {
+                tasks: ['watch',"compass:dev"],
+                options: {
+                    logConcurrentOutput: true
+                }
+            }
+        },
+
+        watch: {
+            options: {
+                atBegin: true
+            },
+            jekyll: {
+                files: ['templates/**/*.html'],
+                tasks: ['jekyll:dev']
+            }
+        },
+
         compass: {
             options : {
                 require: ['rubygems','bundler/setup','susy'],
@@ -28,7 +47,7 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'expanded',
                     environment: 'production',
-                    cssDir: 'dist/css',
+                    cssDir: './dist/css',
                     force: true
                 }
             },
@@ -36,12 +55,11 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'expanded',
                     environment: 'development',
-                    cssDir: 'dev/css',
+                    cssDir: './dev/css',
                     watch: true
                 }
             }
         },
-
 
         usebanner: {
             dist: {
@@ -94,24 +112,76 @@ module.exports = function(grunt) {
                 }
             }
         },
-    });
 
+        jekyll: {
+            options: {
+                bundleExec: true,
+                drafts: false,
+            },
+
+            server : {
+                dest: 'dev',
+                src : 'templates',
+                server : true,
+                server_port : 8000,
+                auto : true,
+                raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
+                     'environment: "dev"'
+            },
+
+            dist: {
+                options: {
+                    src : 'templates',
+                    dest: 'dist',
+                    raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
+                         'environment: "dist"'
+                }
+            },
+            dev: {
+                options: {
+                    src : 'templates',
+                    dest: 'dev',
+                    raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
+                         'environment: "dev"'
+                }
+            }
+        }
+    });
 
     // Use grunt-tasks to load modules instead of
     // grunt.loadNpmTasks('xxx');
     require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
 
+    // Create related task
+    // For when you wan't to create a new element / component in the framework
+    grunt.registerTask('create', 'A simple task for creating a new ui element or component', function () {
+        var config = grunt.config.get(),
+            name = grunt.option("name").replace(/\s/g, "-") || "unnamed",
+            templates_path = "./"+config.jekyll.dev.options.src+"/",
+            sass_path = "./"+config.compass.options.sassDir+"/modules/";
+
+        name = ( grunt.file.isFile(templates_path+name) ) ? name +"-"+ grunt.template.today("yyyymmdd-HHMMss") : name;
+        var template_file = templates_path +name+ ".html",
+            sass_file = sass_path +name+ ".scss";
+
+        grunt.file.write(template_file, "");
+        grunt.file.write(sass_file, "");
+
+        grunt.log.oklns("Created template file: " + template_file );
+        grunt.log.oklns("Created sass file: " + sass_file);
+    });
+
+
     // Distribution related task
-    grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-fonts']);
+    grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-fonts', 'dist-jekyll']);
     grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin', 'usebanner']);
     //grunt.registerTask('dist-js', ['concat', 'uglify']);
     grunt.registerTask('dist-js', []);
     grunt.registerTask('dist-fonts', ['copy']);
+    grunt.registerTask('dist-jekyll', ['']);
 
-    // Development related task
-    grunt.registerTask('dev', ['compass:dev']);
 
     // Default task
-    grunt.registerTask('default', ['dev']);
+    grunt.registerTask('default', ['concurrent:dev']);
 };
