@@ -32,5 +32,6 @@ validation-report.json
 
 # Folders to ignore
 dev
+test/css
 node_modules
 bower_components

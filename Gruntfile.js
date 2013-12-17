@@ -10,16 +10,41 @@ module.exports = function(grunt) {
               ' * Licensed under <%= _.pluck(pkg.licenses, "url").join(", ") %>\n' +
               ' */\n\n',
 
+        template: [ '<!DOCTYPE html>',
+                    '<html>',
+                        '<head>',
+                            '<meta charset="utf-8">',
+                            '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">',
+                            '<title></title>',
+                            '<meta name="viewport" content="width=device-width">',
+
+                            '<link rel="stylesheet" href="/tdcss.js/tdcss.css" type="text/css" media="screen">',
+                            '<link rel="stylesheet" href="/css/framework.css" type="text/css" media="screen">',
+                        '</head>',
+                        '<body>',
+                            '<div id="tdcss">',
+                                '<!-- content -->',
+                            '</div>',
+
+                            '<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>',
+                            '<script src="/tdcss.js/tdcss.js"></script>',
+                            '<script>',
+                                    '$("#tdcss").tdcss();',
+                            '</script>',
+                    '</body>',
+                    '</html>'].join("\n"),
+
         // Task configuration.
         clean: {
           dist: ['dist']
         },
 
-        concurrent: {
-            dev: {
-                tasks: ['watch',"compass:dev"],
-                options: {
-                    logConcurrentOutput: true
+        connect: {
+            server: {
+              options: {
+                    port: 8000,
+                    base: './test/',
+                    keepalive: true
                 }
             }
         },
@@ -28,9 +53,13 @@ module.exports = function(grunt) {
             options: {
                 atBegin: true
             },
-            jekyll: {
-                files: ['templates/**/*.html'],
-                tasks: ['jekyll:dev']
+            html: {
+                files: ['test/**/*.html', '!test/index.html'],
+                tasks: ['buildTest']
+            },
+            sass: {
+                files: ['sass/**/*.scss'],
+                tasks: 'compass:dev'
             }
         },
 
@@ -55,8 +84,7 @@ module.exports = function(grunt) {
                 options: {
                     outputStyle: 'expanded',
                     environment: 'development',
-                    cssDir: './dev/css',
-                    watch: true
+                    cssDir: './test/css'
                 }
             }
         },
@@ -112,40 +140,6 @@ module.exports = function(grunt) {
                 }
             }
         },
-
-        jekyll: {
-            options: {
-                bundleExec: true,
-                drafts: false,
-            },
-
-            server : {
-                dest: 'dev',
-                src : 'templates',
-                server : true,
-                server_port : 8000,
-                auto : true,
-                raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
-                     'environment: "dev"'
-            },
-
-            dist: {
-                options: {
-                    src : 'templates',
-                    dest: 'dist',
-                    raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
-                         'environment: "dist"'
-                }
-            },
-            dev: {
-                options: {
-                    src : 'templates',
-                    dest: 'dev',
-                    raw: 'exclude: ["LICENSE", ".csslintrc", ".csscomb-sortOrder.json", ".gitignore", "Gemfile", "Gemfile.lock", "Gruntfile.js", "package.json", "node_modules", "README.md", "sass", "dist"]\n' +
-                         'environment: "dev"'
-                }
-            }
-        }
     });
 
     // Use grunt-tasks to load modules instead of
@@ -158,20 +152,51 @@ module.exports = function(grunt) {
     grunt.registerTask('create', 'A simple task for creating a new ui element or component', function () {
         var config = grunt.config.get(),
             name = grunt.option("name").replace(/\s/g, "-") || "unnamed",
-            templates_path = "./"+config.jekyll.dev.options.src+"/",
-            sass_path = "./"+config.compass.options.sassDir+"/modules/";
+            templates_path = "./test/",
+            sass_path = "./sass/modules/";
 
         name = ( grunt.file.isFile(templates_path+name) ) ? name +"-"+ grunt.template.today("yyyymmdd-HHMMss") : name;
-        var template_file = templates_path +name+ ".html",
-            sass_file = sass_path +name+ ".scss";
+        var template_file = templates_path +name.toLowerCase()+ ".html",
+            sass_file = sass_path+ "_" +name.toLowerCase()+ ".scss";
 
-        grunt.file.write(template_file, "");
+        grunt.file.write(template_file, template);
         grunt.file.write(sass_file, "");
 
         grunt.log.oklns("Created template file: " + template_file );
-        grunt.log.oklns("Created sass file: " + sass_file);
+        grunt.log.oklns("Created Sass file: " + sass_file);
     });
 
+
+    // Build test
+    grunt.registerTask('buildTest', 'A task that takes all small tests and builds them into a index file', function () {
+        // Force task into async mode and grab a handle to the "done" function.
+        var cheerio = require('cheerio'),
+            filepath = "test/index.html";
+
+        if ( grunt.file.isFile( filepath ) ) {
+            grunt.file.delete( filepath, { force: true } );
+        }
+
+        // get all files
+        var files = grunt.file.expand( grunt.config('watch.html.files') );
+
+        // get their contents
+        var contents = files.map( function( filepath ) {
+            var content = grunt.file.read(filepath);
+            var $ = cheerio.load(content);
+
+            return $("#tdcss").html();
+        }).join("\n\n\n");
+
+        // write to file
+        var data = grunt.config('template');
+        data = data.replace("<!-- content -->", contents);
+        data = data.replace("<title></title>", "<title>"+ grunt.config('pkg.name') +"</title>");
+        grunt.file.write(filepath, data);
+
+        // tell about it
+        grunt.log.oklns('Created index file: '+ filepath);
+    });
 
     // Distribution related task
     grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-fonts', 'dist-jekyll']);
@@ -179,9 +204,10 @@ module.exports = function(grunt) {
     //grunt.registerTask('dist-js', ['concat', 'uglify']);
     grunt.registerTask('dist-js', []);
     grunt.registerTask('dist-fonts', ['copy']);
-    grunt.registerTask('dist-jekyll', ['']);
 
+    // server
+    grunt.registerTask("server", ['connect:server']);
 
     // Default task
-    grunt.registerTask('default', ['concurrent:dev']);
+    grunt.registerTask('default', ['watch']);
 };
