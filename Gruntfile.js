@@ -12,25 +12,23 @@ module.exports = function(grunt) {
 
         template: [ '<!DOCTYPE html>',
                     '<html>',
-                        '<head>',
-                            '<meta charset="utf-8">',
-                            '<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">',
-                            '<title></title>',
-                            '<meta name="viewport" content="width=device-width">',
-
-                            '<link rel="stylesheet" href="/tdcss.js/tdcss.css" type="text/css" media="screen">',
-                            '<link rel="stylesheet" href="/css/framework.css" type="text/css" media="screen">',
-                        '</head>',
-                        '<body>',
-                            '<div id="tdcss">',
-                                '<!-- content -->',
-                            '</div>',
-
-                            '<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>',
-                            '<script src="/tdcss.js/tdcss.js"></script>',
-                            '<script>',
-                                    '$("#tdcss").tdcss();',
-                            '</script>',
+                        '\t<head>',
+                            '\t\t<meta charset="utf-8">',
+                            '\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">',
+                            '\t\t<title></title>',
+                            '\t\t<meta name="viewport" content="width=device-width">\n',
+                            '\t\t<link rel="stylesheet" href="/tdcss.js/tdcss.css" type="text/css" media="screen">',
+                            '\t\t<link rel="stylesheet" href="/css/framework.css" type="text/css" media="screen">',
+                        '\t</head>',
+                        '\t<body>',
+                            '\t\t<div id="tdcss">',
+                                '\t\t\t<!-- content -->',
+                            '\t\t</div>\n',
+                            '\t\t<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>',
+                            '\t\t<script src="/tdcss.js/tdcss.js"></script>',
+                            '\t\t<script>',
+                                    '\t\t\t$("#tdcss").tdcss();',
+                            '\t\t</script>',
                     '</body>',
                     '</html>'].join("\n"),
 
@@ -159,7 +157,7 @@ module.exports = function(grunt) {
         var template_file = templates_path +name.toLowerCase()+ ".html",
             sass_file = sass_path+ "_" +name.toLowerCase()+ ".scss";
 
-        grunt.file.write(template_file, template);
+        grunt.file.write(template_file, grunt.config("template"));
         grunt.file.write(sass_file, "");
 
         grunt.log.oklns("Created template file: " + template_file );
@@ -181,7 +179,7 @@ module.exports = function(grunt) {
         var files = grunt.file.expand( grunt.config('watch.html.files') );
 
         // get their contents
-        var contents = files.map( function( filepath ) {
+        var contents = files.reverse().map( function( filepath ) {
             var content = grunt.file.read(filepath);
             var $ = cheerio.load(content);
 

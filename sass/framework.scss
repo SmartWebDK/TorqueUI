@@ -1,16 +1,29 @@
+// Vendor dependencies
+@import "compass";
+@import "susy";
+
+// Global variables and mixins
 @import "./globals/_settings";
 @import "./globals/_mixins";
 
-@import "./base/reset";
+// Vendor dependencies
+@import "./vendor/normalize";
+@import "./vendor/typeplate.scss";
+
+// Base
 @import "./base/type";
 @import "./base/base";
 
-
+// Layout
 @import "./layout/grid";
+@import "./layout/utils";
+@import "./layout/responsive-utils";
 
+// Modules
 @import "./modules/btn";
 @import "./modules/nav";
 @import "./modules/pager";
 @import "./modules/pagination";
 
+// States
 @import "./globals/states";
