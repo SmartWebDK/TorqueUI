@@ -53,7 +53,7 @@
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
 //
 // Credit: HTML5 Boilerplate
-.visuallyhidden {
+.is-visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
     height: 1px;
@@ -68,8 +68,8 @@
 // when navigated to via the keyboard: h5bp.com/p
 //
 // Credit: HTML5 Boilerplate
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+.is-visuallyhidden.focusable:active,
+.is-visuallyhidden.focusable:focus {
     clip: auto;
     height: auto;
     margin: 0;
@@ -77,10 +77,10 @@
     position: static;
     width: auto;
 }
-.show {
+.shown {
     display: block !important;
 }
-.invisible {
+.is-invisible {
     visibility: hidden;
 }
 
@@ -88,6 +88,6 @@
 // For Affix plugin
 // -------------------------
 
-.affix {
+.is-fixed {
     position: fixed;
 }

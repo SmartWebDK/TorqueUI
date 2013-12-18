@@ -15,16 +15,13 @@
 //
 
 
-// $Styles $Globals
+// Styles Globals
 // -------------------------------------//
 
 html {
-    @if $custom-font-family {
-        font: $font-weight #{$font-size}%/#{$line-height} $custom-font-family, $font-family;
-    } @else {
-        font: $font-weight #{$font-size}%/#{$line-height} $font-family;
-    }
+    font: $font-weight #{$font-size}%/#{$line-height} $font-family;
 }
+
 
 body {
     // Ala Trent Walton
@@ -37,99 +34,62 @@ body {
     color: $body-copy-color;
 }
 
-small {
-    font-size: $small-print-size;
-}
 
-
-// $Styles $Headings
-// -------------------------------------//
-
-// Extend included classes on any element of your
-// choosing for adjusting type based on the scale
-// provided.
-
-// For example:
-
-// <h6 class="giga">Awesome Headline</h6>
-// <p class="tera">a story about a dude</p>
-
-// Our Type Scale is as follows with px fallbacks
-// for IE 6-8 as they do not understand REM units.
-//
-// 18, 21, 24, 36, 48, 60, 72, 90, 117
-
-// styles for all headings, in the style of @csswizardry
-%hN {
-    text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-    line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
-    margin-top: 0;
-}
-
-// Multi-dimensional array, where:
-// the first value is the name of the class
-// and the second value is the variable for the size
-$sizes: tera $tera, giga $giga, mega $mega, alpha $alpha, beta $beta, gamma $gamma, delta $delta, epsilon $epsilon, zeta $zeta;
-
-// Sass loop to associate h1-h6 tags with their appropriate greek
-// heading based on a modular scale.
-// for each size in the scale, create a class
+$sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 @each $size in $sizes {
     .#{nth($size, 1)} {
         @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
     }
 }
 
+%hN {
+    text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+    line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
+    margin-top: 0;
+    color: $heading-color;
+}
+
+
 // associate h1-h6 tags with their appropriate greek heading
 h1 {
-    @extend .alpha;
+    @extend .h1;
     @extend %hN;
 }
 
 h2 {
-    @extend .beta;
+    @extend .h2;
     @extend %hN;
 }
 
 h3 {
-    @extend .gamma;
+    @extend .h3;
     @extend %hN;
 }
 
 h4 {
-    @extend .delta;
+    @extend .h4;
     @extend %hN;
 }
 
 h5 {
-    @extend .epsilon;
+    @extend .h5;
     @extend %hN;
 }
 
 h6 {
-    @extend .zeta;
+    @extend .h6;
     @extend %hN;
 }
 
 
 // $Styles $Parargraphs
 // -------------------------------------//
-
 p {
-    margin: auto auto $indent-val;
-
-    // Conditonal Check For Paragraph Styling
-    @if $paragraph-vertical-whitespace == false {
-        & + p {
-            //siblings indentation
-            text-indent: $indent-val;
-            margin-top: -$indent-val;
-        }
-    }
+    margin: auto;
 }
 
 
-// $Styles $Hyphenation
+// Styles Hyphenation
 // -------------------------------------//
 // http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
 
@@ -150,7 +110,7 @@ xmp {
 }
 
 
-// $Styles $Codeblocks
+// Styles Codeblocks
 // -------------------------------------//
 
 pre code {
@@ -168,16 +128,6 @@ code {
 }
 
 
-// $Styles $Smallcaps
-// -------------------------------------//
-/**
- * Abbreviations Markup
- *
-    <abbr title="hyper text markup language">HMTL</abbr>
- *
- * Extend this object into your markup.
- *
- */
 abbr {
     @include smallcaps($small-caps-color, $small-caps-weight);
     &[title]:hover {
@@ -185,144 +135,7 @@ abbr {
     }
 }
 
-
-// $Styles $Headings-Color
-// -------------------------------------//
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    color: $heading-color;
-}
-
-
-// $Styles $Dropcap
-// -------------------------------------//
-
-// Combats our sibling paragraphs syling and indentation
-// As not to ruin our beautiful drop caps.
-p + .drop-cap {
-    text-indent: 0;
-    margin-top: 0;
-}
-
-.drop-cap {
-    @include dropcap($dropcap-float-position, $dropcap-font-size, $dropcap-font-family, $dropcap-txt-indent, $dropcap-margin, $dropcap-padding, $dropcap-color, $dropcap-line-height, $dropcap-bg);
-}
-
-
-// $Styles $Definition-Lists
-// -------------------------------------//
-/**
- * Lining Definition Style Markup
- *
-    <dl class="lining">
-        <dt><b></b></dt>
-        <dd></dd>
-    </dl>
- *
- * Extend this object into your markup.
- *
- */
-.lining {
-    @include definition-list-style(lining);
-}
-
-/**
- * Dictionary Definition Style Markup
- *
-    <dl class="dictionary-style">
-        <dt><b></b></dt>
-            <dd></dd>
-    </dl>
- *
- * Extend this object into your markup.
- *
- */
-.dictionary-style {
+dl {
     @include definition-list-style(dictionary-style);
 }
 
-
-// $Styles $Blockquote-Markup
-// -------------------------------------//
-/**
- * Blockquote Markup
- *
-        <figure>
-            <blockquote cite="">
-                <p></p>
-            </blockquote>
-            <figcaption>
-                <cite>
-                    <small><a href=""></a></small>
-                </cite>
-            </figcaption>
-        </figure>
- *
- * Extend this object into your markup.
- *
- */
-
-
-// $Styles $Pull-Quotes
-// -------------------------------------//
-// http://24ways.org/2005/swooshy-curly-quotes-without-images
-//
-// http://todomvc.com - Thanks sindresorhus!
-// https://github.com/typeplate/typeplate.github.io/issues/49
-
-/**
- * Pull Quotes Markup
- *
-    <aside class="pull-quote">
-        <blockquote>
-            <p></p>
-        </blockquote>
-    </aside>
- *
- * Extend this object into your custom stylesheet.
- *
- */
-
-.pull-quote {
-     @include pull-quotes($pull-quote-fontsize, $pull-quote-opacity, $pull-quote-color);
-}
-
-
-// $Styles $Figures
-// -------------------------------------//
-/**
- * Figures Markup
- *
-    <figure>
-        <figcaption>
-            <strong>Fig. 4.2 | </strong>Type Anatomy, an excerpt from Mark Boulton's book<cite title="http://designingfortheweb.co.uk/book/part3/part3_chapter11.php">"Designing for the Web"</cite>
-        </figcaption>
-    </figure>
- *
- * Extend this object into your markup.
- *
- */
-
-
-// $Styles $Footnotes
-// -------------------------------------//
-/**
- * Footnote Markup : Replace 'X' with your unique number for each footnote
- *
-    <article>
-        <p><sup><a href="#fn-itemX" id="fn-returnX"></a></sup></p>
-        <footer>
-            <ol class="foot-notes">
-                <li id="fn-itemX"><a href="#fn-returnX">↩</a></li>
-            </ol>
-        </footer>
-    </article>
- *
- * Extend this object into your markup.
- *
- */

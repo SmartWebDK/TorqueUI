@@ -179,7 +179,7 @@ module.exports = function(grunt) {
         var files = grunt.file.expand( grunt.config('watch.html.files') );
 
         // get their contents
-        var contents = files.reverse().map( function( filepath ) {
+        var contents = files.sort().map( function( filepath ) {
             var content = grunt.file.read(filepath);
             var $ = cheerio.load(content);
 
