@@ -54,13 +54,19 @@
 // provides a pixel fallback if you decide
 // to use 'rems' as a unit over ems.
 
-@mixin type-scale($scale, $base, $value, $measure:"") {
+@mixin type-scale($scale, $base, $value, $paragraph, $measure:"") {
     // If 'rem' is used as a $value then provide a px fallback.
     @if $value == rem {
         font-size: $scale#{px};
     }
     font-size: context-calc($scale, $base, $value);
     @if $measure != "" {
+        margin-top: measure-margin($scale, ($measure*1.35), $value);
+        margin-bottom: measure-margin($scale, ($measure*0.9), $value);
+    }
+
+    @if $paragraph {
+        margin-top: measure-margin($scale, $measure, $value);
         margin-bottom: measure-margin($scale, $measure, $value);
     }
 }
@@ -143,13 +149,9 @@
 
 // $Mixin $Definition-Lists
 // -------------------------------------//
-// lining
-// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
-//
-// dictionary-style
 // http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
 
-@mixin definition-list-style($style) {
+@mixin definition-list-style() {
     dt {
         display: inline;
         counter-reset: definitions;

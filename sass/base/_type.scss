@@ -1,28 +1,13 @@
 //
-// $Typeplate Styles
+// Typography
 // -----------------------------------------------------------------------------
-//
-// Based on Typeplate – A Typographic Starter Kit
-//
-// URL ........... http://typeplate.com
-// VERSION ....... 1.1.2
-// Github ........ https://github.com/typeplate/typeplate.github.io
-// AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
-// LICENSE ....... Creative Commmons Attribution 3.0
-// LICENSE URL ... http://creativecommons.org/licenses/by/3.0
-//
-// -----------------------------------------------------------------------------
-//
 
 
-// Styles Globals
-// -------------------------------------//
-
+// Basic
+// -------------------------------------
 html {
-    font: $font-weight #{$font-size}%/#{$line-height} $font-family;
+    font: $font-weight #{$font-base-size}%/#{$font-line-height} $font-base-family;
 }
-
-
 body {
     // Ala Trent Walton
     @include css-hyphens(auto);
@@ -31,68 +16,88 @@ body {
     // break-word : Indicates that normally unbreakable words may be broken at ...
     // arbitrary points if there are no otherwise acceptable break points in the line.
     @extend %breakword;
-    color: $body-copy-color;
+    color: $color-base;
 }
 
 
+
+// Headings
+// -------------------------------------
 $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 @each $size in $sizes {
+    #{nth($size, 1)},
     .#{nth($size, 1)} {
-        @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', $measure);
+        @extend %hN;
+        @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', False, $font-measure);
+
+        * > &:first-child {
+            margin-top: 0;
+        }
     }
 }
 
 %hN {
     text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
-    line-height: 1; // this fixes huge spaces when a heading wraps onto two lines
-    margin-top: 0;
-    color: $heading-color;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: $font-line-height;
+    color: $color-headings;
+
+    small,
+    .small {
+        font-size: $small-print-size;
+    }
 }
 
 
-// associate h1-h6 tags with their appropriate greek heading
-h1 {
-    @extend .h1;
-    @extend %hN;
-}
-
-h2 {
-    @extend .h2;
-    @extend %hN;
-}
-
-h3 {
-    @extend .h3;
-    @extend %hN;
-}
-
-h4 {
-    @extend .h4;
-    @extend %hN;
-}
-
-h5 {
-    @extend .h5;
-    @extend %hN;
-}
-
-h6 {
-    @extend .h6;
-    @extend %hN;
-}
-
-
-// $Styles $Parargraphs
-// -------------------------------------//
+// Styles Parargraphs
+// -------------------------------------
 p {
-    margin: auto;
+    @include type-scale($font-base, $font-base, '#{$type-scale-unit-value}', True, $font-measure);
 }
+
+
+
+// Smoother font & page loading
+// -------------------------------------
+// http://www.jonikorpi.com/a-smoother-page-load/
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+a, p, li, td {
+    opacity: 1;
+    visibility: visible; /* Old IE */
+    -webkit-transition: opacity 0.3s ease-in-out;
+    -moz-transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+.wf-loading {
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6,
+    a, p, li, td {
+        opacity: 0;
+    }
+
+    .ie & {
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6,
+        a, p, li, td {
+            visibility: hidden; /* Old IE */
+        }
+    }
+}
+
+
+
+
+
+// Emphasis & highlights
+// -------------------------------------
 
 
 // Styles Hyphenation
-// -------------------------------------//
+// -------------------------------------
 // http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
-
 abbr,
 acronym,
 blockquote,
@@ -108,26 +113,6 @@ var,
 xmp {
     @include css-hyphens(none);
 }
-
-
-// Styles Codeblocks
-// -------------------------------------//
-
-pre code {
-    @extend %normal-wrap;
-    @include white-space(pre-wrap);
-}
-
-pre {
-    @include white-space(pre);
-}
-
-code {
-    @include white-space(pre);
-    font-family: monospace;
-}
-
-
 abbr {
     @include smallcaps($small-caps-color, $small-caps-weight);
     &[title]:hover {
@@ -135,7 +120,53 @@ abbr {
     }
 }
 
-dl {
-    @include definition-list-style(dictionary-style);
+
+// Styles Codeblocks
+// -------------------------------------
+pre code {
+    @extend %normal-wrap;
+    @include white-space(pre-wrap);
+}
+pre {
+    @include white-space(pre);
+}
+code {
+    @include white-space(pre);
+    font-family: monospace;
 }
 
+
+// Lists
+// -------------------------------------
+
+li {
+
+}
+
+// Easy extend for menus
+// -------------------------
+.list-menu {
+    @extend .reset;
+    list-style-type: none;
+    list-style-image: none;
+}
+
+
+
+
+ul {
+
+}
+dl {
+    @include definition-list-style();
+}
+
+
+// Simple print setup
+// -------------------------
+@media print {
+    * { background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;}
+}

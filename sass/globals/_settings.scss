@@ -5,19 +5,12 @@
 // -------------------------------------
 
 $font-weight: normal;
-$line-height: 1.65;
-$font-size: 100;                                // percentage value (16 * 112.5% = 18px)
-$font-base: 16 * ($font-size/100);              // converts our percentage to a pixel value
-$font-family: sans-serif;                       // Non-font-face font-stack
-$measure: $font-base * $line-height;
-
-// $Paragraphs
-// -------------------------------------
-
-// Paragraph Styling Boolean
-// 'false' means no vertical whitespace
-// between subsequent paragraphs.
-$paragraph-vertical-whitespace: false;
+$font-line-height: 1.35;
+$font-base-size: 100;                   // percentage value (16 * 100% = 16px)
+$font-base: 16 * ($font-base-size/100); // converts our percentage to a pixel value
+$font-base-family: "Raleway", sans-serif;
+$font-headings-family: "Raleway", sans-serif;
+$font-measure: $font-base * $font-line-height;
 
 
 // $Small Print
@@ -27,23 +20,23 @@ $small-print-size: 65%;
 
 // $Color
 // -------------------------------------
-$body-copy-color: #444;
-$heading-color: #222;
+$color-base:        #444;
+$color-headings:    #393b41;
 
 
 // $TypeScale
 // -------------------------------------
-$h1: 60; // 60 = 18 × 3.3333
-$h2: 48; // 48 = 18 × 2.6667
-$h3: 36; // 36 = 18 × 2
-$h4: 24; // 24 = 18 × 1.3333
-$h5: 21; // 21 = 18 × 1.1667
-$h6: 18; // 18 = 18 × 1
+$h1: 30;
+$h2: 28;
+$h3: 24;
+$h4: 22;
+$h5: 20;
+$h6: 18;
 
 
 // $TypeScale-Unit
 // -------------------------------------
-$type-scale-unit-value: rem;
+$type-scale-unit-value: em;
 
 
 // $SmallCaps
