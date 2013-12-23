@@ -3,33 +3,38 @@
 // -----------------------------------------------------------------------------
 
 
-// Basic
-// -------------------------------------
 html {
-    font: $font-weight #{$font-base-size}%/#{$font-line-height} $font-base-family;
+    font-family: $font-base-family;
+    font-size: 100%;
+    font-weight: $font-weight;
+    line-height: $font-line-height;
 }
-body {
-    // Ala Trent Walton
-    @include css-hyphens(auto);
 
-    // normal: Indicates that lines may only break at normal word break points.
-    // break-word : Indicates that normally unbreakable words may be broken at ...
-    // arbitrary points if there are no otherwise acceptable break points in the line.
+body {
+    @include css-hyphens(auto);
     @extend %breakword;
     color: $color-base;
 }
 
-
+// Font Smoothing
+body,
+input,
+button,
+select,
+textarea {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
 
 // Headings
 // -------------------------------------
 $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
+
 @each $size in $sizes {
     #{nth($size, 1)},
     .#{nth($size, 1)} {
         @extend %hN;
-        @include type-scale(nth($size, 2), $font-base, '#{$type-scale-unit-value}', False, $font-measure);
-
+        @include type-scale(nth($size, 2), $font-base, #{$type-scale-unit-value}, False, $font-measure);
         * > &:first-child {
             margin-top: 0;
         }
@@ -37,25 +42,21 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 }
 
 %hN {
-    text-rendering: optimizeLegibility; // voodoo to enable ligatures and kerning
+    text-rendering: optimizeLegibility;
+    // voodoo to enable ligatures and kerning
     -moz-osx-font-smoothing: grayscale;
     line-height: $font-line-height;
     color: $color-headings;
-
     small,
     .small {
         font-size: $small-print-size;
     }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
 }
-
-
-// Styles Parargraphs
-// -------------------------------------
-p {
-    @include type-scale($font-base, $font-base, '#{$type-scale-unit-value}', True, $font-measure);
-}
-
-
 
 // Smoother font & page loading
 // -------------------------------------
@@ -64,35 +65,73 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 a, p, li, td {
     opacity: 1;
-    visibility: visible; /* Old IE */
+    visibility: visible;
+    /* Old IE */
     -webkit-transition: opacity 0.3s ease-in-out;
     -moz-transition: opacity 0.3s ease-in-out;
     transition: opacity 0.3s ease-in-out;
 }
-
-
 .wf-loading {
     h1, h2, h3, h4, h5, h6,
     .h1, .h2, .h3, .h4, .h5, .h6,
     a, p, li, td {
         opacity: 0;
     }
-
     .ie & {
         h1, h2, h3, h4, h5, h6,
         .h1, .h2, .h3, .h4, .h5, .h6,
         a, p, li, td {
-            visibility: hidden; /* Old IE */
+            visibility: hidden;
+            /* Old IE */
         }
     }
 }
 
 
-
-
-
-// Emphasis & highlights
+// Styles Parargraphs
 // -------------------------------------
+p {
+    @include type-scale($font-base, $font-base, #{$type-scale-unit-value}, True, $font-measure);
+}
+
+// Hyperlinks
+// -------------------------------------
+a,
+a:visited {
+    text-decoration: none;
+
+    &:hover {
+       text-decoration: underline;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    a:hover,
+    a:active {
+        outline: none;
+    }
+}
+
+
+p,
+blockquote,
+q,
+pre,
+address,
+hr,
+code,
+samp,
+dl,
+ol,
+ul,
+form,
+table,
+fieldset,
+menu,
+img {
+    margin: 0 0 1.5em;
+    padding: 0;
+}
 
 
 // Styles Hyphenation
@@ -120,7 +159,6 @@ abbr {
     }
 }
 
-
 // Styles Codeblocks
 // -------------------------------------
 pre code {
@@ -135,13 +173,10 @@ code {
     font-family: monospace;
 }
 
-
 // Lists
 // -------------------------------------
 
-li {
-
-}
+li {}
 
 // Easy extend for menus
 // -------------------------
@@ -151,22 +186,20 @@ li {
     list-style-image: none;
 }
 
+ul {}
 
-
-
-ul {
-
-}
 dl {
-    @include definition-list-style();
+    @include definition-list-style;
 }
-
 
 // Simple print setup
 // -------------------------
 @media print {
-    * { background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
+    * {
+        background: transparent !important;
+        color: #000 !important;
+        /* Black prints faster: h5bp.com/s */
         box-shadow: none !important;
-        text-shadow: none !important;}
+        text-shadow: none !important;
+    }
 }
