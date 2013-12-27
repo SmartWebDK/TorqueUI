@@ -2,12 +2,50 @@
 // Typography
 // -----------------------------------------------------------------------------
 
+// ==========================================================================
+// Vertical rhythm and baseline grid
+// resource:
+//  http://compass-style.org/reference/compass/typography/vertical_rhythm/
+//  http://atendesigngroup.com/blog/vertical-rhythm-compass
+// ==========================================================================
+@import "compass/typography/vertical_rhythm";
+
+
+// ==========================================================================
+// Setup
+// ==========================================================================
+
+$base-font-size: $font-base;
+$base-line-height: $font-header-line-height;
+
+
+//
+// Base
+//
+// Font-sizes are based on EM and the font-size of <html> is set
+// to and %-based setting, so it responds to browser specific zoom.
+// Font-size is set to a % of 16px (which is default).
+//
 
 html {
-    font-family: $font-base-family;
-    font-size: 100%;
-    font-weight: $font-weight;
+    font-size: $font-default-size;
     line-height: $font-line-height;
+    font-family: $font-base-family;
+    font-weight: $font-weight;
+
+    @include at-breakpoint($medium) {
+        font-size: $font-medium-size;
+    }
+
+
+    @include at-breakpoint($large) {
+        font-size: $font-large-size;
+    }
+
+
+    @include at-breakpoint($xlarge) {
+        font-size: $font-xlarge-size;
+    }
 }
 
 body {
@@ -16,7 +54,91 @@ body {
     color: $color-base;
 }
 
-// Font Smoothing
+
+// ==========================================================================
+// Headings
+// ==========================================================================
+
+//
+// Headings and .heading classes
+//
+
+$sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
+@each $size in $sizes {
+    #{nth($size, 1)}, .#{nth($size, 1)} {
+        @extend %hN;
+        @include adjust-font-size-to(nth($size, 2));
+        margin: rhythm(4, nth($size, 2)) auto rhythm(3, nth($size, 2));
+    }
+}
+
+%hN {
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    color: $color-headings;
+
+
+    small,
+    .small {
+        font-size: $font-small-print-size;
+    }
+
+    a {
+        color: inherit;
+        text-decoration: inherit;
+    }
+}
+
+
+// ==========================================================================
+//
+// ==========================================================================
+
+//
+// Main font-size setup
+//
+
+p,
+td,
+li,
+dt,
+dd,
+input,
+textarea,
+button,
+select {
+    @include adjust-font-size-to($font-base);
+}
+
+
+//
+// Elements
+//
+
+p,
+blockquote,
+q,
+pre,
+address,
+hr,
+code,
+samp,
+dl,
+ol,
+ul,
+form,
+table,
+fieldset,
+menu,
+img {
+    margin: 0 auto rhythm(1, $font-base);
+}
+
+
+// ==========================================================================
+// Smoother font experience
+// ==========================================================================
+
 body,
 input,
 button,
@@ -26,41 +148,12 @@ textarea {
     -moz-osx-font-smoothing: grayscale;
 }
 
-// Headings
-// -------------------------------------
-$sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 
-@each $size in $sizes {
-    #{nth($size, 1)},
-    .#{nth($size, 1)} {
-        @extend %hN;
-        @include type-scale(nth($size, 2), $font-base, #{$type-scale-unit-value}, False, $font-measure);
-        * > &:first-child {
-            margin-top: 0;
-        }
-    }
-}
-
-%hN {
-    text-rendering: optimizeLegibility;
-    // voodoo to enable ligatures and kerning
-    -moz-osx-font-smoothing: grayscale;
-    line-height: $font-line-height;
-    color: $color-headings;
-    small,
-    .small {
-        font-size: $small-print-size;
-    }
-
-    a {
-        color: inherit;
-        text-decoration: inherit;
-    }
-}
-
+// ==========================================================================
 // Smoother font & page loading
-// -------------------------------------
-// http://www.jonikorpi.com/a-smoother-page-load/
+// Resouce: http://www.jonikorpi.com/a-smoother-page-load/
+// ==========================================================================
+
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6,
 a, p, li, td {
@@ -88,16 +181,15 @@ a, p, li, td {
 }
 
 
-// Styles Parargraphs
-// -------------------------------------
-p {
-    @include type-scale($font-base, $font-base, #{$type-scale-unit-value}, True, $font-measure);
-}
+// ==========================================================================
+// Base elements
+// ==========================================================================
 
+//
 // Hyperlinks
-// -------------------------------------
-a,
-a:visited {
+//
+
+a, a:visited {
     text-decoration: none;
 
     &:hover {
@@ -113,30 +205,11 @@ a:visited {
 }
 
 
-p,
-blockquote,
-q,
-pre,
-address,
-hr,
-code,
-samp,
-dl,
-ol,
-ul,
-form,
-table,
-fieldset,
-menu,
-img {
-    margin: 0 0 1.5em;
-    padding: 0;
-}
-
-
+//
 // Styles Hyphenation
-// -------------------------------------
-// http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+// Resource: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+//
+
 abbr,
 acronym,
 blockquote,
@@ -153,14 +226,17 @@ xmp {
     @include css-hyphens(none);
 }
 abbr {
-    @include smallcaps($small-caps-color, $small-caps-weight);
+    @include smallcaps($color-small-caps, $font-small-caps-weight);
     &[title]:hover {
         cursor: help;
     }
 }
 
+
+//
 // Styles Codeblocks
-// -------------------------------------
+//
+
 pre code {
     @extend %normal-wrap;
     @include white-space(pre-wrap);
@@ -173,10 +249,23 @@ code {
     font-family: monospace;
 }
 
-// Lists
-// -------------------------------------
 
-li {}
+// ==========================================================================
+// Lists
+// ==========================================================================
+
+//
+// Base
+//
+ol,
+ul,
+dl {
+    ol,
+    ul,
+    dl {
+        margin-bottom: 0;
+    }
+}
 
 // Easy extend for menus
 // -------------------------
@@ -192,8 +281,13 @@ dl {
     @include definition-list-style;
 }
 
+
+
+
+// ==========================================================================
 // Simple print setup
-// -------------------------
+// ==========================================================================
+
 @media print {
     * {
         background: transparent !important;

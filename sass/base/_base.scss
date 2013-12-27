@@ -1,11 +1,17 @@
+//
+// Base style
+// -----------------------------------------------------------------------------
+
+//
+// Description
+//
 
 @include border-box-sizing;
 
 html {
-
+    height: 100%;
 }
 
-
 body {
-
+    min-height: 100%;
 }
