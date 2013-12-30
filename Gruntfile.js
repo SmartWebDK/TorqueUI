@@ -47,7 +47,10 @@ module.exports = function(grunt) {
 
         // Task configuration.
         clean: {
-          dist: ['dist']
+          dist: ['dist'],
+          test: {
+            src: ['test/index.html']
+          }
         },
 
         connect: {
@@ -66,7 +69,7 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['test/**/*.html', '!test/index.html'],
-                tasks: ['buildTest']
+                tasks: ['clean:test','buildTest']
             },
             sass: {
                 files: ['sass/**/*.scss'],
