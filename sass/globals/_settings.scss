@@ -33,7 +33,7 @@ $font-headings-family           : "Raleway", sans-serif;
 // 5)   Responsive sizes in %
 //
 
-$font-default-size              : 87.5%;      // 14px
+$font-default-size              : 75%;      // 14px
 $font-medium-size               : 93.75%;     // 15px
 $font-large-size                : 100%;
 $font-xlarge-size               : 100%;
@@ -44,11 +44,11 @@ $font-xlarge-size               : 100%;
 //  http://atendesigngroup.com/blog/vertical-rhythm-compass
 //
 
-$base: 16px;                                                        // 1)
+$base: 16;                                                          // 1)
 
 $font-weight                    : normal;
 $font-base-size                 : 100; // in pct                       2)
-$font-base                      : ($font-base-size/100)*$base;      // 3)
+$font-base                      : ($font-base-size/100)*$base * 1px;// 3)
 $font-line-height               : 1.5;
 $font-header-line-height        : 8px;                              // 4)
 $font-small-print-size          : 65%;
@@ -126,6 +126,21 @@ $large                              : $grid-large $grid-large-columns $grid-xlar
 $xlarge                             : $grid-xlarge $grid-xlarge-columns;
 
 
+
+// ==========================================================================
+// Font Awesome
+// ==========================================================================
+
+//
+// Font Awesome is a iconic font designed for Bootstrap
+// Resource: http://fontawesome.io/
+//
+
+$fa-font-path                       : "../../fonts";
+$fa-border-color                    : #eee;
+$fa-inverse                         : #fff;
+$fa-li-width                        : (30em / $base) !default;
+
 // ==========================================================================
 // Colors
 // ==========================================================================
@@ -133,8 +148,6 @@ $xlarge                             : $grid-xlarge $grid-xlarge-columns;
 //
 // Theme
 //
-
-
 
 
 //

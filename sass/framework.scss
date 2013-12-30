@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 //
-// Vendor dependencies
+// Module dependencies
 //
 
 @import "compass";
@@ -22,6 +22,7 @@
 
 @import "./vendor/normalize";
 @import "./vendor/typeplate.scss";
+@import "./vendor/font awesome/_font-awesome.scss";
 
 
 //
