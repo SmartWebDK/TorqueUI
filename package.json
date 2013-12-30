@@ -22,7 +22,6 @@
     }
   ],
   "devDependencies": {
-    "btoa": "~1.1.1",
     "grunt": "~0.4.2",
     "grunt-banner": "~0.2.0",
     "grunt-contrib-clean": "~0.5.0",
@@ -37,9 +36,9 @@
     "load-grunt-tasks": "~0.2.0",
     "grunt-contrib-rename": "0.0.3",
     "grunt-contrib-cssmin": "~0.7.0",
-    "grunt-jekyll": "~0.4.1",
     "grunt-concurrent": "~0.4.2",
     "grunt-contrib-connect": "~0.5.0",
-    "cheerio": "~0.12.4"
+    "cheerio": "~0.12.4",
+    "grunt-cli": "~0.1.11"
   }
 }

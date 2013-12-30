@@ -1,0 +1,159 @@
+//
+// Settings
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Font
+// ==========================================================================
+
+//
+// General
+// Resource: www.google.com/fonts/specimen/Raleway
+//
+
+$font-base-family               : "Raleway", sans-serif;
+$font-headings-family           : "Raleway", sans-serif;
+
+
+//
+// Sizes
+//
+// 1)   Default font-size for all browsers is 16px, just set for reference and
+//      calculation
+//
+// 2)   Baseline is setup for desktop, not quite mobile but gives the best
+//      baseline grid.
+//      Font-size = % of 16px (93.75 = 15px, 87.5 = 14px, 81.25 = 13px, 75 = 12px)
+//
+// 3)   Calculation of 2)
+//
+// 4)   Setting our line-height variable to 8px helps avoid the awkwardly
+//      large line-heights at certain (large) font-sizes.
+//
+// 5)   Responsive sizes in %
+//
+
+$font-default-size              : 75%;      // 14px
+$font-medium-size               : 93.75%;     // 15px
+$font-large-size                : 100%;
+$font-xlarge-size               : 100%;
+
+//
+// Resource:
+//  http://compass-style.org/reference/compass/typography/vertical_rhythm/
+//  http://atendesigngroup.com/blog/vertical-rhythm-compass
+//
+
+$base: 16;                                                          // 1)
+
+$font-weight                    : normal;
+$font-base-size                 : 100; // in pct                       2)
+$font-base                      : ($font-base-size/100)*$base * 1px;// 3)
+$font-line-height               : 1.5;
+$font-header-line-height        : 8px;                              // 4)
+$font-small-print-size          : 65%;
+$font-small-caps-weight         : 600;
+
+// 5)
+$font-default-size              : 87.5%;                            // 14px
+$font-medium-size               : 93.75%;                           // 15px
+$font-large-size                : 100%;
+$font-xlarge-size               : 100%;
+
+
+//
+// Headings at large desktop (scaled up / down via responsive sizes)
+//
+
+$h1                             : 30px;
+$h2                             : 28px;
+$h3                             : 24px;
+$h4                             : 22px;
+$h5                             : 20px;
+$h6                             : 18px;
+
+
+// ==========================================================================
+// Responsive
+// ==========================================================================
+
+//
+// Responsive breakpoints
+//
+
+$grid-default                       : 480px;
+$grid-default-columns               : 4;
+$grid-default-column-width          : 100px;
+$grid-default-gutter                : 10px;
+
+$grid-medium                        : 768px;
+$grid-medium-columns                : 12;
+$grid-medium-column-width           : 44px;
+$grid-medium-gutter                 : 10px;
+
+$grid-large                         : 960px;
+$grid-large-columns                 : 12;
+$grid-large-column-width            : 60px;
+$grid-large-gutter                  : 10px;
+
+$grid-xlarge                        : 1280px;
+$grid-xlarge-columns                : 12;
+$grid-xlarge-column-width           : 74px;
+$grid-xlarge-gutter                 : 32px;
+
+
+//
+// Susy vars
+// Resource: http://susy.oddbird.net/guides/getting-started/#start-settings
+//
+
+$total-columns                      : $grid-default-columns;
+$column-width                       : $grid-default-column-width;
+$gutter-width                       : $grid-default-gutter;
+$grid-padding                       : $gutter-width;
+
+$show-grid-backgrounds              : false;
+
+//
+// Susy preakpoints
+// Resource: http://susy.oddbird.net/guides/reference/#ref-media-layouts
+// $media-layout: <min-width> <layout> <max-width> <ie-fallback>;
+//
+
+$default                            : $grid-default-columns $grid-medium - 1;
+$medium                             : $grid-medium $grid-medium-columns $grid-large - 1;
+$large                              : $grid-large $grid-large-columns $grid-xlarge - 1;
+$xlarge                             : $grid-xlarge $grid-xlarge-columns;
+
+
+
+// ==========================================================================
+// Font Awesome
+// ==========================================================================
+
+//
+// Font Awesome is a iconic font designed for Bootstrap
+// Resource: http://fontawesome.io/
+//
+
+$fa-font-path                       : "../../fonts";
+$fa-border-color                    : #eee;
+$fa-inverse                         : #fff;
+$fa-li-width                        : (30em / $base) !default;
+
+// ==========================================================================
+// Colors
+// ==========================================================================
+
+//
+// Theme
+//
+
+
+//
+// Fonts
+//
+
+$color-base                     : #444;
+$color-headings                 : #393b41;
+$color-small-caps               : gray;

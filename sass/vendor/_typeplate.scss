@@ -1,0 +1,173 @@
+// .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+
+//     .                                      '||            .
+//   .||.  .... ... ... ...    ....  ... ...   ||   ....   .||.    ....
+//    ||    '|.  |   ||'  || .|...||  ||'  ||  ||  '' .||   ||   .|...||
+//    ||     '|.|    ||    | ||       ||    |  ||  .|' ||   ||   ||
+//    '|.'    '|     ||...'   '|...'  ||...'  .||. '|..'|'  '|.'  '|...'
+//         .. |      ||               ||
+//          ''      ''''             ''''      A Typographic Starter Kit
+
+//   URL ........... http://typeplate.com
+//   VERSION ....... 1.1.2
+//   Github ........ https://github.com/typeplate/typeplate.github.io
+//   AUTHORS ....... Dennis Gaebel (@gryghostvisuals) & Zachary Kain (@zakkain)
+//   LICENSE ....... Creative Commmons Attribution 3.0
+//   LICENSE URL ... http://creativecommons.org/licenses/by/3.0
+
+//  .||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||..||.
+
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Functions
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Function $Context Calculator
+// -------------------------------------//
+// divide a given font-size by base font-size & return a relative value
+
+@function context-calc($scale, $base, $value) {
+    @return ($scale/$base)#{$value};
+}
+
+
+// $Function $Measure-Margin
+// -------------------------------------//
+// divide 1 unit of measure by given font-size & return a relative em value
+
+@function measure-margin($scale, $measure, $value) {
+    @return ($measure/$scale)#{$value};
+}
+
+
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+//
+// $Mixins / $Placeholders
+//
+// .x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x.x //
+
+
+// $Mixin $Type-Scale
+// -------------------------------------//
+// provides a pixel fallback if you decide
+// to use 'rems' as a unit over ems.
+
+@mixin type-scale($scale, $base, $value, $paragraph, $measure:"") {
+    // If 'rem' is used as a $value then provide a px fallback.
+    @if $value == rem {
+        font-size: $scale#{px};
+    }
+    font-size: context-calc($scale, $base, $value);
+    @if $measure != "" {
+        margin-top: measure-margin($scale, ($measure*1.35), $value);
+        margin-bottom: measure-margin($scale, ($measure*0.9), $value);
+    }
+
+    @if $paragraph {
+        margin-top: measure-margin($scale, $measure, $value);
+        margin-bottom: measure-margin($scale, $measure, $value);
+    }
+}
+
+// $Mixin $Hypens
+// -------------------------------------//
+//http://trentwalton.com/2011/09/07/css-hyphenation
+
+@mixin css-hyphens($val) {
+    // Accepted values: [ none | manual | auto ]
+    -webkit-hyphens: $val; // Safari 5.1 thru 6, iOS 4.2 thru 6
+    -moz-hyphens: $val; // Firefox 16 thru 20
+    -ms-hyphens: $val; // IE10
+    -o-hyphens: $val; // PRESTO...haha LOL
+    hyphens: $val; // W3C standard
+}
+
+
+// $Mixin $Smallcaps
+// -------------------------------------//
+// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
+// ISSUE #1 : https://github.com/typeplate/typeplate.github.com/issues/1
+
+@mixin smallcaps($color, $font-weight) {
+    // depends on the font family.
+    // some font-families don't support small caps
+    // or don't provide them with their web font.
+    font-variant: small-caps;
+    font-weight: $font-weight;
+    text-transform: lowercase;
+    color: $color;
+}
+
+
+// $Mixin $Fontsize-Adjust
+// -------------------------------------//
+// correct x-height for fallback fonts: requires secret formula
+// yet to be discovered. This is still wacky for support. Use
+// wisely grasshopper.
+
+@mixin font-size-adjust($adjust-value) {
+    // firefox 17+ only (as of Feb. 2013)
+    font-size-adjust: $adjust-value;
+}
+
+
+// $Placeholder $Wordwrap
+// -------------------------------------//
+// Silent Sass Classes - A.K.A Placeholders
+//
+// normal: Indicates that lines may only break at normal word break points.
+// break-word : Indicates that normally unbreakable words may be broken at
+// arbitrary points if there are no otherwise acceptable break points in the line.
+
+%breakword {
+    word-wrap: break-word;
+}
+
+%normal-wrap {
+    word-wrap: normal;
+}
+
+%inherit-wrap {
+    word-wrap: auto;
+}
+
+
+// $Mixin $Codeblocks
+// -------------------------------------//
+
+@mixin white-space($wrap-space) {
+    @if $wrap-space == 'pre-wrap' {
+        white-space: #{-moz-}$wrap-space; // Firefox 1.0-2.0
+        white-space: $wrap-space;       // current browsers
+    } @else {
+        white-space: $wrap-space;
+    }
+}
+
+
+// $Mixin $Definition-Lists
+// -------------------------------------//
+// http://lea.verou.me/2012/02/flexible-multiline-definition-lists-with-2-lines-of-css
+
+@mixin definition-list-style() {
+    dt {
+        display: inline;
+        counter-reset: definitions;
+        & + dt {
+            &:before {
+                content: ", ";
+                margin-left: -0.2rem; // removes extra space between the dt and the comma
+            }
+        }
+    }
+    dd {
+        display: block;
+        counter-increment: definitions;
+        &:before {
+            content: counter(definitions, decimal) ". ";
+        }
+    }
+}
+
