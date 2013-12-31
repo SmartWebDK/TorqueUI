@@ -250,6 +250,59 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 <!-- : Small -->
 <p><small>small text</small></p>
 
+<!-- : Links -->
+<p><a href="#">Link tekst</a></p>
+
+<!-- : Blockquotes -->
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
+  itaque in harum similique laborum pariatur ex ullam reprehenderit dolorum
+  accusamus. Saepe, nesciunt, totam minus distinctio voluptates est recusandae
+  vero ab!
+  <small>— Some smartass</small>
+  </p>
+</blockquote>
+
+
+<!-- : Everything put together -->
+<div class="wrap-for-example">
+<p>Lorem <s>ipsum dolor</s> sit amet, consectetur <q>adipisicing elit</q>, sed
+do eiusmod tempor incididunt <del>ut labore et dolore magna</del> aliqua. Ut
+enim ad minim veniam, quis <ins>nostrud exercitation ullamco laboris nisi ut
+aliquip</ins> ex ea commodo consequat. <dfn>Duis aute irure dolor</dfn> in
+reprehenderit in voluptate velit esse cillum dolore eu <strong>fugiat
+nulla</strong> pariatur. <em>Excepteur sint occaecat cupidatat</em> non proident,
+sunt in culpa qui officia <mark>deserunt mollit anim id est laborum</mark>.</p>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
+  itaque in harum similique laborum pariatur ex ullam reprehenderit dolorum
+  accusamus. Saepe, nesciunt, totam minus distinctio voluptates est recusandae
+  vero ab!
+  <small>— Some smartass</small>
+  </p>
+</blockquote>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<blockquote>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
+  itaque in harum similique laborum pariatur ex ullam reprehenderit dolorum
+  accusamus. Saepe, nesciunt, totam minus distinctio voluptates est recusandae
+  vero ab!
+  </p>
+</blockquote>
+
+<p> Consectetur adipisicing elit, sed do eiusmod quis nostrud exercitation ullamco laboris
+nisi ut aliquip ex ea commodo consequat. <label>Duis aute</label> irure dolor
+in reprehenderit in voluptate velit esse cillum dolore <small>eu fugiat nulla
+pariatur</small>. Excepteur <a href="#">sint occaecat</a> cupidatat non proident,
+ sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+</div>
+
 <!-- : h1 > small -->
 <h1>h1. <small>Small in heading.</small></h1>
 <!-- : h2 > small -->
@@ -360,11 +413,63 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
 </dl>
 
+<!-- # Paragraphs and lists -->
+<!-- & Test of lists with paragraphs -->
+<!-- : Paragraphs and lists -->
+<div class="wrap-for-example">
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, facilis, recusandae, consequatur, tempora mollitia porro quos corporis odit impedit odio magnam libero tempore animi a incidunt laudantium eum. Nostrum, natus?</p>
+<ul>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Integer molestie lorem at massa</li>
+    <li>Facilisis in pretium nisl aliquet</li>
+    <li>Nulla volutpat aliquam velit
+        <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+        </ul>
+    </li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+    <li>Eget porttitor lorem</li>
+</ul>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde, quae nam laborum debitis facere quod nemo vitae reiciendis quidem odio voluptate eos molestias doloribus qui sapiente consequuntur odit deleniti quisquam.</p>
+<ol>
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit
+        <ol>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+        </ol>
+    </li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+    <li>Eget porttitor lorem</li>
+</ol>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam, eos, soluta distinctio facilis assumenda amet quidem optio ea perspiciatis debitis reiciendis temporibus corporis veritatis at aperiam! Ad reiciendis adipisci error.</p>
+<dl>
+    <dt>Definition 1</dt>
+    <dd>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante.</dd>
+    <dt>Definition 2</dt>
+    <dd>Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.</dd>
+    <dd>Donec id elit non mi porta gravida at eget metus.</dd>
+    <dt>Definition 3</dt>
+    <dd>Etiam porta sem malesuada magna mollis euismod.</dd>
+</dl>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, odit, maiores, et soluta nisi tempora nulla alias ab illum ducimus assumenda reprehenderit reiciendis perferendis veniam minus similique quod id odio.</p>
+</div>
+
+
+
 
 <!-- # Unstyled -->
 <!-- & Removes styling from list items -->
 <!-- : Unstyled -->
-<ul class="l-unstyled">
+<ul class="l-list-unstyled">
     <li>Lorem ipsum dolor sit amet</li>
     <li>Consectetur adipiscing elit</li>
     <li>Integer molestie lorem at massa</li>
@@ -382,16 +487,35 @@ proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     <li>Eget porttitor lorem</li>
 </ul>
 
+<!-- # Menu -->
+<!-- & Removes all list item icons and images + removes margin -->
+<!-- : Menu -->
+<ul class="l-list-menu">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Integer molestie lorem at massa</li>
+    <li>Facilisis in pretium nisl aliquet</li>
+    <li>Nulla volutpat aliquam velit
+        <ul>
+            <li>Phasellus iaculis neque</li>
+            <li>Purus sodales ultricies</li>
+            <li>Vestibulum laoreet porttitor sem</li>
+            <li>Ac tristique libero volutpat at</li>
+        </ul>
+    </li>
+    <li>Faucibus porta lacus fringilla vel</li>
+    <li>Aenean sit amet erat nunc</li>
+    <li>Eget porttitor lorem</li>
+</ul>
 
 <!-- # Inline -->
 <!-- & All list items are setup with <code>display: inline-block</code> -->
 <!-- : Inline -->
-<ul class="l-inline">
+<ul class="l-list-inline">
     <li>Lorem ipsum dolor sit amet</li>
     <li>Consectetur adipiscing elit</li>
     <li>Integer molestie lorem at massa</li>
 </ul>
-
         
 
 

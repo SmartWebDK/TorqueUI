@@ -87,6 +87,16 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
         color: inherit;
         text-decoration: inherit;
     }
+
+    a & {
+        color: inherit;
+        text-decoration: inherit;
+
+        &:hover {
+            color: inherit;
+            text-decoration: inherit;
+        }
+    }
 }
 
 
@@ -108,7 +118,7 @@ select {
 
 
 //
-// Elements
+// Base line of elements
 //
 
 p,
@@ -125,9 +135,9 @@ ul,
 form,
 table,
 fieldset,
-menu,
+nav,
 img {
-    margin: 0 auto rhythm(1, $font-base);
+    margin: 0 auto rhythm(2, $font-base);
 }
 
 
@@ -187,9 +197,11 @@ a, p, li, td {
 
 a, a:visited {
     text-decoration: none;
+    color: darken($color-highlight, 10%);
 
     &:hover {
        text-decoration: underline;
+       color: $color-highlight;
     }
     &:focus {
         outline: thin dotted;
@@ -245,6 +257,83 @@ code {
     font-family: monospace;
 }
 
+//
+// Small
+//
+
+small,
+.small {
+    color: $color-small-caps;
+}
+
+//
+// Marked element
+//
+
+mark,
+.mark {
+    @include text-color($color-highlight, #fff, $color-main);       // in _mixins.scss
+    background-color: $color-highlight;
+    display: inline-block;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+//
+// Color adjust <b> and <strong>
+//
+
+b, strong {
+    color: darken($color-main, 10%);
+}
+
+//
+// Color adjust <del> and <s>
+//
+
+s, del {
+    color: lighten($color-main, 20%);
+}
+
+//
+// Labels need to be strong
+//
+
+label {
+    font-weight: bold;
+}
+
+//
+// Blockquotes
+//
+blockquote {
+    padding: 0 1em 0 4em;
+    position: relative;
+
+    &:before {
+        content: "\f10d";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1.5em;
+        display: block;
+        position: absolute;
+        left: 0.5em;
+    }
+
+    small,
+    .small {
+        display: block;
+        font-size: 100%;
+        color: $color-main;
+        @include trailer(1, $font-base, "margin");
+    }
+}
+
+blockquote, p { margin-top: 20px; }
+blockquote p:first-child { margin-top: 0; }
+
+
 
 // ==========================================================================
 // Lists
@@ -262,24 +351,61 @@ dl {
         margin-bottom: 0;
     }
 }
-
-//
-// Easy extend for menus
-//
-
-.list-menu {
-    @extend .reset;
-    list-style-type: none;
-    list-style-image: none;
+ol,
+ul {
+    padding-left: 1.25em;
 }
-
+ol {}
 ul {}
-
 dl {
     @include definition-list-style;
 }
+dt {
+    font-weight: bold;
+}
+dd {
+    margin-left: 0;
+}
 
+//
+// Unstyled lists
+//
 
+.l-list-unstyled {
+    @extend .no-icon;
+    @extend .base-reset;
+
+    ul {
+        @extend .no-icon;
+    }
+}
+
+//
+// Easy extend for menu lists
+//
+
+.l-list-menu {
+    @extend .l-list-unstyled;
+    @extend .base-reset;
+
+    ul {
+        @extend .reset;
+    }
+}
+
+//
+// Inline lists
+//
+
+.l-list-inline {
+    @extend .l-list-menu;
+
+    & li {
+        display: inline-block;
+        padding-right: 0.5em;
+        padding-left: 0.5em;
+    }
+}
 
 
 // ==========================================================================

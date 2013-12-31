@@ -1,65 +1,41 @@
 @charset "UTF-8";
 
-//
 // Module dependencies
-//
-
 @import "compass";
 @import "susy";
 
-
-//
 // Global variables and mixins
-//
-
 @import "./globals/_settings";
 @import "./globals/_mixins";
 
+// Theme variables
+@import "./theme/_vars";
 
-//
 // Vendor dependencies
-//
-
 @import "./vendor/normalize";
 @import "./vendor/typeplate.scss";
 @import "./vendor/font awesome/_font-awesome.scss";
 
-
-//
 // Base
-//
-
 @import "./base/type";
 @import "./base/base";
 
-
-//
 // Layout
-//
-
 @import "./layout/grid";
 @import "./layout/utils";
 @import "./layout/responsive-utils";
 
-
-//
 // Modules
-//
-
 @import "./modules/btn";
 @import "./modules/nav";
 @import "./modules/pager";
 @import "./modules/pagination";
 
-
-//
 // States
-//
-
 @import "./globals/states";
 
-//
 // Bastard fixes
-//
-
 @import "./shame";
+
+// Theme setup
+@import "./theme/theme";

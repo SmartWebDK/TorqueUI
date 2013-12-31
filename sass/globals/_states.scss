@@ -1,12 +1,17 @@
 //
 // State classes
-// --------------------------------------------------
+// -----------------------------------------------------------------------------
 
 
+// ==========================================================================
 // Floats
-// -------------------------
+// ==========================================================================
+
+//
 // Clearfix: contain floats
 // Credit: HTML5 Boilerplate
+//
+
 .clearfix:before,
 .clearfix:after {
     content: " ";       // 1
@@ -29,20 +34,27 @@
 }
 
 
-// Toggling content
-// -------------------------
+// ==========================================================================
+// Togeling content
+// ==========================================================================
 
+//
 // Hide from screenreaders and browsers
 //
 // Credit: HTML5 Boilerplate
+//
+
 .is-hidden {
     display: none !important;
     visibility: hidden !important;
 }
 
+//
 // Hide only visually, but have it available for screenreaders: h5bp.com/v
 //
 // Credit: HTML5 Boilerplate
+//
+
 .is-visuallyhidden {
     border: 0;
     clip: rect(0 0 0 0);
@@ -54,10 +66,13 @@
     width: 1px;
 }
 
+//
 // Extends the .visuallyhidden class to allow the element to be focusable
 // when navigated to via the keyboard: h5bp.com/p
 //
 // Credit: HTML5 Boilerplate
+//
+
 .is-visuallyhidden.focusable:active,
 .is-visuallyhidden.focusable:focus {
     clip: auto;
@@ -75,25 +90,34 @@
 }
 
 
+
+// ==========================================================================
+// Layout helpers
+// ==========================================================================
+
+//
 // For Affix plugin
-// -------------------------
+//
+
 .is-fixed {
     position: fixed;
 }
 
 
-
+//
 // Change padding behavior
-// -------------------------
+//
+
 .border-box {
 -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
         box-sizing: border-box;
 }
 
-
+//
 // Make inline block work
-// -------------------------
+//
+
 .inline-block {
     display:-moz-inline-stack;
     display:inline-block;
@@ -101,29 +125,63 @@
     *display:inline;
 }
 
-// Basic reset
-// -------------------------
-.reset {
-    margin: 0;
-    padding: 0;
-}
-
-
-// Base transition
-// -------------------------
-.transition {
-    -webkit-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
-       -moz-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
-         -o-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
-            transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
-}
-
+//
 // Full width element
-// -------------------------
+//
+
 .fullwidth {
     width: auto !important;
     float: none;
     padding: 0;
     margin: 0;
     display: block;
+}
+
+
+
+// ==========================================================================
+// Resets
+// ==========================================================================
+
+//
+// Basic reset
+//
+
+.reset {
+    margin: 0;
+    padding: 0;
+}
+
+//
+// Baseline reset
+//
+
+.base-reset {
+    margin: 0 auto rhythm(2, $font-base);
+    padding: 0;
+}
+
+//
+// no icon
+//
+
+.no-icon {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+
+// ==========================================================================
+// Other
+// ==========================================================================
+
+//
+// Base transition
+//
+
+.transition {
+    -webkit-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
+       -moz-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
+         -o-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
+            transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
 }
