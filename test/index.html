@@ -112,7 +112,18 @@
 
 </a>
 
-
+<!-- : h1 > small -->
+<h1>h1. <small>Small in heading.</small></h1>
+<!-- : h2 > small -->
+<h2>h2. <small>Small in heading.</small></h2>
+<!-- : h3 > small -->
+<h3>h3. <small>Small in heading.</small></h3>
+<!-- : h4 > small -->
+<h4>h4. <small>Small in heading.</small></h4>
+<!-- : h5 > small -->
+<h5>h5. <small>Small in heading.</small></h5>
+<!-- : h6 > small -->
+<h6>h6. <small>Small in heading.</small></h6>
 
 
 
@@ -302,20 +313,6 @@ in reprehenderit in voluptate velit esse cillum dolore <small>eu fugiat nulla
 pariatur</small>. Excepteur <a href="#">sint occaecat</a> cupidatat non proident,
  sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 </div>
-
-<!-- : h1 > small -->
-<h1>h1. <small>Small in heading.</small></h1>
-<!-- : h2 > small -->
-<h2>h2. <small>Small in heading.</small></h2>
-<!-- : h3 > small -->
-<h3>h3. <small>Small in heading.</small></h3>
-<!-- : h4 > small -->
-<h4>h4. <small>Small in heading.</small></h4>
-<!-- : h5 > small -->
-<h5>h5. <small>Small in heading.</small></h5>
-<!-- : h6 > small -->
-<h6>h6. <small>Small in heading.</small></h6>
-
 
         
 
@@ -516,6 +513,112 @@ pariatur</small>. Excepteur <a href="#">sint occaecat</a> cupidatat non proident
     <li>Consectetur adipiscing elit</li>
     <li>Integer molestie lorem at massa</li>
 </ul>
+        
+
+
+
+<!-- # Form and form elements -->
+<!-- & Examples of form and form elements -->
+<!-- : Form; 1700px -->
+<form class="form" action="/">
+    <fieldset class="form-group">
+        <label class="form-label" for="name">Name</label>
+        <input type="text" id="name" class="form-input">
+        <p class="form-help">This is help text under the form field.</p>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label class="form-label" for="email">Email</label>
+        <div class="input-group">
+            <input type="email" id="email" class="form-input">
+            <span class="input-addon"><i class="fa fa-envelope-o"></i></span>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label class="form-label" for="gender">Gender</label>
+        <select id="gender" class="form-input form-select">
+            <option>Male</option>
+            <option>Female</option>
+            <option>Cylon</option>
+        </select>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label class="form-label" for="notifications">Notifications</label>
+        <div class="input-group">
+            <span class="input-addon"><input id="send-email" type="radio" name="notifications"></span>
+            <label for="send-email" class="form-label">Send me email</label>
+            <span class="input-addon"><i class="fa fa-thumbs-o-up"></i></span>
+        </div>
+        <div class="input-group">
+            <span class="input-addon"><input id="dont-email" type="radio" name="notifications"></span>
+            <label for="dont-email" class="form-label">Don't send me email</label>
+            <span class="input-addon"><i class="fa fa-thumbs-o-down"></i></span>
+        </div>
+
+        <div class="input-group">
+            <span class="input-addon"><input id="flowers" type="radio" name="notifications"></span>
+            <label class="form-label" for="flowers">Send me flowers</label>
+            <span class="input-addon"><i class="fa fa-leaf"></i></span>
+        </div>
+    </fieldset>
+
+
+    <fieldset class="form-group">
+        <label class="form-label" for="notifications">Normal notifications</label>
+        <label class="form-label"><input id="send-email" type="radio" name="notifications"> Send me email</label>
+        <label class="form-label"><input id="dont-email" type="radio" name="notifications"> Don't send me email</label>
+        <label class="form-label"><input id="flowers" type="radio" name="notifications"> Send me flowers</label>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label class="form-label" for="url">URL</label>
+            <div class="input-group">
+                <span class="input-addon">http://</span>
+                <input type="url" id="url" class="form-input" placeholder="yourdomain.com">
+            </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label class="form-label" for="email">Twitter</label>
+        <div class="input-group">
+            <span class="input-addon">@</span>
+            <input type="text" id="twitter" class="form-input">
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <label class="form-label" for="bio">Bio</label>
+        <textarea class="form-input" id="bio"></textarea>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <div class="input-group">
+            <span class="input-addon"><input id="service" type="checkbox"></span>
+            <label for="service" class="form-label">I accept the terms of service and lorem ipsum.</label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <div class="input-group">
+            <span class="input-addon"><input id="lorem" type="checkbox"></span>
+            <label for="lorem" class="form-label">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quasi, quam, dolores, enim quaerat fuga recusandae reiciendis optio cumque officiis ullam mollitia commodi dicta at nemo animi maxime nulla placeat.</label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group">
+        <div class="input-group">
+            <span class="input-addon"><input id="lorem-long" type="checkbox"></span>
+            <label for="lorem-long" class="form-label"><p class="h2">Lorem ipsum</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, quasi, quam, dolores, enim quaerat fuga recusandae reiciendis optio cumque officiis ullam mollitia commodi dicta at nemo animi maxime nulla placeat.</p><p></p></label>
+        </div>
+    </fieldset>
+
+    <fieldset class="form-group form-action">
+        <input class="form-submit button" type="submit" value="Submit">
+    </fieldset>
+</form>
+
         
 
 

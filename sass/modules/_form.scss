@@ -1,0 +1,165 @@
+//
+// Form and form elements
+// -----------------------------------------------------------------------------
+
+form,
+.form {
+
+}
+
+fieldset {
+    margin: 0;
+    padding: 0;
+    @extend .trailing;
+}
+
+//
+// Form groups defines a row of inputs and helps with spacing
+//
+
+.form-group {
+    @extend .trailing;
+    padding: 0;
+}
+
+//
+// Input groups are used for inputs with prepends and appends
+//
+
+.input-group {
+    @extend .trailing;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
+
+    .form-label,
+    .form-input {
+        @extend .form-input;
+
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            @include border-radius(0);
+        }
+
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+}
+
+//
+// Input-group items
+//
+
+.input-addon {
+    border: 1px solid;
+    width: 1%;
+    min-width: em(40px);
+    display: table-cell;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+    padding: 0 em(12px);
+    @include border-radius($global-border-radius);
+
+    &:first-child {
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+
+    &:not(:first-child):not(:last-child) {
+        border-left: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+    }
+
+    & + .form-label,
+    & + .form-input {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
+
+//
+// Input labels
+//
+
+.form-label {
+    cursor: pointer;
+    display: block;
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: 0.5em;
+    }
+}
+
+
+//
+// Common input styling
+//
+//  1) Remove all styling webkit select
+//     Resource: http://css-tricks.com/almanac/properties/a/appearance/
+//  2) Em based borders for nicer responsive borders
+//
+
+.form-input {
+    -webkit-appearance: none;                                   // 1)
+    width: 100%;
+    display: block;
+    border: 1px solid;
+    padding: em(13px) em(12px);
+    @include border-radius($global-border-radius);              // 2)
+    @include background-clip(padding-box);
+
+    &:focus {
+        outline: none;
+    }
+
+    &:disabled,
+    .is-disabled {
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+}
+
+//
+// Restyle the select box
+//
+//  1) Remove dropdown arrow (expand) from MS devices
+//  2) Its not possible to remove arrow in Firefox, so hide gfx
+//
+
+.form-select {
+    background-repeat: no-repeat;
+    background-position: 98%;
+
+    &:hover {
+    }
+}
+select::-ms-expand {                                            // 1)
+  display: none;
+}
+
+//
+// Form helper texts
+//
+
+.form-help {
+    font-size: 90%;
+}
+

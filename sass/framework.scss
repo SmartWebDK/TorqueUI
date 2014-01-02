@@ -9,7 +9,7 @@
 @import "./globals/_mixins";
 
 // Theme variables
-@import "./theme/_vars";
+@import "./theme/theme_settings";
 
 // Vendor dependencies
 @import "./vendor/normalize";
@@ -26,6 +26,8 @@
 @import "./layout/responsive-utils";
 
 // Modules
+@import "./modules/lists";
+@import "./modules/form";
 @import "./modules/btn";
 @import "./modules/nav";
 @import "./modules/pager";

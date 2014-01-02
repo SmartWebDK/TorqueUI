@@ -27,14 +27,29 @@ $font-headings-family           : "Raleway", sans-serif;
 // Theme
 //
 
-$color-highlight                    : #f79420;
-$color-main                         : #393c41;
-$color-subtle                       : #f5f5f3;
+$color-highlight                : #f79420;
+$color-main                     : #393c41;
+$color-subtle                   : #f5f5f3;
+
+$color-main-light               : lighten($color-main, 30%);
+$color-main-dark                : darken($color-main, 10%);
+
 
 //
 // Fonts
 //
 
 $color-base                     : $color-main;
-$color-headings                 : darken($color-main, 10%);
-$color-small-caps               : lighten($color-main, 30%);
+$color-headings                 : $color-main-dark;
+$color-small-caps               : $color-main-light;
+
+
+// ==========================================================================
+// Misc
+// ==========================================================================
+
+//
+// Global border radius
+//
+
+$global-border-radius           : em(3px);

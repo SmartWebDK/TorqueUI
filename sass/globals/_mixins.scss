@@ -20,4 +20,11 @@
   }
 }
 
+//
+// Calculate px to em
+// Resource: http://vvv.tobiassjosten.net/css/px-to-em-with-sass/
+//
 
+@function em($px, $font-base: $font-base) {
+    @return ($px / $font-base) * 1em;
+}
