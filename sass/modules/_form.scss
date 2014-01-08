@@ -2,6 +2,15 @@
 // Form and form elements
 // -----------------------------------------------------------------------------
 
+
+// ==========================================================================
+// Elements
+// ==========================================================================
+
+//
+// All the elements needed in a form
+//
+
 form,
 .form {
 
@@ -19,6 +28,7 @@ fieldset {
 
 .form-group {
     @extend .trailing;
+    @extend .clearfix;
     padding: 0;
 }
 
@@ -32,32 +42,41 @@ fieldset {
     display: table;
     border-collapse: separate;
     width: 100%;
+}
 
-    .form-label,
-    .form-input {
-        @extend .form-input;
+//
+// Input-group main element
+// label or inputs
+//
 
-        &:first-child {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
+.input-group-main {
+    vertical-align: middle;
 
-        &:not(:first-child):not(:last-child) {
-            @include border-radius(0);
-        }
-
-        &:last-child {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
+    &:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
+
+    &:not(:first-child):not(:last-child) {
+        @include border-radius(0);
+    }
+
+    &:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+label.input-group-main {
+    @extend .form-input;
+    margin: 0;
 }
 
 //
 // Input-group items
 //
 
-.input-addon {
+.input-group-addon {
     border: 1px solid;
     width: 1%;
     min-width: em(40px);
@@ -65,7 +84,8 @@ fieldset {
     white-space: nowrap;
     vertical-align: middle;
     text-align: center;
-    padding: 0 em(12px);
+
+    @extend %input-default;
     @include border-radius($global-border-radius);
 
     &:first-child {
@@ -81,14 +101,14 @@ fieldset {
         border-bottom-right-radius: 0;
     }
 
-    &:last-child {
+    &:last-child,
+    .input-group-main + & {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
         border-left: 0;
     }
 
-    & + .form-label,
-    & + .form-input {
+    & + .input-group-main {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
     }
@@ -101,13 +121,15 @@ fieldset {
 .form-label {
     cursor: pointer;
     display: block;
+    font-size: em(14px);
+    margin-bottom: rhythm(1, $font-base);
+    vertical-align: middle;
 
     input[type="checkbox"],
     input[type="radio"] {
         margin-right: 0.5em;
     }
 }
-
 
 //
 // Common input styling
@@ -122,9 +144,11 @@ fieldset {
     width: 100%;
     display: block;
     border: 1px solid;
-    padding: em(13px) em(12px);
+    vertical-align: middle;
+
     @include border-radius($global-border-radius);              // 2)
     @include background-clip(padding-box);
+    @extend %input-default;
 
     &:focus {
         outline: none;
@@ -146,14 +170,12 @@ fieldset {
 
 .form-select {
     background-repeat: no-repeat;
-    background-position: 98%;
-
-    &:hover {
-    }
+    background-position: 98% 50%;
 }
 select::-ms-expand {                                            // 1)
   display: none;
 }
+
 
 //
 // Form helper texts
@@ -163,3 +185,111 @@ select::-ms-expand {                                            // 1)
     font-size: 90%;
 }
 
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Defining the sizes used in the framework:
+//  Large
+//  Default
+//  Small
+//  XSmall
+//
+
+//
+// Place holders for input sizes
+//
+
+%input-large {
+    padding: 13px 12px;
+    font-size: em(14px);
+    min-height: 46px;
+    height: auto !important;
+    height: 46px;
+}
+%input-default {
+    padding: 8px 12px;
+    font-size: em(14px);
+    min-height: 37px;
+    height: auto !important;
+    height: 37px;
+}
+%input-small {
+    padding: 6px 12px;
+    font-size: em(12px);
+    font-weight: normal;
+    min-height: 30px;
+    height: auto !important;
+    height: 30px;
+}
+%input-xsmall {
+    padding: 2px 12px;
+    font-size: em(12px);
+    font-weight: normal;
+    min-height: 24px;
+    height: auto !important;
+    height: 24px;
+}
+
+//
+// Classes for input sizes
+//
+
+.large {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon {
+       @extend %input-large;
+    }
+
+    &.btn,
+    .btn-main,
+    .btn-addon {
+
+    }
+}
+.default {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon {
+       @extend %input-default;
+    }
+
+    &.btn,
+    .btn-main,
+    .btn-addon {
+
+    }
+}
+.small {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon {
+       @extend %input-small;
+    }
+
+    &.btn,
+    .btn-main,
+    .btn-addon {
+
+    }
+}
+.xsmall {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon {
+       @extend %input-xsmall;
+    }
+
+    &.btn,
+    .btn-main,
+    .btn-addon {
+
+    }
+}

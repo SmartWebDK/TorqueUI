@@ -77,10 +77,6 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
     -moz-osx-font-smoothing: grayscale;
     color: $color-headings;
 
-    &:first-child {
-        margin-top: 0;
-    }
-
     small,
     .small {
         font-size: $font-small-print-size;
@@ -288,6 +284,18 @@ code {
 }
 
 //
+// Horizontal line
+//
+
+hr {
+    height: 0;
+    border: 0;
+    border-top: 1px solid;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+//
 // Small
 //
 
@@ -364,7 +372,6 @@ blockquote {
         @include trailer(1, $font-base, "margin");
     }
 }
-
 
 // ==========================================================================
 // Simple print setup
