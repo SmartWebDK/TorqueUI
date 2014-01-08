@@ -33,7 +33,8 @@
     //
 
     .is-disabled,
-    :disabled {
+    &[disabled],
+    &:disabled {
         color: $color-main-light;
     }
 }

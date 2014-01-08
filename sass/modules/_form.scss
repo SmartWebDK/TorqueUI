@@ -154,8 +154,9 @@ label.input-group-main {
         outline: none;
     }
 
-    &:disabled,
-    .is-disabled {
+    .is-disabled,
+    &[disabled],
+    &:disabled {
         cursor: not-allowed;
         pointer-events: none;
     }
