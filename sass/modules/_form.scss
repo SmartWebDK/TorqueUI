@@ -32,87 +32,6 @@ fieldset {
     padding: 0;
 }
 
-//
-// Input groups are used for inputs with prepends and appends
-//
-
-.input-group {
-    @extend .trailing;
-    position: relative;
-    display: table;
-    border-collapse: separate;
-    width: 100%;
-}
-
-//
-// Input-group main element
-// label or inputs
-//
-
-.input-group-main {
-    vertical-align: middle;
-
-    &:first-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &:not(:first-child):not(:last-child) {
-        @include border-radius(0);
-    }
-
-    &:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-}
-
-label.input-group-main {
-    @extend .form-input;
-    margin: 0;
-}
-
-//
-// Input-group items
-//
-
-.input-group-addon {
-    border: 1px solid;
-    width: 1%;
-    min-width: em(40px);
-    display: table-cell;
-    white-space: nowrap;
-    vertical-align: middle;
-    text-align: center;
-
-    @extend %input-default;
-    @include border-radius($global-border-radius);
-
-    &:first-child {
-        border-right: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-
-    &:not(:first-child):not(:last-child) {
-        border-left: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &:last-child,
-    .input-group-main + & {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left: 0;
-    }
-
-    & + .input-group-main {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-}
 
 //
 // Input labels
@@ -123,7 +42,6 @@ label.input-group-main {
     display: block;
     font-size: em(14px);
     margin-bottom: rhythm(1, $font-base);
-    vertical-align: middle;
 
     input[type="checkbox"],
     input[type="radio"] {
@@ -177,13 +95,99 @@ select::-ms-expand {                                            // 1)
   display: none;
 }
 
-
 //
 // Form helper texts
 //
 
 .form-help {
     font-size: 90%;
+}
+
+
+// ==========================================================================
+// Input groups
+// ==========================================================================
+
+//
+// Input groups are used for inputs with prepends and appends
+//
+
+.input-group {
+    @extend .trailing;
+    position: relative;
+    display: table;
+    border-collapse: separate;
+    width: 100%;
+}
+
+//
+// Input-group main element
+// label or inputs
+//
+
+.input-group-main {
+    vertical-align: middle;
+
+    &:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &:not(:first-child):not(:last-child) {
+        @include border-radius(0);
+    }
+
+    &:last-child {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}
+
+label.input-group-main {
+    @extend .form-input;
+    margin: 0;
+    height: auto !important;
+}
+
+//
+// Input-group items
+//
+
+.input-group-addon {
+    border: 1px solid;
+    width: 1%;
+    min-width: em(40px);
+    display: table-cell;
+    white-space: nowrap;
+    vertical-align: middle;
+    text-align: center;
+
+    @extend %input-default;
+    @include border-radius($global-border-radius);
+
+    &:first-child {
+        border-right: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &:not(:first-child):not(:last-child) {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &:last-child,
+    .input-group-main + & {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-left: 0;
+    }
+
+    & + .input-group-addon {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        border-right: 0;
+    }
 }
 
 
@@ -204,33 +208,29 @@ select::-ms-expand {                                            // 1)
 //
 
 %input-large {
-    padding: 13px 12px;
-    font-size: em(14px);
+    padding: 11px 12px;
+    font-size: 14px;
     min-height: 46px;
-    height: auto !important;
     height: 46px;
 }
 %input-default {
-    padding: 8px 12px;
-    font-size: em(14px);
+    padding: 7px 12px;
+    font-size: 14px;
     min-height: 37px;
-    height: auto !important;
     height: 37px;
 }
 %input-small {
-    padding: 6px 12px;
-    font-size: em(12px);
+    padding: 5px 12px;
+    font-size: 12px;
     font-weight: normal;
     min-height: 30px;
-    height: auto !important;
     height: 30px;
 }
 %input-xsmall {
     padding: 2px 12px;
-    font-size: em(12px);
+    font-size: 12px;
     font-weight: normal;
     min-height: 24px;
-    height: auto !important;
     height: 24px;
 }
 
