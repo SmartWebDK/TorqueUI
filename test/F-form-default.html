@@ -11,19 +11,26 @@
     </head>
     <body>
         <div id="tdcss">
-<!-- # Form and form elements -->
+<!-- # Form elements sizes -->
 <!-- & Examples of form and form elements -->
 
-<!-- # Form elements -->
+
+<!-- # Default -->
+
+<!---
+    $$$$$$$\             $$$$$$\                     $$\   $$\
+    $$  __$$\           $$  __$$\                    $$ |  $$ |
+    $$ |  $$ | $$$$$$\  $$ /  \__|$$$$$$\  $$\   $$\ $$ |$$$$$$\
+    $$ |  $$ |$$  __$$\ $$$$\     \____$$\ $$ |  $$ |$$ |\_$$  _|
+    $$ |  $$ |$$$$$$$$ |$$  _|    $$$$$$$ |$$ |  $$ |$$ |  $$ |
+    $$ |  $$ |$$   ____|$$ |     $$  __$$ |$$ |  $$ |$$ |  $$ |$$\
+    $$$$$$$  |\$$$$$$$\ $$ |     \$$$$$$$ |\$$$$$$  |$$ |  \$$$$  |
+    \_______/  \_______|\__|      \_______| \______/ \__|   \____/
+-->
 
 <!-- # Input type text -->
 
 <!-- : Plain -->
-<fieldset class="form-group">
-    <input type="text">
-</fieldset>
-
-<!-- : With class -->
 <fieldset class="form-group">
     <input type="text" class="form-input">
 </fieldset>
@@ -93,11 +100,6 @@
 <!-- # Input type number -->
 
 <!-- : Plain -->
-<fieldset class="form-group">
-    <input type="number" pattern="[0-9]*">
-</fieldset>
-
-<!-- : With class -->
 <fieldset class="form-group">
     <input type="number" pattern="[0-9]*" class="form-input">
 </fieldset>
@@ -300,16 +302,7 @@
 
 <!-- : Plain -->
 <fieldset class="form-group">
-    <select>
-        <option>Male</option>
-        <option>Female</option>
-        <option>Cylon</option>
-    </select>
-</fieldset>
-
-<!-- : With class -->
-<fieldset class="form-group">
-    <select class="form-input form-select">
+    <select id="gender" class="form-input form-select">
         <option>Male</option>
         <option>Female</option>
         <option>Cylon</option>
@@ -319,7 +312,7 @@
 <!-- : With appended icon addon -->
 <fieldset class="form-group">
     <div class="input-group">
-        <select class="form-input input-group-main form-select">
+        <select id="gender" class="form-input input-group-main form-select">
             <option>Male</option>
             <option>Female</option>
             <option>Cylon</option>
@@ -331,7 +324,7 @@
 <!-- : With appended text addon -->
 <fieldset class="form-group">
     <div class="input-group">
-        <select class="form-input input-group-main form-select">
+        <select id="gender" class="form-input input-group-main form-select">
             <option>Male</option>
             <option>Female</option>
             <option>Cylon</option>
@@ -344,7 +337,7 @@
 <fieldset class="form-group">
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-check"></i></span>
-        <select class="form-input input-group-main form-select">
+        <select id="gender" class="form-input input-group-main form-select">
             <option>Male</option>
             <option>Female</option>
             <option>Cylon</option>
@@ -356,7 +349,7 @@
 <fieldset class="form-group">
     <div class="input-group">
         <span class="input-group-addon">www.</span>
-        <select class="form-input input-group-main form-select">
+        <select id="gender" class="form-input input-group-main form-select">
             <option>Male</option>
             <option>Female</option>
             <option>Cylon</option>
@@ -368,7 +361,7 @@
 <fieldset class="form-group">
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-check"></i></span>
-        <select class="form-input input-group-main form-select">
+        <select id="gender" class="form-input input-group-main form-select">
             <option>Male</option>
             <option>Female</option>
             <option>Cylon</option>
@@ -381,7 +374,7 @@
 <fieldset class="form-group">
     <div class="input-group">
         <span class="input-group-addon">www.</span>
-        <select class="form-input input-group-main form-select">
+        <select id="gender" class="form-input input-group-main form-select">
             <option>Male</option>
             <option>Female</option>
             <option>Cylon</option>
@@ -395,7 +388,7 @@
     <div class="input-group">
         <span class="input-group-addon"><i class="fa fa-check"></i></span>
         <span class="input-group-addon">www.</span>
-        <select class="form-input input-group-main form-select">
+        <select id="gender" class="form-input input-group-main form-select">
             <option>Male</option>
             <option>Female</option>
             <option>Cylon</option>
@@ -405,30 +398,6 @@
     </div>
 </fieldset>
 
-<!-- # disabled styles -->
-<!-- : text -->
-<fieldset class="form-group">
-    <input type="text" class="form-input" disabled="disabled">
-</fieldset>
-
-<!-- : number -->
-<fieldset class="form-group">
-    <input type="number" class="form-input" disabled="disabled">
-</fieldset>
-
-<!-- : textarea -->
-<fieldset class="form-group">
-    <textarea class="form-input" disabled="disabled"></textarea>
-</fieldset>
-
-<!-- : textarea -->
-<fieldset class="form-group">
-    <select class="form-input form-select" disabled="disabled">
-        <option>Male</option>
-        <option>Female</option>
-        <option>Cylon</option>
-    </select>
-</fieldset>
 
 <!-- # Input groups -->
 <!-- : Short label in input-group -->
@@ -463,204 +432,11 @@
     </div>
 </fieldset>
 
-<!-- # Stacked form -->
-<!-- : Stacked form; 1100px -->
-<form class="form" action="/">
-    <fieldset class="form-group">
-        <label class="form-label" for="name">Name</label>
-        <input type="text" id="name" class="form-input" />
-        <p class="form-help">This is help text under the form field.</p>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="email">Email</label>
-        <div class="input-group">
-            <input type="email" id="email" class="form-input input-group-main" />
-            <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="gender">Gender</label>
-        <select id="gender" class="form-input form-select">
-            <option>Male</option>
-            <option>Female</option>
-            <option>Cylon</option>
-        </select>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="notifications">Notifications</label>
-        <div class="input-group">
-            <span class="input-group-addon"><input id="send-email" type="radio" name="notifications" /></span>
-            <label for="send-email" class="form-label input-group-main">Send me email</label>
-            <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
-        </div>
-        <div class="input-group">
-            <span class="input-group-addon"><input id="dont-email" type="radio" name="notifications" /></span>
-            <label for="dont-email" class="form-label input-group-main">Don't send me email</label>
-            <span class="input-group-addon"><i class="fa fa-thumbs-o-down"></i></span>
-        </div>
-
-        <div class="input-group">
-            <span class="input-group-addon"><input id="flowers" type="radio" name="notifications" /></span>
-            <label for="flowers" class="form-label input-group-main">Send me flowers</label>
-            <span class="input-group-addon"><i class="fa fa-leaf"></i></span>
-        </div>
-    </fieldset>
-
-
-    <fieldset class="form-group">
-        <label class="form-label" for="notifications">Normal notifications</label>
-        <label class="form-label"><input id="send-email" type="radio" name="notifications" /> Send me email</label>
-        <label class="form-label"><input id="dont-email" type="radio" name="notifications" /> Don't send me email</label>
-        <label class="form-label"><input id="flowers" type="radio" name="notifications" /> Send me flowers</label>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="url">URL</label>
-            <div class="input-group">
-                <span class="input-group-addon">http://</span>
-                <input type="url" id="url" class="form-input input-group-main" placeholder="yourdomain.com" />
-            </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="email">Twitter</label>
-        <div class="input-group">
-            <span class="input-group-addon">@</span>
-            <input type="text" id="twitter" class="form-input input-group-main" />
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="bio">Bio</label>
-        <textarea class="form-input" id="bio"></textarea>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon"><input id="service" type="checkbox" /></span>
-            <label for="service" class="form-label input-group-main">I accept the terms of service and lorem ipsum.</label>
-        </div>
-    </fieldset>
-
-
-    <fieldset class="form-group form-action">
-        <input class="form-submit button" type="submit" value="Submit" />
-    </fieldset>
-</form>
-
-
-<!-- # Inline form -->
-<!-- : Form inline; 1100px -->
-<form class="form" action="/">
-    <fieldset class="form-group">
-        <label class="form-label" for="name">Name</label>
-
-        <div style="width: 48%; float: right;">
-            <input type="text" id="name" class="form-input" />
-            <p class="form-help">This is help text under the form field.</p>
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="email">Email</label>
-
-        <div style="width: 48%; float: right;">
-            <div class="input-group">
-                <input type="email" id="email" class="form-input input-group-main" />
-                <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
-            </div>
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="gender">Gender</label>
-
-        <div style="width: 48%; float: right;">
-            <select id="gender" class="form-input form-select">
-                <option>Male</option>
-                <option>Female</option>
-                <option>Cylon</option>
-            </select>
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="notifications">Notifications</label>
-
-        <div style="width: 48%; float: right;">
-            <div class="input-group">
-                <span class="input-group-addon"><input id="send-email" type="radio" name="notifications" /></span>
-                <label for="send-email" class="form-label input-group-main">Send me email</label>
-                <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon"><input id="dont-email" type="radio" name="notifications" /></span>
-                <label for="dont-email" class="form-label input-group-main">Don't send me email</label>
-                <span class="input-group-addon"><i class="fa fa-thumbs-o-down"></i></span>
-            </div>
-
-            <div class="input-group">
-                <span class="input-group-addon"><input id="flowers" type="radio" name="notifications" /></span>
-                <label for="flowers" class="form-label input-group-main">Send me flowers</label>
-                <span class="input-group-addon"><i class="fa fa-leaf"></i></span>
-            </div>
-        </div>
-    </fieldset>
-
-
-    <fieldset class="form-group">
-        <label class="form-label" for="notifications">Normal notifications</label>
-
-        <div style="width: 48%; float: right;">
-            <label class="form-label"><input id="send-email" type="radio" name="notifications" /> Send me email</label>
-            <label class="form-label"><input id="dont-email" type="radio" name="notifications" /> Don't send me email</label>
-            <label class="form-label"><input id="flowers" type="radio" name="notifications" /> Send me flowers</label>
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="url">URL</label>
-
-        <div style="width: 48%; float: right;">
-            <div class="input-group">
-                <span class="input-group-addon">http://</span>
-                <input type="url" id="url" class="form-input input-group-main" placeholder="yourdomain.com" />
-            </div>
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="email">Twitter</label>
-        <div style="width: 48%; float: right;">
-            <div class="input-group">
-                <span class="input-group-addon">@</span>
-                <input type="text" id="twitter" class="form-input input-group-main" />
-            </div>
-    </fieldset>
-
-    <fieldset class="form-group">
-        <label class="form-label" for="bio">Bio</label>
-
-        <div style="width: 48%; float: right;">
-            <textarea class="form-input" id="bio"></textarea>
-        </div>
-    </fieldset>
-
-    <hr>
-
-    <fieldset class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon"><input id="service" type="checkbox" /></span>
-            <label for="service" class="form-label input-group-main">I accept the terms of service and lorem ipsum.</label>
-        </div>
-    </fieldset>
-
-    <fieldset class="form-group form-action">
-        <input class="form-submit button" type="submit" value="Submit" />
-    </fieldset>
+<!-- # Text area -->
+<!-- : Text area -->
+<fieldset class="form-group">
+<textarea name="text" class="form-input default"></textarea>
+</fieldset>
 
 </form>
 
