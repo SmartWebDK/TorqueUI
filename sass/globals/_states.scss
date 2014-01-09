@@ -35,7 +35,7 @@
 
 
 // ==========================================================================
-// Togeling content
+// Toggeling content
 // ==========================================================================
 
 //
@@ -89,6 +89,41 @@
     visibility: hidden;
 }
 
+
+// ==========================================================================
+// User interaction
+// ==========================================================================
+
+//
+// Disabled styles
+//
+
+.is-disabled {
+    cursor: not-allowed;
+    @extend .is-unclickable;
+    @extend .is-unselectable;
+}
+
+//
+//  Make unclickable
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+//
+
+.is-unclickable {
+    pointer-events: none;
+}
+
+//
+//  Make the element unable to select
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+//
+
+.is-unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 
 // ==========================================================================
@@ -185,3 +220,5 @@
          -o-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
             transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
 }
+
+

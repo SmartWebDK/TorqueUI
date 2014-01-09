@@ -8,16 +8,15 @@
 //
 
 @mixin text-color($test, $light, $dark) {
-
-  @if lightness($test) < 60% {
-    // if the text colour is a dark colour
-    // we need a light text color
-    color: $light;
-  } @else {
-    // else it must be light so we need
-    // a darker text color
-    color: $dark;
-  }
+    @if lightness($test) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+        color: $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+        color: $dark;
+    }
 }
 
 //
@@ -27,4 +26,16 @@
 
 @function em($px, $font-base: $font-base) {
     @return ($px / $font-base) * 1em;
+}
+
+
+//
+// Table-cell ie7 hack, avoid crash in ie7
+//
+
+@mixin ui-table-cell() {
+    display: table-cell;
+    *width: auto;
+    *display: block;
+    *float: left;
 }

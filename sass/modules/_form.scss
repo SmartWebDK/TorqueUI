@@ -19,6 +19,7 @@ form,
 fieldset {
     margin: 0;
     padding: 0;
+
     @extend .trailing;
 }
 
@@ -27,9 +28,10 @@ fieldset {
 //
 
 .form-group {
+    padding: 0;
+
     @extend .trailing;
     @extend .clearfix;
-    padding: 0;
 }
 
 
@@ -60,23 +62,25 @@ fieldset {
 .form-input {
     -webkit-appearance: none;                                   // 1)
     width: 100%;
-    display: block;
     border: 1px solid;
     vertical-align: middle;
 
     @include border-radius($global-border-radius);              // 2)
     @include background-clip(padding-box);
+    @include ui-table-cell();
     @extend %input-default;
 
     &:focus {
         outline: none;
     }
 
-    .is-disabled,
+    //
+    // Disabled styles
+    //
+
     &[disabled],
     &:disabled {
-        cursor: not-allowed;
-        pointer-events: none;
+        @extend .is-disabled;
     }
 }
 
@@ -113,80 +117,112 @@ select::-ms-expand {                                            // 1)
 //
 
 .input-group {
-    @extend .trailing;
     position: relative;
     display: table;
     border-collapse: separate;
-    width: 100%;
+
+    @extend .trailing;
+
+    //
+    // Remove rounded borders for smooth look
+    //
+
+    .input-group-addon,
+    .input-group-image,
+    .input-group-main {
+        &:first-child {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        &:not(:first-child):not(:last-child) {
+            @include border-radius(0);
+            border-left: 0;
+        }
+
+        &:last-child {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: 0;
+        }
+    }
+
+    //
+    // Has to come again for nested element
+    //
+
+    .input-group-button {
+        &:first-child > .button {
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            margin-right: -1px;
+        }
+
+        &:not(:first-child):not(:last-child) > .button {
+            @include border-radius(0);
+            margin-left: -1px;
+        }
+
+        &:last-child > .button {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            margin-left: -1px;
+        }
+    }
 }
-
-//
-// Input-group main element
-// label or inputs
-//
-
-.input-group-main {
-    vertical-align: middle;
-
-    &:first-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &:not(:first-child):not(:last-child) {
-        @include border-radius(0);
-    }
-
-    &:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-}
-
 label.input-group-main {
-    @extend .form-input;
     margin: 0;
+    width: 100%;
     height: auto !important;
+    @extend .form-input;
 }
 
 //
-// Input-group items
+// Input-group commen styles
 //
 
-.input-group-addon {
-    border: 1px solid;
+.input-group-addon,
+.input-group-button,
+.input-group-image {
     width: 1%;
     min-width: em(40px);
-    display: table-cell;
+    border: 1px solid;
     white-space: nowrap;
     vertical-align: middle;
     text-align: center;
 
-    @extend %input-default;
+    @include ui-table-cell();
+    @include background-clip(padding-box);
     @include border-radius($global-border-radius);
+}
 
-    &:first-child {
-        border-right: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+//
+// Input group addon specific
+//
 
-    &:not(:first-child):not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
+.input-group-addon {
+    @extend %input-default;
+}
 
-    &:last-child,
-    .input-group-main + & {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left: 0;
-    }
+//
+// Input group button specific
+//
 
-    & + .input-group-addon {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-right: 0;
+.input-group-button {
+    position: relative;
+    white-space: nowrap;
+}
+
+//
+// Input group image specific
+//
+
+.input-group-image {
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
     }
 }
 
