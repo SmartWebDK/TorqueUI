@@ -222,12 +222,12 @@ a, p, li, td {
 //
 
 a, a:visited {
-    text-decoration: none;
+    text-decoration: underline;
     color: darken($color-highlight, 10%);
 
     &:hover {
-       text-decoration: underline;
-       color: $color-highlight;
+        text-decoration: none;
+        color: $color-highlight;
     }
     &:focus {
         outline: thin dotted;

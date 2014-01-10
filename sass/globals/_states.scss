@@ -4,6 +4,50 @@
 
 
 // ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Defining the sizes used in the framework:
+//  Large
+//  Default
+//  Small
+//  XSmall
+//
+
+//
+// Place holders for input sizes
+//
+
+%size-large {
+    padding: 11px 12px;
+    font-size: 14px;
+    min-height: 46px;
+    height: 46px;
+}
+%size-default {
+    padding: 7px 12px;
+    font-size: 14px;
+    min-height: 37px;
+    height: 37px;
+}
+%size-small {
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    min-height: 30px;
+    height: 30px;
+}
+%size-xsmall {
+    padding: 2px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    min-height: 24px;
+    height: 24px;
+}
+
+
+// ==========================================================================
 // Floats
 // ==========================================================================
 
@@ -35,7 +79,7 @@
 
 
 // ==========================================================================
-// Togeling content
+// Toggeling content
 // ==========================================================================
 
 //
@@ -89,6 +133,41 @@
     visibility: hidden;
 }
 
+
+// ==========================================================================
+// User interaction
+// ==========================================================================
+
+//
+// Disabled styles
+//
+
+.is-disabled {
+    cursor: not-allowed;
+    @extend .is-unclickable;
+    @extend .is-unselectable;
+}
+
+//
+//  Make unclickable
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+//
+
+.is-unclickable {
+    pointer-events: none;
+}
+
+//
+//  Make the element unable to select
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+//
+
+.is-unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 
 // ==========================================================================

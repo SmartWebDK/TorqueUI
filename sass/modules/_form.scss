@@ -19,6 +19,7 @@ form,
 fieldset {
     margin: 0;
     padding: 0;
+
     @extend .trailing;
 }
 
@@ -27,9 +28,10 @@ fieldset {
 //
 
 .form-group {
+    padding: 0;
+
     @extend .trailing;
     @extend .clearfix;
-    padding: 0;
 }
 
 
@@ -60,23 +62,25 @@ fieldset {
 .form-input {
     -webkit-appearance: none;                                   // 1)
     width: 100%;
-    display: block;
     border: 1px solid;
     vertical-align: middle;
 
     @include border-radius($global-border-radius);              // 2)
     @include background-clip(padding-box);
-    @extend %input-default;
+    @include ui-ie7-table-cell();
+    @extend %size-default;
 
     &:focus {
         outline: none;
     }
 
-    .is-disabled,
+    //
+    // Disabled styles
+    //
+
     &[disabled],
     &:disabled {
-        cursor: not-allowed;
-        pointer-events: none;
+        @extend .is-disabled;
     }
 }
 
@@ -103,194 +107,31 @@ select::-ms-expand {                                            // 1)
     font-size: 90%;
 }
 
-
-// ==========================================================================
-// Input groups
-// ==========================================================================
-
-//
-// Input groups are used for inputs with prepends and appends
-//
-
-.input-group {
-    @extend .trailing;
-    position: relative;
-    display: table;
-    border-collapse: separate;
-    width: 100%;
-}
-
-//
-// Input-group main element
-// label or inputs
-//
-
-.input-group-main {
-    vertical-align: middle;
-
-    &:first-child {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &:not(:first-child):not(:last-child) {
-        @include border-radius(0);
-    }
-
-    &:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-    }
-}
-
-label.input-group-main {
-    @extend .form-input;
-    margin: 0;
-    height: auto !important;
-}
-
-//
-// Input-group items
-//
-
-.input-group-addon {
-    border: 1px solid;
-    width: 1%;
-    min-width: em(40px);
-    display: table-cell;
-    white-space: nowrap;
-    vertical-align: middle;
-    text-align: center;
-
-    @extend %input-default;
-    @include border-radius($global-border-radius);
-
-    &:first-child {
-        border-right: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &:not(:first-child):not(:last-child) {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &:last-child,
-    .input-group-main + & {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left: 0;
-    }
-
-    & + .input-group-addon {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-right: 0;
-    }
-}
-
-
-// ==========================================================================
-// Sizes
-// ==========================================================================
-
-//
-// Defining the sizes used in the framework:
-//  Large
-//  Default
-//  Small
-//  XSmall
-//
-
-//
-// Place holders for input sizes
-//
-
-%input-large {
-    padding: 11px 12px;
-    font-size: 14px;
-    min-height: 46px;
-    height: 46px;
-}
-%input-default {
-    padding: 7px 12px;
-    font-size: 14px;
-    min-height: 37px;
-    height: 37px;
-}
-%input-small {
-    padding: 5px 12px;
-    font-size: 12px;
-    font-weight: normal;
-    min-height: 30px;
-    height: 30px;
-}
-%input-xsmall {
-    padding: 2px 12px;
-    font-size: 12px;
-    font-weight: normal;
-    min-height: 24px;
-    height: 24px;
-}
-
 //
 // Classes for input sizes
 //
 
 .large {
     &.form-input,
-    &.form-label,
-    .input-group-main,
-    .input-group-addon {
-       @extend %input-large;
-    }
-
-    &.btn,
-    .btn-main,
-    .btn-addon {
-
+    &.form-label {
+       @extend %size-large;
     }
 }
 .default {
     &.form-input,
-    &.form-label,
-    .input-group-main,
-    .input-group-addon {
-       @extend %input-default;
-    }
-
-    &.btn,
-    .btn-main,
-    .btn-addon {
-
+    &.form-label {
+       @extend %size-default;
     }
 }
 .small {
     &.form-input,
-    &.form-label,
-    .input-group-main,
-    .input-group-addon {
-       @extend %input-small;
-    }
-
-    &.btn,
-    .btn-main,
-    .btn-addon {
-
+    &.form-label {
+       @extend %size-small;
     }
 }
 .xsmall {
     &.form-input,
-    &.form-label,
-    .input-group-main,
-    .input-group-addon {
-       @extend %input-xsmall;
-    }
-
-    &.btn,
-    .btn-main,
-    .btn-addon {
-
+    &.form-label {
+       @extend %size-xsmall;
     }
 }
