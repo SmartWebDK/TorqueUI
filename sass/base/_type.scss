@@ -51,7 +51,6 @@ html {
 body {
     @include css-hyphens(auto);
     @extend %breakword;
-    color: $color-base;
 }
 
 
@@ -75,7 +74,6 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 %hN {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
-    color: $color-headings;
 
     small,
     .small {
@@ -217,27 +215,6 @@ a, p, li, td {
 // Base elements
 // ==========================================================================
 
-//
-// Hyperlinks
-//
-
-a, a:visited {
-    text-decoration: underline;
-    color: darken($color-highlight, 10%);
-
-    &:hover {
-        text-decoration: none;
-        color: $color-highlight;
-    }
-    &:focus {
-        outline: thin dotted;
-    }
-    a:hover,
-    a:active {
-        outline: none;
-    }
-}
-
 
 //
 // Styles Hyphenation
@@ -295,42 +272,11 @@ hr {
     box-sizing: content-box;
 }
 
-//
-// Small
-//
-
-small,
-.small {
-    color: $color-small-caps;
-}
-
-//
-// Marked element
-//
-
 mark,
 .mark {
-    @include text-color($color-highlight, #fff, $color-main);       // in _mixins.scss
-    background-color: $color-highlight;
     display: inline-block;
     padding: 0 3px;
     border-radius: 3px;
-}
-
-//
-// Color adjust <b> and <strong>
-//
-
-b, strong {
-    color: darken($color-main, 10%);
-}
-
-//
-// Color adjust <del> and <s>
-//
-
-s, del {
-    color: lighten($color-main, 20%);
 }
 
 //

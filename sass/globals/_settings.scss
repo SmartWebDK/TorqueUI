@@ -161,36 +161,8 @@ $color-gray                         : #eee !default;
 $color-gray-light                   : #dddbd9 !default;
 $color-gray-dark                    : darken(#eee, 10%) !default;
 
-//
-// Fonts
-//
-
-$color-base                         : $color-main !default;
-$color-headings                     : $color-main-dark !default;
-$color-small-caps                   : $color-main-light !default;
-
-//
-// Border color used for elements like buttons, form elements and hr
-//
-
-$color-border                       : $color-gray-light !default;
-
-//
-// Form elements
-//
-
-$color-form-bck                     : #fff !default;
-$color-form-bck-hover               : #f5f5f3 !default;
-
-$color-form-addon-bck               : $color-gray !default;
-$color-form-addon-bck-hover         : $color-gray-dark !default;
-
-//
-// Buttons
-//
-
-
-
+$color-default-bck                  : #fff !default;
+$color-default-bck-hover            : $color-subtle !default;
 
 // ==========================================================================
 // Misc
