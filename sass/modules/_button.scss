@@ -6,6 +6,32 @@
 // Button styles
 // ==========================================================================
 
-.button {
+//
+// Base button styling
+//
+
+%button {
+    border: 1px solid;
     @include inline-block();
+    @include border-radius($global-border-radius);
+    @include background-clip(padding-box);
 }
+
+//
+// Default button styling
+//  1) Sizes in global/_states.scss
+//  2) Theme in theme/_theme.scss
+//
+
+.button {
+    @extend %button;
+    @extend %size-default;                                      // 1)
+    @extend %button-default;                                    // 2)
+}
+
+
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+

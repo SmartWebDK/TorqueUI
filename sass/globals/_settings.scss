@@ -141,12 +141,13 @@ $fa-border-color                    : #eee;
 $fa-inverse                         : #fff;
 $fa-li-width                        : (30em / $base) !default;
 
+
 // ==========================================================================
 // Colors
 // ==========================================================================
 
 //
-// Theme
+// Swatches
 //
 
 $color-highlight                    : #f79420 !default;
@@ -156,14 +157,39 @@ $color-subtle                       : #f5f5f3 !default;
 $color-main-light                   : lighten($color-main, 30%) !default;
 $color-main-dark                    : darken($color-main, 10%) !default;
 
+$color-gray                         : #eee !default;
+$color-gray-light                   : #dddbd9 !default;
+$color-gray-dark                    : darken(#eee, 10%) !default;
 
 //
 // Fonts
 //
 
-$color-base                     : $color-main !default;
-$color-headings                 : $color-main-dark !default;
-$color-small-caps               : $color-main-light !default;
+$color-base                         : $color-main !default;
+$color-headings                     : $color-main-dark !default;
+$color-small-caps                   : $color-main-light !default;
+
+//
+// Border color used for elements like buttons, form elements and hr
+//
+
+$color-border                       : $color-gray-light !default;
+
+//
+// Form elements
+//
+
+$color-form-bck                     : #fff !default;
+$color-form-bck-hover               : #f5f5f3 !default;
+
+$color-form-addon-bck               : $color-gray !default;
+$color-form-addon-bck-hover         : $color-gray-dark !default;
+
+//
+// Buttons
+//
+
+
 
 
 // ==========================================================================
@@ -174,4 +200,4 @@ $color-small-caps               : $color-main-light !default;
 // Global border radius
 //
 
-$global-border-radius           : em(3px) !default;
+$global-border-radius               : em(4px) !default;

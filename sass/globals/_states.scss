@@ -4,6 +4,50 @@
 
 
 // ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Defining the sizes used in the framework:
+//  Large
+//  Default
+//  Small
+//  XSmall
+//
+
+//
+// Place holders for input sizes
+//
+
+%size-large {
+    padding: 11px 12px;
+    font-size: 14px;
+    min-height: 46px;
+    height: 46px;
+}
+%size-default {
+    padding: 7px 12px;
+    font-size: 14px;
+    min-height: 37px;
+    height: 37px;
+}
+%size-small {
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    min-height: 30px;
+    height: 30px;
+}
+%size-xsmall {
+    padding: 2px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    min-height: 24px;
+    height: 24px;
+}
+
+
+// ==========================================================================
 // Floats
 // ==========================================================================
 
@@ -220,5 +264,3 @@
          -o-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
             transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
 }
-
-

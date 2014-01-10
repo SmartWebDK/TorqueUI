@@ -28,14 +28,42 @@
     @return ($px / $font-base) * 1em;
 }
 
-
 //
 // Table-cell ie7 hack, avoid crash in ie7
 //
 
-@mixin ui-table-cell() {
+@mixin ui-ie7-table-cell() {
     display: table-cell;
     *width: auto;
     *display: block;
     *float: left;
 }
+
+//
+// Helper to remove rounded borders on elemenent list with rounded borders
+//
+
+@mixin ui-rounded-borders($nested: "") {
+    @if $nested != "" {
+        $nested: " > #{$nested}";
+    }
+
+    &:first-child#{$nested} {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        margin-right: -1px;
+    }
+
+    &:not(:first-child):not(:last-child)#{$nested} {
+        margin-left: -1px;
+
+        @include border-radius(0);
+    }
+
+    &:last-child#{$nested} {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+        margin-left: -1px;
+    }
+}
+
