@@ -103,13 +103,13 @@ hr {
 
 .form-input {
     border-color: $color-border;
-    background-color: $color-form-bck;
+    background-color: $color-default-bck;
     color: $color-main;
 
     @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
 
     &:hover {
-        background-color: $color-form-bck-hover;
+        background-color: $color-default-bck-hover;
     }
 
     &:focus {
@@ -136,23 +136,18 @@ hr {
 .form-select {
     @extends %caret-image;
 }
-@-moz-document url-prefix() {
-    .form-select {
-        background-image: none;
-    }
-}
 
 //
 // Commen checkbox and radiobutton styles
 //
 
 .input-group-addon {
-    background-color: $color-form-addon-bck;
+    background-color: $color-gray;
     border-color: $color-border;
 
     .input-group:hover &,
     .input-group:focus & {
-        background-color: $color-form-addon-bck-hover;
+        background-color: $color-gray-dark;
     }
 }
 .input-group-image img {
@@ -164,22 +159,80 @@ hr {
 // Buttons
 // ==========================================================================
 
-//
-// Base button theming
-//
+button {
+    background-color: #c0c0c0;
 
-.button {
+    &:hover,
+    &:focus {
+        background-color: darken(#c0c0c0, 5%);
+    }
 
+    &:active {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
 }
 
 //
 // Default button theming
 //
 
-%button-default {
+.button {
     border-color: $color-border;
+    color: $color-main;
+    background-color: $color-default-bck;
+
+    &:hover,
+    &:focus {
+        background-color: $color-default-bck-hover;
+    }
+
+    &:active {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
 }
 
+//
+// Primary button theming
+//
+
+.button-primary {
+    border-color: $color-border;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: $color-highlight;
+
+    &:hover,
+    &:focus {
+        background-color: darken($color-highlight, 2%);
+    }
+
+    &:active {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+}
+
+//
+// Text button themeing
+//
+
+.button-text {
+    color: $color-highlight;
+    text-decoration: none;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        color: darken($color-highlight, 5%);
+        background-color: transparent;
+        text-decoration: underline;
+        @include box-shadow(none);
+    }
+
+    &:active {
+        color: darken($color-highlight, 10%);
+    }
+}
 
 // ==========================================================================
 // Global
