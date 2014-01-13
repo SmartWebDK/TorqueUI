@@ -4,29 +4,85 @@
 
 
 // ==========================================================================
-// Global
-// ==========================================================================
-
-//
-// Disabled class
-//
-
-.is-disabled {
-    color: $color-main-light;
-}
-
-//
-// Caret iamge used on elements like form select
-//
-
-%caret-image {
-    background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
-}
-
-
-// ==========================================================================
 // Typography
 // ==========================================================================
+
+//
+// Base
+//
+
+html {
+    color: $color-base;
+}
+
+//
+// Headings
+//
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: $color-headings;
+}
+
+//
+// Hyperlinks
+//
+
+a, a:visited {
+    text-decoration: underline;
+    color: darken($color-highlight, 10%);
+
+    &:hover {
+        text-decoration: none;
+        color: $color-highlight;
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    a:hover,
+    a:active {
+        outline: none;
+    }
+}
+
+//
+// Color adjust <b> and <strong>
+//
+
+b, strong {
+    color: darken($color-main, 10%);
+}
+
+//
+// Color adjust <del> and <s>
+//
+
+s, del {
+    color: lighten($color-main, 20%);
+}
+
+//
+// Small
+//
+
+small,
+.small {
+    color: $color-small-caps;
+}
+
+//
+// Marked element
+//
+
+mark,
+.mark {
+    @include text-color($color-highlight, #fff, $color-main);       // in _mixins.scss
+    background-color: $color-highlight;
+}
 
 //
 // HR
@@ -47,13 +103,13 @@ hr {
 
 .form-input {
     border-color: $color-border;
-    background-color: $color-form-bck;
+    background-color: $color-default-bck;
     color: $color-main;
 
     @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
 
     &:hover {
-        background-color: $color-form-bck-hover;
+        background-color: $color-default-bck-hover;
     }
 
     &:focus {
@@ -80,29 +136,22 @@ hr {
 .form-select {
     @extends %caret-image;
 }
-@-moz-document url-prefix() {
-    .form-select {
-        background-image: none;
-    }
-}
 
 //
 // Commen checkbox and radiobutton styles
 //
 
 .input-group-addon {
-    background-color: $color-form-addon-bck;
+    background-color: $color-gray;
     border-color: $color-border;
 
     .input-group:hover &,
     .input-group:focus & {
-        background-color: $color-form-addon-bck-hover;
+        background-color: $color-gray-dark;
     }
 }
-.input-group-image {
-    img {
-        border-color: $color-border;
-    }
+.input-group-image img {
+    border-color: $color-border;
 }
 
 
@@ -110,18 +159,98 @@ hr {
 // Buttons
 // ==========================================================================
 
-//
-// Base button theming
-//
+button {
+    background-color: #c0c0c0;
 
-.button {
+    &:hover,
+    &:focus {
+        background-color: darken(#c0c0c0, 5%);
+    }
 
+    &:active {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
 }
 
 //
 // Default button theming
 //
 
-%button-default {
+.button {
     border-color: $color-border;
+    color: $color-main;
+    background-color: $color-default-bck;
+
+    &:hover,
+    &:focus {
+        background-color: $color-default-bck-hover;
+    }
+
+    &:active {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
 }
+
+//
+// Primary button theming
+//
+
+.button-primary {
+    border-color: $color-border;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: $color-highlight;
+
+    &:hover,
+    &:focus {
+        background-color: darken($color-highlight, 2%);
+    }
+
+    &:active {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+}
+
+//
+// Text button themeing
+//
+
+.button-text {
+    color: $color-highlight;
+    text-decoration: none;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        color: darken($color-highlight, 5%);
+        background-color: transparent;
+        text-decoration: underline;
+        @include box-shadow(none);
+    }
+
+    &:active {
+        color: darken($color-highlight, 10%);
+    }
+}
+
+// ==========================================================================
+// Global
+// ==========================================================================
+
+//
+// Disabled class
+//
+
+.is-disabled {
+    color: $color-main-light;
+}
+
+//
+// Caret iamge used on elements like form select
+//
+
+%caret-image {
+    background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+}
+

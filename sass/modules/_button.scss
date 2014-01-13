@@ -8,30 +8,92 @@
 
 //
 // Base button styling
+//  1) Sizes in global/_states.scss
 //
 
 %button {
     border: 1px solid;
-    @include inline-block();
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    display: block;
+
     @include border-radius($global-border-radius);
     @include background-clip(padding-box);
+
+    @extend %size-default;                                      // 1)
+
+    &:focus {
+        outline: none;
+    }
+
+
+    @media (min-width: $grid-default) {
+        width: auto;
+        @include inline-block();
+    }
+}
+
+//
+// Styling for plain buttons
+//
+
+button {
+    @extend %button;
+    border: 0;
 }
 
 //
 // Default button styling
-//  1) Sizes in global/_states.scss
-//  2) Theme in theme/_theme.scss
+//  1) Theme in theme/_theme.scss
 //
 
 .button {
     @extend %button;
-    @extend %size-default;                                      // 1)
-    @extend %button-default;                                    // 2)
 }
 
+//
+// Primary button
+//
+
+.button-primary {
+    @extend %button;
+
+    background-color: $color-highlight;
+    &:hover {
+        background-color: darken($color-highlight, 10%);
+    }
+}
+
+//
+// Text button
+//
+
+.button-text {
+    @extend %button;
+    border: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
 
 
 // ==========================================================================
 // Sizes
 // ==========================================================================
+
+%button {
+    &.large {
+        @extend %size-large;
+    }
+
+    &.default {
+        @extend %size-default;
+    }
+    &.small {
+        @extend %size-small;
+    }
+    &.xsmall {
+        @extend %size-xsmall;
+    }
+}
 

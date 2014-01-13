@@ -98,6 +98,11 @@ fieldset {
 select::-ms-expand {                                            // 1)
   display: none;
 }
+@-moz-document url-prefix() {                                   // 2)
+    .form-select {
+        background-image: none;
+    }
+}
 
 //
 // Form helper texts
