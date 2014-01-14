@@ -3,14 +3,26 @@
 // -----------------------------------------------------------------------------
 
 //
-// Description
+// Box-sizing for elments
 //
 
-@include border-box-sizing;
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+//
+// Set HTML height
+//
 
 html {
     height: 100%;
 }
+
+//
+// Body height
+//
 
 body {
     min-height: 100%;

@@ -3,19 +3,19 @@
 // -----------------------------------------------------------------------------
 
 //
-// Based on the darkness / lightness of the test color, set a dark og light
-// font color.
+// Based on the darkness / lightness of the test color, return a dark og light
+// color.
 //
 
-@mixin text-color($test, $light, $dark) {
+@function color($test, $light, $dark) {
     @if lightness($test) < 60% {
         // if the text colour is a dark colour
         // we need a light text color
-        color: $light;
+        @return $light;
     } @else {
         // else it must be light so we need
         // a darker text color
-        color: $dark;
+        @return $dark;
     }
 }
 
@@ -51,12 +51,16 @@
     &:first-child#{$nested} {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+
+        @if $nested != "" {
         margin-right: -1px;
+        }
     }
 
     &:not(:first-child):not(:last-child)#{$nested} {
+        @if $nested != "" {
         margin-left: -1px;
-
+        }
         @include border-radius(0);
     }
 

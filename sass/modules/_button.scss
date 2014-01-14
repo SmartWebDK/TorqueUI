@@ -17,16 +17,20 @@
     vertical-align: middle;
     width: 100%;
     display: block;
+    white-space: nowrap;
+    cursor: pointer;
+    background-image: none;
 
     @include border-radius($global-border-radius);
     @include background-clip(padding-box);
-
     @extend %size-default;                                      // 1)
 
     &:focus {
         outline: none;
     }
-
+    .input-group-button & {
+        display: block;
+    }
 
     @media (min-width: $grid-default) {
         width: auto;
@@ -41,6 +45,7 @@
 button {
     @extend %button;
     border: 0;
+    line-height: 1em;
 }
 
 //
@@ -50,6 +55,10 @@ button {
 
 .button {
     @extend %button;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
 }
 
 //
@@ -58,10 +67,9 @@ button {
 
 .button-primary {
     @extend %button;
-
-    background-color: $color-highlight;
+    text-decoration: none;
     &:hover {
-        background-color: darken($color-highlight, 10%);
+        text-decoration: none;
     }
 }
 
@@ -76,24 +84,80 @@ button {
     padding-right: 0 !important;
 }
 
+//
+// Button icon
+//
+
+%button.button-icon {
+    position: relative;
+    padding-left: 49px;
+
+    .fa {
+        @extend .fa-fw;
+        vertical-align: middle;
+        line-height: 35px;
+        width: 37px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
 
 // ==========================================================================
 // Sizes
 // ==========================================================================
 
-%button {
-    &.large {
-        @extend %size-large;
-    }
+//
+// Sizes for buttons
+//
 
-    &.default {
-        @extend %size-default;
-    }
-    &.small {
-        @extend %size-small;
-    }
-    &.xsmall {
-        @extend %size-xsmall;
+.large {
+    &%button {
+        @extend %size-large;
+        &.button-icon {
+            padding-left: 58px;
+        }
+        &.button-icon > .fa {
+            line-height: 44px;
+            width: 46px;
+        }
     }
 }
-
+.default {
+    &%button {
+        @extend %size-default;
+        &.button-icon {
+            padding-left: 49px;
+        }
+        &.button-icon > .fa {
+            line-height: 35px;
+            width: 37px;
+        }
+    }
+}
+.small {
+    &%button {
+        @extend %size-small;
+        &.button-icon {
+            padding-left: 42px;
+        }
+         &.button-icon > .fa {
+            line-height: 28px;
+            width: 30px;
+        }
+    }
+}
+.xsmall {
+    &%button {
+        @extend %size-xsmall;
+        &.button-icon {
+            padding-left: 36px;
+        }
+        &.button-icon > .fa {
+            line-height: 22px;
+            width: 24px;
+        }
+    }
+}

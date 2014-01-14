@@ -34,11 +34,11 @@ h6, .h6 {
 
 a, a:visited {
     text-decoration: underline;
-    color: darken($color-highlight, 10%);
+    color: $color-highlight;
 
     &:hover {
         text-decoration: none;
-        color: $color-highlight;
+        color: darken($color-highlight, 10%);
     }
     &:focus {
         outline: thin dotted;
@@ -80,7 +80,7 @@ small,
 
 mark,
 .mark {
-    @include text-color($color-highlight, #fff, $color-main);       // in _mixins.scss
+    color: color($color-highlight, #fff, $color-main);       // in _mixins.scss
     background-color: $color-highlight;
 }
 
@@ -170,6 +170,19 @@ button {
     &:active {
         @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
     }
+
+    &.button-icon {
+        > .fa {
+            background-color: $color-gray;
+        }
+        &:active > .fa {
+            @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+        }
+        &:hover > .fa,
+        &:focus > .fa {
+            background-color: $color-gray-dark;
+        }
+    }
 }
 
 //
@@ -183,11 +196,26 @@ button {
 
     &:hover,
     &:focus {
+        color: $color-main;
         background-color: $color-default-bck-hover;
     }
 
     &:active {
+        color: $color-main;
         @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+
+    &.button-icon {
+        > .fa {
+            background-color: $color-subtle;
+        }
+        &:active > .fa {
+            @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+        }
+        &:hover > .fa,
+        &:focus > .fa {
+            background-color: darken($color-subtle, 10%);
+        }
     }
 }
 
@@ -197,7 +225,7 @@ button {
 
 .button-primary {
     border-color: $color-border;
-    color: #fff;
+    color: color($color-highlight, #fff, $color-main);
     text-transform: uppercase;
     font-weight: bold;
     background-color: $color-highlight;
@@ -205,10 +233,25 @@ button {
     &:hover,
     &:focus {
         background-color: darken($color-highlight, 2%);
+        color: color($color-highlight, #fff, $color-main);
     }
 
     &:active {
+        color: color($color-highlight, #fff, $color-main);
         @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+
+    &.button-icon {
+        > .fa {
+            background-color: darken($color-highlight, 10%);
+        }
+        &:active > .fa {
+            @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+        }
+        &:hover > .fa,
+        &:focus > .fa {
+            background-color: darken($color-highlight, 15%);
+        }
     }
 }
 
