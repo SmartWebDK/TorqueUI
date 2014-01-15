@@ -41,6 +41,21 @@ $color-gray-dark                    : darken(#eee, 10%);
 $color-default-bck                  : #fff;
 $color-default-bck-hover            : $color-subtle;
 
+$color-callout						: #d6e9c6;
+$color-callout-light				: #dff1d9;
+$color-callout-dark					: #3c763d;
+
+$color-info							: #ededeb;
+$color-info-light					: #f5f5f3;
+$color-info-dark					: $color-main;
+
+$color-warning						: #faebcc;
+$color-warning-light				: #fdf9e4;
+$color-warning-dark					: #896c3b;
+
+$color-danger						: #ebccd1;
+$color-danger-light					: #f2dede;
+$color-danger-dark					: #a94442;
 
 //
 // Fonts
@@ -66,3 +81,9 @@ $color-border                       : $color-gray-light;
 //
 
 $global-border-radius           : em(4px);
+
+//
+// Global paddings
+//
+
+$global-padding					: em(20px);

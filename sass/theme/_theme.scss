@@ -278,6 +278,91 @@ button {
 }
 
 // ==========================================================================
+// Panels
+// ==========================================================================
+
+.panel {
+    border-color: $color-border;
+    color: $color-main;
+    background-color: $color-default-bck;
+
+    .panel-heading,
+    .panel-footer {
+        border-color: $color-border;
+    }
+}
+
+    .panel-heading {
+        padding: ($global-padding/2) $global-padding;
+        margin-bottom: -1px;
+    }
+
+    .panel-body {
+        padding: $global-padding $global-padding ($global-padding/2) $global-padding;
+    }
+
+    .panel-footer {
+        padding: ($global-padding/2) $global-padding;
+        margin-top: -1px;
+    }
+
+.panel-info {
+    border-color: $color-info;
+    color: $color-info-dark;
+    background-color: $color-info-light;
+
+    .panel-heading,
+    .panel-footer {
+        border-color: $color-info;
+    }
+}
+
+.panel-success {
+    border-color: $color-callout;
+    color: $color-callout-dark;
+    background-color: $color-callout-light;
+
+    h1,h2,h3,h4,h5,h6 {
+        color: $color-callout-dark;
+    }
+
+    .panel-heading,
+    .panel-footer {
+        border-color: $color-callout;
+    }
+}
+
+.panel-warning {
+    border-color: $color-warning;
+    color: $color-warning-dark;
+    background-color: $color-warning-light;
+
+    h1,h2,h3,h4,h5,h6 {
+        color: $color-warning-dark;
+    }
+
+    .panel-heading,
+    .panel-footer {
+        border-color: $color-warning;
+    }
+}
+
+.panel-danger {
+    border-color: $color-danger;
+    color: $color-danger-dark;
+    background-color: $color-danger-light;
+
+    h1,h2,h3,h4,h5,h6 {
+        color: $color-danger-dark;
+    }
+
+    .panel-heading,
+    .panel-footer {
+        border-color: $color-danger;
+    }
+}
+
+// ==========================================================================
 // Global
 // ==========================================================================
 
