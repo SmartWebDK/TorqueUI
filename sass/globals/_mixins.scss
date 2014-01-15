@@ -76,3 +76,19 @@
     }
 }
 
+//
+// Disabled shorthand
+// 1) Make unclickable
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+// 2) Make the element unable to select
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+//
+
+@mixin ui-disabled {
+    cursor: not-allowed;
+    pointer-events: none;                                   // 1)
+    -moz-user-select: none;                                 // 2)
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
