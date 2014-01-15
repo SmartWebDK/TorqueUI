@@ -82,7 +82,7 @@ fieldset {
 
     &[disabled],
     &:disabled {
-        @extend .is-disabled;
+       @include ui-disabled;
     }
 }
 
