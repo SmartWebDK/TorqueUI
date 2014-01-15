@@ -1,0 +1,37 @@
+//
+// Panels
+//
+
+.panel {
+	overflow: hidden;
+	margin-bottom: rhythm(1, $font-base);
+	border: 1px solid;
+}
+
+	.panel-default {
+	}
+
+	.panel-heading {
+		border-bottom: 1px solid;
+		overflow: hidden;
+
+		h1,h2,h3,h4,h5,h6 {
+			margin: 0;
+		}
+
+		button {
+			float: right;
+		}
+	}
+
+	.panel-body {
+
+	}
+
+	.panel-footer {
+		border-top: 1px solid;
+	}
+
+	.panel-rounded {
+		@include border-radius($global-border-radius);
+	}
