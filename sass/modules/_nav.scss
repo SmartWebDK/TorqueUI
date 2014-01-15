@@ -1,0 +1,171 @@
+//
+// Navs
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	width: 100%;
+
+	&:before,
+	&:after {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	> li {
+		> a {
+			display: block;
+			position: relative;
+		}
+	}
+}
+
+
+
+//
+// Pills
+//
+
+	.nav-pills {
+		> li {
+			@include background-clip(border-box);
+			float: left;
+			margin-bottom: -1px;
+
+			> a {
+				@extend %size-default;
+				margin-right: 2px;
+				line-height: 1.428571429;
+				border: 1px solid transparent;
+				border-radius: 4px;
+
+				&:hover {
+					background-color: #ddd;
+				}
+			}
+
+			&.active {
+				> a {
+					color: #FFF;
+					cursor: default;
+					background-color: #000;
+					border: 1px solid #ddd;
+					border-bottom-color: transparent;
+				}
+			}
+		}
+	}
+
+//
+// Tabs
+//
+
+	.nav-tabs {
+		border-bottom: 1px solid #ddd;
+
+		> li {
+			@include background-clip(border-box);
+			float: left;
+			margin-bottom: -1px;
+
+			> a {
+				@extend %size-default;
+				margin-right: 2px;
+				line-height: 1.428571429;
+				border: 1px solid transparent;
+				border-radius: 4px 4px 0 0;
+			}
+
+			&.active {
+				> a {
+					color: #555;
+					cursor: default;
+					background-color: #fff;
+					border: 1px solid #ddd;
+					border-bottom-color: transparent;
+				}
+			}
+		}
+
+		&.nav-justified {
+			border-bottom: 0;
+
+			> li {
+				display: table-cell;
+				width: 1%;
+				float: none;
+
+				> a {
+					border-bottom: 1px solid #ddd;
+					margin: 0;
+					text-align: center;
+				}
+
+				> a.active {
+					border: 1px solid #ddd;
+					border-bottom-color: transparent;
+				}
+			}
+		}
+	}
+
+//
+// Breadcrumb
+//
+
+	.nav-breadcrumbs {}
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Sizes for navs
+//
+
+.large {
+    &.nav {
+        > li {
+        	> a {
+	        	@extend %size-large;
+        	}
+	    }
+    }
+}
+.default {
+    &.nav {
+        > li {
+        	> a {
+	        	@extend %size-default;
+        	}
+	    }
+    }
+}
+.small {
+    &.nav {
+        > li {
+        	> a {
+	        	@extend %size-small;
+        	}
+	    }
+    }
+}
+.xsmall {
+    &.nav {
+        > li {
+        	> a {
+	        	@extend %size-xsmall;
+        	}
+	    }
+    }
+}
