@@ -3,7 +3,6 @@
 //
 
 .panel {
-	@include background-clip(padding-box);
 	overflow: hidden;
 	margin-bottom: rhythm(1, $font-base);
 	border: 1px solid;

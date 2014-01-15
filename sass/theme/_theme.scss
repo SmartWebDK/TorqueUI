@@ -322,7 +322,7 @@ button {
     color: $color-callout-dark;
     background-color: $color-callout-light;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
         color: $color-callout-dark;
     }
 
@@ -337,7 +337,7 @@ button {
     color: $color-warning-dark;
     background-color: $color-warning-light;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
         color: $color-warning-dark;
     }
 
@@ -352,7 +352,7 @@ button {
     color: $color-danger-dark;
     background-color: $color-danger-light;
 
-    h1,h2,h3,h4,h5,h6 {
+    h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6 {
         color: $color-danger-dark;
     }
 
