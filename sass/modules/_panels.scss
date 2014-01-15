@@ -1,0 +1,19 @@
+//
+// Panels
+//
+
+.panel {
+
+}
+
+	.panel-default {
+		@include border-radius($global-border-radius);
+	}
+
+	.panel-heading {
+		
+	}
+
+	.panel-body {
+		
+	}
