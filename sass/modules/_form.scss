@@ -47,6 +47,7 @@ fieldset {
 
     input[type="checkbox"],
     input[type="radio"] {
+        vertical-align: center;
         margin-right: 0.5em;
     }
 }
@@ -67,8 +68,9 @@ fieldset {
 
     @include border-radius($global-border-radius);              // 2)
     @include background-clip(padding-box);
-    @include ui-ie7-table-cell();
+    @include inline-block();
     @extend %size-default;
+    @extend .border-box;
 
     &:focus {
         outline: none;
@@ -93,14 +95,26 @@ fieldset {
 
 .form-select {
     background-repeat: no-repeat;
-    background-position: 98% 50%;
+    background-position: 97% center;
 }
-select::-ms-expand {                                            // 1)
-  display: none;
+select {
+    align-items: center;
+    white-space: pre;
+    cursor: default;
+    -webkit-rtl-ordering: logical;
+    -webkit-appearance: menulist;
+    border-image-source: initial;
+    border-image-slice: initial;
+    border-image-width: initial;
+    border-image-outset: initial;
+    border-image-repeat: initial;
 }
-@-moz-document url-prefix() {                                   // 2)
+select.form-select::-ms-expand {                                      // 1)
+  display: none !important;
+}
+@-moz-document url-prefix() {                                         // 2)
     .form-select {
-        background-image: none;
+        background-image: none !important;
     }
 }
 
@@ -110,33 +124,4 @@ select::-ms-expand {                                            // 1)
 
 .form-help {
     font-size: 90%;
-}
-
-//
-// Classes for input sizes
-//
-
-.large {
-    &.form-input,
-    &.form-label {
-       @extend %size-large;
-    }
-}
-.default {
-    &.form-input,
-    &.form-label {
-       @extend %size-default;
-    }
-}
-.small {
-    &.form-input,
-    &.form-label {
-       @extend %size-small;
-    }
-}
-.xsmall {
-    &.form-input,
-    &.form-label {
-       @extend %size-xsmall;
-    }
 }

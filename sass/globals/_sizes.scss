@@ -1,0 +1,186 @@
+//
+// SIzes
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Defining the sizes used in the framework:
+//  Large
+//  Default
+//  Small
+//  XSmall
+//
+
+//
+// Place holders for input sizes
+// 1) ie7 doesnt understand box-sizing, so let padding decide height
+//
+
+%size-large {
+    padding: 11px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    height: 46px;
+    *height: auto;                                          // 1)
+}
+%size-default {
+    padding: 7px 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    height: 37px;
+    *height: auto;                                          // 1)
+}
+%size-small {
+    padding: 5px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+    height: 30px;
+    *height: auto;                                          // 1)
+}
+%size-xsmall {
+    padding: 2px 12px;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 1.5;
+    height: 25px;
+    *height: auto;                                          // 1)
+}
+
+
+
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Sizes for input groups and addons
+//
+
+//
+// Large sizes
+//
+
+.large {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > .button {
+         @extend %size-large;
+    }
+
+    &%button {
+        @extend %size-large;
+        &.button-icon {
+            padding-left: 58px;
+        }
+    }
+    &.button-icon > .fa {
+        line-height: 44px;
+        width: 46px;
+    }
+}
+
+//
+// Default sizes
+//
+
+.default {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > .button {
+         @extend %size-default;
+    }
+    &%button {
+        @extend %size-default;
+        &.button-icon {
+            padding-left: 49px;
+        }
+
+    }
+    &.button-icon > .fa {
+        line-height: 35px;
+        width: 37px;
+    }
+}
+
+//
+// Small sizes
+//
+
+.small {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > .button {
+         @extend %size-small;
+    }
+    &%button {
+        @extend %size-small;
+        &.button-icon {
+            padding-left: 42px;
+        }
+    }
+    &.button-icon > .fa {
+        line-height: 28px;
+        width: 30px;
+    }
+}
+
+//
+// Xsmall sizes
+//
+
+.xsmall {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > .button {
+         @extend %size-xsmall;
+    }
+    &%button {
+        @extend %size-xsmall;
+        &.button-icon {
+            padding-left: 36px;
+        }
+    }
+    &.button-icon > .fa {
+        line-height: 22px;
+        width: 24px;
+    }
+}
+
+
+
+//
+// Classes for seletc sizes
+//
+
+select {
+    &.large {
+        line-height: 46px;
+    }
+    &.default {
+        line-height: 37px;
+    }
+    &.small {
+        line-height: 30px;
+    }
+    &.xsmall {
+        line-height: 24px;
+    }
+}
+

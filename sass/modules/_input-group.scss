@@ -19,6 +19,8 @@
 .input-group {
     position: relative;
     display: table;
+    *display: block;
+    *zoom: 1;
     border-collapse: separate;
 
     @extend .trailing;
@@ -30,6 +32,11 @@
     .input-group-addon,
     .input-group-main {
         @include ui-rounded-borders;
+    }
+
+
+    .input-group-main {
+        @include ui-ie7-table-cell();
     }
 
     //
@@ -49,6 +56,7 @@ label.input-group-main {
     margin: 0;
     width: 100%;
     height: auto !important;
+    @include ui-ie7-table-cell();
 
     @extend .form-input;
 }
@@ -68,6 +76,7 @@ label.input-group-main {
     white-space: nowrap;
     vertical-align: middle;
     text-align: center;
+    line-height: 1;
 
     @include ui-ie7-table-cell();
     @include background-clip(padding-box);
@@ -95,11 +104,13 @@ label.input-group-main {
 
 //
 // Input group image specific
+//  1) Hidden from < ie7 size min-max-height doesnt work
 //
 
 .input-group-image {
     padding: 0 !important;
     @extend %size-default;
+    *display: none;                                             // 1)
 
     > img {
         @include border-radius($global-border-radius);
@@ -120,50 +131,7 @@ label.input-group-main {
 
 .input-group-button {
     @extend .reset;
-
     position: relative;
     white-space: nowrap;
     min-width: 0;
-}
-
-
-// ==========================================================================
-// Sizes
-// ==========================================================================
-
-//
-// Sizes for input groups and addons
-//
-
-.large {
-    .input-group-main,
-    .input-group-addon,
-    .input-group-image,
-    .input-group-button > .button {
-       @extend %size-large;
-    }
-}
-.default {
-    .input-group-main,
-    .input-group-addon,
-    .input-group-image,
-    .input-group-button > .button {
-       @extend %size-default;
-    }
-}
-.small {
-    .input-group-main,
-    .input-group-addon,
-    .input-group-image,
-    .input-group-button > .button {
-       @extend %size-small;
-    }
-}
-.xsmall {
-    .input-group-main,
-    .input-group-addon,
-    .input-group-image,
-    .input-group-button > .button {
-       @extend %size-xsmall;
-    }
 }
