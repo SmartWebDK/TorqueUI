@@ -14,6 +14,7 @@
 %button {
     border: 1px solid;
     text-align: center;
+    line-height: 1em;
     vertical-align: middle;
     width: 100%;
     display: block;
@@ -28,24 +29,17 @@
     &:focus {
         outline: none;
     }
+    &:visited {
+        color: inherit;
+    }
     .input-group-button & {
-        display: block;
+        @include inline-block;
     }
 
     @media (min-width: $grid-default) {
         width: auto;
         @include inline-block();
     }
-}
-
-//
-// Styling for plain buttons
-//
-
-button {
-    @extend %button;
-    border: 0;
-    line-height: 1em;
 }
 
 //
@@ -101,63 +95,5 @@ button {
         top: 0;
         bottom: 0;
         left: 0;
-    }
-}
-
-
-// ==========================================================================
-// Sizes
-// ==========================================================================
-
-//
-// Sizes for buttons
-//
-
-.large {
-    &%button {
-        @extend %size-large;
-        &.button-icon {
-            padding-left: 58px;
-        }
-        &.button-icon > .fa {
-            line-height: 44px;
-            width: 46px;
-        }
-    }
-}
-.default {
-    &%button {
-        @extend %size-default;
-        &.button-icon {
-            padding-left: 49px;
-        }
-        &.button-icon > .fa {
-            line-height: 35px;
-            width: 37px;
-        }
-    }
-}
-.small {
-    &%button {
-        @extend %size-small;
-        &.button-icon {
-            padding-left: 42px;
-        }
-         &.button-icon > .fa {
-            line-height: 28px;
-            width: 30px;
-        }
-    }
-}
-.xsmall {
-    &%button {
-        @extend %size-xsmall;
-        &.button-icon {
-            padding-left: 36px;
-        }
-        &.button-icon > .fa {
-            line-height: 22px;
-            width: 24px;
-        }
     }
 }

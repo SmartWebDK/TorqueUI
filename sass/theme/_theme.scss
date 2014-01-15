@@ -134,14 +134,14 @@ hr {
 //
 
 .form-select {
-    @extends %caret-image;
+    @extend %caret-image;
 }
 
 //
 // Commen checkbox and radiobutton styles
 //
 
-.input-group-addon {
+.input-group-addon, .input-group-image img  {
     background-color: $color-gray;
     border-color: $color-border;
 
@@ -149,9 +149,6 @@ hr {
     .input-group:focus & {
         background-color: $color-gray-dark;
     }
-}
-.input-group-image img {
-    border-color: $color-border;
 }
 
 

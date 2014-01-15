@@ -5,8 +5,8 @@
 @import "susy";
 
 // Global variables and mixins
-@import "./globals/_settings";
-@import "./globals/_mixins";
+@import "./globals/settings";
+@import "./globals/mixins";
 
 // Theme variables
 @import "./theme/theme_settings";
@@ -14,7 +14,7 @@
 // Vendor dependencies
 @import "./vendor/normalize";
 @import "./vendor/typeplate.scss";
-@import "./vendor/font awesome/_font-awesome.scss";
+@import "./vendor/font awesome/font-awesome.scss";
 
 // Base
 @import "./base/type";
@@ -36,6 +36,7 @@
 
 // States
 @import "./globals/states";
+@import "./globals/sizes";
 
 // Bastard fixes
 @import "./shame";

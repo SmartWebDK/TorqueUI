@@ -51,6 +51,7 @@
     &:first-child#{$nested} {
         border-top-right-radius: 0;
         border-bottom-right-radius: 0;
+        border-right: 0;
 
         @if $nested != "" {
         margin-right: -1px;
@@ -58,6 +59,7 @@
     }
 
     &:not(:first-child):not(:last-child)#{$nested} {
+        border-right: 0;
         @if $nested != "" {
         margin-left: -1px;
         }
@@ -67,7 +69,10 @@
     &:last-child#{$nested} {
         border-top-left-radius: 0;
         border-bottom-left-radius: 0;
+
+        @if $nested != "" {
         margin-left: -1px;
+        }
     }
 }
 
