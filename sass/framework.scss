@@ -26,11 +26,16 @@
 @import "./layout/responsive-utils";
 
 // Modules
+<<<<<<< HEAD
 @import "./modules/panels";
 @import "./modules/alerts";
 @import "./modules/lists";
+=======
+@import "./modules/button";
+>>>>>>> abe40f7787709c251335b3ba14aacfff64c315a6
 @import "./modules/form";
-@import "./modules/btn";
+@import "./modules/input-group";
+@import "./modules/lists";
 @import "./modules/nav";
 @import "./modules/pager";
 @import "./modules/pagination";

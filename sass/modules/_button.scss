@@ -1,0 +1,163 @@
+//
+// Buttons
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Button styles
+// ==========================================================================
+
+//
+// Base button styling
+//  1) Sizes in global/_states.scss
+//
+
+%button {
+    border: 1px solid;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    display: block;
+    white-space: nowrap;
+    cursor: pointer;
+    background-image: none;
+
+    @include border-radius($global-border-radius);
+    @include background-clip(padding-box);
+    @extend %size-default;                                      // 1)
+
+    &:focus {
+        outline: none;
+    }
+    .input-group-button & {
+        display: block;
+    }
+
+    @media (min-width: $grid-default) {
+        width: auto;
+        @include inline-block();
+    }
+}
+
+//
+// Styling for plain buttons
+//
+
+button {
+    @extend %button;
+    border: 0;
+    line-height: 1em;
+}
+
+//
+// Default button styling
+//  1) Theme in theme/_theme.scss
+//
+
+.button {
+    @extend %button;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+//
+// Primary button
+//
+
+.button-primary {
+    @extend %button;
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+//
+// Text button
+//
+
+.button-text {
+    @extend %button;
+    border: 0;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+//
+// Button icon
+//
+
+%button.button-icon {
+    position: relative;
+    padding-left: 49px;
+
+    .fa {
+        @extend .fa-fw;
+        vertical-align: middle;
+        line-height: 35px;
+        width: 37px;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+}
+
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Sizes for buttons
+//
+
+.large {
+    &%button {
+        @extend %size-large;
+        &.button-icon {
+            padding-left: 58px;
+        }
+        &.button-icon > .fa {
+            line-height: 44px;
+            width: 46px;
+        }
+    }
+}
+.default {
+    &%button {
+        @extend %size-default;
+        &.button-icon {
+            padding-left: 49px;
+        }
+        &.button-icon > .fa {
+            line-height: 35px;
+            width: 37px;
+        }
+    }
+}
+.small {
+    &%button {
+        @extend %size-small;
+        &.button-icon {
+            padding-left: 42px;
+        }
+         &.button-icon > .fa {
+            line-height: 28px;
+            width: 30px;
+        }
+    }
+}
+.xsmall {
+    &%button {
+        @extend %size-xsmall;
+        &.button-icon {
+            padding-left: 36px;
+        }
+        &.button-icon > .fa {
+            line-height: 22px;
+            width: 24px;
+        }
+    }
+}

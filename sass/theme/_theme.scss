@@ -2,6 +2,97 @@
 // Theme
 // -----------------------------------------------------------------------------
 
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+//
+// Base
+//
+
+html {
+    color: $color-base;
+}
+
+//
+// Headings
+//
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: $color-headings;
+}
+
+//
+// Hyperlinks
+//
+
+a, a:visited {
+    text-decoration: underline;
+    color: $color-highlight;
+
+    &:hover {
+        text-decoration: none;
+        color: darken($color-highlight, 10%);
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    a:hover,
+    a:active {
+        outline: none;
+    }
+}
+
+//
+// Color adjust <b> and <strong>
+//
+
+b, strong {
+    color: darken($color-main, 10%);
+}
+
+//
+// Color adjust <del> and <s>
+//
+
+s, del {
+    color: lighten($color-main, 20%);
+}
+
+//
+// Small
+//
+
+small,
+.small {
+    color: $color-small-caps;
+}
+
+//
+// Marked element
+//
+
+mark,
+.mark {
+    color: color($color-highlight, #fff, $color-main);       // in _mixins.scss
+    background-color: $color-highlight;
+}
+
+//
+// HR
+//
+
+hr {
+    border-color: $color-border;
+}
+
+
 // ==========================================================================
 // Inputs
 // ==========================================================================
@@ -11,15 +102,14 @@
 //
 
 .form-input {
-    @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
-
-    border-color: #dddbd9;
-    background-color: #fff;
+    border-color: $color-border;
+    background-color: $color-default-bck;
     color: $color-main;
 
-    &:hover,
-    &:focus {
-        background-color: #f5f5f3;
+    @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
+
+    &:hover {
+        background-color: $color-default-bck-hover;
     }
 
     &:focus {
@@ -28,17 +118,13 @@
 
     //
     // Disable styles
-    //  1) Set cursor
-    //  2) Disable pointer events
-    //     Resource: http://css-tricks.com/almanac/properties/p/pointer-events/
     //
 
-    .is-disabled,
-    :disabled {
-        color: $color-main-light;
+    &[disabled],
+    &:disabled {
+        @extends .is-disabled;
     }
 }
-
 
 //
 // Selectbox
@@ -48,24 +134,166 @@
 //
 
 .form-select {
-    background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
-}
-@-moz-document url-prefix() {
-    .form-select {
-        background-image: none;
-    }
+    @extends %caret-image;
 }
 
 //
 // Commen checkbox and radiobutton styles
 //
 
-.input-addon {
-    background-color: #eee;
-    border-color: #dddbd9;
+.input-group-addon {
+    background-color: $color-gray;
+    border-color: $color-border;
 
     .input-group:hover &,
     .input-group:focus & {
-        background-color: darken(#eee, 10%);
+        background-color: $color-gray-dark;
     }
 }
+.input-group-image img {
+    border-color: $color-border;
+}
+
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+button {
+    background-color: #c0c0c0;
+
+    &:hover,
+    &:focus {
+        background-color: darken(#c0c0c0, 5%);
+    }
+
+    &:active {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+
+    &.button-icon {
+        > .fa {
+            background-color: $color-gray;
+        }
+        &:active > .fa {
+            @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+        }
+        &:hover > .fa,
+        &:focus > .fa {
+            background-color: $color-gray-dark;
+        }
+    }
+}
+
+//
+// Default button theming
+//
+
+.button {
+    border-color: $color-border;
+    color: $color-main;
+    background-color: $color-default-bck;
+
+    &:hover,
+    &:focus {
+        color: $color-main;
+        background-color: $color-default-bck-hover;
+    }
+
+    &:active {
+        color: $color-main;
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+
+    &.button-icon {
+        > .fa {
+            background-color: $color-subtle;
+        }
+        &:active > .fa {
+            @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+        }
+        &:hover > .fa,
+        &:focus > .fa {
+            background-color: darken($color-subtle, 10%);
+        }
+    }
+}
+
+//
+// Primary button theming
+//
+
+.button-primary {
+    border-color: $color-border;
+    color: color($color-highlight, #fff, $color-main);
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: $color-highlight;
+
+    &:hover,
+    &:focus {
+        background-color: darken($color-highlight, 2%);
+        color: color($color-highlight, #fff, $color-main);
+    }
+
+    &:active {
+        color: color($color-highlight, #fff, $color-main);
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+
+    &.button-icon {
+        > .fa {
+            background-color: darken($color-highlight, 10%);
+        }
+        &:active > .fa {
+            @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+        }
+        &:hover > .fa,
+        &:focus > .fa {
+            background-color: darken($color-highlight, 15%);
+        }
+    }
+}
+
+//
+// Text button themeing
+//
+
+.button-text {
+    color: $color-highlight;
+    text-decoration: none;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        color: darken($color-highlight, 5%);
+        background-color: transparent;
+        text-decoration: underline;
+        @include box-shadow(none);
+    }
+
+    &:active {
+        color: darken($color-highlight, 10%);
+    }
+}
+
+// ==========================================================================
+// Global
+// ==========================================================================
+
+//
+// Disabled class
+//
+
+.is-disabled {
+    color: $color-main-light;
+}
+
+//
+// Caret iamge used on elements like form select
+//
+
+%caret-image {
+    background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+}
+

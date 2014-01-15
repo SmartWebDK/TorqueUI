@@ -7,3 +7,46 @@
 // ---------------------------------------------------------------------------
 // Shame file for quick fix / quick hacks ( remember to document )
 
+
+//
+// Line-height in Firefox = bugged, so quick fix for select
+//
+
+@-moz-document url-prefix() {
+
+    //
+    // Select
+    //
+
+    .form-select {
+        padding-top: 10px;
+        padding-bottom: 6px;
+    }
+
+    //
+    // Other select sizes
+    //
+
+    .large {
+        &.form-select,
+        & .form-select {
+            padding-top: 15px;
+            padding-bottom: 11px;
+        }
+    }
+    .small {
+        &.form-select,
+        & .form-select {
+            padding-top: 7px;
+            padding-bottom: 5px;
+        }
+    }
+    .xsmall {
+        &.form-select,
+        & .form-select {
+            padding-top: 4px;
+            padding-bottom: 0px;
+        }
+    }
+
+}

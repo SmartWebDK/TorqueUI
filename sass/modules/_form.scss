@@ -2,6 +2,15 @@
 // Form and form elements
 // -----------------------------------------------------------------------------
 
+
+// ==========================================================================
+// Elements
+// ==========================================================================
+
+//
+// All the elements needed in a form
+//
+
 form,
 .form {
 
@@ -10,6 +19,7 @@ form,
 fieldset {
     margin: 0;
     padding: 0;
+
     @extend .trailing;
 }
 
@@ -18,81 +28,12 @@ fieldset {
 //
 
 .form-group {
-    @extend .trailing;
     padding: 0;
-}
 
-//
-// Input groups are used for inputs with prepends and appends
-//
-
-.input-group {
     @extend .trailing;
-    position: relative;
-    display: table;
-    border-collapse: separate;
-    width: 100%;
-
-    .form-label,
-    .form-input {
-        @extend .form-input;
-
-        &:first-child {
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-
-        &:not(:first-child):not(:last-child) {
-            @include border-radius(0);
-        }
-
-        &:last-child {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
-    }
+    @extend .clearfix;
 }
 
-//
-// Input-group items
-//
-
-.input-addon {
-    border: 1px solid;
-    width: 1%;
-    min-width: em(40px);
-    display: table-cell;
-    white-space: nowrap;
-    vertical-align: middle;
-    text-align: center;
-    padding: 0 em(12px);
-    @include border-radius($global-border-radius);
-
-    &:first-child {
-        border-right: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-
-    &:not(:first-child):not(:last-child) {
-        border-left: 0;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-
-    &:last-child {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-        border-left: 0;
-    }
-
-    & + .form-label,
-    & + .form-input {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-}
 
 //
 // Input labels
@@ -101,13 +42,14 @@ fieldset {
 .form-label {
     cursor: pointer;
     display: block;
+    font-size: em(14px);
+    margin-bottom: rhythm(1, $font-base);
 
     input[type="checkbox"],
     input[type="radio"] {
         margin-right: 0.5em;
     }
 }
-
 
 //
 // Common input styling
@@ -120,20 +62,25 @@ fieldset {
 .form-input {
     -webkit-appearance: none;                                   // 1)
     width: 100%;
-    display: block;
     border: 1px solid;
-    padding: em(13px) em(12px);
+    vertical-align: middle;
+
     @include border-radius($global-border-radius);              // 2)
     @include background-clip(padding-box);
+    @include ui-ie7-table-cell();
+    @extend %size-default;
 
     &:focus {
         outline: none;
     }
 
-    &:disabled,
-    .is-disabled {
-        cursor: not-allowed;
-        pointer-events: none;
+    //
+    // Disabled styles
+    //
+
+    &[disabled],
+    &:disabled {
+        @extend .is-disabled;
     }
 }
 
@@ -146,13 +93,15 @@ fieldset {
 
 .form-select {
     background-repeat: no-repeat;
-    background-position: 98%;
-
-    &:hover {
-    }
+    background-position: 98% 50%;
 }
 select::-ms-expand {                                            // 1)
   display: none;
+}
+@-moz-document url-prefix() {                                   // 2)
+    .form-select {
+        background-image: none;
+    }
 }
 
 //
@@ -163,3 +112,31 @@ select::-ms-expand {                                            // 1)
     font-size: 90%;
 }
 
+//
+// Classes for input sizes
+//
+
+.large {
+    &.form-input,
+    &.form-label {
+       @extend %size-large;
+    }
+}
+.default {
+    &.form-input,
+    &.form-label {
+       @extend %size-default;
+    }
+}
+.small {
+    &.form-input,
+    &.form-label {
+       @extend %size-small;
+    }
+}
+.xsmall {
+    &.form-input,
+    &.form-label {
+       @extend %size-xsmall;
+    }
+}
