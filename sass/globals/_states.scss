@@ -106,9 +106,7 @@
 //
 
 .is-disabled {
-    cursor: not-allowed;
-    @extend .is-unclickable;
-    @extend .is-unselectable;
+    @include ui-disabled;
 }
 
 //
