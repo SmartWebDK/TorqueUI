@@ -76,6 +76,7 @@ label.input-group-main {
     white-space: nowrap;
     vertical-align: middle;
     text-align: center;
+    line-height: 1;
 
     @include ui-ie7-table-cell();
     @include background-clip(padding-box);

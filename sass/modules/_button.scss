@@ -25,6 +25,7 @@
     @include border-radius($global-border-radius);
     @include background-clip(padding-box);
     @extend %size-default;                                      // 1)
+    @extend .trailing;
 
     &:focus {
         outline: none;
@@ -34,6 +35,7 @@
     }
     .input-group-button & {
         @include inline-block;
+        margin: 0;
     }
 
     @media (min-width: $grid-default) {
