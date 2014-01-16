@@ -71,7 +71,8 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
+    .input-group-button > .button,
+    &.pagination > li > a {
          @extend %size-large;
     }
 
@@ -97,7 +98,8 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
+    .input-group-button > .button,
+    &.pagination > li > a  {
          @extend %size-default;
     }
     &%button {
@@ -123,7 +125,8 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
+    .input-group-button > .button,
+    &.pagination > li > a  {
          @extend %size-small;
     }
     &%button {
@@ -148,7 +151,8 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
+    .input-group-button > .button,
+    &.pagination > li > a  {
          @extend %size-xsmall;
     }
     &%button {

@@ -85,10 +85,13 @@
 //
 
 @mixin ui-disabled {
-    cursor: not-allowed;
     pointer-events: none;                                   // 1)
     -moz-user-select: none;                                 // 2)
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    &:hover,
+    &:focus {
+        cursor: not-allowed;
+    }
 }

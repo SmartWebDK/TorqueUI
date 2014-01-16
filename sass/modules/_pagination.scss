@@ -1,0 +1,55 @@
+//
+// Pagination
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
+//
+// Default pagination
+//
+
+.pagination {
+    @extend .clearfix;
+    @extend .reset;
+    @extend .trailing;
+    @extend .l-list-unstyled;
+    @include inline-block;
+    @include border-radius($global-border-radius);
+
+    > li {
+        display: inline;
+
+        &:first-child > a {
+            border-top-left-radius: $global-border-radius;
+            border-bottom-left-radius: $global-border-radius;
+        }
+
+        &:last-child > a {
+            border-top-right-radius: $global-border-radius;
+            border-bottom-right-radius: $global-border-radius;
+        }
+
+        &.is-disabled,
+        &.is-disabled > a {
+            @include ui-disabled;
+        }
+
+        > a {
+            text-decoration: none;
+            margin-left: -1px;
+            border: 1px solid;
+            float: left;
+            cursor: pointer;
+
+            @extend %size-default;
+            @include background-clip(border-box);
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}
