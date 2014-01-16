@@ -12,7 +12,6 @@
 
 .pagination {
     @extend .clearfix;
-    @extend .reset;
     @extend .trailing;
     @extend .l-list-unstyled;
     @include inline-block;
@@ -22,6 +21,7 @@
         display: inline;
 
         &:first-child > a {
+            margin-left: 0;
             border-top-left-radius: $global-border-radius;
             border-bottom-left-radius: $global-border-radius;
         }

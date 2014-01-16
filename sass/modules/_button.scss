@@ -96,14 +96,30 @@
     position: relative;
     padding-left: 49px;
 
-    .fa {
+    > .fa {
         @extend .fa-fw;
+        border-bottom-left-radius: $global-border-radius;
+        border-top-left-radius: $global-border-radius;
+
         vertical-align: middle;
         line-height: 35px;
         width: 37px;
         position: absolute;
         top: 0;
-        bottom: 0;
         left: 0;
+        bottom: 0;
+    }
+
+    &.right {
+        padding-right: 49px;
+        padding-left: 12px;
+        > .fa {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: $global-border-radius;
+            border-bottom-right-radius: $global-border-radius;
+            right: 0;
+            left: auto;
+        }
     }
 }
