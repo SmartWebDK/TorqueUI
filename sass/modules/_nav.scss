@@ -11,16 +11,7 @@
 	margin-bottom: 0;
 	list-style: none;
 	width: 100%;
-
-	&:before,
-	&:after {
-		display: table;
-		content: " ";
-	}
-
-	&:after {
-		clear: both;
-	}
+	@extend .clearfix;
 
 	> li {
 		> a {
@@ -30,10 +21,9 @@
 	}
 }
 
-
-
 //
 // Pills
+//
 //
 
 	.nav-pills {
@@ -101,7 +91,7 @@
 			border-bottom: 0;
 
 			> li {
-				display: table-cell;
+				@include ui-ie7-table-cell();
 				width: 1%;
 				float: none;
 
