@@ -1,0 +1,41 @@
+//
+// Pager
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Pager
+// ==========================================================================
+
+//
+// Pager button group
+//
+
+.pager-group {
+    @extend .clearfix;
+    @extend .trailing;
+    @extend .l-list-unstyled;
+    @include inline-block;
+    @include border-radius($global-border-radius);
+
+    .button-icon,
+    .button,
+    .button-primary {
+        margin: 0;
+        float: left;
+        margin-left: -1px;
+        border-radius: 0;
+
+        @include border-radius(0);
+
+        &:first-child {
+            margin-left: 0;
+            border-top-left-radius: $global-border-radius;
+            border-bottom-left-radius: $global-border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $global-border-radius;
+            border-bottom-right-radius: $global-border-radius;
+        }
+    }
+}
