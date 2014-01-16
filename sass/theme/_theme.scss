@@ -299,20 +299,6 @@ button:visited {
     }
 }
 
-    .panel-heading {
-        padding: ($global-padding/2) $global-padding;
-        margin-bottom: -1px;
-    }
-
-    .panel-body {
-        padding: $global-padding $global-padding ($global-padding/2) $global-padding;
-    }
-
-    .panel-footer {
-        padding: ($global-padding/2) $global-padding;
-        margin-top: -1px;
-    }
-
 .panel-info {
     border-color: $color-info;
     color: $color-info-dark;
@@ -368,6 +354,76 @@ button:visited {
         border-color: $color-danger;
     }
 }
+
+// ==========================================================================
+// Navs
+// ==========================================================================
+
+//
+// Pills
+//
+
+    .nav-pills {
+        > li {
+            > a {
+                &:hover {
+                    background-color: $color-subtle;
+                }
+            }
+            &.active {
+                > a {
+                    color: #FFF;
+                    background-color: $color-highlight;
+                    border: 1px solid $color-subtle;
+                }
+            }
+        }
+    }
+
+//
+// Tabs
+//
+
+    .nav-tabs {
+        border-bottom: 1px solid $color-gray-dark;
+
+        > li {
+
+            > a {
+
+                &:hover {
+                    background-color: $color-subtle;
+                    border-color: $color-subtle;
+                    border-bottom: 1px solid $color-gray-dark;
+                }
+            }
+
+            &.active {
+                > a {
+                    color: #555;
+                    background-color: #fff;
+                    border: 1px solid $color-gray-dark;
+                }
+            }
+        }
+
+        &.nav-justified {
+
+            > li {
+
+                > a {
+                    border-bottom: 1px solid $color-gray-dark;
+                }
+
+                &.active {
+                    > a {
+                        border: 1px solid $color-gray-dark;
+                    }
+                }
+            }
+        }
+    }
+
 
 // ==========================================================================
 // Global

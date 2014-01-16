@@ -23,14 +23,13 @@
 	}
 
 	> li {
+		position: relative;
 		> a {
+			text-decoration: none;
 			display: block;
-			position: relative;
 		}
 	}
 }
-
-
 
 //
 // Pills
@@ -40,7 +39,6 @@
 		> li {
 			@include background-clip(border-box);
 			float: left;
-			margin-bottom: -1px;
 
 			> a {
 				@extend %size-default;
@@ -48,18 +46,12 @@
 				line-height: 1.428571429;
 				border: 1px solid transparent;
 				border-radius: 4px;
-
-				&:hover {
-					background-color: #ddd;
-				}
 			}
 
 			&.active {
 				> a {
 					color: #FFF;
 					cursor: default;
-					background-color: #000;
-					border: 1px solid #ddd;
 					border-bottom-color: transparent;
 				}
 			}
@@ -71,7 +63,6 @@
 //
 
 	.nav-tabs {
-		border-bottom: 1px solid #ddd;
 
 		> li {
 			@include background-clip(border-box);
@@ -80,41 +71,75 @@
 
 			> a {
 				@extend %size-default;
-				margin-right: 2px;
 				line-height: 1.428571429;
 				border: 1px solid transparent;
 				border-radius: 4px 4px 0 0;
+				margin-right: 2px;
+
+				border-left: 0px;
+				border-right: 0px;
+
+				&:hover {
+				}
 			}
 
 			&.active {
 				> a {
-					color: #555;
 					cursor: default;
-					background-color: #fff;
-					border: 1px solid #ddd;
-					border-bottom-color: transparent;
+					border-bottom-color: transparent !important;
 				}
 			}
 		}
 
 		&.nav-justified {
-			border-bottom: 0;
+			border-bottom: 1px solid transparent;
 
 			> li {
-				display: table-cell;
-				width: 1%;
-				float: none;
 
 				> a {
-					border-bottom: 1px solid #ddd;
-					margin: 0;
-					text-align: center;
 				}
 
-				> a.active {
-					border: 1px solid #ddd;
-					border-bottom-color: transparent;
+				&.active {
+					> a {
+						border-bottom-color: transparent !important;
+					}
 				}
+			}
+		}
+	}
+
+//
+// Orientations
+//
+
+	.nav-justified {
+		border-bottom: 0;
+
+		> li {
+			display: table-cell;
+			width: 1%;
+			float: none;
+
+			> a {
+				margin: 0;
+				text-align: center;
+			}
+
+			&.active {
+				> a {
+				}
+			}
+		}
+
+	}
+
+	.nav-stacked {
+		> li {
+			float: none;
+			margin-bottom: -1px;
+
+			+li {
+				margin-top: 2px;
 			}
 		}
 	}
@@ -123,7 +148,25 @@
 // Breadcrumb
 //
 
-	.nav-breadcrumbs {}
+	.nav-breadcrumbs {
+
+		> li {
+			float: left;
+
+			> a {
+
+				&:hover {
+
+				}
+			}
+			/*&.seperator {
+				display: none;
+			}
+			@include at-breakpoint($grid-default) {
+				&.seperator { display: block; }
+			}*/
+		}
+	}
 
 // ==========================================================================
 // Sizes
@@ -139,6 +182,9 @@
         	> a {
 	        	@extend %size-large;
         	}
+        	&.seperator {
+        		@extend %size-large-line-height;
+        	}
 	    }
     }
 }
@@ -147,6 +193,9 @@
         > li {
         	> a {
 	        	@extend %size-default;
+        	}
+        	&.seperator {
+        		@extend %size-default-line-height;
         	}
 	    }
     }
@@ -157,6 +206,9 @@
         	> a {
 	        	@extend %size-small;
         	}
+        	&.seperator {
+        		@extend %size-small-line-height;
+        	}
 	    }
     }
 }
@@ -165,6 +217,9 @@
         > li {
         	> a {
 	        	@extend %size-xsmall;
+        	}
+        	&.seperator {
+        		@extend %size-xsmall-line-height;
         	}
 	    }
     }
