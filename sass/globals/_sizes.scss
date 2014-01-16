@@ -26,6 +26,10 @@
     height: 46px;
     *height: auto;                                          // 1)
 }
+    %size-large-line-height {
+        padding: 11px 0;
+        line-height: 1.5;
+    }
 %size-default {
     padding: 7px 12px;
     font-size: 14px;
@@ -33,6 +37,10 @@
     height: 37px;
     *height: auto;                                          // 1)
 }
+    %size-default-line-height {
+        padding: 7px 0;
+        line-height: 1.5;
+    }
 %size-small {
     padding: 5px 12px;
     font-size: 12px;
@@ -41,6 +49,10 @@
     height: 30px;
     *height: auto;                                          // 1)
 }
+    %size-small-line-height {
+        padding: 5px 0;
+        line-height: 1.5;
+    }
 %size-xsmall {
     padding: 2px 12px;
     font-size: 12px;
@@ -49,7 +61,10 @@
     height: 25px;
     *height: auto;                                          // 1)
 }
-
+    %size-xsmall-line-height {
+        padding: 2px 0;
+        line-height: 1.5;
+    }
 
 
 
