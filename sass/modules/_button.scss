@@ -42,6 +42,14 @@
         width: auto;
         @include inline-block();
     }
+
+    //
+    // Disable styles
+    //
+    &.is-disabled,
+    &:disabled {
+        @include ui-disabled;
+    }
 }
 
 //
