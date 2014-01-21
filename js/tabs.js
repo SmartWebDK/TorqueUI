@@ -3,7 +3,7 @@
  * usage, these parts are copyrighted by Twitter.
  * ========================================================================
  * Bootstrap: dropdown.js v3.0.3
- * http://getbootstrap.com/javascript/#dropdowns
+ * http://getbootstrap.com/javascript/#tabs
  * ========================================================================
  * Copyright 2011-2014 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -15,12 +15,13 @@
 // --------------------------------------------------------------------------
 
 (function($, document, undefined) {
-
-    //
-    // Prototype decfinition
-    //
-
     'use strict';
+
+
+    // ==========================================================================
+    // Prototype decfinition
+    // ==========================================================================
+
     var Tab = function(element) {
         this.$element = $(element);
     };
@@ -36,6 +37,9 @@
             $li      = $this.parent('li'),
             selector = $this.data("target");
 
+        // if button is disabled return
+        if ( $this.is('.disabled, .is-disabled, :disabled')) return;
+
         if ( !selector ) {
             selector = $this.attr('href');
             selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
@@ -45,12 +49,13 @@
 
         var $target = $(selector);
 
-        if ( $li.length ) {
-            this.activate($li, $ul);
-        } else {
+        if ( !$li.length ) {
             var $tab = $(".nav [data-toggle='content'][data-target='"+selector+"'], .nav [data-toggle='content'][href='"+selector+"']");
-            this.activate($tab.parent('li'), $tab.closest("ul.nav"));
+            $li = $tab.parent('li');
+            $ul = $tab.closest("ul.nav");
         }
+
+        this.activate($li, $ul);
         this.activate($target, $target.parent(".toggle-content"));
     };
 
@@ -64,9 +69,9 @@
         element.addClass("active");
     };
 
-    //
+    // ==========================================================================
     // Tab plugin definition
-    //
+    // ==========================================================================
 
     $.fn.tab = function (option) {
         return this.each(function () {
@@ -83,18 +88,18 @@
 
     $.fn.tab.Constructor = Tab;
 
-    //
+    // ==========================================================================
     // Tab no conflict
-    //
+    // ==========================================================================
 
     $.fn.tab.noConflict = function () {
         $.fn.tab = old;
         return this;
     };
 
-    //
+    // ==========================================================================
     // Listener
-    //
+    // ==========================================================================
 
     $(document).on("click.ui.tabs", '[data-toggle="content"]', function (e) {
         e.preventDefault();

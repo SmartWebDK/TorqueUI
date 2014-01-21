@@ -1,0 +1,107 @@
+//
+// Dropdown
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Dropdown element
+// ==========================================================================
+
+.dropdown {
+    @extend .reset;
+    @include border-radius($global-border-radius);
+    position: relative;
+
+    %button {
+        margin: 0;
+    }
+
+    .dropdown-menu {
+        @include border-radius($global-border-radius);
+        @include background-clip(padding-box);
+        @extend .transition;
+
+        display: none;
+        z-index: 999;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        float: left;
+        padding: em(6px) 0;
+        margin: 5px 0;
+        min-width: 200px;
+        border: 1px solid;
+        opacity: 0;
+
+        &.pull-right {
+            float: right;
+            left: auto;
+            right: 0;
+        }
+
+        .divider {
+            margin: 6px 0;
+            padding: 0;
+            height: 0;
+            border: 0;
+            border-top: 1px solid;
+            -moz-box-sizing: content-box;
+            box-sizing: content-box;
+        }
+
+        li > a,
+        .dropdown-header,
+        .dropdown-footer {
+            display: block;
+            padding: 8px 15px;
+        }
+
+        li > a {
+            text-decoration: none;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+        .dropdown-header,
+        .dropdown-footer {
+            font-size: em(12px);
+        }
+
+        .dropdown-footer {
+            padding-top: 14px;
+            border-top: 1px solid;
+        }
+
+        &.padding-double {
+            li > a,
+            .dropdown-header,
+            .dropdown-footer {
+                padding: 16px 15px;
+            }
+
+            .dropdown-footer {
+                padding-top: 22px;
+                border-top: 1px solid;
+            }
+
+            .divider {
+                margin: 12px 0;
+            }
+        }
+    }
+
+    &.open .dropdown-menu {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.dropdown-menu,
+.dropdown-menu ul {
+    list-style-type: none;
+    list-style-image: none;
+    @extend .reset;
+}
+

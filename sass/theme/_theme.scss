@@ -444,9 +444,40 @@ hr {
         }
     }
 
+// ==========================================================================
+// Dropdowns
+// ==========================================================================
+
+.dropdown-menu {
+    border-color: $color-border !important;
+    @include box-shadow(2px 3px 3px rgba(0,0,0,.2));
+
+    li {
+        background-color: #fff;
+
+        &:nth-of-type(even):not(.divider) {
+            background-color: $color-subtle;
+        }
+
+        > a {
+            color: $color-main;
+        }
+    }
+
+    .divider,
+    .dropdown-footer {
+        border-color: $color-border !important;
+    }
+
+    .dropdown-header,
+    .dropdown-footer {
+        color: $color-main-light;
+    }
+}
+
 
 // ==========================================================================
-// Global
+// Pagination
 // ==========================================================================
 
 .pagination {
