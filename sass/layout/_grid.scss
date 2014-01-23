@@ -40,12 +40,23 @@ $container-style: static;
         @include ui-grid-container("large");
     }
 
-    @include at-breakpoint($xlarge) {
-        @include ui-grid-container("xlarge");
+    &.with-xlarge {
+        @include at-breakpoint($xlarge) {
+            @include ui-grid-container("xlarge");
+
+            .r, .row {
+                @include ui-grid-row("xlarge");
+            }
+
+            @include ui-grid-column-base("xlarge");
+            @include ui-grid-columns("xlarge");
+        }
     }
+
 
     &.large {
         @include ui-grid-container("large");
+        display: none;
 
         .r, .row {
             @include ui-grid-row("large");
@@ -82,10 +93,6 @@ $container-style: static;
 
     @include at-breakpoint($large) {
         @include ui-grid-row("large");
-    }
-
-    @include at-breakpoint($xlarge) {
-        @include ui-grid-row("xlarge");
     }
 }
 
@@ -132,10 +139,7 @@ $container-style: static;
 // ==========================================================================
 // Xlarge
 //
+// Only shown in containers that have .with-xlarge
+//
 // Columns, offsets, pushes, and pulls for the large desktop device range.
 // ==========================================================================
-
-@include at-breakpoint($xlarge) {
-    @include ui-grid-column-base("xlarge");
-    @include ui-grid-columns("xlarge");
-}
