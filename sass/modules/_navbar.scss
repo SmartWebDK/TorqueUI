@@ -27,6 +27,12 @@
 			margin-top: 1px;
 		}
 	}
+
+	.dropdown {
+		&.navbar-pull-right {
+			margin-right: 10px;
+		}
+	}
 }
 
 	.navbar-pull-right {
@@ -40,11 +46,6 @@
 	.navbar-default {
 		background-color: transparent;
 		border-color: transparent;
-
-		.nav-tabs {
-		}
-		a {
-		}
 	}
 
 	.navbar-header {
@@ -64,15 +65,10 @@
 		}
 	}
 
-	.navbar-inverse {}
-
 	.navbar-collapse {
-		padding: 0 10px 10px;
 		@include at-breakpoint($grid-large) {
 			padding: 0;
 		}
-
-		
 
 		.collapse & {
 			@include at-breakpoint($grid-large) {
@@ -85,13 +81,13 @@
 			}
 		}
 
-		.form-group {
+		.form-group,
+		.input-group {
 			margin: 0;
 		}
 
 		.nav-default,
-		.nav-pills,
-		.nav-breadcrumbs {
+		.nav-pills {
 			> li {
 				display: block;
 				float: none;
@@ -104,6 +100,42 @@
 					border-color: transparent !important;
 				}
 			}
+			&.nav-justified {
+				> li {
+					width: auto;
+				}
+			}
+			@include at-breakpoint($grid-large) {
+				&.nav-justified {
+					> li {
+						display: table-cell;
+						width: 1%;
+						float: none;
+					}
+				}
+			}
+		}
+
+		.nav-breadcrumbs {
+			> li {
+					display: block;
+					float: none;
+
+				@include at-breakpoint($grid-large) {
+					display: inline-block;
+					float: left;
+				}
+
+				> a {
+					border-color: transparent !important;
+				}
+			}
+			.seperator {
+				display: none;
+				@include at-breakpoint($grid-large) {
+					display: block;
+				}
+			}
 		}
 
 		.nav-default {}
@@ -112,15 +144,24 @@
 			> li {
 				display: block;
 				float: none;
-
+				width: auto;
+				margin-bottom: 0;
 				@include at-breakpoint($grid-large) {
-					display: inline-block;
+					margin-bottom: -1px;
 				}
 			}
-		}
-		.nav-breadcrumbs {
-			.seperator {
-				display: none;
+			@include at-breakpoint($grid-large) {
+				> li {
+					display: inline-block;
+					float: left;
+				}
+				&.nav-justified {
+					> li {
+						display: table-cell;
+						width: 1%;
+						float: none;
+					}
+				}
 			}
 		}
 	}

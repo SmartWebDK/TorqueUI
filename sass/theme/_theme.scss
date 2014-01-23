@@ -491,6 +491,16 @@ hr {
                     }
                 }
             }
+
+            &.nav-justified {
+                > li {
+                    > a {
+                        &:hover {
+                            border-bottom-color: $color-gray-dark;
+                        }
+                    }
+                }
+            }
         }
     }
 
@@ -526,6 +536,15 @@ hr {
                         color: $color-main;
                         background-color: #fff;
                         border: 1px solid $color-gray-dark;
+                    }
+                }
+            }
+
+            &.nav-justified {
+                margin-bottom: -1px;
+                > li {
+                    > a {
+                        border-bottom: 1px solid $color-main;
                     }
                 }
             }

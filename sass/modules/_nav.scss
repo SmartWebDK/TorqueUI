@@ -108,9 +108,11 @@
 			border-bottom: 1px solid transparent;
 
 			> li {
-				@include ui-ie7-table-cell();
-				width: 1%;
-				float: none;
+				@include at-breakpoint($grid-large) {
+					@include ui-ie7-table-cell();
+					width: 1%;
+					float: none;
+				}
 
 				> a {
 				}
