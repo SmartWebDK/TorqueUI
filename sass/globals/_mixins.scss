@@ -163,26 +163,35 @@
         $all-selector:  '';
 
         @for $col from 1 through $columns-total {
-            @if $columns-total != $col {
-                @if $all-selector != "" {
-                    $all-selector:  '#{$all-selector} ,';
-                }
-                $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
+            @if $all-selector != "" {
+                $all-selector:  '#{$all-selector} ,';
             }
+            $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
         }
 
 
         [class^="col-"]{
             margin-left: #{gutter(1) / 2};
             margin-right: #{gutter(1) / 2};
-            clear: both;
         }
 
         #{$all-selector} {
             float: left;
-            display: inline;
-            clear: none;
         }
+
+
+        @if $size == "default" {
+            @include at-breakpoint($default) {
+                #{$size-selector}-#{$columns-total} {
+                    clear: both;
+                }
+            }
+        } @else {
+            #{$size-selector}-#{$columns-total} {
+                clear: both;
+            }
+        }
+
     }
 }
 
