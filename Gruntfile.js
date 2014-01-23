@@ -48,8 +48,11 @@ module.exports = function(grunt) {
         // Task configuration.
         clean: {
           dist: ['dist'],
-          test: {
+          html: {
             src: ['test/index.html']
+          },
+          js: {
+            src: ['test/js/*']
           }
         },
 
@@ -69,7 +72,11 @@ module.exports = function(grunt) {
             },
             html: {
                 files: ['test/**/*.html', '!test/index.html'],
-                tasks: ['clean:test','buildTest']
+                tasks: ['clean:html','buildTest']
+            },
+            js: {
+                files: ['js/**/*.js'],
+                tasks: ['clean:js','copy:js']
             },
             sass: {
                 files: ['sass/**/*.scss'],
@@ -121,8 +128,13 @@ module.exports = function(grunt) {
         copy: {
             fonts: {
                 expand: true,
-                src: ['fonts/*'],
-                dest: 'dist/'
+                src: ['./fonts/*'],
+                dest: './dist/'
+            },
+            js: {
+                expand: true,
+                src: ['./js/**/*.js'],
+                dest: './test/'
             }
         },
 
