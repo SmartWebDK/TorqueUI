@@ -175,11 +175,13 @@
         [class^="col-"]{
             margin-left: #{gutter(1) / 2};
             margin-right: #{gutter(1) / 2};
+            clear: both;
         }
 
         #{$all-selector} {
             float: left;
             display: inline;
+            clear: none;
         }
     }
 }
