@@ -380,6 +380,27 @@ hr {
 // ==========================================================================
 
 //
+// Default
+//
+
+    .nav-default {
+        > li {
+            > a {
+                &:hover {
+                    background-color: $color-subtle;
+                }
+            }
+            &.active {
+                > a {
+                    color: #FFF;
+                    background-color: $color-highlight;
+                    border: 1px solid $color-highlight;
+                }
+            }
+        }
+    }
+
+//
 // Pills
 //
 
@@ -394,7 +415,7 @@ hr {
                 > a {
                     color: #FFF;
                     background-color: $color-highlight;
-                    border: 1px solid $color-subtle;
+                    border: 1px solid $color-highlight;
                 }
             }
         }
@@ -414,13 +435,13 @@ hr {
                 &:hover {
                     background-color: $color-subtle;
                     border-color: $color-subtle;
-                    border-bottom: 1px solid $color-gray-dark;
+                    border-bottom-color: $color-gray-dark;
                 }
             }
 
             &.active {
                 > a {
-                    color: #555;
+                    color: $color-main;
                     background-color: #fff;
                     border: 1px solid $color-gray-dark;
                 }
@@ -444,6 +465,94 @@ hr {
         }
     }
 
+// ==========================================================================
+// Navbar
+// ==========================================================================
+
+
+
+.navbar {
+    border: 1px solid transparent;
+
+    .navbar-brand {
+        color: $color-main;
+    }
+}
+
+    .navbar-default {
+        a {
+            &:hover {
+            }
+        }
+
+        .nav-tabs {
+            > li {
+                > a {
+                    &:hover {
+                        border-bottom-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+
+    .navbar-collapse {
+    }
+
+    .navbar-invert {
+        background-color: $color-main;
+        border-color: $color-main;
+
+        .navbar-brand {
+            color: invert($color-main);
+        }
+
+        .button-primary {
+            border-color: $color-highlight;
+        }
+
+        .navbar-collapse {
+        }
+
+        .nav-tabs {
+            > li {
+                > a {
+                    &:hover {
+                        background-color: darken($color-main, 10%);
+                        border-color: darken($color-main, 10%);
+                        border-bottom-color: $color-main;
+                    }
+                }
+                &.active {
+                    > a {
+                        color: $color-main;
+                        background-color: #fff;
+                        border: 1px solid $color-gray-dark;
+                    }
+                }
+            }
+        }
+
+        .nav-pills {
+            > li {
+                > a {
+                    &:hover {
+                        background-color: darken($color-main, 10%);
+                        border-color: darken($color-main, 10%);
+                    }
+                }
+                &.active {
+                    > a {
+                        color: #FFF;
+                        background-color: $color-highlight;
+                        border: 1px solid $color-highlight;
+                    }
+                }
+            }
+        }
+    }
+
+    
 
 // ==========================================================================
 // Global

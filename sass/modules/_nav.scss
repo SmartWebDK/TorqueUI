@@ -22,6 +22,25 @@
 	}
 }
 
+	.nav-default {
+		> li {
+			@include background-clip(border-box);
+			float: left;
+
+			> a {
+				@extend %size-default;
+				border: 1px solid transparent;
+			}
+
+			&.active {
+				> a {
+					cursor: default;
+					border-bottom-color: transparent;
+				}
+			}
+		}
+	}
+
 //
 // Pills
 //
@@ -34,15 +53,16 @@
 
 			> a {
 				@extend %size-default;
-				margin-right: 2px;
-				line-height: 1.428571429;
+				@include border-radius($global-border-radius);
 				border: 1px solid transparent;
-				border-radius: 4px;
+
+				@include at-breakpoint($grid-large) {
+					margin-right: 2px;
+				}
 			}
 
 			&.active {
 				> a {
-					color: #FFF;
 					cursor: default;
 					border-bottom-color: transparent;
 				}
@@ -63,13 +83,14 @@
 
 			> a {
 				@extend %size-default;
-				line-height: 1.428571429;
+				@include border-radius($global-border-radius $global-border-radius 0 0);
 				border: 1px solid transparent;
-				border-radius: 4px 4px 0 0;
-				margin-right: 2px;
-
 				border-left: 0px;
 				border-right: 0px;
+
+				@include at-breakpoint($grid-large) {
+					margin-right: 2px;
+				}
 
 				&:hover {
 				}
@@ -154,12 +175,6 @@
 
 				}
 			}
-			/*&.seperator {
-				display: none;
-			}
-			@include at-breakpoint($grid-default) {
-				&.seperator { display: block; }
-			}*/
 		}
 	}
 
