@@ -121,9 +121,9 @@ $show-grid-backgrounds              : false;
 //
 
 $default                            : $grid-default-columns $grid-medium - 1;
-$medium                             : $grid-medium $grid-medium-columns $grid-large - 1;
-$large                              : $grid-large $grid-large-columns $grid-xlarge - 1;
-$xlarge                             : $grid-xlarge $grid-xlarge-columns;
+$medium                             : $grid-medium;
+$large                              : $grid-large;
+$xlarge                             : $grid-xlarge;
 
 
 

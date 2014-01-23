@@ -93,7 +93,7 @@ module.exports = function(grunt) {
                 separator: ';',
             },
             ie: {
-                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js','./js/lib/selectivizr/selectivizr-min.js'],
+                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
                 dest: './test/js/ie.js',
             },
         },
