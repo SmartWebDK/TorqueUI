@@ -90,8 +90,12 @@
 }
 
 //
-// is-collapsed
+// collapsed classes
 //
+
+.collapse {
+    display: none;
+}
 
 .is-collapsed {
     display: none !important;

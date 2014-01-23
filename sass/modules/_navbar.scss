@@ -1,0 +1,193 @@
+//
+// Navbar
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Navbar
+// ==========================================================================
+
+.navbar {
+	position: relative;
+	display: block;
+	border: 1px solid transparent;
+	&:before,
+	&:after {
+		display: table;
+		content: " ";
+	}
+
+	&:after {
+		clear: both;
+	}
+
+	.nav-tabs {
+		border-bottom: 0px;
+
+		@include at-breakpoint($grid-large) {
+			margin-top: 1px;
+		}
+	}
+}
+
+	.navbar-pull-right {
+		float: right;
+	}
+
+	.navbar-pull-left {
+		float: left;
+	}
+
+	.navbar-default {
+		background-color: transparent;
+		border-color: transparent;
+
+		.nav-tabs {
+		}
+		a {
+		}
+	}
+
+	.navbar-header {
+
+		&:before,
+		&:after {
+			display: table;
+			content: " ";
+		}
+
+		&:after {
+			clear: both;
+		}
+
+		@include at-breakpoint($grid-large) {
+			float: left;
+		}
+	}
+
+	.navbar-inverse {}
+
+	.navbar-collapse {
+		padding: 0 10px 10px;
+		@include at-breakpoint($grid-large) {
+			padding: 0;
+		}
+
+		
+
+		.collapse & {
+			@include at-breakpoint($grid-large) {
+				display: block;
+			}
+
+			.navbar-pull-right,
+			.navbar-pull-left {
+				float: none;
+			}
+		}
+
+		.form-group {
+			margin: 0;
+		}
+
+		.nav-default,
+		.nav-pills,
+		.nav-breadcrumbs {
+			> li {
+				display: block;
+				float: none;
+
+				@include at-breakpoint($grid-large) {
+					display: inline-block;
+				}
+
+				> a {
+					border-color: transparent !important;
+				}
+			}
+		}
+
+		.nav-default {}
+		.nav-pills {}
+		.nav-tabs {
+			> li {
+				display: block;
+				float: none;
+
+				@include at-breakpoint($grid-large) {
+					display: inline-block;
+				}
+			}
+		}
+		.nav-breadcrumbs {
+			.seperator {
+				display: none;
+			}
+		}
+	}
+
+	.navbar-brand {
+		float: left;
+		text-decoration: none;
+		font-weight: bold;
+	}
+
+	.navbar-toggle {
+		display: inline-block;
+		width: auto;
+		float: right;
+		margin: 7px 10px;
+
+		@include at-breakpoint($grid-large) {
+			display: none;
+		}
+	}
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Sizes for navbar
+//
+
+
+.large {
+    &.navbar-brand {
+        font-size: 16px;
+		line-height: 1.5;
+		padding: 18px 10px;
+		@include at-breakpoint($grid-large) {
+			padding: 11px 10px;
+		}
+    }
+}
+.default {
+    &.navbar-brand {
+        font-size: 16px;
+		line-height: 1.5;
+		padding: 13px 10px;
+		@include at-breakpoint($grid-large) {
+			padding: 6px 10px;
+		}
+    }
+}
+.small {
+    &.navbar-brand {
+	    font-size: 14px;
+		line-height: 1.5;
+		padding: 11px 10px;
+		@include at-breakpoint($grid-large) {
+			padding: 4px 10px;
+		}
+    }
+}
+.xsmall {
+    &.navbar-brand {
+	    font-size: 14px;
+		line-height: 1.5;
+		padding: 9px 10px;
+		@include at-breakpoint($grid-large) {
+			padding: 2px 10px;
+		}
+    }
+}
