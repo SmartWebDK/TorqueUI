@@ -95,3 +95,155 @@
         cursor: not-allowed;
     }
 }
+
+// ==========================================================================
+// Grid helpers
+// ==========================================================================
+
+//
+// Always have the right grid settings
+//
+
+@mixin ui-with-grid-settings($size: "default") {
+    @if $size == "medium" {
+       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
+        @include with-grid-settings($grid-medium-columns, $grid-medium-column-width, $grid-medium-gutter, $grid-medium-gutter/2) {
+            @content;
+        }
+    } @else if $size == "large" {
+       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
+        @include with-grid-settings($grid-large-columns, $grid-large-column-width, $grid-large-gutter, $grid-large-gutter/2) {
+            @content;
+        }
+    } @else if $size == "xlarge" {
+       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
+        @include with-grid-settings($grid-xlarge-columns, $grid-xlarge-column-width, $grid-xlarge-gutter, $grid-xlarge-gutter/2) {
+            @content;
+        }
+    } @else {
+       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
+        @include with-grid-settings($grid-default-columns, $grid-default-column-width, $grid-default-gutter, $grid-default-gutter/2) {
+            @content;
+        }
+    }
+}
+
+//
+// Container helper
+//
+
+@mixin ui-grid-container($size: "default") {
+    @include ui-with-grid-settings($size) {
+        @include container;
+    }
+}
+
+//
+// Row helper
+//
+
+@mixin ui-grid-row($size: "default") {
+    @include ui-with-grid-settings($size) {
+        margin-left: -#{gutter(1) / 2};
+        margin-right: -#{gutter(1) / 2};
+    }
+}
+
+//
+// Column helpers
+//
+
+@mixin ui-grid-column-base($size: "default") {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+        $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+
+        $columns-total: ui-grid-total_columns($size);
+        $all-selector:  '';
+
+        @for $col from 1 through $columns-total {
+            @if $all-selector != "" {
+                $all-selector:  '#{$all-selector} ,';
+            }
+            $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
+        }
+
+
+        [class^="col-"]{
+            margin-left: #{gutter(1) / 2};
+            margin-right: #{gutter(1) / 2};
+        }
+
+        #{$all-selector} {
+            float: left;
+        }
+
+
+        @if $size == "default" {
+            @include at-breakpoint($default) {
+                #{$size-selector}-#{$columns-total} {
+                    clear: both;
+                }
+            }
+        } @else {
+            #{$size-selector}-#{$columns-total} {
+                clear: both;
+            }
+        }
+
+    }
+}
+
+@mixin ui-grid-columns($size: "default") {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+        $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+
+        $columns-total: ui-grid-total_columns($size);
+
+        @for $col from 1 through $columns-total {
+            $total-selector: '#{$size-selector}-#{$col}';
+            #{$total-selector} {
+                width: columns($col, $columns-total);
+            }
+        }
+    }
+}
+
+@function ui-grid-total_columns($size: "default") {
+    @if $size == "default" {
+        @return $grid-default-columns;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium-columns;
+    }
+
+    @if $size == "large" {
+        @return $grid-large-columns;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge-columns;
+    }
+}
+
+@function ui-grid-shortsize($size: "default") {
+    @if $size == "default" {
+        @return "-s";
+    }
+
+    @if $size == "medium" {
+        @return "-m";
+    }
+
+    @if $size == "large" {
+        @return "-l";
+    }
+
+    @if $size == "xlarge" {
+        @return "-xl";
+    }
+}

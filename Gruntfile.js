@@ -19,6 +19,10 @@ module.exports = function(grunt) {
                             '\t\t<meta name="viewport" content="width=device-width">\n',
                             '\t\t<link rel="stylesheet" href="/tdcss.js/tdcss.css" type="text/css" media="screen">',
                             '\t\t<link rel="stylesheet" href="/css/framework.css" type="text/css" media="screen">',
+                            '<!--[if (lt IE 9) & (!IEMobile)]>',
+                                '<script src="js/ie.js"></script>',
+                            '<![endif]-->',
+                            '<script type="text/javascript" src="js/all.js">',
                             '\t\t<script type="text/javascript">',
                             '\t\tWebFontConfig = { google: { families: [ "Raleway:400,700:latin" ]}',
                             '\t\t};',
@@ -76,11 +80,32 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['js/**/*.js'],
-                tasks: ['clean:js','copy:js']
+                tasks: ['clean:js','concat:ie','uglify:test','copy:js']
             },
             sass: {
                 files: ['sass/**/*.scss'],
                 tasks: 'compass:dev'
+            }
+        },
+
+        concat: {
+            options: {
+                separator: ';',
+            },
+            ie: {
+                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
+                dest: './test/js/ie.js',
+            },
+        },
+
+        uglify: {
+            options: {
+                preserveComments: 'some'
+            },
+            test: {
+                files: {
+                    'test/js/all.js': ['./js/*.js']
+                }
             }
         },
 
@@ -133,7 +158,7 @@ module.exports = function(grunt) {
             },
             js: {
                 expand: true,
-                src: ['./js/**/*.js'],
+                src: ['./js/*.js'],
                 dest: './test/'
             }
         },
