@@ -51,6 +51,8 @@ $container-style: static;
             @include ui-grid-columns("xlarge");
             @include ui-grid-offset("xlarge");
             @include ui-grid-bleed("xlarge");
+            @include ui-grid-push("xlarge");
+            @include ui-grid-pull("xlarge");
         }
     }
 
@@ -66,6 +68,8 @@ $container-style: static;
         @include ui-grid-columns("large", false);
         @include ui-grid-offset("large", false);
         @include ui-grid-bleed("large", false);
+        @include ui-grid-push("large", false);
+        @include ui-grid-pull("large", false);
     }
 
     &.small {
@@ -78,6 +82,8 @@ $container-style: static;
         @include ui-grid-columns("default", false);
         @include ui-grid-offset("default", false);
         @include ui-grid-bleed("default", false);
+        @include ui-grid-push("default", false);
+        @include ui-grid-pull("default", false);
     }
 }
 
@@ -114,6 +120,8 @@ $container-style: static;
 @include ui-grid-columns("default");
 @include ui-grid-offset("default");
 @include ui-grid-bleed("default");
+@include ui-grid-push("default");
+@include ui-grid-pull("default");
 
 // ==========================================================================
 // Medium
@@ -127,6 +135,8 @@ $container-style: static;
     @include ui-grid-columns("medium");
     @include ui-grid-offset("medium");
     @include ui-grid-bleed("medium");
+    @include ui-grid-push("medium");
+    @include ui-grid-pull("medium");
 }
 
 
@@ -141,6 +151,8 @@ $container-style: static;
     @include ui-grid-columns("large");
     @include ui-grid-offset("large");
     @include ui-grid-bleed("large");
+    @include ui-grid-push("large");
+    @include ui-grid-pull("large");
 }
 
 
@@ -151,3 +163,4 @@ $container-style: static;
 //
 // Columns, offsets, pushes, and pulls for the large desktop device range.
 // ==========================================================================
+
