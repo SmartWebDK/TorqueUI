@@ -153,11 +153,13 @@
 // Column helpers
 //
 
-@mixin ui-grid-column-base($size: "default") {
+@mixin ui-grid-column-base($size: "default", $include-size: true) {
     @include ui-with-grid-settings($size) {
         $base:  ".";
         $selector: '#{$base}col';
+
         $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
 
         $columns-total: ui-grid-total_columns($size);
         $all-selector:  '';
@@ -195,11 +197,13 @@
     }
 }
 
-@mixin ui-grid-columns($size: "default") {
+@mixin ui-grid-columns($size: "default", $include-size: true) {
     @include ui-with-grid-settings($size) {
         $base:  ".";
         $selector: '#{$base}col';
+
         $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
 
         $columns-total: ui-grid-total_columns($size);
 
@@ -207,6 +211,47 @@
             $total-selector: '#{$size-selector}-#{$col}';
             #{$total-selector} {
                 width: columns($col, $columns-total);
+            }
+        }
+    }
+}
+
+@mixin ui-grid-offset($size: "default", $include-size: true) {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+
+        $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
+        $offset-selector: '#{$size-selector}-offset';
+
+        $columns-total: ui-grid-total_columns($size);
+
+        @for $col from 1 through $columns-total + 3 {
+            $total-selector: '#{$offset-selector}-#{$col}';
+            #{$total-selector} {
+                @include push($col);
+            }
+        }
+    }
+}
+
+
+@mixin ui-grid-bleed($size: "default", $include-size: true) {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+
+        $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
+        $bleed-selector: '#{$size-selector}-bleed';
+
+        $columns-total: ui-grid-total_columns($size);
+
+        @for $col from 1 through $columns-total + 3 {
+            $total-selector: '#{$bleed-selector}-#{$col}';
+            #{$total-selector} {
+                @include pull($col);
             }
         }
     }

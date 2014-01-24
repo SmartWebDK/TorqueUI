@@ -43,38 +43,41 @@ $container-style: static;
     &.with-xlarge {
         @include at-breakpoint($xlarge) {
             @include ui-grid-container("xlarge");
-
             .r, .row {
                 @include ui-grid-row("xlarge");
             }
 
             @include ui-grid-column-base("xlarge");
             @include ui-grid-columns("xlarge");
+            @include ui-grid-offset("xlarge");
+            @include ui-grid-bleed("xlarge");
         }
     }
 
 
     &.large {
+        /* lolse */
         @include ui-grid-container("large");
-        display: none;
-
         .r, .row {
             @include ui-grid-row("large");
         }
 
-        @include ui-grid-column-base("large");
-        @include ui-grid-columns("large");
+        @include ui-grid-column-base("large", false);
+        @include ui-grid-columns("large", false);
+        @include ui-grid-offset("large", false);
+        @include ui-grid-bleed("large", false);
     }
 
     &.small {
         @include ui-grid-container("default");
-
         .r, .row {
             @include ui-grid-row("default");
         }
 
-        @include ui-grid-column-base("default");
-        @include ui-grid-columns("default");
+        @include ui-grid-column-base("default", false);
+        @include ui-grid-columns("default", false);
+        @include ui-grid-offset("default", false);
+        @include ui-grid-bleed("default", false);
     }
 }
 
@@ -109,7 +112,8 @@ $container-style: static;
 
 @include ui-grid-column-base("default");
 @include ui-grid-columns("default");
-
+@include ui-grid-offset("default");
+@include ui-grid-bleed("default");
 
 // ==========================================================================
 // Medium
@@ -121,6 +125,8 @@ $container-style: static;
 @include at-breakpoint($medium) {
     @include ui-grid-column-base("medium");
     @include ui-grid-columns("medium");
+    @include ui-grid-offset("medium");
+    @include ui-grid-bleed("medium");
 }
 
 
@@ -133,6 +139,8 @@ $container-style: static;
 @include at-breakpoint($large) {
     @include ui-grid-column-base("large");
     @include ui-grid-columns("large");
+    @include ui-grid-offset("large");
+    @include ui-grid-bleed("large");
 }
 
 
