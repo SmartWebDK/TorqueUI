@@ -70,7 +70,18 @@
         line-height: 1.5;
     }
 
-
+%navbar-size-large {
+    height: 46px;
+}
+%navbar-size-default {
+    height: 37px;
+}
+%navbar-size-small {
+    height: 30px;
+}
+%navbar-size-xsmall {
+    height: 25px;
+}
 
 // ==========================================================================
 // Sizes

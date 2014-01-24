@@ -28,12 +28,13 @@
 		}
 	}
 
-	.dropdown {
-		&.navbar-pull-right {
-			margin-right: 10px;
-		}
-	}
+
 }
+	
+	.navbar-pull-right,
+	.navbar-pull-left {
+		display: table;
+	}
 
 	.navbar-pull-right {
 		float: right;
@@ -81,9 +82,22 @@
 			}
 		}
 
+		@include at-breakpoint($grid-large) {
+			.navbar-pull-right,
+			.navbar-pull-left {
+				margin-right: 10px;
+			}
+		}
+
 		.form-group,
 		.input-group {
 			margin: 0;
+		}
+
+		.dropdown,
+		.form-group {
+			display: table-cell;
+			vertical-align: middle;
 		}
 
 		.nav-default,
@@ -231,4 +245,46 @@
 			padding: 2px 10px;
 		}
     }
+}
+
+
+
+.navbar-size-large {
+	.navbar-pull-right,
+	.navbar-pull-left {
+		@extend %navbar-size-large;
+		@include at-breakpoint($grid-large) {
+			@extend %navbar-size-large;
+		}
+	}
+}
+
+.navbar-size-default {
+	.navbar-pull-right,
+	.navbar-pull-left {
+		@extend %navbar-size-default;
+		@include at-breakpoint($grid-large) {
+			@extend %navbar-size-default;
+		}
+	}
+}
+
+.navbar-size-small {
+	.navbar-pull-right,
+	.navbar-pull-left {
+		@extend %navbar-size-small;
+		@include at-breakpoint($grid-large) {
+			@extend %navbar-size-small;
+		}
+	}
+}
+
+.navbar-size-xsmall {
+	.navbar-pull-right,
+	.navbar-pull-left {
+		@extend %navbar-size-xsmall;
+		@include at-breakpoint($grid-large) {
+			@extend %navbar-size-xsmall;
+		}
+	}
 }
