@@ -12,9 +12,9 @@
 @import "./theme/theme_settings";
 
 // Vendor dependencies
-@import "./vendor/normalize";
-@import "./vendor/typeplate.scss";
-@import "./vendor/font awesome/font-awesome.scss";
+@import "./lib/normalize";
+@import "./lib/typeplate.scss";
+@import "./lib/font awesome/font-awesome.scss";
 
 // Base
 @import "./base/type";
@@ -26,19 +26,14 @@
 @import "./layout/responsive-utils";
 
 // Modules
-@import "./modules/alerts";
 @import "./modules/button";
 @import "./modules/dropdown";
 @import "./modules/form";
 @import "./modules/input-group";
 @import "./modules/lists";
-@import "./modules/lists";
 @import "./modules/nav";
-<<<<<<< HEAD
 @import "./modules/navbar";
-=======
 @import "./modules/media";
->>>>>>> d9da86e8aa38d39ce54d7ed90da882faee387de2
 @import "./modules/pager";
 @import "./modules/pagination";
 @import "./modules/panels";

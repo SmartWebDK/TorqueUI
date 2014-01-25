@@ -19,6 +19,10 @@ module.exports = function(grunt) {
                             '\t\t<meta name="viewport" content="width=device-width">\n',
                             '\t\t<link rel="stylesheet" href="/tdcss.js/tdcss.css" type="text/css" media="screen">',
                             '\t\t<link rel="stylesheet" href="/css/framework.css" type="text/css" media="screen">',
+                            '<!--[if (lt IE 9) & (!IEMobile)]>',
+                                '<script src="js/ie.js"></script>',
+                            '<![endif]-->',
+                            '<script type="text/javascript" src="js/all.js">',
                             '\t\t<script type="text/javascript">',
                             '\t\tWebFontConfig = { google: { families: [ "Raleway:400,700:latin" ]}',
                             '\t\t};',
@@ -76,11 +80,41 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['js/**/*.js'],
-                tasks: ['clean:js','copy:js']
+                tasks: ['clean:js','concat:test','uglify:test','copy:js']
             },
             sass: {
                 files: ['sass/**/*.scss'],
                 tasks: 'compass:dev'
+            }
+        },
+
+        concat: {
+            options: {
+                separator: ';',
+            },
+            test: {
+                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
+                dest: './test/js/ie.js'
+            },
+            dist: {
+                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
+                dest: './dist/js/ie.js'
+            }
+        },
+
+        uglify: {
+            options: {
+                preserveComments: 'some'
+            },
+            test: {
+                files: {
+                    './test/js/all.js': ['./js/*.js']
+                }
+            },
+            dist: {
+                files: {
+                    './dist/js/all.js': ['./js/*.js']
+                }
             }
         },
 
@@ -120,6 +154,7 @@ module.exports = function(grunt) {
                     src: [
                         'dist/css/<%= pkg.name %>.css',
                         'dist/css/<%= pkg.name %>.min.css',
+                        'dist/js/all.js'
                     ]
                 }
             }
@@ -133,7 +168,7 @@ module.exports = function(grunt) {
             },
             js: {
                 expand: true,
-                src: ['./js/**/*.js'],
+                src: ['./js/*.js'],
                 dest: './test/'
             }
         },
@@ -225,11 +260,11 @@ module.exports = function(grunt) {
     });
 
     // Distribution related task
-    grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-fonts', 'dist-jekyll']);
-    grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin', 'usebanner']);
+    grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-fonts','usebanner']);
+    grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin']);
     //grunt.registerTask('dist-js', ['concat', 'uglify']);
-    grunt.registerTask('dist-js', []);
-    grunt.registerTask('dist-fonts', ['copy']);
+    grunt.registerTask('dist-js', ['concat:dist','uglify:dist']);
+    grunt.registerTask('dist-fonts', ['copy:fonts']);
 
     // server
     grunt.registerTask("server", ['connect:server']);

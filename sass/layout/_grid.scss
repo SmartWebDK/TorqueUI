@@ -7,8 +7,160 @@
 // Resource: http://susy.oddbird.net/guides/reference/
 // ==========================================================================
 
-
 //
 // Setup
 //
+
+$legacy-support-for-ie:   true;
+$legacy-support-for-ie7:  $legacy-support-for-ie;
+$legacy-support-for-ie8:  $legacy-support-for-ie;
+$container-style: static;
+
+
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+//
+// Container for the a grid
+//
+
+.c,
+.container {
+    @extend .clearfix;
+    @include box-sizing(content-box);
+
+    @include ui-grid-container("default");
+
+    @include at-breakpoint($medium) {
+        @include ui-grid-container("medium");
+    }
+
+    @include at-breakpoint($large) {
+        @include ui-grid-container("large");
+    }
+
+    &.with-xlarge {
+        @include at-breakpoint($xlarge) {
+            @include ui-grid-container("xlarge");
+            .r, .row {
+                @include ui-grid-row("xlarge");
+            }
+
+            @include ui-grid-column-base("xlarge");
+            @include ui-grid-columns("xlarge");
+            @include ui-grid-offset("xlarge");
+            @include ui-grid-bleed("xlarge");
+            @include ui-grid-push("xlarge");
+            @include ui-grid-pull("xlarge");
+        }
+    }
+
+
+    &.is-large {
+        /* lolse */
+        @include ui-grid-container("large");
+        .r, .row {
+            @include ui-grid-row("large");
+        }
+
+        @include ui-grid-column-base("large", false);
+        @include ui-grid-columns("large", false);
+        @include ui-grid-offset("large", false);
+        @include ui-grid-bleed("large", false);
+        @include ui-grid-push("large", false);
+        @include ui-grid-pull("large", false);
+    }
+
+    &.is-small {
+        @include ui-grid-container("default");
+        .r, .row {
+            @include ui-grid-row("default");
+        }
+
+        @include ui-grid-column-base("default", false);
+        @include ui-grid-columns("default", false);
+        @include ui-grid-offset("default", false);
+        @include ui-grid-bleed("default", false);
+        @include ui-grid-push("default", false);
+        @include ui-grid-pull("default", false);
+    }
+}
+
+//
+// Row element
+//
+
+.r,
+.row {
+    @extend .clearfix;
+    @include ui-grid-row("default");
+
+    @include at-breakpoint($medium) {
+        @include ui-grid-row("medium");
+    }
+
+    @include at-breakpoint($large) {
+        @include ui-grid-row("large");
+    }
+}
+
+[class^="col"] {
+    position: relative;
+}
+
+// ==========================================================================
+// Default columns
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+// ==========================================================================
+
+@include ui-grid-column-base("default");
+@include ui-grid-columns("default");
+@include ui-grid-offset("default");
+@include ui-grid-bleed("default");
+@include ui-grid-push("default");
+@include ui-grid-pull("default");
+
+// ==========================================================================
+// Medium
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+// ==========================================================================
+
+@include at-breakpoint($medium) {
+    @include ui-grid-column-base("medium");
+    @include ui-grid-columns("medium");
+    @include ui-grid-offset("medium");
+    @include ui-grid-bleed("medium");
+    @include ui-grid-push("medium");
+    @include ui-grid-pull("medium");
+}
+
+
+// ==========================================================================
+// Large
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+// ==========================================================================
+
+@include at-breakpoint($large) {
+    @include ui-grid-column-base("large");
+    @include ui-grid-columns("large");
+    @include ui-grid-offset("large");
+    @include ui-grid-bleed("large");
+    @include ui-grid-push("large");
+    @include ui-grid-pull("large");
+}
+
+
+// ==========================================================================
+// Xlarge
+//
+// Only shown in containers that have .with-xlarge
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+// ==========================================================================
 
