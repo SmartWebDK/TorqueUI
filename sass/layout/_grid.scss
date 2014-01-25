@@ -57,7 +57,7 @@ $container-style: static;
     }
 
 
-    &.large {
+    &.is-large {
         /* lolse */
         @include ui-grid-container("large");
         .r, .row {
@@ -72,7 +72,7 @@ $container-style: static;
         @include ui-grid-pull("large", false);
     }
 
-    &.small {
+    &.is-small {
         @include ui-grid-container("default");
         .r, .row {
             @include ui-grid-row("default");
