@@ -334,33 +334,31 @@
 // Utility mixin
 // ==========================================================================
 
-@mixin ui-responsive-util($size: "default", $show: true, $selector: ".is-visible") {
+@mixin ui-responsive-hide($size: "default", $selector: ".is-visible") {
     $size-selector: '#{$selector}#{ui-shortsize($size)}';
-
-    @if $show {
-        #{$size-selector} {
-            display: block !important;
-        }
-        table#{$size-selector} {
-            display: table;
-        }
-        tr#{$size-selector} {
-            display: table-row !important;
-        }
-        td#{$size-selector},
-        th#{$size-selector} {
-            display: table-cell !important;
-        }
+    #{$size-selector},
+    table#{$size-selector},
+    tr#{$size-selector},
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: none !important;
     }
+}
 
-    @if not $show {
-        #{$size-selector},
-        table#{$size-selector},
-        tr#{$size-selector},
-        td#{$size-selector},
-        th#{$size-selector} {
-            display: none !important;
-        }
+@mixin ui-responsive-show($size: "default", $selector: ".is-visible") {
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{$size-selector} {
+        display: block !important;
+    }
+    table#{$size-selector} {
+        display: table;
+    }
+    tr#{$size-selector} {
+        display: table-row !important;
+    }
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: table-cell !important;
     }
 }
 

@@ -115,7 +115,7 @@ $container-style: static;
     }
 }
 
-[class~="col-"] {
+[class*="col-"] {
     position: relative;
 }
 
