@@ -33,15 +33,21 @@
 	
 	.navbar-pull-right,
 	.navbar-pull-left {
-		display: table;
+		@include at-breakpoint($grid-large) {
+			display: table;
+		}
 	}
 
 	.navbar-pull-right {
-		float: right;
+		@include at-breakpoint($grid-large) {
+			float: right;
+		}
 	}
 
 	.navbar-pull-left {
-		float: left;
+		@include at-breakpoint($grid-large) {
+			float: left;
+		}
 	}
 
 	.navbar-default {
@@ -96,8 +102,10 @@
 
 		.dropdown,
 		.form-group {
-			display: table-cell;
-			vertical-align: middle;
+			@include at-breakpoint($grid-large) {
+				display: table-cell;
+				vertical-align: middle;
+			}
 		}
 
 		.nav-default,
