@@ -14,7 +14,20 @@
 $legacy-support-for-ie:   true;
 $legacy-support-for-ie7:  $legacy-support-for-ie;
 $legacy-support-for-ie8:  $legacy-support-for-ie;
+
+//
+// Grid is set to static
+//
+
 $container-style: static;
+
+//
+// Set correct MS viewport
+//
+
+@-ms-viewport {
+    width: device-width
+}
 
 
 // ==========================================================================
@@ -25,14 +38,13 @@ $container-style: static;
 // Container for the a grid
 //
 
-.c,
 .container {
     @extend .clearfix;
     @include box-sizing(content-box);
 
     @include ui-grid-container("default");
 
-    @include at-breakpoint($medium) {
+    @include ui-on-breakpoint($medium) {
         @include ui-grid-container("medium");
     }
 
@@ -41,9 +53,9 @@ $container-style: static;
     }
 
     &.with-xlarge {
-        @include at-breakpoint($xlarge) {
+        @include ui-on-breakpoint($xlarge) {
             @include ui-grid-container("xlarge");
-            .r, .row {
+            .row {
                 @include ui-grid-row("xlarge");
             }
 
@@ -58,9 +70,8 @@ $container-style: static;
 
 
     &.is-large {
-        /* lolse */
         @include ui-grid-container("large");
-        .r, .row {
+        .row {
             @include ui-grid-row("large");
         }
 
@@ -74,7 +85,7 @@ $container-style: static;
 
     &.is-small {
         @include ui-grid-container("default");
-        .r, .row {
+        .row {
             @include ui-grid-row("default");
         }
 
@@ -91,12 +102,11 @@ $container-style: static;
 // Row element
 //
 
-.r,
 .row {
     @extend .clearfix;
     @include ui-grid-row("default");
 
-    @include at-breakpoint($medium) {
+    @include ui-on-breakpoint($medium) {
         @include ui-grid-row("medium");
     }
 
@@ -105,7 +115,7 @@ $container-style: static;
     }
 }
 
-[class^="col"] {
+[class~="col-"] {
     position: relative;
 }
 
@@ -130,7 +140,7 @@ $container-style: static;
 // to tablets.
 // ==========================================================================
 
-@include at-breakpoint($medium) {
+@include ui-on-breakpoint($medium) {
     @include ui-grid-column-base("medium");
     @include ui-grid-columns("medium");
     @include ui-grid-offset("medium");
