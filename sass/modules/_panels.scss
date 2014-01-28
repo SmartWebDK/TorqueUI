@@ -4,12 +4,9 @@
 
 .panel {
 	overflow: hidden;
-	margin-bottom: rhythm(1, $font-base);
+	margin-bottom: rhythm(2, $font-base);
 	border: 1px solid;
 }
-
-	.panel-default {
-	}
 
 	.panel-heading {
 		border-bottom: 1px solid;
@@ -17,23 +14,46 @@
 		padding: ($global-padding/2) $global-padding;
         margin-bottom: -1px;
 
+        @include at-breakpoint($medium $large) {
+        	padding: ($global-padding/2) ($global-padding/2);
+        }
+
 		h1,h2,h3,h4,h5,h6 {
 			margin: 0;
 		}
 
-		button {
+		.form-group,
+		.button,
+        .button-primary,
+        button {
 			float: right;
+			margin: 0;
 		}
 	}
 
 	.panel-body {
 		padding: $global-padding $global-padding ($global-padding/2) $global-padding;
+
+		@include at-breakpoint($medium $large) {
+        	padding: ($global-padding/2) ($global-padding/2) (($global-padding/2)/2) ($global-padding/2);
+        }
 	}
 
 	.panel-footer {
 		border-top: 1px solid;
 		padding: ($global-padding/2) $global-padding;
         margin-top: -1px;
+
+        @include at-breakpoint($medium $large) {
+        	padding: ($global-padding/2) ($global-padding/2);
+        }
+
+        .form-group,
+        .button,
+        .button-primary,
+        button {
+			margin: 0;
+		}
 	}
 
 	.panel-rounded {
