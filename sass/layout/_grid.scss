@@ -14,7 +14,20 @@
 $legacy-support-for-ie:   true;
 $legacy-support-for-ie7:  $legacy-support-for-ie;
 $legacy-support-for-ie8:  $legacy-support-for-ie;
+
+//
+// Grid is set to static
+//
+
 $container-style: static;
+
+//
+// Set correct MS viewport
+//
+
+@-ms-viewport {
+    width: device-width
+}
 
 
 // ==========================================================================
@@ -25,14 +38,13 @@ $container-style: static;
 // Container for the a grid
 //
 
-.c,
 .container {
     @extend .clearfix;
     @include box-sizing(content-box);
 
     @include ui-grid-container("default");
 
-    @include at-breakpoint($medium) {
+    @include ui-on-breakpoint($medium) {
         @include ui-grid-container("medium");
     }
 
@@ -41,40 +53,48 @@ $container-style: static;
     }
 
     &.with-xlarge {
-        @include at-breakpoint($xlarge) {
+        @include ui-on-breakpoint($xlarge) {
             @include ui-grid-container("xlarge");
-
-            .r, .row {
+            .row {
                 @include ui-grid-row("xlarge");
             }
 
             @include ui-grid-column-base("xlarge");
             @include ui-grid-columns("xlarge");
+            @include ui-grid-offset("xlarge");
+            @include ui-grid-bleed("xlarge");
+            @include ui-grid-push("xlarge");
+            @include ui-grid-pull("xlarge");
         }
     }
 
 
-    &.large {
+    &.is-large {
         @include ui-grid-container("large");
-        display: none;
-
-        .r, .row {
+        .row {
             @include ui-grid-row("large");
         }
 
-        @include ui-grid-column-base("large");
-        @include ui-grid-columns("large");
+        @include ui-grid-column-base("large", false);
+        @include ui-grid-columns("large", false);
+        @include ui-grid-offset("large", false);
+        @include ui-grid-bleed("large", false);
+        @include ui-grid-push("large", false);
+        @include ui-grid-pull("large", false);
     }
 
-    &.small {
+    &.is-small {
         @include ui-grid-container("default");
-
-        .r, .row {
+        .row {
             @include ui-grid-row("default");
         }
 
-        @include ui-grid-column-base("default");
-        @include ui-grid-columns("default");
+        @include ui-grid-column-base("default", false);
+        @include ui-grid-columns("default", false);
+        @include ui-grid-offset("default", false);
+        @include ui-grid-bleed("default", false);
+        @include ui-grid-push("default", false);
+        @include ui-grid-pull("default", false);
     }
 }
 
@@ -82,12 +102,11 @@ $container-style: static;
 // Row element
 //
 
-.r,
 .row {
     @extend .clearfix;
     @include ui-grid-row("default");
 
-    @include at-breakpoint($medium) {
+    @include ui-on-breakpoint($medium) {
         @include ui-grid-row("medium");
     }
 
@@ -96,7 +115,7 @@ $container-style: static;
     }
 }
 
-[class^="col"] {
+[class*="col-"] {
     position: relative;
 }
 
@@ -109,7 +128,10 @@ $container-style: static;
 
 @include ui-grid-column-base("default");
 @include ui-grid-columns("default");
-
+@include ui-grid-offset("default");
+@include ui-grid-bleed("default");
+@include ui-grid-push("default");
+@include ui-grid-pull("default");
 
 // ==========================================================================
 // Medium
@@ -118,9 +140,13 @@ $container-style: static;
 // to tablets.
 // ==========================================================================
 
-@include at-breakpoint($medium) {
+@include ui-on-breakpoint($medium) {
     @include ui-grid-column-base("medium");
     @include ui-grid-columns("medium");
+    @include ui-grid-offset("medium");
+    @include ui-grid-bleed("medium");
+    @include ui-grid-push("medium");
+    @include ui-grid-pull("medium");
 }
 
 
@@ -133,6 +159,10 @@ $container-style: static;
 @include at-breakpoint($large) {
     @include ui-grid-column-base("large");
     @include ui-grid-columns("large");
+    @include ui-grid-offset("large");
+    @include ui-grid-bleed("large");
+    @include ui-grid-push("large");
+    @include ui-grid-pull("large");
 }
 
 
@@ -143,3 +173,4 @@ $container-style: static;
 //
 // Columns, offsets, pushes, and pulls for the large desktop device range.
 // ==========================================================================
+

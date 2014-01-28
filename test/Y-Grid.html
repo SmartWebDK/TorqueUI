@@ -40,12 +40,16 @@
               text-align: center;
               line-height: 40px;
               background-color: #000;
-              opacity: 0.5;
+              opacity: 0.25;
               font-weight: bold;
-              height: 40px;
+              min-height: 40px;
               border-radius: 0.25em;
               margin-top: 5px;
               margin-bottom: 5px;
+            }
+
+            [class^="col-"] [class^="col-"] {
+                opacity: .50;
             }
 
         </style>
@@ -60,7 +64,7 @@
                 <br>
                 <br>
                 <br>
-                <h1 style="font-size: 5em; text-align:center;">NORMAL CONTAINER</h1>
+                <h1 style="font-size: 4em; text-align:center;">NORMAL CONTAINER</h1>
                 <br>
                 <br>
                 <br>
@@ -182,6 +186,287 @@
                         <div class="col-s-2 col-m-6 col-l-6 col-xl-6">6</div>
                         <div class="col-s-1 col-m-3 col-l-3 col-xl-3">3</div>
                         <div class="col-s-1 col-m-3 col-l-3 col-xl-3">3</div>
+                    </div>
+                <br>
+                <br>
+                    <h4 style="text-align: center;">Nested</h4>
+                    <div class="row">
+                        <div class="col-s-4 col-m-12 col-l-12 col-xl-12">12</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-4 col-m-8 col-l-8 col-xl-8">
+                            <div class="row">
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                            </div>
+                        </div>
+                        <div class="col-s-4 col-m-4 col-l-4 col-xl-4">
+                            <div class="row">
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                                <div class="col-s-4 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-4 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-s-4 col-m-12 col-l-12 col-xl-12">12</div>
+                    </div>
+                <br>
+                <br>
+                    <h4 style="text-align: center;">Bleed and offset</h4>
+                    <div class="row">
+                        <div class="col-s-1 col-s-bleed-3
+                                    col-m-1 col-m-bleed-3
+                                    col-l-1 col-l-bleed-3
+                                    col-xl-1 col-xl-bleed-3">3</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-bleed-2
+                                    col-m-1 col-m-bleed-2
+                                    col-l-1 col-l-bleed-2
+                                    col-xl-1 col-xl-bleed-2">2</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-bleed-1
+                                    col-m-1 col-m-bleed-1
+                                    col-l-1 col-l-bleed-1
+                                    col-xl-1 col-xl-bleed-1">1</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-m-1 col-l-1 col-xl-1">1</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-1
+                                    col-m-1 col-m-offset-1
+                                    col-l-1 col-l-offset-1
+                                    col-xl-1 col-xl-offset-1">1</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-2
+                                    col-m-1 col-m-offset-2
+                                    col-l-1 col-l-offset-2
+                                    col-xl-1 col-xl-offset-2">2</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-3
+                                    col-m-1 col-m-offset-3
+                                    col-l-1 col-l-offset-3
+                                    col-xl-1 col-xl-offset-3">3</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-4
+                                    col-l-1 col-l-offset-4
+                                    col-xl-1 col-xl-offset-4">4</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-5
+                                    col-l-1 col-l-offset-5
+                                    col-xl-1 col-xl-offset-5">5</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-6
+                                    col-l-1 col-l-offset-6
+                                    col-xl-1 col-xl-offset-6">6</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-7
+                                    col-l-1 col-l-offset-7
+                                    col-xl-1 col-xl-offset-7">7</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-8
+                                    col-l-1 col-l-offset-8
+                                    col-xl-1 col-xl-offset-8">8</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-9
+                                    col-l-1 col-l-offset-9
+                                    col-xl-1 col-xl-offset-9">9</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-10
+                                    col-l-1 col-l-offset-10
+                                    col-xl-1 col-xl-offset-10">10</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-11
+                                    col-l-1 col-l-offset-11
+                                    col-xl-1 col-xl-offset-11">11</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-12
+                                    col-l-1 col-l-offset-12
+                                    col-xl-1 col-xl-offset-12">12</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-5
+                                    col-m-1 col-m-offset-13
+                                    col-l-1 col-l-offset-13
+                                    col-xl-1 col-xl-offset-13">13</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-6
+                                    col-m-1 col-m-offset-14
+                                    col-l-1 col-l-offset-14
+                                    col-xl-1 col-xl-offset-14">14</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-7
+                                    col-m-1 col-m-offset-15
+                                    col-l-1 col-l-offset-15
+                                    col-xl-1 col-xl-offset-15">15</div>
+                    </div>
+                <br>
+                <br>
+                    <h4 style="text-align: center;">Pull and push</h4>
+                    <div class="row">
+                        <div class="col-s-1 col-s-push-3
+                                    col-m-1 col-m-push-11
+                                    col-l-1 col-l-push-11
+                                    col-xl-1 col-xl-push-11">p-11</div>
+                        <div class="col-s-3 col-s-pull-1
+                                    col-m-11 col-m-pull-1
+                                    col-l-11 col-l-pull-1
+                                    col-xl-11 col-xl-pull-1">pull-1</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-2 col-s-push-2
+                                    col-m-2 col-m-push-10
+                                    col-l-2 col-l-push-10
+                                    col-xl-2 col-xl-push-10">push-10</div>
+                        <div class="col-s-2 col-s-pull-2
+                                    col-m-10 col-m-pull-2
+                                    col-l-10 col-l-pull-2
+                                    col-xl-10 col-xl-pull-2">pull-2</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-push-3
+                                    col-m-3 col-m-push-9
+                                    col-l-3 col-l-push-9
+                                    col-xl-3 col-xl-push-9">push-9</div>
+                        <div class="col-s-3 col-s-pull-1
+                                    col-m-9 col-m-pull-3
+                                    col-l-9 col-l-pull-3
+                                    col-xl-9 col-xl-pull-3">pull-3</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-4 col-m-push-8
+                                    col-l-4 col-l-push-8
+                                    col-xl-4 col-xl-push-8">push-8</div>
+                        <div class="col-s-4
+                                    col-m-8 col-m-pull-4
+                                    col-l-8 col-l-pull-4
+                                    col-xl-8 col-xl-pull-4">pull-4</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-5 col-m-push-7
+                                    col-l-5 col-l-push-7
+                                    col-xl-5 col-xl-push-7">push-7</div>
+                        <div class="col-s-4
+                                    col-m-7 col-m-pull-5
+                                    col-l-7 col-l-pull-5
+                                    col-xl-7 col-xl-pull-5">pull-5</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-6 col-m-push-6
+                                    col-l-6 col-l-push-6
+                                    col-xl-6 col-xl-push-6">push-6</div>
+                        <div class="col-s-4
+                                    col-m-6 col-m-pull-6
+                                    col-l-6 col-l-pull-6
+                                    col-xl-6 col-xl-pull-6">pull-6</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-7 col-m-push-5
+                                    col-l-7 col-l-push-5
+                                    col-xl-7 col-xl-push-5">push-5</div>
+                        <div class="col-s-4
+                                    col-m-5 col-m-pull-7
+                                    col-l-5 col-l-pull-7
+                                    col-xl-5 col-xl-pull-7">pull-7</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-8 col-m-push-4
+                                    col-l-8 col-l-push-4
+                                    col-xl-8 col-xl-push-4">push-4</div>
+                        <div class="col-s-4
+                                    col-m-4 col-m-pull-8
+                                    col-l-4 col-l-pull-8
+                                    col-xl-4 col-xl-pull-8">pull-8</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-3 col-s-push-1
+                                    col-m-9 col-m-push-3
+                                    col-l-9 col-l-push-3
+                                    col-xl-9 col-xl-push-3">push-3</div>
+                        <div class="col-s-1 col-s-pull-3
+                                    col-m-3 col-m-pull-9
+                                    col-l-3 col-l-pull-9
+                                    col-xl-3 col-xl-pull-9">pull-9</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-2 col-s-push-2
+                                    col-m-10 col-m-push-2
+                                    col-l-10 col-l-push-2
+                                    col-xl-10 col-xl-push-2">push-2</div>
+                        <div class="col-s-2 col-s-pull-2
+                                    col-m-2 col-m-pull-10
+                                    col-l-2 col-l-pull-10
+                                    col-xl-2 col-xl-pull-10">pull-10</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-3 col-s-push-1
+                                    col-m-11 col-m-push-1
+                                    col-l-11 col-l-push-1
+                                    col-xl-11 col-xl-push-1">push-1</div>
+                        <div class="col-s-1 col-s-pull-3
+                                    col-m-1 col-m-pull-11
+                                    col-l-1 col-l-pull-11
+                                    col-xl-1 col-xl-pull-11">p-11</div>
                     </div>
                 <br>
                 <br>
@@ -606,7 +891,7 @@
                 <br>
                 <br>
                 <br>
-                <h1 style="font-size: 5em; text-align:center;">CONTAINER WITH XLARGE</h1>
+                <h1 style="font-size: 4em; text-align:center;">CONTAINER WITH XLARGE</h1>
                 <br>
                 <br>
                 <br>
@@ -614,6 +899,7 @@
                 <br>
                 <h1 style="text-align:center;">Mixed grid</h1>
                 <!-- : Grid with xlarge -->
+
                     <div class="row">
                         <div class="col-s-1 col-m-1 col-l-1 col-xl-1">1</div>
                         <div class="col-s-1 col-m-1 col-l-1 col-xl-1">1</div>
@@ -728,6 +1014,287 @@
                         <div class="col-s-2 col-m-6 col-l-6 col-xl-6">6</div>
                         <div class="col-s-1 col-m-3 col-l-3 col-xl-3">3</div>
                         <div class="col-s-1 col-m-3 col-l-3 col-xl-3">3</div>
+                    </div>
+                <br>
+                <br>
+                    <h4 style="text-align: center;">Nested</h4>
+                    <div class="row">
+                        <div class="col-s-4 col-m-12 col-l-12 col-xl-12">12</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-4 col-m-8 col-l-8 col-xl-8">
+                            <div class="row">
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-4 col-l-4 col-xl-4">4</div>
+                            </div>
+                        </div>
+                        <div class="col-s-4 col-m-4 col-l-4 col-xl-4">
+                            <div class="row">
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                                <div class="col-s-4 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-4 col-m-4 col-l-4 col-xl-4">4</div>
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                                <div class="col-s-2 col-m-2 col-l-2 col-xl-2">2</div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="row">
+                        <div class="col-s-4 col-m-12 col-l-12 col-xl-12">12</div>
+                    </div>
+               <br>
+                <br>
+                    <h4 style="text-align: center;">Bleed and offset</h4>
+                    <div class="row">
+                        <div class="col-s-1 col-s-bleed-3
+                                    col-m-1 col-m-bleed-3
+                                    col-l-1 col-l-bleed-3
+                                    col-xl-1 col-xl-bleed-3">3</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-bleed-2
+                                    col-m-1 col-m-bleed-2
+                                    col-l-1 col-l-bleed-2
+                                    col-xl-1 col-xl-bleed-2">2</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-bleed-1
+                                    col-m-1 col-m-bleed-1
+                                    col-l-1 col-l-bleed-1
+                                    col-xl-1 col-xl-bleed-1">1</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-m-1 col-l-1 col-xl-1">1</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-1
+                                    col-m-1 col-m-offset-1
+                                    col-l-1 col-l-offset-1
+                                    col-xl-1 col-xl-offset-1">1</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-2
+                                    col-m-1 col-m-offset-2
+                                    col-l-1 col-l-offset-2
+                                    col-xl-1 col-xl-offset-2">2</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-3
+                                    col-m-1 col-m-offset-3
+                                    col-l-1 col-l-offset-3
+                                    col-xl-1 col-xl-offset-3">3</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-4
+                                    col-l-1 col-l-offset-4
+                                    col-xl-1 col-xl-offset-4">4</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-5
+                                    col-l-1 col-l-offset-5
+                                    col-xl-1 col-xl-offset-5">5</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-6
+                                    col-l-1 col-l-offset-6
+                                    col-xl-1 col-xl-offset-6">6</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-7
+                                    col-l-1 col-l-offset-7
+                                    col-xl-1 col-xl-offset-7">7</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-8
+                                    col-l-1 col-l-offset-8
+                                    col-xl-1 col-xl-offset-8">8</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-9
+                                    col-l-1 col-l-offset-9
+                                    col-xl-1 col-xl-offset-9">9</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-10
+                                    col-l-1 col-l-offset-10
+                                    col-xl-1 col-xl-offset-10">10</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-11
+                                    col-l-1 col-l-offset-11
+                                    col-xl-1 col-xl-offset-11">11</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-4
+                                    col-m-1 col-m-offset-12
+                                    col-l-1 col-l-offset-12
+                                    col-xl-1 col-xl-offset-12">12</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-5
+                                    col-m-1 col-m-offset-13
+                                    col-l-1 col-l-offset-13
+                                    col-xl-1 col-xl-offset-13">13</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-6
+                                    col-m-1 col-m-offset-14
+                                    col-l-1 col-l-offset-14
+                                    col-xl-1 col-xl-offset-14">14</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-offset-7
+                                    col-m-1 col-m-offset-15
+                                    col-l-1 col-l-offset-15
+                                    col-xl-1 col-xl-offset-15">15</div>
+                    </div>
+               <br>
+                <br>
+                    <h4 style="text-align: center;">Pull and push</h4>
+                    <div class="row">
+                        <div class="col-s-1 col-s-push-3
+                                    col-m-1 col-m-push-11
+                                    col-l-1 col-l-push-11
+                                    col-xl-1 col-xl-push-11">p-11</div>
+                        <div class="col-s-3 col-s-pull-1
+                                    col-m-11 col-m-pull-1
+                                    col-l-11 col-l-pull-1
+                                    col-xl-11 col-xl-pull-1">pull-1</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-2 col-s-push-2
+                                    col-m-2 col-m-push-10
+                                    col-l-2 col-l-push-10
+                                    col-xl-2 col-xl-push-10">push-10</div>
+                        <div class="col-s-2 col-s-pull-2
+                                    col-m-10 col-m-pull-2
+                                    col-l-10 col-l-pull-2
+                                    col-xl-10 col-xl-pull-2">pull-2</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-1 col-s-push-3
+                                    col-m-3 col-m-push-9
+                                    col-l-3 col-l-push-9
+                                    col-xl-3 col-xl-push-9">push-9</div>
+                        <div class="col-s-3 col-s-pull-1
+                                    col-m-9 col-m-pull-3
+                                    col-l-9 col-l-pull-3
+                                    col-xl-9 col-xl-pull-3">pull-3</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-4 col-m-push-8
+                                    col-l-4 col-l-push-8
+                                    col-xl-4 col-xl-push-8">push-8</div>
+                        <div class="col-s-4
+                                    col-m-8 col-m-pull-4
+                                    col-l-8 col-l-pull-4
+                                    col-xl-8 col-xl-pull-4">pull-4</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-5 col-m-push-7
+                                    col-l-5 col-l-push-7
+                                    col-xl-5 col-xl-push-7">push-7</div>
+                        <div class="col-s-4
+                                    col-m-7 col-m-pull-5
+                                    col-l-7 col-l-pull-5
+                                    col-xl-7 col-xl-pull-5">pull-5</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-6 col-m-push-6
+                                    col-l-6 col-l-push-6
+                                    col-xl-6 col-xl-push-6">push-6</div>
+                        <div class="col-s-4
+                                    col-m-6 col-m-pull-6
+                                    col-l-6 col-l-pull-6
+                                    col-xl-6 col-xl-pull-6">pull-6</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-7 col-m-push-5
+                                    col-l-7 col-l-push-5
+                                    col-xl-7 col-xl-push-5">push-5</div>
+                        <div class="col-s-4
+                                    col-m-5 col-m-pull-7
+                                    col-l-5 col-l-pull-7
+                                    col-xl-5 col-xl-pull-7">pull-7</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-4
+                                    col-m-8 col-m-push-4
+                                    col-l-8 col-l-push-4
+                                    col-xl-8 col-xl-push-4">push-4</div>
+                        <div class="col-s-4
+                                    col-m-4 col-m-pull-8
+                                    col-l-4 col-l-pull-8
+                                    col-xl-4 col-xl-pull-8">pull-8</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-3 col-s-push-1
+                                    col-m-9 col-m-push-3
+                                    col-l-9 col-l-push-3
+                                    col-xl-9 col-xl-push-3">push-3</div>
+                        <div class="col-s-1 col-s-pull-3
+                                    col-m-3 col-m-pull-9
+                                    col-l-3 col-l-pull-9
+                                    col-xl-3 col-xl-pull-9">pull-9</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-2 col-s-push-2
+                                    col-m-10 col-m-push-2
+                                    col-l-10 col-l-push-2
+                                    col-xl-10 col-xl-push-2">push-2</div>
+                        <div class="col-s-2 col-s-pull-2
+                                    col-m-2 col-m-pull-10
+                                    col-l-2 col-l-pull-10
+                                    col-xl-2 col-xl-pull-10">pull-10</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-s-3 col-s-push-1
+                                    col-m-11 col-m-push-1
+                                    col-l-11 col-l-push-1
+                                    col-xl-11 col-xl-push-1">push-1</div>
+                        <div class="col-s-1 col-s-pull-3
+                                    col-m-1 col-m-pull-11
+                                    col-l-1 col-l-pull-11
+                                    col-xl-1 col-xl-pull-11">p-11</div>
                     </div>
                 <br>
                 <br>
@@ -1146,13 +1713,13 @@
                 <br>
 </div>
 <div style="color: pink; background-color: pink;">
-                <div class="container small">
+                <div class="container is-small">
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <h1 style="font-size: 5em; text-align:center;">CONTAINER SET TO SMALL</h1>
+                <h1 style="font-size: 4em; text-align:center;">CONTAINER SET TO SMALL</h1>
                 <br>
                 <br>
                 <br>
@@ -1161,46 +1728,46 @@
                 <h1 style="text-align:center;">Showing small grid only</h1>
                 <!-- : Grid locked to small -->
                     <div class="row">
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-s-2">2</div>
-                        <div class="col-s-2">2</div>
+                        <div class="col-2">2</div>
+                        <div class="col-2">2</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-s-3">3</div>
-                        <div class="col-s-1">1</div>
+                        <div class="col-3">3</div>
+                        <div class="col-1">1</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-3">3</div>
+                        <div class="col-1">1</div>
+                        <div class="col-3">3</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-s-4">4</div>
+                        <div class="col-4">4</div>
                     </div>
                 <br>
                 <br>
                     <h4 style="text-align: center;">Stacking</h4>
                     <div class="row">
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-2">2</div>
-                        <div class="col-s-4">4</div>
-                        <div class="col-s-3">3</div>
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-3">3</div>
-                        <div class="col-s-4">4</div>
-                        <div class="col-s-2">2</div>
-                        <div class="col-s-1">1</div>
-                        <div class="col-s-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-2">2</div>
+                        <div class="col-4">4</div>
+                        <div class="col-3">3</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-3">3</div>
+                        <div class="col-4">4</div>
+                        <div class="col-2">2</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
                     </div>
 
                 </div>
@@ -1211,13 +1778,13 @@
                 <br>
 </div>
 <div style="color: #cecece; background-color: #cecece;">
-                <div class="container large">
+                <div class="container is-large">
                 <br>
                 <br>
                 <br>
                 <br>
                 <br>
-                <h1 style="font-size: 5em; text-align:center;">CONTAINER SET TO LARGE</h1>
+                <h1 style="font-size: 4em; text-align:center;">CONTAINER SET TO LARGE</h1>
                 <br>
                 <br>
                 <br>
@@ -1226,112 +1793,112 @@
                 <h1 style="text-align:center;">Showing large grid only</h1>
                 <!-- : Grid locked to large -->
                     <div class="row">
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
+                        <div class="col-1">1</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-2">2</div>
-                        <div class="col-l-2">2</div>
-                        <div class="col-l-2">2</div>
-                        <div class="col-l-2">2</div>
-                        <div class="col-l-2">2</div>
-                        <div class="col-l-2">2</div>
+                        <div class="col-2">2</div>
+                        <div class="col-2">2</div>
+                        <div class="col-2">2</div>
+                        <div class="col-2">2</div>
+                        <div class="col-2">2</div>
+                        <div class="col-2">2</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-3">3</div>
-                        <div class="col-l-3">3</div>
-                        <div class="col-l-3">3</div>
-                        <div class="col-l-3">3</div>
+                        <div class="col-3">3</div>
+                        <div class="col-3">3</div>
+                        <div class="col-3">3</div>
+                        <div class="col-3">3</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-4">4</div>
-                        <div class="col-l-4">4</div>
-                        <div class="col-l-4">4</div>
+                        <div class="col-4">4</div>
+                        <div class="col-4">4</div>
+                        <div class="col-4">4</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-1">1</div>
-                        <div class="col-l-11">11</div>
+                        <div class="col-1">1</div>
+                        <div class="col-11">11</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-2">2</div>
-                        <div class="col-l-10">10</div>
+                        <div class="col-2">2</div>
+                        <div class="col-10">10</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-3">3</div>
-                        <div class="col-l-9">9</div>
+                        <div class="col-3">3</div>
+                        <div class="col-9">9</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-4">4</div>
-                        <div class="col-l-8">8</div>
+                        <div class="col-4">4</div>
+                        <div class="col-8">8</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-5">5</div>
-                        <div class="col-l-7">7</div>
+                        <div class="col-5">5</div>
+                        <div class="col-7">7</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-6">6</div>
-                        <div class="col-l-6">6</div>
+                        <div class="col-6">6</div>
+                        <div class="col-6">6</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-7">7</div>
-                        <div class="col-l-5">5</div>
+                        <div class="col-7">7</div>
+                        <div class="col-5">5</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-8">8</div>
-                        <div class="col-l-4">4</div>
+                        <div class="col-8">8</div>
+                        <div class="col-4">4</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-9">9</div>
-                        <div class="col-l-3">3</div>
+                        <div class="col-9">9</div>
+                        <div class="col-3">3</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-10">10</div>
-                        <div class="col-l-2">2</div>
+                        <div class="col-10">10</div>
+                        <div class="col-2">2</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-11">11</div>
-                        <div class="col-l-1">1</div>
+                        <div class="col-11">11</div>
+                        <div class="col-1">1</div>
                     </div>
 
                     <div class="row">
-                        <div class="col-l-12">12</div>
+                        <div class="col-12">12</div>
                     </div>
                 <br>
                 <br>
                     <h4 style="text-align: center;">Stacking</h4>
                     <div class="row">
-                        <div class="col-l-3">3</div>
-                        <div class="col-l-3">3</div>
-                        <div class="col-l-6">6</div>
-                        <div class="col-l-12">12</div>
-                        <div class="col-l-12">12</div>
-                        <div class="col-l-6">6</div>
-                        <div class="col-l-3">3</div>
-                        <div class="col-l-3">3</div>
+                        <div class="col-3">3</div>
+                        <div class="col-3">3</div>
+                        <div class="col-6">6</div>
+                        <div class="col-12">12</div>
+                        <div class="col-12">12</div>
+                        <div class="col-6">6</div>
+                        <div class="col-3">3</div>
+                        <div class="col-3">3</div>
                     </div>
                 <br>
                 <br>

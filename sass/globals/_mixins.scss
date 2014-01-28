@@ -153,11 +153,13 @@
 // Column helpers
 //
 
-@mixin ui-grid-column-base($size: "default") {
+@mixin ui-grid-column-base($size: "default", $include-size: true) {
     @include ui-with-grid-settings($size) {
         $base:  ".";
         $selector: '#{$base}col';
-        $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+
+        $size-selector: '#{$selector}#{ui-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
 
         $columns-total: ui-grid-total_columns($size);
         $all-selector:  '';
@@ -169,16 +171,11 @@
             $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
         }
 
-
-        [class^="col-"]{
+        #{$all-selector} {
             margin-left: #{gutter(1) / 2};
             margin-right: #{gutter(1) / 2};
-        }
-
-        #{$all-selector} {
             float: left;
         }
-
 
         @if $size == "default" {
             @include at-breakpoint($default) {
@@ -195,11 +192,13 @@
     }
 }
 
-@mixin ui-grid-columns($size: "default") {
+@mixin ui-grid-columns($size: "default", $include-size: true) {
     @include ui-with-grid-settings($size) {
         $base:  ".";
         $selector: '#{$base}col';
-        $size-selector: '#{$selector}#{ui-grid-shortsize($size)}';
+
+        $size-selector: '#{$selector}#{ui-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
 
         $columns-total: ui-grid-total_columns($size);
 
@@ -211,6 +210,106 @@
         }
     }
 }
+
+//
+// Offset
+//
+
+@mixin ui-grid-offset($size: "default", $include-size: true) {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+
+        $size-selector: '#{$selector}#{ui-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
+        $offset-selector: '#{$size-selector}-offset';
+
+        $columns-total: ui-grid-total_columns($size);
+
+        @for $col from 1 through $columns-total + 3 {
+            $total-selector: '#{$offset-selector}-#{$col}';
+            #{$total-selector} {
+                @include push($col);
+            }
+        }
+    }
+}
+
+//
+// Bleed
+//
+
+@mixin ui-grid-bleed($size: "default", $include-size: true) {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+
+        $size-selector: '#{$selector}#{ui-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
+        $bleed-selector: '#{$size-selector}-bleed';
+
+        $columns-total: ui-grid-total_columns($size);
+
+        @for $col from 1 through $columns-total + 3 {
+            $total-selector: '#{$bleed-selector}-#{$col}';
+            #{$total-selector} {
+                @include pull($col);
+            }
+        }
+    }
+}
+
+//
+// Push
+//
+
+@mixin ui-grid-push($size: "default", $include-size: true) {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+
+        $size-selector: '#{$selector}#{ui-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
+        $bleed-selector: '#{$size-selector}-push';
+
+        $columns-total: ui-grid-total_columns($size);
+
+        @for $col from 1 through $columns-total {
+            $total-selector: '#{$bleed-selector}-#{$col}';
+            #{$total-selector} {
+                left: space($col);
+            }
+        }
+    }
+}
+
+//
+// Pull
+//
+
+@mixin ui-grid-pull($size: "default", $include-size: true) {
+    @include ui-with-grid-settings($size) {
+        $base:  ".";
+        $selector: '#{$base}col';
+
+        $size-selector: '#{$selector}#{ui-shortsize($size)}';
+        @if not $include-size { $size-selector: '#{$selector}'; }
+        $bleed-selector: '#{$size-selector}-pull';
+
+        $columns-total: ui-grid-total_columns($size);
+
+        @for $col from 1 through $columns-total {
+            $total-selector: '#{$bleed-selector}-#{$col}';
+            #{$total-selector} {
+                left: -#{space($col)};
+            }
+        }
+    }
+}
+
+//
+// Helper functions
+//
 
 @function ui-grid-total_columns($size: "default") {
     @if $size == "default" {
@@ -230,7 +329,80 @@
     }
 }
 
-@function ui-grid-shortsize($size: "default") {
+
+// ==========================================================================
+// Utility mixin
+// ==========================================================================
+
+@mixin ui-responsive-hide($size: "default", $selector: ".is-visible") {
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{$size-selector},
+    table#{$size-selector},
+    tr#{$size-selector},
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: none !important;
+    }
+}
+
+@mixin ui-responsive-show($size: "default", $selector: ".is-visible") {
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{$size-selector} {
+        display: block !important;
+    }
+    table#{$size-selector} {
+        display: table;
+    }
+    tr#{$size-selector} {
+        display: table-row !important;
+    }
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: table-cell !important;
+    }
+}
+
+
+// ==========================================================================
+// Breakpoint
+// ==========================================================================
+
+@mixin ui-on-breakpoint($bp: $default) {
+    @if $bp == $default {
+        @media (max-width: $grid-medium - 1) {
+           @content;
+        }
+    }
+
+    @if $bp == $medium {
+        @media (max-width: $grid-large - 1) and (min-width: $grid-medium) {
+           @content;
+        }
+    }
+
+    @if $bp == $large {
+        @media (max-width: $grid-xlarge - 1) and (min-width: $grid-large) {
+           @content;
+        }
+    }
+
+    @if $bp == $xlarge {
+        @media (min-width: $grid-xlarge) {
+           @content;
+        }
+    }
+}
+
+
+// ==========================================================================
+// Misc helper functions
+// ==========================================================================
+
+//
+// Get short name for sizes
+//
+
+@function ui-shortsize($size: "default") {
     @if $size == "default" {
         @return "-s";
     }
@@ -247,3 +419,4 @@
         @return "-xl";
     }
 }
+
