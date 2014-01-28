@@ -23,7 +23,7 @@
 	.nav-tabs {
 		border-bottom: 0px;
 
-		@include at-breakpoint($large) {
+		@include from(4) {
 			margin-top: 1px;
 		}
 	}
@@ -33,19 +33,19 @@
 
 	.navbar-pull-right,
 	.navbar-pull-left {
-		@include at-breakpoint($large) {
+		@include from(4) {
 			display: table;
 		}
 	}
 
 	.navbar-pull-right {
-		@include at-breakpoint($large) {
+		@include from(4) {
 			float: right;
 		}
 	}
 
 	.navbar-pull-left {
-		@include at-breakpoint($large) {
+		@include from(4) {
 			float: left;
 		}
 	}
@@ -67,18 +67,18 @@
 			clear: both;
 		}
 
-		@include at-breakpoint($large) {
+		@include from(4) {
 			float: left;
 		}
 	}
 
 	.navbar-collapse {
-		@include at-breakpoint($large) {
+		@include from(4) {
 			padding: 0;
 		}
 
 		.collapse & {
-			@include at-breakpoint($large) {
+			@include from(4) {
 				display: block;
 			}
 
@@ -88,7 +88,7 @@
 			}
 		}
 
-		@include at-breakpoint($large) {
+		@include from(4) {
 			.navbar-pull-right,
 			.navbar-pull-left {
 				margin-right: 10px;
@@ -102,7 +102,7 @@
 
 		.dropdown,
 		.form-group {
-			@include at-breakpoint($large) {
+			@include from(4) {
 				@include ui-ie7-table-cell;
 				vertical-align: middle;
 			}
@@ -114,7 +114,7 @@
 				display: block;
 				float: none;
 
-				@include at-breakpoint($large) {
+				@include from(4) {
 					display: inline-block;
 				}
 
@@ -127,7 +127,7 @@
 					width: auto;
 				}
 			}
-			@include at-breakpoint($large) {
+			@include from(4) {
 				&.nav-justified {
 					> li {
 						display: table-cell;
@@ -143,7 +143,7 @@
 					display: block;
 					float: none;
 
-				@include at-breakpoint($large) {
+				@include from(4) {
 					display: inline-block;
 					float: left;
 				}
@@ -154,7 +154,7 @@
 			}
 			.seperator {
 				display: none;
-				@include at-breakpoint($large) {
+				@include from(4) {
 					display: block;
 				}
 			}
@@ -168,11 +168,11 @@
 				float: none;
 				width: auto;
 				margin-bottom: 0;
-				@include at-breakpoint($large) {
+				@include from(4) {
 					margin-bottom: -1px;
 				}
 			}
-			@include at-breakpoint($large) {
+			@include from(4) {
 				> li {
 					display: inline-block;
 					float: left;
@@ -200,7 +200,7 @@
 		float: right;
 		margin: 7px 10px;
 
-		@include at-breakpoint($large) {
+		@include from(4) {
 			display: none;
 		}
 	}
@@ -219,7 +219,7 @@
         font-size: 16px;
 		line-height: 1.5;
 		padding: 18px 10px;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			padding: 11px 10px;
 		}
     }
@@ -229,7 +229,7 @@
         font-size: 16px;
 		line-height: 1.5;
 		padding: 13px 10px;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			padding: 6px 10px;
 		}
     }
@@ -239,7 +239,7 @@
 	    font-size: 14px;
 		line-height: 1.5;
 		padding: 11px 10px;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			padding: 4px 10px;
 		}
     }
@@ -249,7 +249,7 @@
 	    font-size: 14px;
 		line-height: 1.5;
 		padding: 9px 10px;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			padding: 2px 10px;
 		}
     }
@@ -261,7 +261,7 @@
 	.navbar-pull-right,
 	.navbar-pull-left {
 		@extend %navbar-size-large;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			@extend %navbar-size-large;
 		}
 	}
@@ -271,7 +271,7 @@
 	.navbar-pull-right,
 	.navbar-pull-left {
 		@extend %navbar-size-default;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			@extend %navbar-size-default;
 		}
 	}
@@ -281,7 +281,7 @@
 	.navbar-pull-right,
 	.navbar-pull-left {
 		@extend %navbar-size-small;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			@extend %navbar-size-small;
 		}
 	}
@@ -291,7 +291,7 @@
 	.navbar-pull-right,
 	.navbar-pull-left {
 		@extend %navbar-size-xsmall;
-		@include at-breakpoint($large) {
+		@include from(4) {
 			@extend %navbar-size-xsmall;
 		}
 	}

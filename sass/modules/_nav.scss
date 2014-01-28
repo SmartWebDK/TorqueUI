@@ -56,7 +56,7 @@
 				@include border-radius($global-border-radius);
 				border: 1px solid transparent;
 
-				@include at-breakpoint($grid-large) {
+				@include at(4) {
 					margin-right: 2px;
 				}
 			}
@@ -88,7 +88,7 @@
 				border-left: 0px;
 				border-right: 0px;
 
-				@include at-breakpoint($grid-large) {
+				@include at(4) {
 					margin-right: 2px;
 				}
 
@@ -108,7 +108,7 @@
 			border-bottom: 1px solid transparent;
 
 			> li {
-				@include at-breakpoint($grid-large) {
+				@include at(4) {
 					@include ui-ie7-table-cell();
 					width: 1%;
 					float: none;

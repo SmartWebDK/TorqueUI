@@ -101,41 +101,18 @@
 // ==========================================================================
 
 //
-// Always have the right grid settings
+// Container helpers
 //
 
-@mixin ui-with-grid-settings($size: "default") {
-    @if $size == "medium" {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-medium-columns, $grid-medium-column-width, 0, $grid-medium-gutter/2) {
-            @content;
-        }
-    } @else if $size == "large" {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-large-columns, $grid-large-column-width, 0, $grid-large-gutter/2) {
-            @content;
-        }
-    } @else if $size == "xlarge" {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-xlarge-columns, $grid-xlarge-column-width, 0, $grid-xlarge-gutter/2) {
-            @content;
-        }
-    } @else {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-default-columns, $grid-default-column-width, 0, $grid-default-gutter/2) {
-            @content;
-        }
-    }
+@mixin ui-grid-container-base() {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-//
-// Container helper
-//
-
 @mixin ui-grid-container($size: "default") {
-    @include ui-with-grid-settings($size) {
-        @include container;
-    }
+    width: ui-grid-width($size);
+    padding-left: ui-grid-gutter-width($size);
+    padding-right: ui-grid-gutter-width($size);
 }
 
 //
@@ -175,7 +152,7 @@
     }
 
     @if $size == "default" {
-        @include at-breakpoint($default) {
+        @include to(2) {
             #{$size-selector}-#{$columns-total} {
                 clear: both;
             }
@@ -332,6 +309,24 @@
     }
 }
 
+@function ui-grid-width($size: "default") {
+    @if $size == "default" {
+        @return $grid-default;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium;
+    }
+
+    @if $size == "large" {
+        @return $grid-large;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge;
+    }
+}
+
 
 // ==========================================================================
 // Utility mixin
@@ -364,38 +359,6 @@
         display: table-cell !important;
     }
 }
-
-
-// ==========================================================================
-// Breakpoint
-// ==========================================================================
-
-@mixin ui-on-breakpoint($bp: $default) {
-    @if $bp == $default {
-        @media (max-width: $grid-medium - 1) {
-           @content;
-        }
-    }
-
-    @if $bp == $medium {
-        @media (max-width: $grid-large - 1) and (min-width: $grid-medium) {
-           @content;
-        }
-    }
-
-    @if $bp == $large {
-        @media (max-width: $grid-xlarge - 1) and (min-width: $grid-large) {
-           @content;
-        }
-    }
-
-    @if $bp == $xlarge {
-        @media (min-width: $grid-xlarge) {
-           @content;
-        }
-    }
-}
-
 
 // ==========================================================================
 // Misc helper functions

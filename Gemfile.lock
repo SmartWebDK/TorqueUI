@@ -1,6 +1,13 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    breakpoint (2.0.7)
+      compass (>= 0.12.1)
+      sass (>= 3.2.0)
+    breakpoint-slicer (1.2)
+      breakpoint (>= 2.0.1)
+      compass (>= 0.12.2)
+      sass (>= 3.2.1)
     chunky_png (1.2.9)
     compass (0.12.2)
       chunky_png (~> 1.2)
@@ -16,6 +23,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  breakpoint-slicer
   compass (~> 0.12.2)
   sass (~> 3.2.13)
   susy (~> 1.0.9)

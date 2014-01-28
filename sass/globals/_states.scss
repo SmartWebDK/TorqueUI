@@ -233,7 +233,7 @@ $visible-selector: ".is-visible";
 // Show classes for small
 //
 
-@include ui-on-breakpoint($default) {
+@include to(2) {
     @include ui-responsive-show("default", $visible-selector);
 }
 
@@ -241,7 +241,7 @@ $visible-selector: ".is-visible";
 // Show classes for medium
 //
 
-@include at-breakpoint($medium $large) {
+@include at(3) {
     @include ui-responsive-show("medium", $visible-selector);
 }
 
@@ -249,7 +249,7 @@ $visible-selector: ".is-visible";
 // Show classes for large
 //
 
-@include at-breakpoint($large $xlarge) {
+@include at(4) {
     @include ui-responsive-show("large", $visible-selector);
 }
 
@@ -257,7 +257,7 @@ $visible-selector: ".is-visible";
 // Show classes for xlarge
 //
 
-@include at-breakpoint($xlarge) {
+@include from(5) {
     @include ui-responsive-show("xlarge", $visible-selector);
 }
 
@@ -285,7 +285,7 @@ $hidden-selector: ".is-hidden";
 // Hide classes for small
 //
 
-@include ui-on-breakpoint($default) {
+@include to(2) {
     @include ui-responsive-hide("default", $hidden-selector);
 }
 
@@ -293,7 +293,7 @@ $hidden-selector: ".is-hidden";
 // Hide classes for medium
 //
 
-@include at-breakpoint($medium $large) {
+@include at(3) {
     @include ui-responsive-hide("medium", $hidden-selector);
 }
 
@@ -301,7 +301,7 @@ $hidden-selector: ".is-hidden";
 // Hide classes for large
 //
 
-@include at-breakpoint($large $xlarge) {
+@include at(4) {
     @include ui-responsive-hide("large", $hidden-selector);
 }
 
@@ -309,7 +309,7 @@ $hidden-selector: ".is-hidden";
 // Hide classes for xlarge
 //
 
-@include at-breakpoint($xlarge) {
+@include from(5) {
     @include ui-responsive-hide("xlarge", $hidden-selector);
 }
 
