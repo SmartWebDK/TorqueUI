@@ -43,11 +43,11 @@ $container-style: magic;
     @include ui-grid-container-base;
     @include ui-grid-container("default");
 
-    @include at(3) {
+    @include from(3) {
         @include ui-grid-container("medium");
     }
 
-    @include at(4) {
+    @include from(4) {
         @include ui-grid-container("large");
     }
 
@@ -164,7 +164,7 @@ $container-style: magic;
 // Columns, offsets, pushes, and pulls for the desktop device range.
 // ==========================================================================
 
-@include at(4) {
+@include from(4) {
     @include ui-grid-column-base("large");
     @include ui-grid-columns("large");
     @include ui-grid-offset("large");
