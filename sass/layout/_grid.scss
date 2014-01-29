@@ -19,7 +19,7 @@ $legacy-support-for-ie8:  $legacy-support-for-ie;
 // Grid is set to static
 //
 
-$container-style: static;
+$container-style: magic;
 
 //
 // Set correct MS viewport
@@ -40,20 +40,28 @@ $container-style: static;
 
 .container {
     @extend .clearfix;
-    @include box-sizing(content-box);
-
+    @include ui-grid-container-base;
     @include ui-grid-container("default");
 
-    @include ui-on-breakpoint($medium) {
+    @include from(3) {
         @include ui-grid-container("medium");
     }
 
-    @include at-breakpoint($large) {
+    @include from(4) {
         @include ui-grid-container("large");
     }
 
+
+    // ==========================================================================
+    // Xlarge
+    //
+    // Only shown in containers that have .with-xlarge
+    //
+    // Columns, offsets, pushes, and pulls for the large desktop device range.
+    // ==========================================================================
+
     &.with-xlarge {
-        @include ui-on-breakpoint($xlarge) {
+        @include from(5) {
             @include ui-grid-container("xlarge");
             .row {
                 @include ui-grid-row("xlarge");
@@ -106,11 +114,11 @@ $container-style: static;
     @extend .clearfix;
     @include ui-grid-row("default");
 
-    @include ui-on-breakpoint($medium) {
+    @include at(3) {
         @include ui-grid-row("medium");
     }
 
-    @include at-breakpoint($large) {
+    @include at(4) {
         @include ui-grid-row("large");
     }
 }
@@ -140,7 +148,7 @@ $container-style: static;
 // to tablets.
 // ==========================================================================
 
-@include ui-on-breakpoint($medium) {
+@include at(3) {
     @include ui-grid-column-base("medium");
     @include ui-grid-columns("medium");
     @include ui-grid-offset("medium");
@@ -156,7 +164,7 @@ $container-style: static;
 // Columns, offsets, pushes, and pulls for the desktop device range.
 // ==========================================================================
 
-@include at-breakpoint($large) {
+@include from(4) {
     @include ui-grid-column-base("large");
     @include ui-grid-columns("large");
     @include ui-grid-offset("large");
@@ -164,13 +172,4 @@ $container-style: static;
     @include ui-grid-push("large");
     @include ui-grid-pull("large");
 }
-
-
-// ==========================================================================
-// Xlarge
-//
-// Only shown in containers that have .with-xlarge
-//
-// Columns, offsets, pushes, and pulls for the large desktop device range.
-// ==========================================================================
 

@@ -33,17 +33,17 @@ html {
     font-family: $font-base-family;
     font-weight: $font-weight;
 
-    @include at-breakpoint($medium) {
+    @include at(3) {
         font-size: $font-medium-size;
     }
 
 
-    @include at-breakpoint($large) {
+    @include at(4) {
         font-size: $font-large-size;
     }
 
 
-    @include at-breakpoint($xlarge) {
+    @include at(4) {
         font-size: $font-xlarge-size;
     }
 }

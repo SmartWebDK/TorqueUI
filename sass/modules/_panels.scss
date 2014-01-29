@@ -14,7 +14,7 @@
 		padding: ($global-padding/2) $global-padding;
         margin-bottom: -1px;
 
-        @include at-breakpoint($medium $large) {
+        @include at(3) {
         	padding: ($global-padding/2) ($global-padding/2);
         }
 
@@ -34,7 +34,7 @@
 	.panel-body {
 		padding: $global-padding $global-padding ($global-padding/2) $global-padding;
 
-		@include at-breakpoint($medium $large) {
+		@include at(3) {
         	padding: ($global-padding/2) ($global-padding/2) (($global-padding/2)/2) ($global-padding/2);
         }
 	}
@@ -44,7 +44,7 @@
 		padding: ($global-padding/2) $global-padding;
         margin-top: -1px;
 
-        @include at-breakpoint($medium $large) {
+        @include at(3) {
         	padding: ($global-padding/2) ($global-padding/2);
         }
 

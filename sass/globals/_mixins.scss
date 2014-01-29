@@ -101,41 +101,18 @@
 // ==========================================================================
 
 //
-// Always have the right grid settings
+// Container helpers
 //
 
-@mixin ui-with-grid-settings($size: "default") {
-    @if $size == "medium" {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-medium-columns, $grid-medium-column-width, $grid-medium-gutter, $grid-medium-gutter/2) {
-            @content;
-        }
-    } @else if $size == "large" {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-large-columns, $grid-large-column-width, $grid-large-gutter, $grid-large-gutter/2) {
-            @content;
-        }
-    } @else if $size == "xlarge" {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-xlarge-columns, $grid-xlarge-column-width, $grid-xlarge-gutter, $grid-xlarge-gutter/2) {
-            @content;
-        }
-    } @else {
-       // with-grid-settings([$<columns>, $<width>, <$gutter>, <$padding>]) { <@content> }
-        @include with-grid-settings($grid-default-columns, $grid-default-column-width, $grid-default-gutter, $grid-default-gutter/2) {
-            @content;
-        }
-    }
+@mixin ui-grid-container-base() {
+    margin-left: auto;
+    margin-right: auto;
 }
 
-//
-// Container helper
-//
-
 @mixin ui-grid-container($size: "default") {
-    @include ui-with-grid-settings($size) {
-        @include container;
-    }
+    width: ui-grid-width($size);
+    padding-left: ui-grid-gutter-width($size);
+    padding-right: ui-grid-gutter-width($size);
 }
 
 //
@@ -143,10 +120,8 @@
 //
 
 @mixin ui-grid-row($size: "default") {
-    @include ui-with-grid-settings($size) {
-        margin-left: -#{gutter(1) / 2};
-        margin-right: -#{gutter(1) / 2};
-    }
+    margin-left: -#{ui-grid-gutter-width($size)};
+    margin-right: -#{ui-grid-gutter-width($size)};
 }
 
 //
@@ -154,59 +129,54 @@
 //
 
 @mixin ui-grid-column-base($size: "default", $include-size: true) {
-    @include ui-with-grid-settings($size) {
-        $base:  ".";
-        $selector: '#{$base}col';
+    $base:  ".";
+    $selector: '#{$base}col';
 
-        $size-selector: '#{$selector}#{ui-shortsize($size)}';
-        @if not $include-size { $size-selector: '#{$selector}'; }
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
 
-        $columns-total: ui-grid-total_columns($size);
-        $all-selector:  '';
+    $columns-total: ui-grid-total_columns($size);
+    $all-selector:  '';
 
-        @for $col from 1 through $columns-total {
-            @if $all-selector != "" {
-                $all-selector:  '#{$all-selector} ,';
-            }
-            $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
+    @for $col from 1 through $columns-total {
+        @if $all-selector != "" {
+            $all-selector:  '#{$all-selector} ,';
         }
+        $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
+    }
 
-        #{$all-selector} {
-            margin-left: #{gutter(1) / 2};
-            margin-right: #{gutter(1) / 2};
-            float: left;
-        }
+    #{$all-selector} {
+        padding-left: #{ui-grid-gutter-width($size)};
+        padding-right: #{ui-grid-gutter-width($size)};
+        float: left;
+    }
 
-        @if $size == "default" {
-            @include at-breakpoint($default) {
-                #{$size-selector}-#{$columns-total} {
-                    clear: both;
-                }
-            }
-        } @else {
+    @if $size == "default" {
+        @include to(2) {
             #{$size-selector}-#{$columns-total} {
                 clear: both;
             }
         }
-
+    } @else {
+        #{$size-selector}-#{$columns-total} {
+            clear: both;
+        }
     }
 }
 
 @mixin ui-grid-columns($size: "default", $include-size: true) {
-    @include ui-with-grid-settings($size) {
-        $base:  ".";
-        $selector: '#{$base}col';
+    $base:  ".";
+    $selector: '#{$base}col';
 
-        $size-selector: '#{$selector}#{ui-shortsize($size)}';
-        @if not $include-size { $size-selector: '#{$selector}'; }
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
 
-        $columns-total: ui-grid-total_columns($size);
+    $columns-total: ui-grid-total_columns($size);
 
-        @for $col from 1 through $columns-total {
-            $total-selector: '#{$size-selector}-#{$col}';
-            #{$total-selector} {
-                width: columns($col, $columns-total);
-            }
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$size-selector}-#{$col}';
+        #{$total-selector} {
+            width: percentage($col / $columns-total);
         }
     }
 }
@@ -216,22 +186,24 @@
 //
 
 @mixin ui-grid-offset($size: "default", $include-size: true) {
-    @include ui-with-grid-settings($size) {
-        $base:  ".";
-        $selector: '#{$base}col';
+    $base:  ".";
+    $selector: '#{$base}col';
 
-        $size-selector: '#{$selector}#{ui-shortsize($size)}';
-        @if not $include-size { $size-selector: '#{$selector}'; }
-        $offset-selector: '#{$size-selector}-offset';
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $offset-selector: '#{$size-selector}-offset';
 
-        $columns-total: ui-grid-total_columns($size);
+    $columns-total: ui-grid-total_columns($size);
 
-        @for $col from 1 through $columns-total + 3 {
-            $total-selector: '#{$offset-selector}-#{$col}';
-            #{$total-selector} {
-                @include push($col);
-            }
+    @for $col from 1 through $columns-total + 3 {
+        $total-selector: '#{$offset-selector}-#{$col}';
+        #{$total-selector} {
+            margin-left: percentage($col / $columns-total);
         }
+    }
+
+    #{$offset-selector}-0 {
+        margin-left: 0;
     }
 }
 
@@ -240,22 +212,24 @@
 //
 
 @mixin ui-grid-bleed($size: "default", $include-size: true) {
-    @include ui-with-grid-settings($size) {
-        $base:  ".";
-        $selector: '#{$base}col';
+    $base:  ".";
+    $selector: '#{$base}col';
 
-        $size-selector: '#{$selector}#{ui-shortsize($size)}';
-        @if not $include-size { $size-selector: '#{$selector}'; }
-        $bleed-selector: '#{$size-selector}-bleed';
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $bleed-selector: '#{$size-selector}-bleed';
 
-        $columns-total: ui-grid-total_columns($size);
+    $columns-total: ui-grid-total_columns($size);
 
-        @for $col from 1 through $columns-total + 3 {
-            $total-selector: '#{$bleed-selector}-#{$col}';
-            #{$total-selector} {
-                @include pull($col);
-            }
+    @for $col from 1 through $columns-total + 3 {
+        $total-selector: '#{$bleed-selector}-#{$col}';
+        #{$total-selector} {
+            margin-left: -#{percentage($col / $columns-total)};
         }
+    }
+
+    #{$bleed-selector}-0 {
+        margin-left: 0;
     }
 }
 
@@ -264,22 +238,24 @@
 //
 
 @mixin ui-grid-push($size: "default", $include-size: true) {
-    @include ui-with-grid-settings($size) {
-        $base:  ".";
-        $selector: '#{$base}col';
+    $base:  ".";
+    $selector: '#{$base}col';
 
-        $size-selector: '#{$selector}#{ui-shortsize($size)}';
-        @if not $include-size { $size-selector: '#{$selector}'; }
-        $bleed-selector: '#{$size-selector}-push';
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $push-selector: '#{$size-selector}-push';
 
-        $columns-total: ui-grid-total_columns($size);
+    $columns-total: ui-grid-total_columns($size);
 
-        @for $col from 1 through $columns-total {
-            $total-selector: '#{$bleed-selector}-#{$col}';
-            #{$total-selector} {
-                left: space($col);
-            }
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$push-selector}-#{$col}';
+        #{$total-selector} {
+            left: percentage($col / $columns-total);
         }
+    }
+
+    #{$push-selector}-0 {
+        left: 0;
     }
 }
 
@@ -288,22 +264,24 @@
 //
 
 @mixin ui-grid-pull($size: "default", $include-size: true) {
-    @include ui-with-grid-settings($size) {
-        $base:  ".";
-        $selector: '#{$base}col';
+    $base:  ".";
+    $selector: '#{$base}col';
 
-        $size-selector: '#{$selector}#{ui-shortsize($size)}';
-        @if not $include-size { $size-selector: '#{$selector}'; }
-        $bleed-selector: '#{$size-selector}-pull';
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $pull-selector: '#{$size-selector}-pull';
 
-        $columns-total: ui-grid-total_columns($size);
+    $columns-total: ui-grid-total_columns($size);
 
-        @for $col from 1 through $columns-total {
-            $total-selector: '#{$bleed-selector}-#{$col}';
-            #{$total-selector} {
-                left: -#{space($col)};
-            }
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$pull-selector}-#{$col}';
+        #{$total-selector} {
+            left: -#{percentage($col / $columns-total)};
         }
+    }
+
+    #{$pull-selector}-0 {
+        left: 0;
     }
 }
 
@@ -326,6 +304,42 @@
 
     @if $size == "xlarge" {
         @return $grid-xlarge-columns;
+    }
+}
+
+@function ui-grid-gutter-width($size: "default") {
+    @if $size == "default" {
+        @return $grid-default-gutter/2;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium-gutter/2;
+    }
+
+    @if $size == "large" {
+        @return $grid-large-gutter/2;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge-gutter/2;
+    }
+}
+
+@function ui-grid-width($size: "default") {
+    @if $size == "default" {
+        @return $grid-default;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium;
+    }
+
+    @if $size == "large" {
+        @return $grid-large;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge;
     }
 }
 
@@ -361,38 +375,6 @@
         display: table-cell !important;
     }
 }
-
-
-// ==========================================================================
-// Breakpoint
-// ==========================================================================
-
-@mixin ui-on-breakpoint($bp: $default) {
-    @if $bp == $default {
-        @media (max-width: $grid-medium - 1) {
-           @content;
-        }
-    }
-
-    @if $bp == $medium {
-        @media (max-width: $grid-large - 1) and (min-width: $grid-medium) {
-           @content;
-        }
-    }
-
-    @if $bp == $large {
-        @media (max-width: $grid-xlarge - 1) and (min-width: $grid-large) {
-           @content;
-        }
-    }
-
-    @if $bp == $xlarge {
-        @media (min-width: $grid-xlarge) {
-           @content;
-        }
-    }
-}
-
 
 // ==========================================================================
 // Misc helper functions

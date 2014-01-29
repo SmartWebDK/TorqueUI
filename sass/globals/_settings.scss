@@ -103,28 +103,15 @@ $grid-xlarge-gutter                 : 32px;
 
 
 //
-// Susy vars
-// Resource: http://susy.oddbird.net/guides/getting-started/#start-settings
+// Breakpoint slicer
+// Resource: https://github.com/lolmaus/breakpoint-slicer
 //
 
-$total-columns                      : $grid-default-columns;
-$column-width                       : $grid-default-column-width;
-$gutter-width                       : $grid-default-gutter;
-$grid-padding                       : $gutter-width;
+$slicer-breakpoints: 0 $grid-default $grid-medium $grid-large $grid-xlarge;
 
-$show-grid-backgrounds              : false;
-
-//
-// Susy preakpoints
-// Resource: http://susy.oddbird.net/guides/reference/#ref-media-layouts
-// $media-layout: <min-width> <layout> <max-width> <ie-fallback>;
-//
-
-$default                            : $grid-default-columns $grid-medium - 1;
-$medium                             : $grid-medium;
-$large                              : $grid-large;
-$xlarge                             : $grid-xlarge;
-
+// Breakpoint:   0                 480px     768px     960px       1289px
+//               ├───────────────────┼─────────┼─────────┼───────────┼─────────>
+// Slice #:                1              2         3          4          5
 
 
 // ==========================================================================

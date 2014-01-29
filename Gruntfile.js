@@ -120,7 +120,7 @@ module.exports = function(grunt) {
 
         compass: {
             options : {
-                require: ['rubygems','bundler/setup','susy'],
+                require: ['rubygems','bundler/setup','breakpoint-slicer'],
                 httpPath: "/",
                 sassDir: 'sass',
                 relativeAssets: true,
