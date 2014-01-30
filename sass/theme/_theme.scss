@@ -305,7 +305,7 @@ hr {
 // ==========================================================================
 
 .panel {
- 
+
 }
 
 .panel-default {
@@ -584,7 +584,7 @@ hr {
         }
     }
 
-    
+
 // ==========================================================================
 // Dropdowns
 // ==========================================================================
@@ -664,6 +664,64 @@ hr {
             }
         }
     }
+}
+
+
+// ==========================================================================
+// Tables
+// ==========================================================================
+
+
+$opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
+
+//
+// Basic table placeholder class
+//
+
+%table {
+    th,
+    td {
+        border-color: $color-border;
+    }
+}
+
+//
+// horizontally striped table
+//
+
+.table-h-striped {
+    tbody > tr:nth-child(odd) {
+        background-color: $opacity-subtle;
+    }
+}
+
+//
+// Vertically striped table
+//
+
+.table-v-striped {
+    tbody, thead, tfoot {
+        td:nth-child(even),
+        th:nth-child(even) {
+            background-color: $opacity-subtle;
+        }
+    }
+}
+
+//
+// Bordered tabled
+//
+
+.table-bordered {
+    border-color: $color-border;
+}
+
+//
+// Responsive wrapper for tables
+//
+
+.responsive-table-wrap {
+    border-color: $color-border;
 }
 
 
