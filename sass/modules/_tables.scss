@@ -1,0 +1,142 @@
+//
+// Tables
+// -----------------------------------------------------------------------------
+
+
+// ==========================================================================
+// Basic table setup
+// ==========================================================================
+
+//
+//  Resonable table resets
+//
+
+table {
+    max-width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th {
+    text-align: left;
+}
+
+th, td {
+    vertical-align: top;
+}
+
+
+// ==========================================================================
+// Table styles
+// ==========================================================================
+
+//
+// Extend class for basic table styling
+//
+
+%table {
+    width: 100%;
+
+    thead:first-child {
+        th,
+        td {
+            border-top-width: 0;
+        }
+    }
+
+    tfoot {
+        th,
+        td {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        }
+    }
+
+    th,
+    td {
+        @extend %size-default;
+        border-top-width: 1px;
+        border-top-style: solid;
+    }
+
+    th {
+        vertical-align: bottom;
+        border-bottom-width: 2px;
+        border-bottom-style: solid;
+    }
+}
+
+//
+// Simple table
+//
+
+.table {
+    @extend %table;
+}
+
+
+//
+// Table with horizontal stipes
+//
+
+.table-h-striped {
+    @extend %table;
+}
+
+//
+// Table with vertical stipes
+//
+
+.table-v-striped {
+    @extend %table;
+}
+
+//
+// Table with borders
+//
+
+.table-border {
+    @extend %table;
+    border-width: 1px;
+    border-style: solid;
+    thead:first-child {
+        th,
+        td {
+            border-top-width: 1px;
+        }
+    }
+
+    th,
+    td {
+        border-width: 1px;
+        border-style: solid;
+    }
+}
+
+
+// ==========================================================================
+// Responsive table
+// ==========================================================================
+
+@include to(2) {
+    .responsive-table-wrap {
+        width: 100%;
+        max-width: 100%;
+        @extend .trailing;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        border-width: 1px;
+        border-style: solid;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        -webkit-overflow-scrolling: touch;
+
+        > .table-bordered {
+            border-width: 0;
+            border-style: hidden;
+        }
+
+        > %table:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
