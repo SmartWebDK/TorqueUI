@@ -8,10 +8,6 @@
 
 		<link rel="stylesheet" href="/tdcss.js/tdcss.css" type="text/css" media="screen">
 		<link rel="stylesheet" href="/css/framework.css" type="text/css" media="screen">
-<!--[if (lt IE 9) & (!IEMobile)]>
-<script src="js/ie.js"></script>
-<![endif]-->
-<script type="text/javascript" src="js/all.js">
 		<script type="text/javascript">
 		WebFontConfig = { google: { families: [ "Raleway:400,700:latin" ]}
 		};
@@ -25,6 +21,30 @@
 			s.parentNode.insertBefore(wf, s);
 			})();
 		</script>
+<style>
+.r,
+.row {
+border-radius: 0.25em;
+}
+.container {
+margin-top: 20px;
+border-radius: 0.25em;
+}
+[class^="col-"] {
+text-align: center;
+line-height: 40px;
+background-color: #000;
+opacity: 0.25;
+font-weight: bold;
+min-height: 40px;
+border-radius: 0.25em;
+margin-top: 5px;
+margin-bottom: 5px;
+}
+[class^="col-"] [class^="col-"] {
+opacity: .50;
+}
+</style>
 	</head>
 	<body>
 		<div id="tdcss">
@@ -6673,6 +6693,517 @@ pariatur</small>. Excepteur <a href="#">sint occaecat</a> cupidatat non proident
 
 
 
+        <!-- # Tables -->
+
+            <!-- & Table -->
+            <!-- : Table -->
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>4</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- & Table-h-striped -->
+            <!-- : Table-h-striped -->
+            <table class="table-h-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>4</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- & Table-v-striped -->
+            <!-- : Table-v-striped -->
+            <table class="table-v-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>4</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- & Table-v-striped and table-h-striped  -->
+            <!-- : Table-v-striped and table-h-striped -->
+            <table class="table-h-striped table-v-striped">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>4</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+            <!-- & Table-border -->
+            <!-- : Table-border -->
+            <table class="table-border">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     <tr>
+                        <td>4</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                     <tr>
+                        <td>5</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>John</td>
+                        <td>Doe</td>
+                        <td>Anonymous</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th>Firstname</th>
+                        <th>Lastname</th>
+                        <th>Username</th>
+                    </tr>
+                </tfoot>
+            </table>
+
+
+            <!-- & Table with responsive wrapper -->
+            <!-- : Table with responsive wrapper -->
+            <div class="responsive-table-wrap">
+                <table class="table-border">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Username</th>
+                            <th>Misc info #1</th>
+                            <th>Misc info #2</th>
+                            <th>Misc info #3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Username</th>
+                            <th>Misc info #1</th>
+                            <th>Misc info #2</th>
+                            <th>Misc info #3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td>4</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                         <tr>
+                            <td>5</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Username</th>
+                            <th>Misc info #1</th>
+                            <th>Misc info #2</th>
+                            <th>Misc info #3</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        
+
+
+
+            <!-- # Expanded vs. collapsed -->
+
+            <!-- : is-expanded -->
+            <div class="panel panel-border">
+                <div class="panel-heading">
+                    <button type="submit" class="xsmall"><i class="fa fa-angle-double-up"></i></button>
+                    <span class="h4">Log ind</span>
+                </div>
+                <div class="panel-body">
+                    <label>Brugernavn:</label>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-input">
+                    </fieldset>
+                    <label>Adgangskode</label>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-input">
+                        <a href="...">Glemt adgangskode</a>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><input id="lorem-short" type="checkbox"></span>
+                            <label for="lorem-short" class="form-label input-group-main">Husk log ind</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="panel-footer">
+                    <button type="button" class="button-primary">Log ind</button>
+                </div>
+            </div>
+
+            <!-- : is-collapsed -->
+            <div class="panel panel-border">
+                <div class="panel-heading">
+                    <button type="submit" class="xsmall"><i class="fa fa-angle-double-down"></i></button>
+                    <span class="h4">Log ind</span>
+                </div>
+                <div class="panel-body is-collapsed">
+                    <label>Brugernavn:</label>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-input">
+                    </fieldset>
+                    <label>Adgangskode</label>
+                    <fieldset class="form-group">
+                        <input type="text" class="form-input">
+                        <a href="...">Glemt adgangskode</a>
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><input id="lorem-short" type="checkbox"></span>
+                            <label for="lorem-short" class="form-label input-group-main">Husk log ind</label>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="panel-footer is-collapsed">
+                    <button type="button" class="button-primary">Log ind</button>
+                </div>
+            </div>
+
+        
+
+
+
 <!-- # Font Awesome -->
 <!-- & The iconic font designed for Bootstrap -->
 
@@ -8617,6 +9148,10 @@ pariatur</small>. Excepteur <a href="#">sint occaecat</a> cupidatat non proident
 		</div>
 
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="js/ie.js"></script>
+<![endif]-->
+<script type="text/javascript" src="js/all.js"></script>
 		<script src="/tdcss.js/tdcss.js"></script>
 		<script>
 			$("#tdcss").tdcss();
