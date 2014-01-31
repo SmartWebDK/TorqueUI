@@ -95,7 +95,7 @@ th, td {
 // Table with borders
 //
 
-.table-bordered {
+.table-border {
     @extend %table;
     border-width: 1px;
     border-style: solid;
