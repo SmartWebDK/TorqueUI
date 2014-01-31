@@ -11,15 +11,16 @@
     </head>
     <body>
         <div id="tdcss">
+
             <!-- # Expanded vs. collapsed -->
 
             <!-- : is-expanded -->
             <div class="panel panel-border">
                 <div class="panel-heading">
-                    <button type="submit" class="xsmall"><i class="fa fa-angle-double-up"></i></button>
+                    <button type="submit" class="xsmall" data-toggle="collapse" data-class="is-collapsed" data-target="panel-1"><i class="fa fa-angle-double-up"></i></button>
                     <span class="h4">Log ind</span>
                 </div>
-                <div class="panel-body">
+                <div class="panel-body" data-group="panel-1">
                     <label>Brugernavn:</label>
                     <fieldset class="form-group">
                         <input type="text" class="form-input">
@@ -36,7 +37,7 @@
                         </div>
                     </fieldset>
                 </div>
-                <div class="panel-footer">
+                <div class="panel-footer" data-group="panel-1">
                     <button type="button" class="button-primary">Log ind</button>
                 </div>
             </div>
@@ -44,10 +45,10 @@
             <!-- : is-collapsed -->
             <div class="panel panel-border">
                 <div class="panel-heading">
-                    <button type="submit" class="xsmall"><i class="fa fa-angle-double-down"></i></button>
+                    <button type="submit" class="xsmall" data-toggle="collapse" data-class="is-collapsed" data-target="panel-2"><i class="fa fa-angle-double-down"></i></button>
                     <span class="h4">Log ind</span>
                 </div>
-                <div class="panel-body is-collapsed">
+                <div class="panel-body is-collapsed" data-group="panel-2">
                     <label>Brugernavn:</label>
                     <fieldset class="form-group">
                         <input type="text" class="form-input">
@@ -64,7 +65,7 @@
                         </div>
                     </fieldset>
                 </div>
-                <div class="panel-footer is-collapsed">
+                <div class="panel-footer is-collapsed" data-group="panel-2">
                     <button type="button" class="button-primary">Log ind</button>
                 </div>
             </div>
@@ -73,6 +74,7 @@
 
 
         <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+        <script src="js/collapsable.js"></script>
         <script src="tdcss.js/tdcss.js"></script>
         <script>
             $("#tdcss").tdcss();

@@ -1,17 +1,5 @@
-/*! ========================================================================
- * Some parts are borrowed from Twitter Bootstrap and modified for our
- * usage, those parts are copyrighted by Twitter.
- * ========================================================================
- * Bootstrap: dropdown.js v3.0.3
- * http://getbootstrap.com/javascript/#dropdowns
- * ========================================================================
- * Copyright 2011-2014 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
- * ======================================================================== */
-
-
 //
-// Dropdown Javascript file
+// Collapseable Javascript file
 // --------------------------------------------------------------------------
 
 (function($, document, undefined) {
@@ -22,106 +10,103 @@
     // Prototype definition
     // ==========================================================================
 
-    var backdrop = '.dropdown-backdrop',
-        toggle   = '[data-toggle=dropdown]';
+    var toggle   = '[data-toggle=collapse]';
 
-    var Dropdown = function (element) {
-        $(element).on('click.ui.dropdown', this.toggle);
+    var Collapsable = function (element) {
+        this.$element = $(element);
     };
 
     //
-    // Toggle dropdown
+    // Toggle collapse
     //
 
-    Dropdown.prototype.toggle = function (e) {
-        var $this = $(this);
+    Collapsable.prototype.toggle = function (e) {
+        var $this       = this.$element,
+            selector    = $this.data("target"),
+            css         = $this.data("class") || "is-collapsed";
 
         // if button is disabled return
         if ( $this.is('.disabled, .is-disabled, :disabled')) return;
 
-        // get parent and find out if active
-        var $parent  = getParent($this),
-            isActive = $parent.hasClass('open');
+        // if no selector specified
+        if ( !selector ) return;
 
-        // close all menues
-        clearMenus();
+        var $target = $("[data-group="+selector+"]"),
+            isOpen = getIsOpen($target, css);
 
         // if not active setup click events
-        if ( !isActive ) {
-            // if mobile we use a backdrop because click events don't delegate
-            if ( 'ontouchstart' in document.documentElement ) {
-                $('<div class="dropdown-backdrop" />').insertAfter($(this)).on('click', clearMenus);
-            }
-
-            if ( e.isDefaultPrevented() ) return;
-
-            $parent.toggleClass('open');
-            $this.focus();
+        if ( isOpen ) {
+            this.open($target, css);
+        } else {
+            this.close($target, css);
         }
 
         return false;
     };
 
+    //
+    // Open collapse
+    //
+
+    Collapsable.prototype.open = function () {
+        var $this       = this.$element,
+            selector    = $this.data("target"),
+            css         = $this.data("class") || "is-collapsed",
+            $target = $("[data-group="+selector+"]");
+
+        $this.removeClass(css);
+        $target.removeClass(css);
+    };
+
+    //
+    // Close collapse
+    //
+
+    Collapsable.prototype.close = function () {
+        var $this       = this.$element,
+            selector    = $this.data("target"),
+            css         = $this.data("class") || "is-collapsed",
+            $target = $("[data-group="+selector+"]");
+
+        $this.addClass(css);
+        $target.addClass(css);
+    };
+
+
     // ==========================================================================
     // Helpers
     // ==========================================================================
 
-    //
-    // ClearMenu closes all menues
-    //
-
-    var clearMenus = function (e) {
-        $(backdrop).remove();
-        $(toggle).each(function () {
-            var $parent = getParent($(this));
-
-            if ( !$parent.hasClass('open') ) return;
-            $parent.removeClass('open');
-        });
+    var getIsOpen = function (target, css) {
+        return target.first().hasClass(css);
     };
-
-    //
-    // GetParent find a
-    //
-
-    function getParent($this) {
-        var selector = $this.attr('data-target');
-
-        if ( !selector ) {
-            selector = $this.attr('href');
-            selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, ''); //strip for ie7
-        }
-
-        var $parent = selector && $(selector);
-        return $parent && $parent.length ? $parent : $this.parent();
-    }
 
 
     // ==========================================================================
     // Dropdown plugin definition
     // ==========================================================================
 
-    $.fn.dropdown = function (option) {
+    $.fn.collapse = function (option) {
         return this.each( function () {
             var $this = $(this),
-                data  = $this.data("ui.dropdown");
+                data  = $this.data("ui.collapse");
 
-            // convert dropdown to a prototype of dropdown
-            if ( !data ) $this.data("ui.dropdown", (data = new Dropdown(this)));
+            // convert collapse to a prototype of dropdown
+            if ( !data ) $this.data("ui.collapse", (data = new Collapsable(this)));
 
-            // option could be 'toggle'
-            if ( typeof option == 'string' ) data[option].call($this);
+            // option could be 'open' or 'close'
+            if (typeof option == 'string') data[option]();
         });
     };
 
-    $.fn.dropdown.Construct = Dropdown;
+    $.fn.collapse.Construct = Collapsable;
 
 
     // ==========================================================================
     // Dropdown no conflict mode
     // ==========================================================================
 
-    $.fn.dropdown.noConflict = function () {
+    $.fn.collapse.noConflict = function () {
         $.fn.dropdown = old;
         return this;
     };
@@ -131,10 +116,10 @@
     // Listener
     // ==========================================================================
 
-    $(document)
-        .on('click.ui.dropdown', clearMenus)
-        .on('click.ui.dropdown', '.dropdown form', function (e) { e.stopPropagation(); })
-        .on('click.ui.dropdown', toggle, Dropdown.prototype.toggle);
+    $(document).on('click.ui.collapse', '[data-toggle="collapse"]', function (e) {
+        e.stopPropagation();
+        $(this).collapse("toggle");
+    });
 
 })(jQuery, document);
 

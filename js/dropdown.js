@@ -84,7 +84,7 @@
     // GetParent find a
     //
 
-    function getParent($this) {
+    var getParent = function ($this) {
         var selector = $this.attr('data-target');
 
         if ( !selector ) {
@@ -94,7 +94,7 @@
 
         var $parent = selector && $(selector);
         return $parent && $parent.length ? $parent : $this.parent();
-    }
+    };
 
 
     // ==========================================================================

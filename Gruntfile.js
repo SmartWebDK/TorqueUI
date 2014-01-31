@@ -108,7 +108,7 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['js/**/*.js'],
-                tasks: ['clean:js','concat:test','uglify:test','copy:js']
+                tasks: ['clean:js','concat:test','copy:js','uglify:test','copy:js']
             },
             sass: {
                 files: ['sass/**/*.scss'],
