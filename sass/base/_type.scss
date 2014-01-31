@@ -322,6 +322,33 @@ blockquote {
     }
 }
 
+//
+// Badge
+//
+
+.badge {
+    display: inline-block;
+    padding: 3px 7px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+//
+// Text orientation
+//
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
 // ==========================================================================
 // Simple print setup
 // ==========================================================================
