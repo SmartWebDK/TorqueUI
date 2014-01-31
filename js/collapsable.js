@@ -54,7 +54,7 @@
             css         = $this.data("class") || "is-collapsed",
             $target = $("[data-group="+selector+"]");
 
-        $this.removeClass(css);
+        // $this.removeClass(css);
         $target.removeClass(css);
     };
 
@@ -68,7 +68,7 @@
             css         = $this.data("class") || "is-collapsed",
             $target = $("[data-group="+selector+"]");
 
-        $this.addClass(css);
+        // $this.addClass(css);
         $target.addClass(css);
     };
 
