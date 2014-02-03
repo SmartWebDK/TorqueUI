@@ -78,3 +78,12 @@ dd {
     }
 }
 
+//
+// List with spacing
+//
+
+.l-list-border {
+    > li {
+        border-bottom: 1px solid #eee;
+    }
+}
