@@ -5035,14 +5035,18 @@ th, td {
           box-sizing: border-box;
 }
 
-.inline-block {
+.inline-block,
+.is-inline-block,
+.is-i-b {
   display: -moz-inline-stack;
   display: inline-block;
   *zoom: 1;
   *display: inline;
 }
 
-.fullwidth, .is-block {
+.fullwidth,
+.is-block,
+.is-b {
   display: block;
   float: none;
   width: 100% !important;

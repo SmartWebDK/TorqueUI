@@ -162,7 +162,9 @@
 // Make inline block work
 //
 
-.inline-block {
+.inline-block,
+.is-inline-block,
+.is-i-b {
     display:-moz-inline-stack;
     display:inline-block;
     *zoom:1;
@@ -173,7 +175,9 @@
 // Full width element
 //
 
-.fullwidth, .is-block {
+.fullwidth,
+.is-block,
+.is-b {
     width: 100% !important;
     float: none;
     margin: 0;
