@@ -15,6 +15,7 @@
     @extend .list-unstyled;
     @include inline-block;
     @include border-radius($global-border-radius);
+    margin: 0;
 
     .button-icon,
     .button,
