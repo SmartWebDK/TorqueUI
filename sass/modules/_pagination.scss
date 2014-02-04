@@ -13,7 +13,7 @@
 .pagination {
     @extend .clearfix;
     @extend .trailing;
-    @extend .l-list-unstyled;
+    @extend .list-unstyled;
     @include inline-block;
     @include border-radius($global-border-radius);
 

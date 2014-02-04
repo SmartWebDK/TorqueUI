@@ -12,7 +12,7 @@
 //
 
 .theme-color-default {                  color: #fff; }
-.theme-color-base {                     @extend .color-theme-main; }
+.theme-color-base {                     @extend .theme-color-main; }
 .theme-color-main {                     color: $color-main; }
 .theme-color-main-light {               color: $color-main-light; }
 .theme-color-highlight {                color: $color-highlight; }
@@ -98,14 +98,6 @@ a, a:visited {
 }
 
 //
-// Color adjust <b> and <strong>
-//
-
-b, strong {
-    color: $color-main-dark;
-}
-
-//
 // Color adjust <del> and <s>
 //
 
@@ -118,7 +110,7 @@ s, del {
 //
 
 small {
-    color: $color-small-caps;
+    @extend .theme-color-main-light;
 }
 
 //
