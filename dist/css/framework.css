@@ -2059,7 +2059,7 @@ form,
 table,
 fieldset,
 nav,
-img, .button, .button-primary, .button-text, .form-group, .pager-group, .pagination {
+img, .form-group, .media, .pager-group, .pagination {
   margin: 0 auto 1em;
 }
 
@@ -2077,7 +2077,7 @@ form.double,
 table.double,
 fieldset.double,
 nav.double,
-img.double, .double.button, .double.button-primary, .double.button-text, .double.form-group, .double.pager-group, .double.pagination {
+img.double, .double.form-group, .double.media, .double.pager-group, .double.pagination {
   margin: 0 auto 2em;
 }
 
@@ -2095,7 +2095,7 @@ form.triple,
 table.triple,
 fieldset.triple,
 nav.triple,
-img.triple, .triple.button, .triple.button-primary, .triple.button-text, .triple.form-group, .triple.pager-group, .triple.pagination {
+img.triple, .triple.form-group, .triple.media, .triple.pager-group, .triple.pagination {
   margin: 0 auto 3em;
 }
 
@@ -5041,7 +5041,7 @@ th, td {
   margin: 0;
 }
 
-.reset, .dropdown, .input-group-image > img, .input-group-button, .list-menu ul, .list-inline ul {
+.reset, .dropdown, .input-group-image > img, .list-menu ul, .list-inline ul {
   padding: 0;
   margin: 0;
 }
