@@ -2140,6 +2140,41 @@ a, p, li, td {
   /* Old IE */
 }
 
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+@media print {
+  * {
+    color: #000 !important;
+    text-shadow: none !important;
+    background: transparent !important;
+    /* Black prints faster: h5bp.com/s */
+    box-shadow: none !important;
+  }
+}
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+}
+
 abbr,
 acronym,
 blockquote,
@@ -2189,6 +2224,7 @@ hr {
   -moz-box-sizing: content-box;
        box-sizing: content-box;
   margin: 1em auto;
+  clear: both;
   border: 0;
   border-top: 1px solid;
 }
@@ -2230,48 +2266,6 @@ blockquote .small {
   margin-bottom: .5em;
   font-size: 100%;
   color: #393c41;
-}
-
-.badge {
-  display: inline-block;
-  padding: 3px 7px;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.text-left {
-  text-align: left;
-}
-
-.text-right {
-  text-align: right;
-}
-
-.text-justify {
-  text-align: justify;
-}
-
-@media print {
-  * {
-    color: #000 !important;
-    text-shadow: none !important;
-    background: transparent !important;
-    /* Black prints faster: h5bp.com/s */
-    box-shadow: none !important;
-  }
-}
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-     -moz-box-sizing: border-box;
-          box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
-
-body {
-  min-height: 100%;
 }
 
 @-ms-viewport {
@@ -3807,6 +3801,13 @@ th.is-hidden-xl {
     display: none !important;
   }
 }
+.badge {
+  display: inline-block;
+  padding: 3px 7px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
 .button, .button-primary, .button-text {
   display: block;
   width: 100%;
@@ -3909,19 +3910,6 @@ th.is-hidden-xl {
   border-top-right-radius: .25em;
   border-bottom-right-radius: .25em;
   border-bottom-left-radius: 0;
-}
-
-.symbol {
-  display: inline-block;
-  padding: 0;
-  margin: 0 2px;
-  vertical-align: middle;
-  background: none;
-  border-color: transparent;
-  border-top: 4px solid;
-  border-right: 4px solid;
-  border-bottom: 0;
-  border-left: 4px solid;
 }
 
 .dropdown {
@@ -4841,6 +4829,19 @@ dd {
           border-radius: .25em;
 }
 
+.symbol {
+  display: inline-block;
+  padding: 0;
+  margin: 0 2px;
+  vertical-align: middle;
+  background: none;
+  border-color: transparent;
+  border-top: 4px solid;
+  border-right: 4px solid;
+  border-bottom: 0;
+  border-left: 4px solid;
+}
+
 table {
   max-width: 100%;
   border-spacing: 0;
@@ -5034,7 +5035,7 @@ th, td {
   *display: inline;
 }
 
-.fullwidth, hr, .is-block {
+.fullwidth, .is-block {
   display: block;
   float: none;
   width: 100% !important;
