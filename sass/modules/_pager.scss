@@ -12,7 +12,6 @@
 
 .pager-group {
     @extend .clearfix;
-    @extend .trailing;
     @extend .list-unstyled;
     @include inline-block;
     @include border-radius($global-border-radius);
