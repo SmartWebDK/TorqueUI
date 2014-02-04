@@ -38,7 +38,7 @@ html {
     }
 
 
-    @include at(4) {
+    @include from(4) {
         font-size: $font-large-size;
     }
 
@@ -273,7 +273,7 @@ hr {
     border-top: 1px solid;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
-    margin: rhythm(4, $font-base) auto;
+    margin: rhythm(2, $font-base) auto;
 
     &.line {
         margin: 0;

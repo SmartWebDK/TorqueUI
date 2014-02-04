@@ -1964,17 +1964,17 @@ html {
 }
 @media (min-width: 768px) and (max-width: 959px) {
   html {
-    font-size: 93.75%;
+    font-size: 87.5%;
   }
 }
-@media (min-width: 960px) and (max-width: 1279px) {
+@media (min-width: 960px) {
   html {
-    font-size: 100%;
+    font-size: 87.5%;
   }
 }
 @media (min-width: 1280px) {
   html {
-    font-size: 100%;
+    font-size: 93.75%;
   }
 }
 
@@ -2188,7 +2188,7 @@ hr {
   height: 0;
   -moz-box-sizing: content-box;
        box-sizing: content-box;
-  margin: 2em auto;
+  margin: 1em auto;
   border: 0;
   border-top: 1px solid;
 }
