@@ -4,6 +4,54 @@
 
 
 // ==========================================================================
+// Extends
+// ==========================================================================
+
+//
+// Font colors
+//
+
+.theme-color-default {                  color: #fff; }
+.theme-color-base {                     @extend .color-theme-main; }
+.theme-color-main {                     color: $color-main; }
+.theme-color-main-light {               color: $color-main-light; }
+.theme-color-highlight {                color: $color-highlight; }
+
+//
+// Backgrounds
+//
+
+.theme-background-transparent {         background-color: transparent; }
+.theme-background-subtle {              background-color: $color-subtle; }
+.theme-background-main {                background-color: $color-main; }
+.theme-background-main-dark {           background-color: $color-main-dark; }
+.theme-background-highlight {           background-color: $color-highlight; }
+.theme-background-highlight-light-30 {  background-color: lighten($color-highlight, 30%); }
+.theme-background-highlight-light-20 {  background-color: lighten($color-highlight, 20%); }
+.theme-background-highlight-dark-5 {    background-color: darken($color-highlight, 5%); }
+.theme-background-highlight-dark-10 {   background-color: darken($color-highlight, 10%); }
+.theme-background-highlight-dark-15 {   background-color: darken($color-highlight, 15%); }
+.theme-background-highlight-dark-25 {   background-color: darken($color-highlight, 25%); }
+.theme-background-highlight-dark-30 {   background-color: darken($color-highlight, 30%); }
+.theme-background-gray {                background-color: $color-gray; }
+.theme-background-gray-dark {           background-color: $color-gray-dark; }
+.theme-background-default {             background-color: $color-default-bck; }
+.theme-background-default-hover {       background-color: $color-default-bck-hover; }
+
+//
+// Borders
+//
+
+.theme-border-transparent {             border-color: transparent }
+.theme-border-subtle {                  border-color: $color-border !important; }
+.theme-border-highlight {               border-color: $color-highlight; }
+.theme-border-highlight-dark-10 {       border-color: darken($color-highlight, 10%); }
+.theme-border-gray-dark {               border-color: $color-gray-dark; }
+.theme-border-main {                    border-color: $color-main; }
+.theme-border-main-dark {               border-color: $color-main-dark; }
+
+
+// ==========================================================================
 // Typography
 // ==========================================================================
 
@@ -12,7 +60,7 @@
 //
 
 html {
-    color: $color-base;
+    @extend .theme-color-base;
 }
 
 //
@@ -33,8 +81,8 @@ h6, .h6 {
 //
 
 a, a:visited {
-    text-decoration: underline;
-    color: $color-highlight;
+    text-decoration: none;
+    @extend .theme-color-highlight;
 
     &:hover {
         text-decoration: none;
@@ -54,7 +102,7 @@ a, a:visited {
 //
 
 b, strong {
-    color: darken($color-main, 10%);
+    color: $color-main-dark;
 }
 
 //
@@ -62,7 +110,7 @@ b, strong {
 //
 
 s, del {
-    color: lighten($color-main, 20%);
+    @extend .theme-color-main-light;
 }
 
 //
@@ -80,7 +128,7 @@ small {
 mark,
 .mark {
     color: color($color-highlight, #fff, $color-main);       // in _mixins.scss
-    background-color: $color-highlight;
+    @extend .theme-background-highlight;
 }
 
 //
@@ -91,7 +139,7 @@ mark,
 
     &.badge-clean {
         background-color: #FFF;
-        color: $color-main;
+        @extend .theme-color-main;
     }
     &.badge-info {
         background-color: $color-info-light;
@@ -116,7 +164,7 @@ mark,
 //
 
 hr {
-    border-color: $color-border;
+    @extend .theme-border-subtle;
 }
 
 
@@ -129,14 +177,14 @@ hr {
 //
 
 .form-input {
-    border-color: $color-border;
-    background-color: $color-default-bck;
-    color: $color-main;
+    @extend .theme-border-subtle;
+    @extend .theme-background-default;
+    @extend .theme-color-main;
 
     @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
 
     &:hover {
-        background-color: $color-default-bck-hover;
+        @extend .theme-background-default-hover;
     }
 
     &:focus {
@@ -148,7 +196,7 @@ hr {
     //
     &.is-disabled,
     &:disabled {
-        color: $color-main-light;
+        @extend .theme-color-main-light;
     }
 }
 
@@ -168,12 +216,12 @@ hr {
 //
 
 .input-group-addon, .input-group-image img  {
-    background-color: $color-gray;
-    border-color: $color-border;
+    @extend .theme-background-gray;
+    @extend .theme-border-subtle;
 
     .input-group:hover &,
     .input-group:focus & {
-        background-color: $color-gray-dark;
+        @extend .theme-background-gray-dark;
     }
 }
 
@@ -188,18 +236,18 @@ hr {
 
 .button,
 .button:visited {
-    border-color: $color-border;
-    color: $color-main;
-    background-color: $color-default-bck;
+    @extend .theme-border-subtle;
+    @extend .theme-color-main;
+    @extend .theme-background-default;
 
     &:hover,
     &:focus {
-        color: $color-main;
-        background-color: $color-default-bck-hover;
+        @extend .theme-color-main;
+        @extend .theme-background-default-hover;
     }
 
     &:active {
-        color: $color-main;
+        @extend .theme-color-main;
         @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
     }
 
@@ -209,7 +257,7 @@ hr {
 
     &.is-disabled,
     &:disabled {
-        color: lighten($color-main, 20%) !important;
+        color: $color-main-light !important;
     }
 }
 
@@ -219,7 +267,7 @@ hr {
 
 .button.button-icon {
     > .fa {
-        background-color: $color-default-bck-hover;
+        @extend .theme-background-default-hover;
     }
     &:active > .fa {
         // background-color: darken($color-subtle, 20%);
@@ -237,7 +285,7 @@ hr {
     &.is-disabled,
     &:disabled {
         > .fa {
-                background-color: lighten($color-subtle, 2%);
+            background-color: lighten($color-subtle, 2%);
         }
     }
 }
@@ -248,15 +296,16 @@ hr {
 
 .button-primary,
 .button-primary:visited {
-    border-color: $color-border;
     color: color($color-highlight, #fff, $color-main);
     text-transform: uppercase;
     font-weight: bold;
-    background-color: $color-highlight;
+
+    @extend .theme-background-highlight;
+    @extend .theme-border-subtle;
 
     &:hover,
     &:focus {
-        background-color: darken($color-highlight, 5%);
+        @extend .theme-background-highlight-dark-5;
         color: color($color-highlight, #fff, $color-main);
     }
 
@@ -272,7 +321,7 @@ hr {
     &.is-disabled,
     &:disabled {
         color: color($color-highlight, #fff, $color-main);
-        background-color: lighten($color-highlight, 20%);
+        @extend .theme-background-highlight-light-20;
     }
 }
 
@@ -282,15 +331,15 @@ hr {
 
 .button-primary.button-icon {
     > .fa {
-        background-color: darken($color-highlight, 10%);
+        @extend .theme-background-highlight-dark-10;
     }
     &:active > .fa {
-        background-color: darken($color-highlight, 25%);
+        @extend .theme-background-highlight-dark-25;
         @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
     }
     &:hover > .fa,
     &:focus > .fa {
-        background-color: darken($color-highlight, 15%);
+        @extend .theme-background-highlight-dark-15;
     }
 
     //
@@ -300,7 +349,7 @@ hr {
     &.is-disabled,
     &:disabled {
         > .fa {
-                background-color: lighten($color-highlight, 30%);
+                @extend .theme-background-highlight-light-30;
         }
     }
 }
@@ -311,14 +360,14 @@ hr {
 
 .button-text,
 .button-text:visited {
-    color: $color-highlight;
+    @extend .theme-color-highlight;
     text-decoration: none;
-    background-color: transparent;
+    @extend .theme-background-transparent;
 
     &:hover,
     &:focus {
         color: darken($color-highlight, 5%);
-        background-color: transparent;
+        @extend .theme-background-transparent;
         text-decoration: underline;
         @include box-shadow(none);
     }
@@ -332,11 +381,11 @@ hr {
 // ==========================================================================
 .symbol {
     &.symbol-button {
-        color: $color-main-light;
+        @extend .theme-color-main-light;
 
         &:hover {
-            color: $color-main;
-        }   
+            @extend .theme-color-main;
+        }
     }
 }
 
@@ -350,24 +399,24 @@ hr {
 }
 
 .panel-default {
-    border-color: transparent;
-    color: $color-main;
-    background-color: transparent;
+    @extend .theme-border-transparent;
+    @extend .theme-color-main;
+    @extend .theme-background-transparent;
 
     .panel-heading,
     .panel-footer {
-        border-color: transparent;
+        @extend .theme-border-transparent;
     }
 }
 
 .panel-border {
-    border-color: $color-border;
-    color: $color-main;
-    background-color: $color-default-bck;
+    @extend .theme-border-subtle;
+    @extend .theme-color-main;
+    @extend .theme-background-default;
 
     .panel-heading,
     .panel-footer {
-        border-color: $color-border;
+        @extend .theme-border-subtle;
     }
 }
 
@@ -443,14 +492,16 @@ hr {
         > li {
             > a {
                 &:hover {
-                    background-color: $color-subtle;
+                    @extend .theme-background-subtle;
                 }
             }
             &.active {
                 > a {
-                    color: #FFF;
-                    background-color: $color-highlight;
-                    border: 1px solid $color-highlight;
+                    @extend .theme-color-default;
+                    @extend .theme-background-highlight;
+                    border-width: 1px;
+                    border-style: solid;
+                    @extend .theme-border-highlight;
                 }
             }
         }
@@ -464,14 +515,16 @@ hr {
         > li {
             > a {
                 &:hover {
-                    background-color: $color-subtle;
+                    @extend .theme-background-subtle;
                 }
             }
             &.active {
                 > a {
-                    color: #FFF;
-                    background-color: $color-highlight;
-                    border: 1px solid $color-highlight;
+                    @extend .theme-color-default;
+                    @extend .theme-background-highlight;
+                    border-width: 1px;
+                    border-style: solid;
+                    @extend .theme-border-highlight;
                 }
             }
         }
@@ -482,14 +535,16 @@ hr {
 //
 
     .nav-tabs {
-        border-bottom: 1px solid $color-gray-dark;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $color-gray-dark;
 
         > li {
 
             > a {
 
                 &:hover {
-                    background-color: $color-subtle;
+                    @extend .theme-background-subtle;
                     border-color: $color-subtle;
                     border-bottom-color: $color-gray-dark;
                 }
@@ -497,9 +552,11 @@ hr {
 
             &.active {
                 > a {
-                    color: $color-main;
-                    background-color: #fff;
-                    border: 1px solid $color-gray-dark;
+                    @extend .theme-color-main;
+                    @extend .theme-background-default;
+                    border-width: 1px;
+                    border-style: solid;
+                    @extend .theme-border-gray-dark;
                 }
             }
         }
@@ -509,12 +566,16 @@ hr {
             > li {
 
                 > a {
-                    border-bottom: 1px solid $color-gray-dark;
+                    border-bottom-width: 1px;
+                    border-bottom-style: solid;
+                    border-bottom-color: $color-gray-dark;
                 }
 
                 &.active {
                     > a {
-                        border: 1px solid $color-gray-dark;
+                        border-width: 1px;
+                        border-style: solid;
+                        @extend .theme-border-gray-dark;
                     }
                 }
             }
@@ -526,10 +587,12 @@ hr {
 // ==========================================================================
 
 .navbar {
-    border: 1px solid transparent;
+    border-width: 1px;
+    border-style: solid;
+    @extend .theme-border-transparent;
 
     .navbar-brand {
-        color: $color-main;
+        @extend .theme-color-main;
     }
 }
 
@@ -564,15 +627,16 @@ hr {
     }
 
     .navbar-invert {
-        background-color: $color-main;
-        border-color: $color-main;
+        @extend .theme-background-main;
+
+        @extend .theme-border-main;
 
         .navbar-brand {
             color: invert($color-main);
         }
 
         .button-primary {
-            border-color: $color-highlight;
+            @extend .theme-border-highlight;
         }
 
         .navbar-collapse {
@@ -582,16 +646,18 @@ hr {
             > li {
                 > a {
                     &:hover {
-                        background-color: darken($color-main, 10%);
-                        border-color: darken($color-main, 10%);
+                        @extend .theme-background-main-dark;
+                        @extend .theme-border-main-dark;
                         border-bottom-color: $color-main;
                     }
                 }
                 &.active {
                     > a {
-                        color: $color-main;
-                        background-color: #fff;
-                        border: 1px solid $color-gray-dark;
+                        @extend .theme-color-main;
+                        @extend .theme-background-default;
+                        border-width: 1px;
+                        border-style: solid;
+                        @extend .theme-border-gray-dark;
                     }
                 }
             }
@@ -600,7 +666,9 @@ hr {
                 margin-bottom: -1px;
                 > li {
                     > a {
-                        border-bottom: 1px solid $color-main;
+                        border-bottom-width: 1px;
+                        border-bottom-style: solid;
+                        border-bottom-color: $color-main;
                     }
                 }
             }
@@ -610,15 +678,17 @@ hr {
             > li {
                 > a {
                     &:hover {
-                        background-color: darken($color-main, 10%);
-                        border-color: darken($color-main, 10%);
+                        @extend .theme-background-main-dark;
+                        @extend .theme-border-main-dark;
                     }
                 }
                 &.active {
                     > a {
-                        color: #FFF;
-                        background-color: $color-highlight;
-                        border: 1px solid $color-highlight;
+                        @extend .theme-color-default;
+                        @extend .theme-background-highlight;
+                        border-width: 1px;
+                        border-style: solid;
+                        @extend .theme-border-highlight;
                     }
                 }
             }
@@ -631,24 +701,24 @@ hr {
 // ==========================================================================
 
 .dropdown-menu {
-    border-color: $color-border !important;
+    @extend .theme-border-subtle;
     @include box-shadow(2px 3px 3px rgba(0,0,0,.2));
 
     li {
-        background-color: #fff;
+        @extend .theme-background-default;
 
         &:nth-of-type(even):not(.divider) {
-            background-color: $color-subtle;
+            @extend .theme-background-subtle;
         }
 
         > a {
-            color: $color-main;
+            @extend .theme-color-main;
         }
     }
 
     .divider,
     .dropdown-footer {
-        border-color: $color-border !important;
+        @extend .theme-border-subtle;
     }
 
     .dropdown-header,
@@ -667,14 +737,14 @@ hr {
 .pagination {
     > li {
         > a {
-            background-color: $color-default-bck;
-            border-color: $color-border;
-            color: $color-main;
+            @extend .theme-background-default;
+            @extend .theme-border-subtle;
+            @extend .theme-color-main;
 
             &:hover,
             &:focus {
-                background-color: $color-default-bck-hover;
-                color: $color-main;
+                @extend .theme-background-default-hover;
+                @extend .theme-color-main;
             }
 
             &:active {
@@ -684,13 +754,14 @@ hr {
 
         &.current {
             a {
-                background-color: $color-highlight;
-                color: #fff;
+                @extend .theme-background-highlight;
+                @extend .theme-color-default;
 
                 &:hover,
                 &:focus {
-                    color: #fff;
-                    background-color: darken($color-highlight, 10%);
+                    @extend .theme-color-default;
+                    @extend .theme-border-highlight-dark-10;
+                    @extend .theme-background-highlight;
                 }
             }
         }
@@ -700,8 +771,8 @@ hr {
             > a:hover,
             > a:focus,
             > a:active {
-                color: lighten($color-main, 40%);
-                background-color: $color-default-bck-hover;
+                @extend .theme-color-main-light;
+                @extend .theme-background-default-hover;
             }
         }
     }
@@ -722,7 +793,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 %table {
     th,
     td {
-        border-color: $color-border;
+        @extend .theme-border-subtle;
     }
 }
 
@@ -754,7 +825,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 //
 
 .table-bordered {
-    border-color: $color-border;
+    @extend .theme-border-subtle;
 }
 
 //
@@ -762,7 +833,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 //
 
 .responsive-table-wrap {
-    border-color: $color-border;
+    @extend .theme-border-subtle;
 }
 
 

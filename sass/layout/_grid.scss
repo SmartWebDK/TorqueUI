@@ -2,25 +2,6 @@
 // Grid
 // -----------------------------------------------------------------------------
 
-// ==========================================================================
-// Susy based grid
-// Resource: http://susy.oddbird.net/guides/reference/
-// ==========================================================================
-
-//
-// Setup
-//
-
-$legacy-support-for-ie:   true;
-$legacy-support-for-ie7:  $legacy-support-for-ie;
-$legacy-support-for-ie8:  $legacy-support-for-ie;
-
-//
-// Grid is set to static
-//
-
-$container-style: magic;
-
 //
 // Set correct MS viewport
 //

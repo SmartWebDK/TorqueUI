@@ -122,7 +122,6 @@ th, td {
     .responsive-table-wrap {
         width: 100%;
         max-width: 100%;
-        @extend .trailing;
         overflow-x: scroll;
         overflow-y: hidden;
         border-width: 1px;

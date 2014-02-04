@@ -43,7 +43,7 @@ html {
     }
 
 
-    @include at(4) {
+    @include from(5) {
         font-size: $font-xlarge-size;
     }
 }
@@ -52,6 +52,7 @@ body {
     @include css-hyphens(auto);
     @extend %breakword;
 }
+
 
 
 // ==========================================================================
@@ -153,7 +154,6 @@ blockquote,
 q,
 pre,
 address,
-hr,
 code,
 samp,
 dl,
@@ -273,6 +273,11 @@ hr {
     border-top: 1px solid;
     -moz-box-sizing: content-box;
     box-sizing: content-box;
+    margin: rhythm(4, $font-base) auto;
+
+    &.line {
+        margin: 0;
+    }
 }
 
 mark,
