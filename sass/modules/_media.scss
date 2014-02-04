@@ -11,6 +11,7 @@
 
 .media, .media-body {
     @extend .clearfix;
+    @extend .trailing;
     overflow:hidden;
     _overflow:visible;
     zoom:1;
