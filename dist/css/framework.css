@@ -2099,6 +2099,11 @@ img.triple, .triple.form-group, .triple.media {
   margin: 0 auto 3em;
 }
 
+.base-reset, .list-unstyled, .list-menu, .list-inline, .pager-group, .pagination {
+  padding: 0;
+  margin: 0 auto 1em;
+}
+
 p,
 input,
 textarea,
@@ -4681,15 +4686,16 @@ dd {
 .pager-group {
   display: -moz-inline-stack;
   display: inline-block;
+       -o-border-radius: .25em;
+  *vertical-align: auto;
+      -ms-border-radius: .25em;
+  *display: inline;
+  margin: 0;
+     -moz-border-radius: .25em;
   vertical-align: middle;
   zoom: 1;
           border-radius: .25em;
-  *vertical-align: auto;
   -webkit-border-radius: .25em;
-     -moz-border-radius: .25em;
-      -ms-border-radius: .25em;
-       -o-border-radius: .25em;
-  *display: inline;
 }
 .pager-group .button-icon,
 .pager-group .button,
@@ -4721,15 +4727,16 @@ dd {
 .pagination {
   display: -moz-inline-stack;
   display: inline-block;
+       -o-border-radius: .25em;
+  *vertical-align: auto;
+      -ms-border-radius: .25em;
+  *display: inline;
+  margin: 0;
+     -moz-border-radius: .25em;
   vertical-align: middle;
   zoom: 1;
           border-radius: .25em;
-  *vertical-align: auto;
   -webkit-border-radius: .25em;
-     -moz-border-radius: .25em;
-      -ms-border-radius: .25em;
-       -o-border-radius: .25em;
-  *display: inline;
 }
 .pagination > li {
   display: inline;
@@ -5045,11 +5052,6 @@ th, td {
 .reset, .dropdown, .input-group-image > img, .list-menu ul, .list-inline ul {
   padding: 0;
   margin: 0;
-}
-
-.base-reset, .list-unstyled, .list-menu, .list-inline, .pager-group, .pagination {
-  padding: 0;
-  margin: 0 auto 1em;
 }
 
 .no-icon, .list-unstyled, .list-menu, .list-inline, .pager-group, .pagination, .list-unstyled ul, .list-menu ul, .list-inline ul, .pager-group ul, .pagination ul {
