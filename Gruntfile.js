@@ -19,7 +19,7 @@ module.exports = function(grunt) {
                             '\t\t<meta name="viewport" content="width=device-width">\n',
                             '\t\t<link rel="stylesheet" href="tdcss.js/tdcss.css" type="text/css" media="screen">',
                             '\t\t<link rel="stylesheet" href="css/framework.css" type="text/css" media="screen">',
-                            '\t\t<link rel="stylesheet" href="css/theme/theme.css" type="text/css" media="screen">',
+                            '\t\t<link rel="stylesheet" href="css/theme.css" type="text/css" media="screen">',
                             '\t\t<script type="text/javascript">',
                             '\t\tWebFontConfig = { google: { families: [ "Raleway:400,700:latin" ]}',
                             '\t\t};',
