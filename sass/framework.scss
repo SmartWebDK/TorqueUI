@@ -8,9 +8,6 @@
 @import "./globals/settings";
 @import "./globals/mixins";
 
-// Theme variables
-@import "./theme/theme_settings";
-
 // Vendor dependencies
 @import "./lib/normalize";
 @import "./lib/typeplate.scss";
@@ -49,5 +46,3 @@
 // Bastard fixes
 @import "./shame";
 
-// Theme setup
-@import "./theme/theme";

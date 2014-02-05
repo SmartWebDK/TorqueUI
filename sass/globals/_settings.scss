@@ -122,29 +122,6 @@ $fa-li-width                        : (30em / $base) !default;
 
 
 // ==========================================================================
-// Colors
-// ==========================================================================
-
-//
-// Swatches
-//
-
-$color-highlight                    : #f79420 !default;
-$color-main                         : #393c41 !default;
-$color-subtle                       : #f5f5f3 !default;
-
-$color-main-light                   : lighten($color-main, 30%) !default;
-$color-main-dark                    : darken($color-main, 10%) !default;
-
-$color-gray                         : #eee !default;
-$color-gray-light                   : #dddbd9 !default;
-$color-gray-dark                    : darken(#eee, 10%) !default;
-
-$color-default-bck                  : #fff !default;
-$color-default-bck-hover            : $color-subtle !default;
-
-
-// ==========================================================================
 // Misc
 // ==========================================================================
 
@@ -153,3 +130,9 @@ $color-default-bck-hover            : $color-subtle !default;
 //
 
 $global-border-radius               : em(4px) !default;
+
+//
+// Global paddings
+//
+
+$global-padding                     : em(20px) !default;

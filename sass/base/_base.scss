@@ -29,117 +29,37 @@ body {
 }
 
 
-
 // ==========================================================================
-// Base elements
+// Baseline helpers
 // ==========================================================================
 
-
 //
-// Styles Hyphenation
-// Resource: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+// Classes for vertical distance
 //
 
-abbr,
-acronym,
-blockquote,
-code,
-dir,
-kbd,
-listing,
-plaintext,
-q,
-samp,
-tt,
-var,
-xmp {
-    @include css-hyphens(none);
-}
-abbr {
-    @include smallcaps($color-small-caps, $font-small-caps-weight);
-    &[title]:hover {
-        cursor: help;
-    }
-}
+.trailing {
+    margin: 0 auto rhythm(2, $font-base);
 
-
-//
-// Styles Codeblocks
-//
-
-pre code {
-    @extend %normal-wrap;
-    @include white-space(pre-wrap);
-}
-pre {
-    @include white-space(pre);
-}
-code {
-    @include white-space(pre);
-    font-family: monospace;
-}
-
-//
-// Horizontal line
-//
-
-hr {
-    clear:both;
-    height: 0;
-    border: 0;
-    border-top: 1px solid;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    margin: rhythm(2, $font-base) auto;
-
-    &.line {
-        margin: 0;
-    }
-}
-
-mark,
-.mark {
-    display: inline-block;
-    padding: 0 3px;
-    border-radius: 3px;
-}
-
-//
-// Labels need to be strong
-//
-
-label {
-    font-weight: bold;
-}
-
-//
-// Blockquotes
-//
-
-blockquote {
-    padding: 0 1em 0 4em;
-    position: relative;
-
-    &:before {
-        content: "\f10d";
-        font-family: FontAwesome;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 1.5em;
-        display: block;
-        position: absolute;
-        left: 0.5em;
+    &.double {
+        @extend .trailing-db;
     }
 
-    p:first-child {
-        margin-top: 0;
+    &.triple {
+        @extend .trailing-trip;
     }
+}
+.trailing-db {
+    margin: 0 auto rhythm(4, $font-base);
+}
+.trailing-trip {
+    margin: 0 auto rhythm(6, $font-base);
+}
 
-    small,
-    .small {
-        display: block;
-        font-size: 100%;
-        color: $color-main;
-        @include trailer(1, $font-base, "margin");
-    }
+//
+// Baseline reset
+//
+
+.base-reset {
+    margin: 0 auto rhythm(2, $font-base);
+    padding: 0;
 }
