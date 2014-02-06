@@ -412,6 +412,17 @@ hr {
     }
 }
 
+.panel-clean {
+    border-color: $color-info;
+    color: $color-main;
+    background-color: #fff;
+
+    .panel-heading,
+    .panel-footer {
+        border-color: $color-info;
+    }
+}
+
 .panel-info {
     border-color: $color-info;
     color: $color-info-dark;
