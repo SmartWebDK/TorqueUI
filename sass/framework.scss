@@ -5,8 +5,8 @@
 @import "breakpoint-slicer";
 
 // Global variables and mixins
-@import "./globals/settings";
 @import "./globals/mixins";
+@import "./globals/settings";
 
 // Vendor dependencies
 @import "./lib/normalize";

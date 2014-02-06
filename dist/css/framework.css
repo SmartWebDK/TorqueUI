@@ -3822,13 +3822,13 @@ th.is-hidden-xl {
   background-image: none;
   -webkit-background-clip: padding;
      -moz-background-clip: padding;
-     -moz-border-radius: em(4px);
-      -ms-border-radius: em(4px);
-       -o-border-radius: em(4px);
+     -moz-border-radius: .25em;
+      -ms-border-radius: .25em;
+       -o-border-radius: .25em;
           background-clip: padding-box;
-  -webkit-border-radius: em(4px);
+  -webkit-border-radius: .25em;
   border: 1px solid;
-          border-radius: em(4px);
+          border-radius: .25em;
 }
 .button:focus, .button-primary:focus, .button-text:focus {
   outline: none;
@@ -3899,8 +3899,8 @@ th.is-hidden-xl {
   width: 37px;
   line-height: 35px;
   vertical-align: middle;
-  border-top-left-radius: em(4px);
-  border-bottom-left-radius: em(4px);
+  border-top-left-radius: .25em;
+  border-bottom-left-radius: .25em;
 }
 .button-icon.right.button, .button-icon.right.button-primary, .button-icon.right.button-text {
   padding-right: 49px;
@@ -3910,18 +3910,18 @@ th.is-hidden-xl {
   right: 0;
   left: auto;
   border-top-left-radius: 0;
-  border-top-right-radius: em(4px);
-  border-bottom-right-radius: em(4px);
+  border-top-right-radius: .25em;
+  border-bottom-right-radius: .25em;
   border-bottom-left-radius: 0;
 }
 
 .dropdown {
-  -webkit-border-radius: em(4px);
-     -moz-border-radius: em(4px);
-      -ms-border-radius: em(4px);
-       -o-border-radius: em(4px);
+  -webkit-border-radius: .25em;
+     -moz-border-radius: .25em;
+      -ms-border-radius: .25em;
+       -o-border-radius: .25em;
   position: relative;
-          border-radius: em(4px);
+          border-radius: .25em;
 }
 .dropdown .button, .dropdown .button-primary, .dropdown .button-text {
   margin: 0;
@@ -3942,17 +3942,17 @@ th.is-hidden-xl {
 }
 
 .dropdown-menu {
-  -webkit-border-radius: em(4px);
+  -webkit-border-radius: .25em;
   min-width: 200px;
   padding: .375em 0;
   -webkit-background-clip: padding;
      -moz-background-clip: padding;
-      -ms-border-radius: em(4px);
-     -moz-border-radius: em(4px);
-       -o-border-radius: em(4px);
+      -ms-border-radius: .25em;
+     -moz-border-radius: .25em;
+       -o-border-radius: .25em;
           background-clip: padding-box;
   border: 1px solid;
-          border-radius: em(4px);
+          border-radius: .25em;
   opacity: 0;
 }
 .dropdown-menu.pull-right {
@@ -4058,11 +4058,11 @@ fieldset {
   *display: inline;
   border: 1px solid;
   vertical-align: middle;
-  -webkit-border-radius: em(4px);
-     -moz-border-radius: em(4px);
-      -ms-border-radius: em(4px);
-       -o-border-radius: em(4px);
-          border-radius: em(4px);
+  -webkit-border-radius: .25em;
+     -moz-border-radius: .25em;
+      -ms-border-radius: .25em;
+       -o-border-radius: .25em;
+          border-radius: .25em;
   width: 100%;
      -moz-background-clip: padding;
           background-clip: padding-box;
@@ -4229,11 +4229,11 @@ label.input-group-main {
 
 .input-group-addon {
   border: 1px solid;
-  -webkit-border-radius: em(4px);
-     -moz-border-radius: em(4px);
-      -ms-border-radius: em(4px);
-       -o-border-radius: em(4px);
-          border-radius: em(4px);
+  -webkit-border-radius: .25em;
+     -moz-border-radius: .25em;
+      -ms-border-radius: .25em;
+       -o-border-radius: .25em;
+          border-radius: .25em;
 }
 
 .input-group-image {
@@ -4241,17 +4241,17 @@ label.input-group-main {
   *display: none;
 }
 .input-group-image > img {
-  -webkit-border-radius: em(4px);
+  -webkit-border-radius: .25em;
   display: block;
-      -ms-border-radius: em(4px);
-       -o-border-radius: em(4px);
-     -moz-border-radius: em(4px);
+      -ms-border-radius: .25em;
+       -o-border-radius: .25em;
+     -moz-border-radius: .25em;
   width: auto;
   height: 100%;
   max-height: 100%;
   vertical-align: middle;
   border: 1px solid;
-          border-radius: em(4px);
+          border-radius: .25em;
 }
 
 .input-group-button {
@@ -4346,12 +4346,12 @@ dd {
           background-clip: border-box;
 }
 .nav-pills > li > a {
-  -webkit-border-radius: em(4px);
-     -moz-border-radius: em(4px);
-      -ms-border-radius: em(4px);
-       -o-border-radius: em(4px);
+  -webkit-border-radius: .25em;
+     -moz-border-radius: .25em;
+      -ms-border-radius: .25em;
+       -o-border-radius: .25em;
   border: 1px solid transparent;
-          border-radius: em(4px);
+          border-radius: .25em;
 }
 @media (min-width: 960px) and (max-width: 1279px) {
   .nav-pills > li > a {
@@ -4371,14 +4371,14 @@ dd {
           background-clip: border-box;
 }
 .nav-tabs > li > a {
-  -webkit-border-radius: em(4px) em(4px) 0 0;
-     -moz-border-radius: em(4px) em(4px) 0 0;
-      -ms-border-radius: em(4px) em(4px) 0 0;
-       -o-border-radius: em(4px) em(4px) 0 0;
+  -webkit-border-radius: .25em .25em 0 0;
+     -moz-border-radius: .25em .25em 0 0;
+      -ms-border-radius: .25em .25em 0 0;
+       -o-border-radius: .25em .25em 0 0;
   border: 1px solid transparent;
   border-right: 0;
   border-left: 0;
-          border-radius: em(4px) em(4px) 0 0;
+          border-radius: .25em .25em 0 0;
 }
 @media (min-width: 960px) and (max-width: 1279px) {
   .nav-tabs > li > a {
@@ -4684,16 +4684,16 @@ dd {
 .pager-group {
   display: -moz-inline-stack;
   display: inline-block;
-       -o-border-radius: em(4px);
+       -o-border-radius: .25em;
   *vertical-align: auto;
-      -ms-border-radius: em(4px);
+      -ms-border-radius: .25em;
   *display: inline;
   margin: 0;
-     -moz-border-radius: em(4px);
+     -moz-border-radius: .25em;
   vertical-align: middle;
   zoom: 1;
-          border-radius: em(4px);
-  -webkit-border-radius: em(4px);
+          border-radius: .25em;
+  -webkit-border-radius: .25em;
 }
 .pager-group .button-icon,
 .pager-group .button,
@@ -4712,41 +4712,41 @@ dd {
 .pager-group .button:first-child,
 .pager-group .button-primary:first-child {
   margin-left: 0;
-  border-top-left-radius: em(4px);
-  border-bottom-left-radius: em(4px);
+  border-top-left-radius: .25em;
+  border-bottom-left-radius: .25em;
 }
 .pager-group .button-icon:last-child,
 .pager-group .button:last-child,
 .pager-group .button-primary:last-child {
-  border-top-right-radius: em(4px);
-  border-bottom-right-radius: em(4px);
+  border-top-right-radius: .25em;
+  border-bottom-right-radius: .25em;
 }
 
 .pagination {
   display: -moz-inline-stack;
   display: inline-block;
-       -o-border-radius: em(4px);
+       -o-border-radius: .25em;
   *vertical-align: auto;
-      -ms-border-radius: em(4px);
+      -ms-border-radius: .25em;
   *display: inline;
   margin: 0;
-     -moz-border-radius: em(4px);
+     -moz-border-radius: .25em;
   vertical-align: middle;
   zoom: 1;
-          border-radius: em(4px);
-  -webkit-border-radius: em(4px);
+          border-radius: .25em;
+  -webkit-border-radius: .25em;
 }
 .pagination > li {
   display: inline;
 }
 .pagination > li:first-child > a {
   margin-left: 0;
-  border-top-left-radius: em(4px);
-  border-bottom-left-radius: em(4px);
+  border-top-left-radius: .25em;
+  border-bottom-left-radius: .25em;
 }
 .pagination > li:last-child > a {
-  border-top-right-radius: em(4px);
-  border-bottom-right-radius: em(4px);
+  border-top-right-radius: .25em;
+  border-bottom-right-radius: .25em;
 }
 .pagination > li.is-disabled, .pagination > li.is-disabled > a {
   pointer-events: none;
@@ -4779,14 +4779,14 @@ dd {
 }
 
 .panel-heading {
-  padding: em(20px)/2 em(20px);
+  padding: .625em 1.25em;
   margin-bottom: -1px;
   overflow: hidden;
   border-bottom: 1px solid;
 }
 @media (min-width: 768px) and (max-width: 959px) {
   .panel-heading {
-    padding: em(20px)/2 em(20px)/2;
+    padding: .625em .625em;
   }
 }
 .panel-heading h1, .panel-heading h2, .panel-heading h3, .panel-heading h4, .panel-heading h5, .panel-heading h6 {
@@ -4801,22 +4801,22 @@ dd {
 }
 
 .panel-body {
-  padding: em(20px) em(20px) em(20px)/2 em(20px);
+  padding: 1.25em 1.25em .625em 1.25em;
 }
 @media (min-width: 768px) and (max-width: 959px) {
   .panel-body {
-    padding: em(20px)/2 em(20px)/2 em(20px)/2/2 em(20px)/2;
+    padding: .625em .625em .3125em .625em;
   }
 }
 
 .panel-footer {
-  padding: em(20px)/2 em(20px);
+  padding: .625em 1.25em;
   margin-top: -1px;
   border-top: 1px solid;
 }
 @media (min-width: 768px) and (max-width: 959px) {
   .panel-footer {
-    padding: em(20px)/2 em(20px)/2;
+    padding: .625em .625em;
   }
 }
 .panel-footer .form-group,
@@ -4827,11 +4827,11 @@ dd {
 }
 
 .panel-rounded {
-  -webkit-border-radius: em(4px);
-     -moz-border-radius: em(4px);
-      -ms-border-radius: em(4px);
-       -o-border-radius: em(4px);
-          border-radius: em(4px);
+  -webkit-border-radius: .25em;
+     -moz-border-radius: .25em;
+      -ms-border-radius: .25em;
+       -o-border-radius: .25em;
+          border-radius: .25em;
 }
 
 .symbol {
