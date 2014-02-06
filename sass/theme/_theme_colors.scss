@@ -43,13 +43,13 @@
 //
 
 .theme-border-transparent {             border-color: transparent }
-.theme-border-subtle {                  border-color: $color-border !important; }
 .theme-border-highlight {               border-color: $color-highlight; }
 .theme-border-highlight-dark-10 {       border-color: darken($color-highlight, 10%); }
 .theme-border-gray-dark {               border-color: $color-gray-dark; }
+.theme-border-gray-light {              border-color: $color-border !important; }
 .theme-border-main {                    border-color: $color-main; }
 .theme-border-main-dark {               border-color: $color-main-dark; }
-
+.theme-border-info {                    border-color: $color-info; }
 
 // ==========================================================================
 // Typography
@@ -130,7 +130,7 @@ mark,
     @include border-radius();
 
     &.badge-clean {
-        background-color: #FFF;
+        @extend .theme-background-default;
         @extend .theme-color-main;
     }
     &.badge-info {
@@ -156,7 +156,7 @@ mark,
 //
 
 hr {
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
 }
 
 
@@ -169,7 +169,7 @@ hr {
 //
 
 .form-input {
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
     @extend .theme-background-default;
     @extend .theme-color-main;
 
@@ -209,7 +209,7 @@ hr {
 
 .input-group-addon, .input-group-image img  {
     @extend .theme-background-gray;
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
 
     .input-group:hover &,
     .input-group:focus & {
@@ -228,7 +228,7 @@ hr {
 
 .button,
 .button:visited {
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
     @extend .theme-color-main;
     @extend .theme-background-default;
 
@@ -293,7 +293,7 @@ hr {
     font-weight: bold;
 
     @extend .theme-background-highlight;
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
 
     &:hover,
     &:focus {
@@ -402,35 +402,35 @@ hr {
 }
 
 .panel-border {
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
     @extend .theme-color-main;
     @extend .theme-background-default;
 
     .panel-heading,
     .panel-footer {
-        @extend .theme-border-subtle;
+        @extend .theme-border-gray-light;
     }
 }
 
 .panel-clean {
-    border-color: $color-info;
-    color: $color-main;
-    background-color: #fff;
+    @extend .theme-border-info;
+    @extend .theme-color-main;
+    @extend .theme-background-default;
 
     .panel-heading,
     .panel-footer {
-        border-color: $color-info;
+        @extend .theme-border-info;
     }
 }
 
 .panel-info {
-    border-color: $color-info;
+    @extend .theme-border-info;
     color: $color-info-dark;
     background-color: $color-info-light;
 
     .panel-heading,
     .panel-footer {
-        border-color: $color-info;
+        @extend .theme-border-info;
     }
 }
 
@@ -704,7 +704,7 @@ hr {
 // ==========================================================================
 
 .dropdown-menu {
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
     @include box-shadow(2px 3px 3px rgba(0,0,0,.2));
 
     li {
@@ -721,7 +721,7 @@ hr {
 
     .divider,
     .dropdown-footer {
-        @extend .theme-border-subtle;
+        @extend .theme-border-gray-light;
     }
 
     .dropdown-header,
@@ -741,7 +741,7 @@ hr {
     > li {
         > a {
             @extend .theme-background-default;
-            @extend .theme-border-subtle;
+            @extend .theme-border-gray-light;
             @extend .theme-color-main;
 
             &:hover,
@@ -796,7 +796,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 %table {
     th,
     td {
-        @extend .theme-border-subtle;
+        @extend .theme-border-gray-light;
     }
 }
 
@@ -805,6 +805,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 //
 
 .table-h-striped {
+    @extend %table;
     tbody > tr:nth-child(odd) {
         background-color: $opacity-subtle;
     }
@@ -815,6 +816,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 //
 
 .table-v-striped {
+    @extend %table;
     tbody, thead, tfoot {
         td:nth-child(even),
         th:nth-child(even) {
@@ -828,7 +830,8 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 //
 
 .table-bordered {
-    @extend .theme-border-subtle;
+    @extend %table;
+    @extend .theme-border-gray-light;
 }
 
 //
@@ -836,7 +839,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 //
 
 .responsive-table-wrap {
-    @extend .theme-border-subtle;
+    @extend .theme-border-gray-light;
 }
 
 
