@@ -98,7 +98,7 @@
 
 .theme-background-default, .badge.badge-clean, .form-input,
 .input-group-main.form-label, .button,
-.button:visited, .panel-border, .panel-clean, .nav-tabs > li.active > a, .navbar-invert .nav-tabs > li.active > a, .dropdown-menu li, .pagination > li > a {
+.button:visited, .panel-border, .panel-clean, .nav-tabs > li.active > a, .navbar-invert .nav-tabs > li.active > a, .dropdown-menu, .dropdown-menu li, .pagination > li > a {
   background-color: white;
 }
 
