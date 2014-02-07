@@ -168,7 +168,8 @@ hr {
 // Inputs and selects
 //
 
-.form-input, .form-label {
+.form-input,
+.input-group-main.form-label {
     @extend .theme-border-gray-light;
     @extend .theme-background-default;
     @extend .theme-color-main;
@@ -208,9 +209,10 @@ hr {
 //
 
 .input-group-addon,
-.input-group-image img  {
-    @extend .theme-background-gray;
+.input-group-image img,
+.input-group-main   {
     @extend .theme-border-gray-light;
+    @extend .theme-background-gray;
 
     .input-group:hover &,
     .input-group:focus & {

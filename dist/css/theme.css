@@ -2,7 +2,8 @@
   color: #fff;
 }
 
-.theme-color-main, .theme-color-base, html, .badge.badge-clean, .form-input, .form-label, .button,
+.theme-color-main, .theme-color-base, html, .badge.badge-clean, .form-input,
+.input-group-main.form-label, .button,
 .button:visited, .button:hover, .button:focus,
 .button:visited:hover,
 .button:visited:focus, .button:active,
@@ -10,7 +11,9 @@
   color: #393c41;
 }
 
-.theme-color-main-light, s, del, small, .form-input.is-disabled, .form-input:disabled, .form-label.is-disabled, .form-label:disabled, .symbol.symbol-button, .pagination > li.is-disabled > a,
+.theme-color-main-light, s, del, small, .form-input.is-disabled, .form-input:disabled,
+.input-group-main.form-label.is-disabled,
+.input-group-main.form-label:disabled, .symbol.symbol-button, .pagination > li.is-disabled > a,
 .pagination > li.is-disabled > a:hover,
 .pagination > li.is-disabled > a:focus,
 .pagination > li.is-disabled > a:active {
@@ -80,22 +83,27 @@
 }
 
 .theme-background-gray, .input-group-addon,
-.input-group-image img {
+.input-group-image img,
+.input-group-main {
   background-color: #eeeeee;
 }
 
 .theme-background-gray-dark, .input-group:hover .input-group-addon, .input-group:focus .input-group-addon, .input-group:hover
 .input-group-image img, .input-group:focus
-.input-group-image img {
+.input-group-image img, .input-group:hover
+.input-group-main, .input-group:focus
+.input-group-main {
   background-color: #d4d4d4;
 }
 
-.theme-background-default, .badge.badge-clean, .form-input, .form-label, .button,
+.theme-background-default, .badge.badge-clean, .form-input,
+.input-group-main.form-label, .button,
 .button:visited, .panel-border, .panel-clean, .nav-tabs > li.active > a, .navbar-invert .nav-tabs > li.active > a, .dropdown-menu li, .pagination > li > a {
   background-color: white;
 }
 
-.theme-background-default-hover, .form-input:hover, .form-label:hover, .button:hover, .button:focus,
+.theme-background-default-hover, .form-input:hover,
+.input-group-main.form-label:hover, .button:hover, .button:focus,
 .button:visited:hover,
 .button:visited:focus, .button.button-icon > .fa, .pagination > li > a:hover, .pagination > li > a:focus, .pagination > li.is-disabled > a,
 .pagination > li.is-disabled > a:hover,
@@ -121,8 +129,10 @@
   border-color: #d4d4d4;
 }
 
-.theme-border-gray-light, hr, .form-input, .form-label, .input-group-addon,
-.input-group-image img, .button,
+.theme-border-gray-light, hr, .form-input,
+.input-group-main.form-label, .input-group-addon,
+.input-group-image img,
+.input-group-main, .button,
 .button:visited, .button-primary,
 .button-primary:visited, .panel-border, .panel-border .panel-heading,
 .panel-border .panel-footer, .dropdown-menu, .dropdown-menu .divider,
@@ -201,12 +211,14 @@ mark,
   color: #a94442;
 }
 
-.form-input, .form-label {
+.form-input,
+.input-group-main.form-label {
   -webkit-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
 }
-.form-input:focus, .form-label:focus {
+.form-input:focus,
+.input-group-main.form-label:focus {
   -webkit-box-shadow: 0 0 4px 1px rgba(190, 234, 255, 0.75), inset 0 1px 5px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 0 4px 1px rgba(190, 234, 255, 0.75), inset 0 1px 5px rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 4px 1px rgba(190, 234, 255, 0.75), inset 0 1px 5px rgba(0, 0, 0, 0.1);
