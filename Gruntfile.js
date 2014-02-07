@@ -103,10 +103,6 @@ module.exports = function(grunt) {
             options: {
                 atBegin: true
             },
-            html: {
-                files: ['test/**/*.html', '!test/index.html'],
-                tasks: ['clean:html','buildTest']
-            },
             js: {
                 files: ['js/**/*.js'],
                 tasks: ['clean:js','concat:test','copy:js','uglify:test','copy:js']
@@ -235,58 +231,6 @@ module.exports = function(grunt) {
     // Use grunt-tasks to load modules instead of
     // grunt.loadNpmTasks('xxx');
     require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
-
-
-    // Create related task
-    // For when you wan't to create a new element / component in the framework
-    grunt.registerTask('create', 'A simple task for creating a new ui element or component', function () {
-        var config = grunt.config.get(),
-            name = grunt.option("name").replace(/\s/g, "-") || "unnamed",
-            templates_path = "./test/",
-            sass_path = "./sass/modules/";
-
-        name = ( grunt.file.isFile(templates_path+name) ) ? name +"-"+ grunt.template.today("yyyymmdd-HHMMss") : name;
-        var template_file = templates_path +name.toLowerCase()+ ".html",
-            sass_file = sass_path+ "_" +name.toLowerCase()+ ".scss";
-
-        grunt.file.write(template_file, grunt.config("template"));
-        grunt.file.write(sass_file, "");
-
-        grunt.log.oklns("Created template file: " + template_file );
-        grunt.log.oklns("Created Sass file: " + sass_file);
-    });
-
-
-    // Build test
-    grunt.registerTask('buildTest', 'A task that takes all small tests and builds them into a index file', function () {
-        // Force task into async mode and grab a handle to the "done" function.
-        var cheerio = require('cheerio'),
-            filepath = "test/index.html";
-
-        if ( grunt.file.isFile( filepath ) ) {
-            grunt.file.delete( filepath, { force: true } );
-        }
-
-        // get all files
-        var files = grunt.file.expand( grunt.config('watch.html.files') );
-
-        // get their contents
-        var contents = files.sort().map( function( filepath ) {
-            var content = grunt.file.read(filepath);
-            var $ = cheerio.load(content);
-
-            return $("#tdcss").html();
-        }).join("\n\n\n");
-
-        // write to file
-        var data = grunt.config('template');
-        data = data.replace("<!-- content -->", contents);
-        data = data.replace("<title></title>", "<title>"+ grunt.config('pkg.name') +"</title>");
-        grunt.file.write(filepath, data);
-
-        // tell about it
-        grunt.log.oklns('Created index file: '+ filepath);
-    });
 
     // Distribution related task
     grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-fonts','usebanner']);
