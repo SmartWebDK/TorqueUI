@@ -168,7 +168,7 @@ hr {
 // Inputs and selects
 //
 
-.form-input {
+.form-input, .form-label {
     @extend .theme-border-gray-light;
     @extend .theme-background-default;
     @extend .theme-color-main;
@@ -207,7 +207,8 @@ hr {
 // Commen checkbox and radiobutton styles
 //
 
-.input-group-addon, .input-group-image img  {
+.input-group-addon,
+.input-group-image img  {
     @extend .theme-background-gray;
     @extend .theme-border-gray-light;
 
