@@ -706,7 +706,12 @@ hr {
 // Dropdowns
 // ==========================================================================
 
+.dropdown {
+    @extend .theme.background-default;
+}
+
 .dropdown-menu {
+    @extend .theme-background-default;
     @extend .theme-border-gray-light;
     @include box-shadow(2px 3px 3px rgba(0,0,0,.2));
 
