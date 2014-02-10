@@ -4119,7 +4119,7 @@ select.form-select::-ms-expand {
   font-size: 90%;
 }
 
-.responsive.image {
+img.responsive {
   display: block;
   max-width: 100%;
   height: auto;
