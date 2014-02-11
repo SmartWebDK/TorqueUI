@@ -39,14 +39,6 @@ body {
 
 .trailing {
     margin: 0 auto rhythm(2, $font-base);
-
-    &.double {
-        @extend .trailing-db;
-    }
-
-    &.triple {
-        @extend .trailing-trip;
-    }
 }
 .trailing-db {
     margin: 0 auto rhythm(4, $font-base);
