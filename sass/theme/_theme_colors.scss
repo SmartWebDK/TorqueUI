@@ -607,98 +607,9 @@ hr {
             &:hover {
             }
         }
-
-        .nav-tabs {
-            > li {
-                > a {
-                    &:hover {
-                        border-bottom-color: #fff;
-                    }
-                }
-            }
-
-            &.nav-justified {
-                > li {
-                    > a {
-                        &:hover {
-                            border-bottom-color: $color-gray-dark;
-                        }
-                    }
-                }
-            }
-        }
     }
 
     .navbar-collapse {
-    }
-
-    .navbar-invert {
-        @extend .theme-background-main;
-
-        @extend .theme-border-main;
-
-        .navbar-brand {
-            color: invert($color-main);
-        }
-
-        .button-primary {
-            @extend .theme-border-highlight;
-        }
-
-        .navbar-collapse {
-        }
-
-        .nav-tabs {
-            > li {
-                > a {
-                    &:hover {
-                        @extend .theme-background-main-dark;
-                        @extend .theme-border-main-dark;
-                        border-bottom-color: $color-main;
-                    }
-                }
-                &.active {
-                    > a {
-                        @extend .theme-color-main;
-                        @extend .theme-background-default;
-                        border-width: 1px;
-                        border-style: solid;
-                        @extend .theme-border-gray-dark;
-                    }
-                }
-            }
-
-            &.nav-justified {
-                margin-bottom: -1px;
-                > li {
-                    > a {
-                        border-bottom-width: 1px;
-                        border-bottom-style: solid;
-                        border-bottom-color: $color-main;
-                    }
-                }
-            }
-        }
-
-        .nav-pills {
-            > li {
-                > a {
-                    &:hover {
-                        @extend .theme-background-main-dark;
-                        @extend .theme-border-main-dark;
-                    }
-                }
-                &.active {
-                    > a {
-                        @extend .theme-color-default;
-                        @extend .theme-background-highlight;
-                        border-width: 1px;
-                        border-style: solid;
-                        @extend .theme-border-highlight;
-                    }
-                }
-            }
-        }
     }
 
 
