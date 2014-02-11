@@ -93,15 +93,24 @@ $grid-xlarge-columns                : 12;
 $grid-xlarge-gutter                 : 32px;
 
 
-//
+// ==========================================================================
 // Breakpoint slicer
 // Resource: https://github.com/lolmaus/breakpoint-slicer
+// ==========================================================================
+
+//
+// Config
 //
 
 $slicer-anti-overlap-corrections: -1px;
+
+//
+// Slices
+//
+
 $slicer-breakpoints: 0 $grid-default $grid-medium $grid-large $grid-xlarge;
 
-// Breakpoint:   0                 480px     768px     960px       1289px
+// Breakpoint:   0                 480px     768px     960px       1280px
 //               ├───────────────────┼─────────┼─────────┼───────────┼─────────>
 // Slice #:                1              2         3          4          5
 
@@ -115,7 +124,7 @@ $slicer-breakpoints: 0 $grid-default $grid-medium $grid-large $grid-xlarge;
 // Resource: http://fontawesome.io/
 //
 
-$fa-font-path                       : "../../fonts";
+$fa-font-path                       : "../fonts";
 $fa-border-color                    : #eee;
 $fa-inverse                         : #fff;
 $fa-li-width                        : (30em / $base) !default;
@@ -129,10 +138,10 @@ $fa-li-width                        : (30em / $base) !default;
 // Global border radius
 //
 
-$global-border-radius               : em(4px) !default;
+$global-border-radius               : em(4px);
 
 //
 // Global paddings
 //
 
-$global-padding                     : em(20px) !default;
+$global-padding                     : em(20px);

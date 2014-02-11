@@ -2,10 +2,8 @@
 // Responsive images
 // -----------------------------------------------------------------------------
 
-.responsive {
-    &.image {
-        max-width: 100%;
-        height: auto;
-        display: block;
-    }
+img.responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
