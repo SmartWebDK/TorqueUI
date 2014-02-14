@@ -3776,6 +3776,90 @@ th.is-hidden-xl {
     display: none !important;
   }
 }
+@media (max-width: 767px) {
+  .inline-block-s,
+  .is-inline-block-s,
+  .is-i-b-s {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+  }
+
+  .fullwidth-s,
+  .is-block-s,
+  .is-b-s {
+    display: block;
+    float: none;
+    width: 100% !important;
+    margin: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 959px) {
+  .inline-block-m,
+  .is-inline-block-m,
+  .is-i-b-m {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+  }
+
+  .fullwidth-m,
+  .is-block-m,
+  .is-b-m {
+    display: block;
+    float: none;
+    width: 100% !important;
+    margin: 0;
+  }
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+  .inline-block-l,
+  .is-inline-block-l,
+  .is-i-b-l {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+  }
+
+  .fullwidth-l,
+  .is-block-l,
+  .is-b-l {
+    display: block;
+    float: none;
+    width: 100% !important;
+    margin: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .inline-block-xl,
+  .is-inline-block-xl,
+  .is-i-b-xl {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    *vertical-align: auto;
+    zoom: 1;
+    *display: inline;
+  }
+
+  .fullwidth-xl,
+  .is-block-xl,
+  .is-b-xl {
+    display: block;
+    float: none;
+    width: 100% !important;
+    margin: 0;
+  }
+}
 .badge {
   display: inline-block;
   padding: 3px 7px;
@@ -3909,9 +3993,9 @@ th.is-hidden-xl {
   margin: 5px 0;
 }
 .dropdown.open .dropdown-menu {
-  display: block;
-  opacity: 1;
-  filter: alpha(opacity=0);
+  display: block !important;
+  opacity: 1 !important;
+  filter: alpha(opacity=0) !important;
 }
 
 .dropdown-menu {
@@ -4505,6 +4589,11 @@ dd {
     border-radius: 0 !important;
        -moz-box-shadow: none !important;
             box-shadow: none !important;
+  }
+  .navbar .nav .dropdown .dropdown-menu .dropdown-menu {
+    display: none;
+    opacity: 0;
+    filter: alpha(opacity=0);
   }
 }
 @media (min-width: 960px) {
