@@ -327,19 +327,19 @@
 
 @function ui-grid-width($size: "default") {
     @if $size == "default" {
-        @return $grid-default;
+        @return $grid-default - $grid-default-gutter;
     }
 
     @if $size == "medium" {
-        @return $grid-medium;
+        @return $grid-medium - $grid-medium-gutter;
     }
 
     @if $size == "large" {
-        @return $grid-large;
+        @return $grid-large - $grid-large-gutter;
     }
 
     @if $size == "xlarge" {
-        @return $grid-xlarge;
+        @return $grid-xlarge - $grid-xlarge-gutter;
     }
 }
 

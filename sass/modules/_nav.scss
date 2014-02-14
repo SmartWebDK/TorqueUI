@@ -22,24 +22,6 @@
 	}
 }
 
-	.nav-default {
-		> li {
-			@include background-clip(border-box);
-			float: left;
-
-			> a {
-				@extend %size-default;
-				border: 1px solid transparent;
-			}
-
-			&.active {
-				> a {
-					cursor: default;
-					border-bottom-color: transparent;
-				}
-			}
-		}
-	}
 
 //
 // Pills
@@ -211,51 +193,46 @@
 // Sizes for navs
 //
 
-.large {
-    &.nav {
-        > li {
-        	> a {
-	        	@extend %size-large;
-        	}
-        	&.seperator {
-        		@extend %size-large-line-height;
-        	}
-	    }
+.nav {
+    > li {
+        > a {
+            @extend %size-default;
+        }
+        &.seperator {
+            @extend %size-default-line-height;
+        }
     }
-}
-.default {
-    &.nav {
-        > li {
-        	> a {
-	        	@extend %size-default;
-        	}
-        	&.seperator {
-        		@extend %size-default-line-height;
-        	}
-	    }
+
+    .large > li {
+        > a {
+        	@extend %size-large;
+        }
+        &.seperator {
+        	@extend %size-large-line-height;
+        }
     }
-}
-.small {
-    &.nav {
-        > li {
-        	> a {
-	        	@extend %size-small;
-        	}
-        	&.seperator {
-        		@extend %size-small-line-height;
-        	}
-	    }
+    .default > li {
+    	> a {
+        	@extend %size-default;
+    	}
+    	&.seperator {
+    		@extend %size-default-line-height;
+    	}
     }
-}
-.xsmall {
-    &.nav {
-        > li {
-        	> a {
-	        	@extend %size-xsmall;
-        	}
-        	&.seperator {
-        		@extend %size-xsmall-line-height;
-        	}
-	    }
+    .small > li {
+    	> a {
+        	@extend %size-small;
+    	}
+    	&.seperator {
+    		@extend %size-small-line-height;
+    	}
+    }
+    .xsmall > li {
+    	> a {
+        	@extend %size-xsmall;
+    	}
+    	&.seperator {
+    		@extend %size-xsmall-line-height;
+    	}
     }
 }

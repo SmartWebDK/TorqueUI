@@ -8,7 +8,9 @@
 
 .dropdown {
     @extend .reset;
+    @extend .clearfix;
     @include border-radius($global-border-radius);
+
     position: relative;
 
     %button {
@@ -27,9 +29,11 @@
     }
 
     &.open .dropdown-menu {
-        display: block;
-        opacity: 1;
+        display: block !important;
+        opacity: 1 !important;
+        filter: alpha(opacity=0) !important;
     }
+
 }
 
 
@@ -38,10 +42,21 @@
     @include background-clip(padding-box);
     @extend .transition;
 
-    padding: em(6px) 0;
-    min-width: 200px;
+    filter: alpha(opacity=00);
     border: 1px solid;
     opacity: 0;
+
+    padding: em(6px) 0;
+    min-width: 200px;
+    max-width: $grid-default - $grid-default-gutter;
+
+    @include at(3) {
+        max-width: $grid-medium - $grid-medium-gutter;
+    }
+
+    @include at(4) {
+        max-width: $grid-large - $grid-large-gutter;
+    }
 
     &.pull-right {
         float: right;
@@ -50,7 +65,7 @@
     }
 
     .divider {
-        margin: 6px 0;
+        margin: 0;
         padding: 0;
         height: 0;
         border: 0;
@@ -64,6 +79,26 @@
         list-style-image: none;
         margin: 0;
         padding: 0;
+    }
+
+
+    .dropdown,
+    .dropdown-menu {
+        float: none;
+        margin-left: 0.65em;
+        -webkit-box-shadow: none !important;
+        -ms-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        position: static;
+        margin: 0;
+        display: block;
+    }
+
+    .dropdown-menu {
+        padding-left: 0.75em;
     }
 
     //
@@ -123,7 +158,7 @@
         }
 
         .divider {
-            margin: 12px 0;
+            margin: 0;
         }
     }
 }

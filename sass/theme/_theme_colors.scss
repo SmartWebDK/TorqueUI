@@ -4,54 +4,6 @@
 
 
 // ==========================================================================
-// Extends
-// ==========================================================================
-
-//
-// Font colors
-//
-
-.theme-color-default {                  color: #fff; }
-.theme-color-base {                     @extend .theme-color-main; }
-.theme-color-main {                     color: $color-main; }
-.theme-color-main-light {               color: $color-main-light; }
-.theme-color-highlight {                color: $color-highlight; }
-
-//
-// Backgrounds
-//
-
-.theme-background-transparent {         background-color: transparent; }
-.theme-background-subtle {              background-color: $color-subtle; }
-.theme-background-main {                background-color: $color-main; }
-.theme-background-main-dark {           background-color: $color-main-dark; }
-.theme-background-highlight {           background-color: $color-highlight; }
-.theme-background-highlight-light-30 {  background-color: lighten($color-highlight, 30%); }
-.theme-background-highlight-light-20 {  background-color: lighten($color-highlight, 20%); }
-.theme-background-highlight-dark-5 {    background-color: darken($color-highlight, 5%); }
-.theme-background-highlight-dark-10 {   background-color: darken($color-highlight, 10%); }
-.theme-background-highlight-dark-15 {   background-color: darken($color-highlight, 15%); }
-.theme-background-highlight-dark-25 {   background-color: darken($color-highlight, 25%); }
-.theme-background-highlight-dark-30 {   background-color: darken($color-highlight, 30%); }
-.theme-background-gray {                background-color: $color-gray; }
-.theme-background-gray-dark {           background-color: $color-gray-dark; }
-.theme-background-default {             background-color: $color-default-bck; }
-.theme-background-default-hover {       background-color: $color-default-bck-hover; }
-
-//
-// Borders
-//
-
-.theme-border-transparent {             border-color: transparent }
-.theme-border-highlight {               border-color: $color-highlight; }
-.theme-border-highlight-dark-10 {       border-color: darken($color-highlight, 10%); }
-.theme-border-gray-dark {               border-color: $color-gray-dark; }
-.theme-border-gray-light {              border-color: $color-border !important; }
-.theme-border-main {                    border-color: $color-main; }
-.theme-border-main-dark {               border-color: $color-main-dark; }
-.theme-border-info {                    border-color: $color-info; }
-
-// ==========================================================================
 // Typography
 // ==========================================================================
 
@@ -60,7 +12,7 @@
 //
 
 html {
-    @extend .theme-color-base;
+    color: $color-main;
 }
 
 //
@@ -82,7 +34,7 @@ h6, .h6 {
 
 a, a:visited {
     text-decoration: none;
-    @extend .theme-color-highlight;
+    color: $color-highlight;
 
     &:hover {
         text-decoration: none;
@@ -102,7 +54,7 @@ a, a:visited {
 //
 
 s, del {
-    @extend .theme-color-main-light;
+    color: $color-main-light;
 }
 
 //
@@ -110,7 +62,7 @@ s, del {
 //
 
 small {
-    @extend .theme-color-main-light;
+    color: $color-main-light;
 }
 
 //
@@ -120,7 +72,7 @@ small {
 mark,
 .mark {
     color: color($color-highlight, #fff, $color-main);       // in _mixins.scss
-    @extend .theme-background-highlight;
+    background-color: $color-highlight;
 }
 
 //
@@ -130,8 +82,8 @@ mark,
     @include border-radius();
 
     &.badge-clean {
-        @extend .theme-background-default;
-        @extend .theme-color-main;
+        background-color: $color-default-bck;
+        color: $color-main;
     }
     &.badge-info {
         background-color: $color-info-light;
@@ -156,7 +108,7 @@ mark,
 //
 
 hr {
-    @extend .theme-border-gray-light;
+    border-color: $color-border !important;
 }
 
 
@@ -170,14 +122,14 @@ hr {
 
 .form-input,
 .input-group-main.form-label {
-    @extend .theme-border-gray-light;
-    @extend .theme-background-default;
-    @extend .theme-color-main;
+    border-color: $color-border !important;
+    background-color: $color-default-bck;
+    color: $color-main;
 
     @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
 
     &:hover {
-        @extend .theme-background-default-hover;
+        background-color: $color-default-bck-hover;
     }
 
     &:focus {
@@ -189,7 +141,7 @@ hr {
     //
     &.is-disabled,
     &:disabled {
-        @extend .theme-color-main-light;
+        color: $color-main-light;
     }
 }
 
@@ -211,12 +163,12 @@ hr {
 .input-group-addon,
 .input-group-image img,
 .input-group-main   {
-    @extend .theme-border-gray-light;
-    @extend .theme-background-gray;
+    border-color: $color-border !important;
+    background-color: $color-gray;
 
     .input-group:hover &,
     .input-group:focus & {
-        @extend .theme-background-gray-dark;
+        background-color: $color-gray-dark;
     }
 }
 
@@ -231,18 +183,18 @@ hr {
 
 .button,
 .button:visited {
-    @extend .theme-border-gray-light;
-    @extend .theme-color-main;
-    @extend .theme-background-default;
+    border-color: $color-border !important;
+    color: $color-main;
+    background-color: $color-default-bck;
 
     &:hover,
     &:focus {
-        @extend .theme-color-main;
-        @extend .theme-background-default-hover;
+        color: $color-main;
+        background-color: $color-default-bck-hover;
     }
 
     &:active {
-        @extend .theme-color-main;
+        color: $color-main;
         @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
     }
 
@@ -262,7 +214,7 @@ hr {
 
 .button.button-icon {
     > .fa {
-        @extend .theme-background-default-hover;
+        background-color: $color-default-bck-hover;
     }
     &:active > .fa {
         // background-color: darken($color-subtle, 20%);
@@ -295,12 +247,12 @@ hr {
     text-transform: uppercase;
     font-weight: bold;
 
-    @extend .theme-background-highlight;
-    @extend .theme-border-gray-light;
+    background-color: $color-highlight;
+    border-color: $color-border !important;
 
     &:hover,
     &:focus {
-        @extend .theme-background-highlight-dark-5;
+        background-color: darken($color-highlight, 5%);
         color: color($color-highlight, #fff, $color-main);
     }
 
@@ -316,7 +268,7 @@ hr {
     &.is-disabled,
     &:disabled {
         color: color($color-highlight, #fff, $color-main);
-        @extend .theme-background-highlight-light-20;
+        background-color: lighten($color-highlight, 20%);
     }
 }
 
@@ -326,15 +278,15 @@ hr {
 
 .button-primary.button-icon {
     > .fa {
-        @extend .theme-background-highlight-dark-10;
+        background-color: darken($color-highlight, 10%);
     }
     &:active > .fa {
-        @extend .theme-background-highlight-dark-25;
+        background-color: darken($color-highlight, 25%);
         @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
     }
     &:hover > .fa,
     &:focus > .fa {
-        @extend .theme-background-highlight-dark-15;
+        background-color: darken($color-highlight, 15%);
     }
 
     //
@@ -344,7 +296,7 @@ hr {
     &.is-disabled,
     &:disabled {
         > .fa {
-                @extend .theme-background-highlight-light-30;
+                background-color: lighten($color-highlight, 30%);
         }
     }
 }
@@ -355,14 +307,14 @@ hr {
 
 .button-text,
 .button-text:visited {
-    @extend .theme-color-highlight;
+    color: $color-highlight;
     text-decoration: none;
-    @extend .theme-background-transparent;
+    background-color: transparent;
 
     &:hover,
     &:focus {
         color: darken($color-highlight, 5%);
-        @extend .theme-background-transparent;
+        background-color: transparent;
         text-decoration: underline;
         @include box-shadow(none);
     }
@@ -376,10 +328,10 @@ hr {
 // ==========================================================================
 .symbol {
     &.symbol-button {
-        @extend .theme-color-main-light;
+        color: $color-main-light;
 
         &:hover {
-            @extend .theme-color-main;
+            color: $color-main;
         }
     }
 }
@@ -394,46 +346,46 @@ hr {
 }
 
 .panel-default {
-    @extend .theme-border-transparent;
-    @extend .theme-color-main;
-    @extend .theme-background-transparent;
+    border-color: transparent;
+    color: $color-main;
+    background-color: transparent;
 
     .panel-heading,
     .panel-footer {
-        @extend .theme-border-transparent;
+        border-color: transparent;
     }
 }
 
 .panel-border {
-    @extend .theme-border-gray-light;
-    @extend .theme-color-main;
-    @extend .theme-background-default;
+    border-color: $color-border !important;
+    color: $color-main;
+    background-color: $color-default-bck;
 
     .panel-heading,
     .panel-footer {
-        @extend .theme-border-gray-light;
+        border-color: $color-border !important;
     }
 }
 
 .panel-clean {
-    @extend .theme-border-info;
-    @extend .theme-color-main;
-    @extend .theme-background-default;
+    border-color: $color-info;
+    color: $color-main;
+    background-color: $color-default-bck;
 
     .panel-heading,
     .panel-footer {
-        @extend .theme-border-info;
+        border-color: $color-info;
     }
 }
 
 .panel-info {
-    @extend .theme-border-info;
+    border-color: $color-info;
     color: $color-info-dark;
     background-color: $color-info-light;
 
     .panel-heading,
     .panel-footer {
-        @extend .theme-border-info;
+        border-color: $color-info;
     }
 }
 
@@ -494,44 +446,45 @@ hr {
 // Default
 //
 
-    .nav-default {
-        > li {
-            > a {
-                &:hover {
-                    @extend .theme-background-subtle;
-                }
-            }
-            &.active {
-                > a {
-                    @extend .theme-color-default;
-                    @extend .theme-background-highlight;
-                    border-width: 1px;
-                    border-style: solid;
-                    @extend .theme-border-highlight;
-                }
+.nav-default,
+.nav .dropdown-menu,
+.nav .dropdown-stripped {
+    /* zomg */
+    background-color: $color-default-bck;
+    li {
+        > a {
+            color: $color-highlight;
+            &:hover {
+                color: $color-highlight;
+                background-color: $color-subtle;
             }
         }
+        &.active > a {
+            color: #fff;
+            background-color: $color-highlight;
+            border-color: $color-highlight;
+            border-width: 1px;
+            border-style: solid;
+        }
     }
+}
 
 //
 // Pills
 //
 
     .nav-pills {
+        background-color: $color-default-bck;
         > li {
-            > a {
-                &:hover {
-                    @extend .theme-background-subtle;
-                }
+            > a:hover {
+                background-color: $color-subtle;
             }
-            &.active {
-                > a {
-                    @extend .theme-color-default;
-                    @extend .theme-background-highlight;
-                    border-width: 1px;
-                    border-style: solid;
-                    @extend .theme-border-highlight;
-                }
+            &.active > a {
+                color: #fff;
+                background-color: $color-highlight;
+                border-color: $color-highlight;
+                border-width: 1px;
+                border-style: solid;
             }
         }
     }
@@ -541,49 +494,37 @@ hr {
 //
 
     .nav-tabs {
+        background-color: $color-default-bck;
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-bottom-color: $color-gray-dark;
 
-        > li {
-
-            > a {
-
-                &:hover {
-                    @extend .theme-background-subtle;
-                    border-color: $color-subtle;
-                    border-bottom-color: $color-gray-dark;
-                }
+        li {
+            > a:hover {
+                background-color: $color-subtle;
+                border-color: $color-subtle;
+                border-bottom-color: $color-gray-dark;
             }
 
-            &.active {
-                > a {
-                    @extend .theme-color-main;
-                    @extend .theme-background-default;
-                    border-width: 1px;
-                    border-style: solid;
-                    @extend .theme-border-gray-dark;
-                }
+            &.active > a {
+                color: $color-main;
+                background-color: $color-default-bck;
+                border-color: $color-gray-dark;
+                border-width: 1px;
+                border-style: solid;
             }
         }
 
-        &.nav-justified {
-
-            > li {
-
-                > a {
-                    border-bottom-width: 1px;
-                    border-bottom-style: solid;
-                    border-bottom-color: $color-gray-dark;
-                }
-
-                &.active {
-                    > a {
-                        border-width: 1px;
-                        border-style: solid;
-                        @extend .theme-border-gray-dark;
-                    }
-                }
+        &.nav-justified > li {
+            > a {
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+                border-bottom-color: $color-gray-dark;
+            }
+            &.active > a {
+                border-width: 1px;
+                border-style: solid;
+                border-color: $color-gray-dark;
             }
         }
     }
@@ -595,22 +536,12 @@ hr {
 .navbar {
     border-width: 1px;
     border-style: solid;
-    @extend .theme-border-transparent;
+    border-color: transparent;
 
     .navbar-brand {
-        @extend .theme-color-main;
+        color: $color-main;
     }
 }
-
-    .navbar-default {
-        a {
-            &:hover {
-            }
-        }
-    }
-
-    .navbar-collapse {
-    }
 
 
 // ==========================================================================
@@ -618,29 +549,19 @@ hr {
 // ==========================================================================
 
 .dropdown {
-    @extend .theme-background-default;
+    background-color: $color-default-bck;
 }
 
-.dropdown-menu {
-    @extend .theme-background-default;
-    @extend .theme-border-gray-light;
+.dropdown-menu,
+.dropdown-stripped {
+    background-color: $color-default-bck;
+    border-color: $color-border !important;
     @include box-shadow(2px 3px 3px rgba(0,0,0,.2));
 
-    li {
-        @extend .theme-background-default;
-
-        &:nth-of-type(even):not(.divider) {
-            @extend .theme-background-subtle;
-        }
-
-        > a {
-            @extend .theme-color-main;
-        }
-    }
 
     .divider,
     .dropdown-footer {
-        @extend .theme-border-gray-light;
+        border-color: $color-border !important;
     }
 
     .dropdown-header,
@@ -648,6 +569,23 @@ hr {
         h1, h2, h3, h4, h5, h6,
         .h1, .h2, .h3, .h4, .h5, .h6 {
             color: lighten($color-main, 5%);
+        }
+    }
+
+    li > a {
+        color: $color-main;
+        &:hover {
+            color: $color-main-light;
+        }
+    }
+}
+
+.dropdown-stripped {
+    li {
+        background-color: $color-default-bck;
+
+        &:nth-of-type(even):not(.divider) {
+            background-color: $color-subtle;
         }
     }
 }
@@ -659,14 +597,14 @@ hr {
 .pagination {
     > li {
         > a {
-            @extend .theme-background-default;
-            @extend .theme-border-gray-light;
-            @extend .theme-color-main;
+            background-color: $color-default-bck;
+            border-color: $color-border !important;
+            color: $color-main;
 
             &:hover,
             &:focus {
-                @extend .theme-background-default-hover;
-                @extend .theme-color-main;
+                background-color: $color-default-bck-hover;
+                color: $color-main;
             }
 
             &:active {
@@ -674,17 +612,15 @@ hr {
             }
         }
 
-        &.current {
-            a {
-                @extend .theme-background-highlight;
-                @extend .theme-color-default;
+        &.current a {
+            background-color: $color-highlight;
+            color: #fff;
 
-                &:hover,
-                &:focus {
-                    @extend .theme-color-default;
-                    @extend .theme-border-highlight-dark-10;
-                    @extend .theme-background-highlight;
-                }
+            &:hover,
+            &:focus {
+                color: #fff;
+                border-color: darken($color-highlight, 10%);
+                background-color: $color-highlight;
             }
         }
 
@@ -693,8 +629,8 @@ hr {
             > a:hover,
             > a:focus,
             > a:active {
-                @extend .theme-color-main-light;
-                @extend .theme-background-default-hover;
+                color: $color-main-light;
+                background-color: $color-default-bck-hover;
             }
         }
     }
@@ -715,7 +651,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 %table {
     th,
     td {
-        @extend .theme-border-gray-light;
+        border-color: $color-border !important;
     }
 }
 
@@ -750,7 +686,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 
 .table-bordered {
     @extend %table;
-    @extend .theme-border-gray-light;
+    border-color: $color-border !important;
 }
 
 //
@@ -758,7 +694,7 @@ $opacity-subtle: rgba(darken($color-subtle, 34%), 0.1);
 //
 
 .responsive-table-wrap {
-    @extend .theme-border-gray-light;
+    border-color: $color-border !important;
 }
 
 
