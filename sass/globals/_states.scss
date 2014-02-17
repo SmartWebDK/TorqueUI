@@ -21,7 +21,7 @@
     clear: both;
 }
 
-.center-block {
+.is-center-block {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -90,11 +90,15 @@
 }
 
 //
-// is-collapsed
+// collapsed classes
 //
 
+.collapse {
+    display: none;
+}
+
 .is-collapsed {
-    display: none !important;
+    display: none;
 }
 
 // ==========================================================================
@@ -158,7 +162,9 @@
 // Make inline block work
 //
 
-.inline-block {
+.inline-block,
+.is-inline-block,
+.is-i-b {
     display:-moz-inline-stack;
     display:inline-block;
     *zoom:1;
@@ -169,7 +175,9 @@
 // Full width element
 //
 
-.fullwidth, .is-block {
+.fullwidth,
+.is-block,
+.is-b {
     width: 100% !important;
     float: none;
     margin: 0;
@@ -188,15 +196,6 @@
 
 .reset {
     margin: 0;
-    padding: 0;
-}
-
-//
-// Baseline reset
-//
-
-.base-reset {
-    margin: 0 auto rhythm(2, $font-base);
     padding: 0;
 }
 

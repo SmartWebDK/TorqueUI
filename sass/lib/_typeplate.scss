@@ -85,22 +85,6 @@
 }
 
 
-// $Mixin $Smallcaps
-// -------------------------------------//
-// http://blog.hypsometry.com/articles/true-small-capitals-with-font-face
-// ISSUE #1 : https://github.com/typeplate/typeplate.github.com/issues/1
-
-@mixin smallcaps($color, $font-weight) {
-    // depends on the font family.
-    // some font-families don't support small caps
-    // or don't provide them with their web font.
-    font-variant: small-caps;
-    font-weight: $font-weight;
-    text-transform: lowercase;
-    color: $color;
-}
-
-
 // $Mixin $Fontsize-Adjust
 // -------------------------------------//
 // correct x-height for fallback fonts: requires secret formula

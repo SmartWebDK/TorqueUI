@@ -11,7 +11,7 @@
 // Resource: www.google.com/fonts/specimen/Raleway
 //
 
-$font-base-family               : "Raleway", sans-serif !default;
+$font-base-family               : sans-serif !default;
 $font-headings-family           : "Raleway", sans-serif !default;
 
 
@@ -33,10 +33,6 @@ $font-headings-family           : "Raleway", sans-serif !default;
 // 5)   Responsive sizes in %
 //
 
-$font-default-size              : 75%;      // 14px
-$font-medium-size               : 93.75%;     // 15px
-$font-large-size                : 100%;
-$font-xlarge-size               : 100%;
 
 //
 // Resource:
@@ -54,11 +50,10 @@ $font-header-line-height        : 8px;                              // 4)
 $font-small-print-size          : 65%;
 $font-small-caps-weight         : 600;
 
-// 5)
 $font-default-size              : 87.5%;                            // 14px
-$font-medium-size               : 93.75%;                           // 15px
-$font-large-size                : 100%;
-$font-xlarge-size               : 100%;
+$font-medium-size               : 87.5%;                            // 15px
+$font-large-size                : 87.5%;                            // 15px
+$font-xlarge-size               : 93.75%;                            // 15px
 
 
 //
@@ -83,48 +78,41 @@ $h6                             : 18px;
 
 $grid-default                       : 480px;
 $grid-default-columns               : 4;
-$grid-default-column-width          : 100px;
-$grid-default-gutter                : 10px;
+$grid-default-gutter                : 20px;
 
 $grid-medium                        : 768px;
 $grid-medium-columns                : 12;
-$grid-medium-column-width           : 44px;
-$grid-medium-gutter                 : 10px;
+$grid-medium-gutter                 : 20px;
 
 $grid-large                         : 960px;
 $grid-large-columns                 : 12;
-$grid-large-column-width            : 60px;
-$grid-large-gutter                  : 10px;
+$grid-large-gutter                  : 20px;
 
 $grid-xlarge                        : 1280px;
 $grid-xlarge-columns                : 12;
-$grid-xlarge-column-width           : 74px;
 $grid-xlarge-gutter                 : 32px;
 
 
-//
-// Susy vars
-// Resource: http://susy.oddbird.net/guides/getting-started/#start-settings
-//
-
-$total-columns                      : $grid-default-columns;
-$column-width                       : $grid-default-column-width;
-$gutter-width                       : $grid-default-gutter;
-$grid-padding                       : $gutter-width;
-
-$show-grid-backgrounds              : false;
+// ==========================================================================
+// Breakpoint slicer
+// Resource: https://github.com/lolmaus/breakpoint-slicer
+// ==========================================================================
 
 //
-// Susy preakpoints
-// Resource: http://susy.oddbird.net/guides/reference/#ref-media-layouts
-// $media-layout: <min-width> <layout> <max-width> <ie-fallback>;
+// Config
 //
 
-$default                            : $grid-default-columns $grid-medium - 1;
-$medium                             : $grid-medium $grid-medium-columns $grid-large - 1;
-$large                              : $grid-large $grid-large-columns $grid-xlarge - 1;
-$xlarge                             : $grid-xlarge $grid-xlarge-columns;
+$slicer-anti-overlap-corrections: -1px;
 
+//
+// Slices
+//
+
+$slicer-breakpoints: 0 $grid-default $grid-medium $grid-large $grid-xlarge;
+
+// Breakpoint:   0                 480px     768px     960px       1280px
+//               ├───────────────────┼─────────┼─────────┼───────────┼─────────>
+// Slice #:                1              2         3          4          5
 
 
 // ==========================================================================
@@ -136,33 +124,10 @@ $xlarge                             : $grid-xlarge $grid-xlarge-columns;
 // Resource: http://fontawesome.io/
 //
 
-$fa-font-path                       : "../../fonts";
+$fa-font-path                       : "../fonts";
 $fa-border-color                    : #eee;
 $fa-inverse                         : #fff;
 $fa-li-width                        : (30em / $base) !default;
-
-
-// ==========================================================================
-// Colors
-// ==========================================================================
-
-//
-// Swatches
-//
-
-$color-highlight                    : #f79420 !default;
-$color-main                         : #393c41 !default;
-$color-subtle                       : #f5f5f3 !default;
-
-$color-main-light                   : lighten($color-main, 30%) !default;
-$color-main-dark                    : darken($color-main, 10%) !default;
-
-$color-gray                         : #eee !default;
-$color-gray-light                   : #dddbd9 !default;
-$color-gray-dark                    : darken(#eee, 10%) !default;
-
-$color-default-bck                  : #fff !default;
-$color-default-bck-hover            : $color-subtle !default;
 
 
 // ==========================================================================
@@ -173,4 +138,10 @@ $color-default-bck-hover            : $color-subtle !default;
 // Global border radius
 //
 
-$global-border-radius               : em(4px) !default;
+$global-border-radius               : em(4px);
+
+//
+// Global paddings
+//
+
+$global-padding                     : em(20px);

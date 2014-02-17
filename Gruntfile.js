@@ -1,5 +1,5 @@
 module.exports = function(grunt) {
-
+    require('time-grunt')(grunt);
     grunt.initConfig({
 
         // Metadata
@@ -17,8 +17,9 @@ module.exports = function(grunt) {
                             '\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">',
                             '\t\t<title></title>',
                             '\t\t<meta name="viewport" content="width=device-width">\n',
-                            '\t\t<link rel="stylesheet" href="/tdcss.js/tdcss.css" type="text/css" media="screen">',
-                            '\t\t<link rel="stylesheet" href="/css/framework.css" type="text/css" media="screen">',
+                            '\t\t<link rel="stylesheet" href="tdcss.js/tdcss.css" type="text/css" media="screen">',
+                            '\t\t<link rel="stylesheet" href="css/framework.css" type="text/css" media="screen">',
+                            '\t\t<link rel="stylesheet" href="css/theme.css" type="text/css" media="screen">',
                             '\t\t<script type="text/javascript">',
                             '\t\tWebFontConfig = { google: { families: [ "Raleway:400,700:latin" ]}',
                             '\t\t};',
@@ -32,12 +33,44 @@ module.exports = function(grunt) {
                               '\t\t\ts.parentNode.insertBefore(wf, s);',
                             '\t\t\t})();',
                             '\t\t</script>',
+                            '<style>',
+                                '.r,',
+                                '.row {',
+                                  'border-radius: 0.25em;',
+                                '}',
+
+                                '.container {',
+                                  'margin-top: 20px;',
+                                  'border-radius: 0.25em;',
+                                '}',
+
+                                '[class^="col-"] {',
+                                  'text-align: center;',
+                                  'line-height: 40px;',
+                                  'background-color: #000;',
+                                  'opacity: 0.25;',
+                                  'font-weight: bold;',
+                                  'min-height: 40px;',
+                                  'border-radius: 0.25em;',
+                                  'margin-top: 5px;',
+                                  'margin-bottom: 5px;',
+                                '}',
+
+                                '[class^="col-"] [class^="col-"] {',
+                                    'opacity: .50;',
+                                '}',
+
+                            '</style>',
                         '\t</head>',
                         '\t<body>',
                             '\t\t<div id="tdcss">',
                                 '\t\t\t<!-- content -->',
                             '\t\t</div>\n',
                             '\t\t<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>',
+                            '<!--[if (lt IE 9) & (!IEMobile)]>',
+                                '<script src="js/ie.js"></script>',
+                            '<![endif]-->',
+                            '<script type="text/javascript" src="js/all.js"></script>',
                             '\t\t<script src="/tdcss.js/tdcss.js"></script>',
                             '\t\t<script>',
                                     '\t\t\t$("#tdcss").tdcss();',
@@ -48,8 +81,11 @@ module.exports = function(grunt) {
         // Task configuration.
         clean: {
           dist: ['dist'],
-          test: {
+          html: {
             src: ['test/index.html']
+          },
+          js: {
+            src: ['test/js/*']
           }
         },
 
@@ -67,9 +103,9 @@ module.exports = function(grunt) {
             options: {
                 atBegin: true
             },
-            html: {
-                files: ['test/**/*.html', '!test/index.html'],
-                tasks: ['clean:test','buildTest']
+            js: {
+                files: ['js/**/*.js'],
+                tasks: ['clean:js','concat:test','copy:js','uglify:test','copy:js']
             },
             sass: {
                 files: ['sass/**/*.scss'],
@@ -77,9 +113,39 @@ module.exports = function(grunt) {
             }
         },
 
+        concat: {
+            options: {
+                separator: ';',
+            },
+            test: {
+                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
+                dest: './test/js/ie.js'
+            },
+            dist: {
+                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
+                dest: './dist/js/ie.js'
+            }
+        },
+
+        uglify: {
+            options: {
+                preserveComments: 'some'
+            },
+            test: {
+                files: {
+                    './test/js/all.js': ['./js/*.js']
+                }
+            },
+            dist: {
+                files: {
+                    './dist/js/all.js': ['./js/*.js']
+                }
+            }
+        },
+
         compass: {
             options : {
-                require: ['rubygems','bundler/setup','susy'],
+                require: ['rubygems','bundler/setup','breakpoint-slicer'],
                 httpPath: "/",
                 sassDir: 'sass',
                 relativeAssets: true,
@@ -113,6 +179,7 @@ module.exports = function(grunt) {
                     src: [
                         'dist/css/<%= pkg.name %>.css',
                         'dist/css/<%= pkg.name %>.min.css',
+                        'dist/js/all.js'
                     ]
                 }
             }
@@ -121,8 +188,13 @@ module.exports = function(grunt) {
         copy: {
             fonts: {
                 expand: true,
-                src: ['fonts/*'],
-                dest: 'dist/'
+                src: ['./fonts/*'],
+                dest: './dist/'
+            },
+            js: {
+                expand: true,
+                src: ['./js/*.js'],
+                dest: './test/'
             }
         },
 
@@ -160,64 +232,12 @@ module.exports = function(grunt) {
     // grunt.loadNpmTasks('xxx');
     require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
-
-    // Create related task
-    // For when you wan't to create a new element / component in the framework
-    grunt.registerTask('create', 'A simple task for creating a new ui element or component', function () {
-        var config = grunt.config.get(),
-            name = grunt.option("name").replace(/\s/g, "-") || "unnamed",
-            templates_path = "./test/",
-            sass_path = "./sass/modules/";
-
-        name = ( grunt.file.isFile(templates_path+name) ) ? name +"-"+ grunt.template.today("yyyymmdd-HHMMss") : name;
-        var template_file = templates_path +name.toLowerCase()+ ".html",
-            sass_file = sass_path+ "_" +name.toLowerCase()+ ".scss";
-
-        grunt.file.write(template_file, grunt.config("template"));
-        grunt.file.write(sass_file, "");
-
-        grunt.log.oklns("Created template file: " + template_file );
-        grunt.log.oklns("Created Sass file: " + sass_file);
-    });
-
-
-    // Build test
-    grunt.registerTask('buildTest', 'A task that takes all small tests and builds them into a index file', function () {
-        // Force task into async mode and grab a handle to the "done" function.
-        var cheerio = require('cheerio'),
-            filepath = "test/index.html";
-
-        if ( grunt.file.isFile( filepath ) ) {
-            grunt.file.delete( filepath, { force: true } );
-        }
-
-        // get all files
-        var files = grunt.file.expand( grunt.config('watch.html.files') );
-
-        // get their contents
-        var contents = files.sort().map( function( filepath ) {
-            var content = grunt.file.read(filepath);
-            var $ = cheerio.load(content);
-
-            return $("#tdcss").html();
-        }).join("\n\n\n");
-
-        // write to file
-        var data = grunt.config('template');
-        data = data.replace("<!-- content -->", contents);
-        data = data.replace("<title></title>", "<title>"+ grunt.config('pkg.name') +"</title>");
-        grunt.file.write(filepath, data);
-
-        // tell about it
-        grunt.log.oklns('Created index file: '+ filepath);
-    });
-
     // Distribution related task
-    grunt.registerTask('dist', ['clean', 'dist-css', 'dist-js', 'dist-fonts', 'dist-jekyll']);
-    grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin', 'usebanner']);
+    grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-fonts','usebanner']);
+    grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin']);
     //grunt.registerTask('dist-js', ['concat', 'uglify']);
-    grunt.registerTask('dist-js', []);
-    grunt.registerTask('dist-fonts', ['copy']);
+    grunt.registerTask('dist-js', ['concat:dist','uglify:dist']);
+    grunt.registerTask('dist-fonts', ['copy:fonts']);
 
     // server
     grunt.registerTask("server", ['connect:server']);

@@ -1,0 +1,238 @@
+//
+// Navs
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	width: 100%;
+	@extend .clearfix;
+
+	> li {
+		position: relative;
+		> a {
+			text-decoration: none;
+			display: block;
+		}
+	}
+}
+
+
+//
+// Pills
+//
+//
+
+	.nav-pills {
+		> li {
+			@include background-clip(border-box);
+			float: left;
+
+			> a {
+				@extend %size-default;
+				@include border-radius($global-border-radius);
+				border: 1px solid transparent;
+
+				@include at(4) {
+					margin-right: 2px;
+				}
+			}
+
+			&.active {
+				> a {
+					cursor: default;
+					border-bottom-color: transparent;
+				}
+			}
+		}
+	}
+
+//
+// Tabs
+//
+
+	.nav-tabs {
+
+		> li {
+			@include background-clip(border-box);
+			float: left;
+			margin-bottom: -1px;
+
+			> a {
+				@extend %size-default;
+				@include border-radius($global-border-radius $global-border-radius 0 0);
+				border: 1px solid transparent;
+				border-left: 0px;
+				border-right: 0px;
+
+				@include at(4) {
+					margin-right: 2px;
+				}
+
+				&:hover {
+				}
+			}
+
+			&.active {
+				> a {
+					cursor: default;
+					border-bottom-color: transparent !important;
+				}
+			}
+		}
+
+		&.nav-justified {
+			border-bottom: 1px solid transparent;
+
+			> li {
+				@include at(4) {
+					@include ui-ie7-table-cell();
+					width: 1%;
+					float: none;
+				}
+
+				> a {
+				}
+
+				&.active {
+					> a {
+						border-bottom-color: transparent !important;
+					}
+				}
+			}
+		}
+	}
+
+//
+// Orientations
+//
+
+	.nav-justified {
+		border-bottom: 0;
+
+		> li {
+			display: table-cell;
+			width: 1%;
+			float: none;
+
+			> a {
+				margin: 0;
+				text-align: center;
+			}
+
+			&.active {
+				> a {
+				}
+			}
+		}
+
+	}
+
+	.nav-stacked {
+		> li {
+			float: none;
+			margin-bottom: -1px;
+
+			+li {
+				margin-top: 2px;
+			}
+		}
+	}
+
+//
+// Breadcrumb
+//
+
+	.nav-breadcrumbs {
+
+		> li {
+			float: left;
+
+			> a {
+
+				&:hover {
+
+				}
+			}
+		}
+	}
+
+// ==========================================================================
+// Toggle-content
+// ==========================================================================
+
+//
+// Toggle content is used for content on tabs / plls
+//
+
+.toggle-content {
+    @extend .clearfix;
+    > .pane {
+        @extend .transition;
+        display: none;
+        opacity: 0;
+
+        &.active {
+            display: block;
+            opacity: 1;
+        }
+    }
+}
+
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Sizes for navs
+//
+
+.nav {
+    > li {
+        > a {
+            @extend %size-default;
+        }
+        &.seperator {
+            @extend %size-default-line-height;
+        }
+    }
+
+    .large > li {
+        > a {
+        	@extend %size-large;
+        }
+        &.seperator {
+        	@extend %size-large-line-height;
+        }
+    }
+    .default > li {
+    	> a {
+        	@extend %size-default;
+    	}
+    	&.seperator {
+    		@extend %size-default-line-height;
+    	}
+    }
+    .small > li {
+    	> a {
+        	@extend %size-small;
+    	}
+    	&.seperator {
+    		@extend %size-small-line-height;
+    	}
+    }
+    .xsmall > li {
+    	> a {
+        	@extend %size-xsmall;
+    	}
+    	&.seperator {
+    		@extend %size-xsmall-line-height;
+    	}
+    }
+}

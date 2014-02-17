@@ -33,17 +33,17 @@ html {
     font-family: $font-base-family;
     font-weight: $font-weight;
 
-    @include at-breakpoint($medium) {
+    @include at(3) {
         font-size: $font-medium-size;
     }
 
 
-    @include at-breakpoint($large) {
+    @include from(4) {
         font-size: $font-large-size;
     }
 
 
-    @include at-breakpoint($xlarge) {
+    @include from(5) {
         font-size: $font-xlarge-size;
     }
 }
@@ -52,6 +52,7 @@ body {
     @include css-hyphens(auto);
     @extend %breakword;
 }
+
 
 
 // ==========================================================================
@@ -67,13 +68,17 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
     #{nth($size, 1)}, .#{nth($size, 1)} {
         @extend %hN;
         @include adjust-font-size-to(nth($size, 2));
-        margin: rhythm(4, nth($size, 2)) auto rhythm(3, nth($size, 2));
+        margin: rhythm(4, nth($size, 2)) auto rhythm(2, nth($size, 2));
     }
 }
 
 %hN {
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
+
+    &:first-child {
+        margin-top: 0;
+    }
 
     small {
         font-size: $font-small-print-size;
@@ -97,29 +102,118 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 
 
 // ==========================================================================
-// Baseline helpers
+// Base elements
 // ==========================================================================
 
 //
-// Classes for vertical distance
+// Styles Hyphenation
+// Resource: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
 //
 
-.trailing {
-    margin: 0 auto rhythm(2, $font-base);
+abbr,
+acronym,
+blockquote,
+code,
+dir,
+kbd,
+listing,
+plaintext,
+q,
+samp,
+tt,
+var,
+xmp {
+    @include css-hyphens(none);
+}
+abbr {
+    font-variant: small-caps;
+    font-weight: normal;
+    text-transform: lowercase;
 
-    &.double {
-        @extend .trailing-db;
-    }
-
-    &.triple {
-        @extend .trailing-trip;
+    &[title]:hover {
+        cursor: help;
     }
 }
-.trailing-db {
-    margin: 0 auto rhythm(4, $font-base);
+
+
+//
+// Styles Codeblocks
+//
+
+pre code {
+    @extend %normal-wrap;
+    @include white-space(pre-wrap);
 }
-.trailing-trip {
-    margin: 0 auto rhythm(6, $font-base);
+pre {
+    @include white-space(pre);
+}
+code {
+    @include white-space(pre);
+    font-family: monospace;
+}
+
+//
+// Horizontal line
+//
+
+hr {
+    clear:both;
+    height: 0;
+    border: 0;
+    border-top: 1px solid;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: rhythm(2, $font-base) auto;
+
+    &.line {
+        margin: 0;
+    }
+}
+
+mark,
+.mark {
+    display: inline-block;
+    padding: 0 3px;
+    border-radius: 3px;
+}
+
+//
+// Labels need to be strong
+//
+
+label {
+    font-weight: bold;
+}
+
+//
+// Blockquotes
+//
+
+blockquote {
+    padding: 0 1em 0 4em;
+    position: relative;
+
+    &:before {
+        content: "\f10d";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 1.5em;
+        display: block;
+        position: absolute;
+        left: 0.5em;
+    }
+
+    p:first-child {
+        margin-top: 0;
+    }
+
+    small,
+    .small {
+        display: block;
+        font-size: 100%;
+        @include trailer(1, $font-base, "margin");
+    }
 }
 
 
@@ -149,7 +243,6 @@ blockquote,
 q,
 pre,
 address,
-hr,
 code,
 samp,
 dl,
@@ -209,113 +302,24 @@ a, p, li, td {
     }
 }
 
-
-// ==========================================================================
-// Base elements
-// ==========================================================================
-
-
 //
-// Styles Hyphenation
-// Resource: http://meyerweb.com/eric/thoughts/2012/12/17/where-to-avoid-css-hyphenation
+// Text orientation
 //
 
-abbr,
-acronym,
-blockquote,
-code,
-dir,
-kbd,
-listing,
-plaintext,
-q,
-samp,
-tt,
-var,
-xmp {
-    @include css-hyphens(none);
-}
-abbr {
-    @include smallcaps($color-small-caps, $font-small-caps-weight);
-    &[title]:hover {
-        cursor: help;
-    }
+.text-left {
+    text-align: left;
 }
 
-
-//
-// Styles Codeblocks
-//
-
-pre code {
-    @extend %normal-wrap;
-    @include white-space(pre-wrap);
-}
-pre {
-    @include white-space(pre);
-}
-code {
-    @include white-space(pre);
-    font-family: monospace;
+.text-right {
+    text-align: right;
 }
 
-//
-// Horizontal line
-//
-
-hr {
-    height: 0;
-    border: 0;
-    border-top: 1px solid;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
+.text-center {
+    text-align: center;
 }
 
-mark,
-.mark {
-    display: inline-block;
-    padding: 0 3px;
-    border-radius: 3px;
-}
-
-//
-// Labels need to be strong
-//
-
-label {
-    font-weight: bold;
-}
-
-//
-// Blockquotes
-//
-
-blockquote {
-    padding: 0 1em 0 4em;
-    position: relative;
-
-    &:before {
-        content: "\f10d";
-        font-family: FontAwesome;
-        font-weight: normal;
-        font-style: normal;
-        font-size: 1.5em;
-        display: block;
-        position: absolute;
-        left: 0.5em;
-    }
-
-    p:first-child {
-        margin-top: 0;
-    }
-
-    small,
-    .small {
-        display: block;
-        font-size: 100%;
-        color: $color-main;
-        @include trailer(1, $font-base, "margin");
-    }
+.text-justify {
+    text-align: justify;
 }
 
 // ==========================================================================

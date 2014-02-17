@@ -2,19 +2,16 @@
 
 // Module dependencies
 @import "compass";
-@import "susy";
+@import "breakpoint-slicer";
 
 // Global variables and mixins
-@import "./globals/settings";
 @import "./globals/mixins";
-
-// Theme variables
-@import "./theme/theme_settings";
+@import "./globals/settings";
 
 // Vendor dependencies
-@import "./vendor/normalize";
-@import "./vendor/typeplate.scss";
-@import "./vendor/font awesome/font-awesome.scss";
+@import "./lib/normalize";
+@import "./lib/typeplate.scss";
+@import "./lib/font awesome/font-awesome.scss";
 
 // Base
 @import "./base/type";
@@ -22,20 +19,25 @@
 
 // Layout
 @import "./layout/grid";
-@import "./layout/utils";
 @import "./layout/responsive-utils";
 
 // Modules
-@import "./modules/panels";
-@import "./modules/alerts";
-@import "./modules/lists";
+@import "./modules/badge";
 @import "./modules/button";
+@import "./modules/dropdown";
 @import "./modules/form";
+@import "./modules/images";
 @import "./modules/input-group";
 @import "./modules/lists";
 @import "./modules/nav";
+@import "./modules/navbar";
+@import "./modules/media";
 @import "./modules/pager";
 @import "./modules/pagination";
+@import "./modules/panels";
+@import "./modules/symbol";
+@import "./modules/tables";
+
 
 // States
 @import "./globals/states";
@@ -44,5 +46,3 @@
 // Bastard fixes
 @import "./shame";
 
-// Theme setup
-@import "./theme/theme";

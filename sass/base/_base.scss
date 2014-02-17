@@ -27,3 +27,31 @@ html {
 body {
     min-height: 100%;
 }
+
+
+// ==========================================================================
+// Baseline helpers
+// ==========================================================================
+
+//
+// Classes for vertical distance
+//
+
+.trailing {
+    margin: 0 auto rhythm(2, $font-base);
+}
+.trailing-db {
+    margin: 0 auto rhythm(4, $font-base);
+}
+.trailing-trip {
+    margin: 0 auto rhythm(6, $font-base);
+}
+
+//
+// Baseline reset
+//
+
+.base-reset {
+    margin: 0 auto rhythm(2, $font-base);
+    padding: 0;
+}

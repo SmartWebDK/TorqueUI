@@ -35,3 +35,6 @@ dev
 test/css
 node_modules
 bower_components
+
+# Framework files
+/test/index.html

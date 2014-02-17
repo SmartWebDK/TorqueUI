@@ -85,10 +85,333 @@
 //
 
 @mixin ui-disabled {
-    cursor: not-allowed;
     pointer-events: none;                                   // 1)
     -moz-user-select: none;                                 // 2)
     -webkit-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    &:hover,
+    &:focus {
+        cursor: not-allowed;
+    }
 }
+
+//
+// DIsplay block
+//
+
+@mixin ui-block {
+    width: 100% !important;
+    float: none;
+    margin: 0;
+    display: block;
+}
+
+
+
+// ==========================================================================
+// Grid helpers
+// ==========================================================================
+
+//
+// Container helpers
+//
+
+@mixin ui-grid-container-base() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin ui-grid-container($size: "default") {
+    width: ui-grid-width($size);
+    padding-left: ui-grid-gutter-width($size);
+    padding-right: ui-grid-gutter-width($size);
+}
+
+//
+// Row helper
+//
+
+@mixin ui-grid-row($size: "default") {
+    margin-left: -#{ui-grid-gutter-width($size)};
+    margin-right: -#{ui-grid-gutter-width($size)};
+}
+
+//
+// Column helpers
+//
+
+@mixin ui-grid-column-base($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+
+    $columns-total: ui-grid-total_columns($size);
+    $all-selector:  '';
+
+    @for $col from 1 through $columns-total {
+        @if $all-selector != "" {
+            $all-selector:  '#{$all-selector} ,';
+        }
+        $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
+    }
+
+    #{$all-selector} {
+        padding-left: #{ui-grid-gutter-width($size)};
+        padding-right: #{ui-grid-gutter-width($size)};
+        float: left;
+    }
+
+    @if $size == "default" {
+        @include to(2) {
+            #{$size-selector}-#{$columns-total} {
+                clear: both;
+            }
+        }
+    } @else {
+        #{$size-selector}-#{$columns-total} {
+            clear: both;
+        }
+    }
+}
+
+@mixin ui-grid-columns($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$size-selector}-#{$col}';
+        #{$total-selector} {
+            width: percentage($col / $columns-total);
+        }
+    }
+}
+
+//
+// Offset
+//
+
+@mixin ui-grid-offset($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $offset-selector: '#{$size-selector}-offset';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total + 3 {
+        $total-selector: '#{$offset-selector}-#{$col}';
+        #{$total-selector} {
+            margin-left: percentage($col / $columns-total);
+        }
+    }
+
+    #{$offset-selector}-0 {
+        margin-left: 0;
+    }
+}
+
+//
+// Bleed
+//
+
+@mixin ui-grid-bleed($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $bleed-selector: '#{$size-selector}-bleed';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total + 3 {
+        $total-selector: '#{$bleed-selector}-#{$col}';
+        #{$total-selector} {
+            margin-left: -#{percentage($col / $columns-total)};
+        }
+    }
+
+    #{$bleed-selector}-0 {
+        margin-left: 0;
+    }
+}
+
+//
+// Push
+//
+
+@mixin ui-grid-push($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $push-selector: '#{$size-selector}-push';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$push-selector}-#{$col}';
+        #{$total-selector} {
+            left: percentage($col / $columns-total);
+        }
+    }
+
+    #{$push-selector}-0 {
+        left: 0;
+    }
+}
+
+//
+// Pull
+//
+
+@mixin ui-grid-pull($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $pull-selector: '#{$size-selector}-pull';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$pull-selector}-#{$col}';
+        #{$total-selector} {
+            left: -#{percentage($col / $columns-total)};
+        }
+    }
+
+    #{$pull-selector}-0 {
+        left: 0;
+    }
+}
+
+//
+// Helper functions
+//
+
+@function ui-grid-total_columns($size: "default") {
+    @if $size == "default" {
+        @return $grid-default-columns;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium-columns;
+    }
+
+    @if $size == "large" {
+        @return $grid-large-columns;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge-columns;
+    }
+}
+
+@function ui-grid-gutter-width($size: "default") {
+    @if $size == "default" {
+        @return $grid-default-gutter/2;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium-gutter/2;
+    }
+
+    @if $size == "large" {
+        @return $grid-large-gutter/2;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge-gutter/2;
+    }
+}
+
+@function ui-grid-width($size: "default") {
+    @if $size == "default" {
+        @return $grid-default - $grid-default-gutter;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium - $grid-medium-gutter;
+    }
+
+    @if $size == "large" {
+        @return $grid-large - $grid-large-gutter;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge - $grid-xlarge-gutter;
+    }
+}
+
+
+// ==========================================================================
+// Utility mixin
+// ==========================================================================
+
+@mixin ui-responsive-hide($size: "default", $selector: ".is-visible") {
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{$size-selector},
+    table#{$size-selector},
+    tr#{$size-selector},
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: none !important;
+    }
+}
+
+@mixin ui-responsive-show($size: "default", $selector: ".is-visible") {
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{$size-selector} {
+        display: block !important;
+    }
+    table#{$size-selector} {
+        display: table;
+    }
+    tr#{$size-selector} {
+        display: table-row !important;
+    }
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: table-cell !important;
+    }
+}
+
+// ==========================================================================
+// Misc helper functions
+// ==========================================================================
+
+//
+// Get short name for sizes
+//
+
+@function ui-shortsize($size: "default") {
+    @if $size == "default" {
+        @return "-s";
+    }
+
+    @if $size == "medium" {
+        @return "-m";
+    }
+
+    @if $size == "large" {
+        @return "-l";
+    }
+
+    @if $size == "xlarge" {
+        @return "-xl";
+    }
+}
+

@@ -1,0 +1,164 @@
+//
+// Dropdown
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Dropdown element
+// ==========================================================================
+
+.dropdown {
+    @extend .reset;
+    @extend .clearfix;
+    @include border-radius($global-border-radius);
+
+    position: relative;
+
+    %button {
+        margin: 0;
+    }
+
+    .dropdown-menu {
+        display: none;
+        z-index: 999;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        float: left;
+        margin: 5px 0;
+        padding: 6px 0;
+    }
+
+    &.open > .dropdown-menu {
+        display: block !important;
+        opacity: 1 !important;
+        filter: alpha(opacity=0) !important;
+    }
+
+}
+
+
+.dropdown-menu {
+    @include border-radius($global-border-radius);
+    @include background-clip(padding-box);
+    @extend .transition;
+
+    filter: alpha(opacity=00);
+    border: 1px solid;
+    opacity: 0;
+
+    padding: em(6px) 0;
+    min-width: 200px;
+    max-width: $grid-default - $grid-default-gutter;
+
+    @include at(3) {
+        max-width: $grid-medium - $grid-medium-gutter;
+    }
+
+    @include at(4) {
+        max-width: $grid-large - $grid-large-gutter;
+    }
+
+    &.pull-right {
+        float: right;
+        left: auto;
+        right: 0;
+    }
+
+    .divider {
+        margin: 0;
+        padding: 0;
+        height: 0;
+        border: 0;
+        border-top: 1px solid;
+        -moz-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+
+    ul {
+        list-style-type: none;
+        list-style-image: none;
+        margin: 0;
+        padding: 0;
+    }
+
+
+    .dropdown,
+    .dropdown-menu {
+        float: none;
+        margin-left: 0.65em;
+        -webkit-box-shadow: none !important;
+        -ms-box-shadow: none !important;
+        -moz-box-shadow: none !important;
+        box-shadow: none !important;
+        border: 0 !important;
+        border-radius: 0 !important;
+        position: static;
+        margin: 0;
+        display: block;
+    }
+
+    .dropdown-menu {
+        padding-left: 0.75em;
+    }
+
+    //
+    // Font-size on header + footer is smaller, so they need a bit more padding
+    //
+
+    .dropdown-header,
+    .dropdown-footer {
+        display: block;
+        padding: 10px 15px;
+    }
+
+    li > a,
+    li.media {
+        text-decoration: none;
+        display: block;
+        padding: 8px 15px;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    .dropdown-header,
+    .dropdown-footer {
+        h1, h2, h3, h4, h5, h6,
+        .h1, .h2, .h3, .h4, .h5, .h6 {
+            font-size: em(12px);
+            font-weight: normal;
+            color: inherit;
+            margin: 0;
+            line-height: 1.5em;
+        }
+    }
+
+    .dropdown-footer {
+        padding-top: 14px;
+        border-top: 1px solid;
+    }
+
+    &.padding-double {
+        li > a,
+        li.media {
+            padding: 16px 15px;
+        }
+
+        .dropdown-header,
+        .dropdown-footer {
+            padding-top: 18px;
+            padding-bottom: 18px;
+        }
+
+        .dropdown-footer {
+            padding-top: 26px;
+            border-top: 1px solid;
+        }
+
+        .divider {
+            margin: 0;
+        }
+    }
+}

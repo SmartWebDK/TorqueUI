@@ -26,6 +26,11 @@
     height: 46px;
     *height: auto;                                          // 1)
 }
+    %size-large-line-height {
+        padding: 11px 0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
 %size-default {
     padding: 7px 12px;
     font-size: 14px;
@@ -33,6 +38,11 @@
     height: 37px;
     *height: auto;                                          // 1)
 }
+    %size-default-line-height {
+        padding: 7px 0;
+        font-size: 14px;
+        line-height: 1.5;
+    }
 %size-small {
     padding: 5px 12px;
     font-size: 12px;
@@ -41,6 +51,11 @@
     height: 30px;
     *height: auto;                                          // 1)
 }
+    %size-small-line-height {
+        padding: 5px 0;
+        font-size: 12px;
+        line-height: 1.5;
+    }
 %size-xsmall {
     padding: 2px 12px;
     font-size: 12px;
@@ -49,9 +64,11 @@
     height: 25px;
     *height: auto;                                          // 1)
 }
-
-
-
+    %size-xsmall-line-height {
+        padding: 2px 0;
+        font-size: 12px;
+        line-height: 1.5;
+    }
 
 // ==========================================================================
 // Sizes
@@ -71,19 +88,27 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
-         @extend %size-large;
-    }
-
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
     &%button {
         @extend %size-large;
-        &.button-icon {
-            padding-left: 58px;
-        }
     }
-    &.button-icon > .fa {
-        line-height: 44px;
-        width: 46px;
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 58px !important;
+        &.left {
+            padding-left: 58px !important;
+        }
+        &.button-icon.right {
+            padding-right: 58px !important;
+            padding-left: 12px !important;
+        }
+        > .fa {
+            line-height: 44px !important;
+            width: 46px !important;
+        }
     }
 }
 
@@ -97,19 +122,27 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
-         @extend %size-default;
-    }
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
     &%button {
         @extend %size-default;
-        &.button-icon {
-            padding-left: 49px;
-        }
-
     }
-    &.button-icon > .fa {
-        line-height: 35px;
-        width: 37px;
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 49px !important;
+        &.left {
+            padding-left: 49px !important;
+        }
+        &.button-icon.right {
+            padding-right: 49px !important;
+            padding-left: 12px !important;
+        }
+         .fa {
+            line-height: 35px !important;
+            width: 37px !important;
+        }
     }
 }
 
@@ -123,18 +156,27 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
-         @extend %size-small;
-    }
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
     &%button {
         @extend %size-small;
-        &.button-icon {
-            padding-left: 42px;
-        }
     }
-    &.button-icon > .fa {
-        line-height: 28px;
-        width: 30px;
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 42px !important;
+        &.left {
+            padding-left: 42px !important;
+        }
+        &.right {
+            padding-right: 42px !important;
+            padding-left: 12px !important;
+        }
+        > .fa {
+            line-height: 28px !important;
+            width: 30px !important;
+        }
     }
 }
 
@@ -148,18 +190,27 @@
     .input-group-main,
     .input-group-addon,
     .input-group-image,
-    .input-group-button > .button {
-         @extend %size-xsmall;
-    }
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
     &%button {
         @extend %size-xsmall;
-        &.button-icon {
-            padding-left: 36px;
-        }
     }
-    &.button-icon > .fa {
-        line-height: 22px;
-        width: 24px;
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 36px !important;
+        &.left {
+            padding-left: 36px !important;
+        }
+        &.right {
+            padding-right: 36px !important;
+            padding-left: 12px !important;
+        }
+        > .fa {
+            line-height: 22px !important;
+            width: 24px !important;
+        }
     }
 }
 

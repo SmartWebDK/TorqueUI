@@ -42,7 +42,7 @@ dd {
 // Unstyled lists
 //
 
-.l-list-unstyled {
+.list-unstyled {
     @extend .no-icon;
     @extend .base-reset;
 
@@ -55,8 +55,8 @@ dd {
 // Easy extend for menu lists
 //
 
-.l-list-menu {
-    @extend .l-list-unstyled;
+.list-menu {
+    @extend .list-unstyled;
     @extend .base-reset;
 
     ul {
@@ -68,8 +68,8 @@ dd {
 // Inline lists
 //
 
-.l-list-inline {
-    @extend .l-list-menu;
+.list-inline {
+    @extend .list-menu;
 
     & li {
         display: inline-block;
@@ -78,3 +78,12 @@ dd {
     }
 }
 
+//
+// List with spacing
+//
+
+.list-border {
+    > li {
+        border-bottom: 1px solid #eee;
+    }
+}

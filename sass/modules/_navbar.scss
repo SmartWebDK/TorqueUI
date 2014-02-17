@@ -1,0 +1,169 @@
+//
+// Navbar
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Navbar
+// ==========================================================================
+
+.navbar {
+    position: relative;
+    display: block;
+    border: 1px solid transparent;
+
+    @extend .clearfix;
+}
+
+    .navbar-default {
+        background-color: transparent;
+        border-color: transparent;
+    }
+
+    .navbar-header {
+        @extend .clearfix;
+    }
+
+    .navbar-collapse {
+        @extend .transition;
+        z-index: 999;
+        display: block;
+        opacity: 1;
+        filter: alpha(opacity=100);
+
+
+        &.is-collapsed {
+            @extend .transition;
+            display: none;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        .form-group,
+        .input-group {
+            margin: 0;
+        }
+
+        .nav-default {
+            > li {
+                display: block;
+                float: none;
+
+                > a {
+                    border-color: transparent !important;
+                    cursor: pointer;
+                }
+            }
+            &.nav-justified > li {
+                width: auto;
+            }
+        }
+    }
+
+    .marker {
+        @extend %size-default;
+        float: right;
+        padding: 0.5em;
+    }
+
+    .navbar-brand {
+        @extend %size-default;
+        float: left;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 7px 5px;
+    }
+
+    .navbar-toggle {
+        @include inline-block;
+        width: auto;
+        float: right;
+        margin: 7px 5px;
+    }
+
+
+// ==========================================================================
+// Media Quries
+// ==========================================================================
+
+@include to(3) {
+    .navbar .nav .dropdown {
+        position: static;
+
+        .dropdown-menu {
+            float: none;
+            -webkit-box-shadow: none !important;
+            -ms-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            position: static;
+            margin: 0;
+
+            .dropdown-menu {
+                display: none;
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+        }
+    }
+}
+
+
+@include from(4) {
+
+    .navbar-pull-right {
+        float: right;
+    }
+    .navbar-pull-left {
+        float: left;
+    }
+
+    .navbar-collapse,
+    .navbar-collapse.is-collapsed {
+        @include ui-ie7-table-cell;
+        opacity: 1;
+        padding: 0;
+        width: 10000000px;
+
+        .nav {
+            > li {
+                display: inline-block;
+                > a {
+                    float: left;
+                }
+            }
+            &.nav-justified > li {
+                @include ui-ie7-table-cell;
+                width: 1%;
+                float: none;
+            }
+        }
+    }
+
+    .navbar-brand {
+        margin: 0;
+    }
+    .navbar-header {
+        float: left;
+    }
+    .navbar-toggle {
+        display: none;
+    }
+
+    .nav .dropdown {
+        position: relative;
+
+        .dropdown {
+            .dropdown-menu {
+                display: block;
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+            .marker {
+                display: none;
+            }
+        }
+    }
+}
+
