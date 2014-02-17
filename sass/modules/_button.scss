@@ -16,8 +16,9 @@
     text-align: center;
     line-height: 1em;
     vertical-align: middle;
-    width: 100%;
-    display: block;
+    width: auto;
+    @include inline-block();
+
     white-space: nowrap;
     cursor: pointer;
     background-image: none;
@@ -37,9 +38,9 @@
         margin: 0;
     }
 
-    @media (min-width: $grid-default) {
-        width: auto;
-        @include inline-block();
+    @include to(2) {
+        width: 100%;
+        display: block;
     }
 
     //

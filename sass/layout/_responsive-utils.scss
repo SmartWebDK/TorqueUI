@@ -1,4 +1,3 @@
-
 // ==========================================================================
 // Show classes
 // ==========================================================================
@@ -97,4 +96,81 @@ $hidden-selector: ".is-hidden";
 
 @include from(5) {
     @include ui-responsive-hide("xlarge", $hidden-selector);
+}
+
+
+// ==========================================================================
+// Box-mode helpers
+// ==========================================================================
+
+//
+// For small
+//
+
+@include to(2) {
+    .inline-block-s,
+    .is-inline-block-s,
+    .is-i-b-s {
+        @include inline-block;
+    }
+
+    .fullwidth-s,
+    .is-block-s,
+    .is-b-s {
+        @include ui-block;
+    }
+}
+
+//
+// For medium
+//
+
+@include at(3) {
+    .inline-block-m,
+    .is-inline-block-m,
+    .is-i-b-m {
+        @include inline-block;
+    }
+
+    .fullwidth-m,
+    .is-block-m,
+    .is-b-m {
+        @include ui-block;
+    }
+}
+
+//
+// For large
+//
+
+@include at(4) {
+    .inline-block-l,
+    .is-inline-block-l,
+    .is-i-b-l {
+        @include inline-block;
+    }
+
+    .fullwidth-l,
+    .is-block-l,
+    .is-b-l {
+        @include ui-block;
+    }
+}
+
+//
+// For xlarge
+//
+
+@include from(5) {
+    .inline-block-xl,
+    .is-inline-block-xl,
+    .is-i-b-xl {
+        @include inline-block;
+    }
+
+    .fullwidth-xl,
+    .is-block-xl,
+    .is-b-xl {
+        @include ui-block;
+    }
 }

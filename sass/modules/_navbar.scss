@@ -7,230 +7,163 @@
 // ==========================================================================
 
 .navbar {
-	position: relative;
-	display: block;
-	border: 1px solid transparent;
-	&:before,
-	&:after {
-		display: table;
-		content: " ";
-	}
+    position: relative;
+    display: block;
+    border: 1px solid transparent;
 
-	&:after {
-		clear: both;
-	}
+    @extend .clearfix;
 }
 
-	.navbar-default {
-		background-color: transparent;
-		border-color: transparent;
-	}
-
-	.navbar-header {
-
-		&:before,
-		&:after {
-			display: table;
-			content: " ";
-		}
-
-		&:after {
-			clear: both;
-		}
-	}
-
-	.navbar-collapse {
-		.collapse & {
-			.navbar-pull-right,
-			.navbar-pull-left {
-				float: none;
-			}
-		}
-
-		.form-group,
-		.input-group {
-			margin: 0;
-		}
-
-		.nav-default {
-			> li {
-				display: block;
-				float: none;
-
-				> a {
-					border-color: transparent !important;
-				}
-			}
-			&.nav-justified {
-				> li {
-					width: auto;
-				}
-			}
-		}
-	}
-
-	.navbar-brand {
-		float: left;
-		text-decoration: none;
-		font-weight: bold;
-	}
-
-	.navbar-toggle {
-		display: inline-block;
-		width: auto;
-		float: right;
-		margin: 7px 10px;
-	}
-
-// ==========================================================================
-// Sizes
-// ==========================================================================
-
-//
-// Sizes for navbar
-//
-
-
-.large {
-    &.navbar-brand {
-        font-size: 16px;
-		line-height: 1.5;
-		padding: 18px 10px;
+    .navbar-default {
+        background-color: transparent;
+        border-color: transparent;
     }
-}
-.default {
-    &.navbar-brand {
-        font-size: 16px;
-		line-height: 1.5;
-		padding: 13px 10px;
+
+    .navbar-header {
+        @extend .clearfix;
     }
-}
-.small {
-    &.navbar-brand {
-	    font-size: 14px;
-		line-height: 1.5;
-		padding: 11px 10px;
+
+    .navbar-collapse {
+        @extend .transition;
+        z-index: 999;
+        display: block;
+        opacity: 1;
+        filter: alpha(opacity=100);
+
+
+        &.is-collapsed {
+            @extend .transition;
+            display: none;
+            opacity: 0;
+            filter: alpha(opacity=0);
+        }
+
+        .form-group,
+        .input-group {
+            margin: 0;
+        }
+
+        .nav-default {
+            > li {
+                display: block;
+                float: none;
+
+                > a {
+                    border-color: transparent !important;
+                    cursor: pointer;
+                }
+            }
+            &.nav-justified > li {
+                width: auto;
+            }
+        }
     }
-}
-.xsmall {
-    &.navbar-brand {
-	    font-size: 14px;
-		line-height: 1.5;
-		padding: 9px 10px;
+
+    .marker {
+        @extend %size-default;
+        float: right;
+        padding: 0.5em;
     }
-}
+
+    .navbar-brand {
+        @extend %size-default;
+        float: left;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 7px 5px;
+    }
+
+    .navbar-toggle {
+        @include inline-block;
+        width: auto;
+        float: right;
+        margin: 7px 5px;
+    }
+
 
 // ==========================================================================
 // Media Quries
 // ==========================================================================
 
-//
-// Small
-//
+@include to(3) {
+    .navbar .nav .dropdown {
+        position: static;
+
+        .dropdown-menu {
+            float: none;
+            -webkit-box-shadow: none !important;
+            -ms-box-shadow: none !important;
+            -moz-box-shadow: none !important;
+            box-shadow: none !important;
+            border: 0 !important;
+            border-radius: 0 !important;
+            position: static;
+            margin: 0;
+
+            .dropdown-menu {
+                display: none;
+                opacity: 0;
+                filter: alpha(opacity=0);
+            }
+        }
+    }
+}
+
 
 @include from(4) {
-	.navbar-pull-right,
-	.navbar-pull-left {
-		display: table;
-	}
 
-	.navbar-pull-right {
-		float: right;
-	}
-	.navbar-pull-left {
-		float: left;
-	}
-	.navbar-collapse {
-		padding: 0;
-
-		.collapse & {
-			display: block;
-		}
-
-		.nav-default {
-			> li {
-				display: inline-block;
-			}
-			&.nav-justified {
-				> li {
-					display: table-cell;
-					width: 1%;
-					float: none;
-				}
-			}
-		}
-	}
-	.navbar-header {
-		float: left;
-	}
-	.navbar-toggle {
-		display: none;
-	}
-
-	.large {
-    	&.navbar-brand {
-    		padding: 11px 10px;
-    	}
+    .navbar-pull-right {
+        float: right;
+    }
+    .navbar-pull-left {
+        float: left;
     }
 
-    .default {
-    	&.navbar-brand {
-			padding: 6px 10px;
-    	}
+    .navbar-collapse,
+    .navbar-collapse.is-collapsed {
+        @include ui-ie7-table-cell;
+        opacity: 1;
+        padding: 0;
+        width: 10000000px;
+
+        .nav {
+            > li {
+                display: inline-block;
+                > a {
+                    float: left;
+                }
+            }
+            &.nav-justified > li {
+                @include ui-ie7-table-cell;
+                width: 1%;
+                float: none;
+            }
+        }
     }
 
-    .small {
-    	&.navbar-brand {
-			padding: 4px 10px;
-    	}
+    .navbar-brand {
+        margin: 0;
+    }
+    .navbar-header {
+        float: left;
+    }
+    .navbar-toggle {
+        display: none;
     }
 
-    .xsmall {
-    	&.navbar-brand {
-			padding: 2px 10px;
-    	}
+    .nav .dropdown {
+        position: relative;
+
+        .dropdown {
+            .dropdown-menu {
+                display: block;
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+            .marker {
+                display: none;
+            }
+        }
     }
 }
 
-
-/*
-.navbar-size-large {
-	.navbar-pull-right,
-	.navbar-pull-left {
-		@extend %navbar-size-large;
-		@include from(4) {
-			@extend %navbar-size-large;
-		}
-	}
-}
-
-.navbar-size-default {
-	.navbar-pull-right,
-	.navbar-pull-left {
-		@extend %navbar-size-default;
-		@include from(4) {
-			@extend %navbar-size-default;
-		}
-	}
-}
-
-.navbar-size-small {
-	.navbar-pull-right,
-	.navbar-pull-left {
-		@extend %navbar-size-small;
-		@include from(4) {
-			@extend %navbar-size-small;
-		}
-	}
-}
-
-.navbar-size-xsmall {
-	.navbar-pull-right,
-	.navbar-pull-left {
-		@extend %navbar-size-xsmall;
-		@include from(4) {
-			@extend %navbar-size-xsmall;
-		}
-	}
-}
-*/
