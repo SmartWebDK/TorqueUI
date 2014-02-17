@@ -54,6 +54,10 @@
             @include ui-grid-bleed("xlarge");
             @include ui-grid-push("xlarge");
             @include ui-grid-pull("xlarge");
+
+            .col-l-12 {
+                clear: none;
+            }
         }
     }
 
