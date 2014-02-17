@@ -307,28 +307,35 @@ hr {
 .nav-default,
 .nav .dropdown-menu,
 .nav .dropdown-stripped {
-  /* zomg */
   background-color: white;
 }
-.nav-default li > a,
-.nav .dropdown-menu li > a,
-.nav .dropdown-stripped li > a {
+.nav-default li:hover,
+.nav .dropdown-menu li:hover,
+.nav .dropdown-stripped li:hover {
+  background-color: #f5f5f3;
+}
+.nav-default li:hover a,
+.nav .dropdown-menu li:hover a,
+.nav .dropdown-stripped li:hover a {
   color: #f79420;
 }
-.nav-default li > a:hover,
-.nav .dropdown-menu li > a:hover,
-.nav .dropdown-stripped li > a:hover {
+.nav-default li a,
+.nav .dropdown-menu li a,
+.nav .dropdown-stripped li a {
   color: #f79420;
-  background-color: #f5f5f3;
+}
+.nav-default li.active,
+.nav .dropdown-menu li.active,
+.nav .dropdown-stripped li.active {
+  background-color: #f79420;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f79420;
 }
 .nav-default li.active > a,
 .nav .dropdown-menu li.active > a,
 .nav .dropdown-stripped li.active > a {
   color: #fff;
-  background-color: #f79420;
-  border-color: #f79420;
-  border-width: 1px;
-  border-style: solid;
 }
 
 .nav-pills {
