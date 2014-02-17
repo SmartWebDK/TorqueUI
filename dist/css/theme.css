@@ -1,4 +1,5 @@
-.theme-color-default, .nav-default > li.active > a, .nav-pills > li.active > a, .navbar-invert .nav-pills > li.active > a, .pagination > li.current a, .pagination > li.current a:hover, .pagination > li.current a:focus {
+@charset "UTF-8";
+.theme-color-default, .nav-default > li.active > a, .nav-pills > li.active > a, .pagination > li.current a, .pagination > li.current a:hover, .pagination > li.current a:focus {
   color: #fff;
 }
 
@@ -7,7 +8,7 @@
 .button:visited, .button:hover, .button:focus,
 .button:visited:hover,
 .button:visited:focus, .button:active,
-.button:visited:active, .symbol.symbol-button:hover, .panel-default, .panel-border, .panel-clean, .nav-tabs > li.active > a, .navbar .navbar-brand, .navbar-invert .nav-tabs > li.active > a, .dropdown-menu li > a, .pagination > li > a, .pagination > li > a:hover, .pagination > li > a:focus {
+.button:visited:active, .symbol.symbol-button:hover, .panel-default, .panel-border, .panel-clean, .nav-tabs > li.active > a, .navbar .navbar-brand, .dropdown-menu li > a, .pagination > li > a, .pagination > li > a:hover, .pagination > li > a:focus {
   color: #393c41;
 }
 
@@ -36,17 +37,17 @@
   background-color: #f5f5f3;
 }
 
-.theme-background-main, .navbar-invert {
+.theme-background-main {
   background-color: #393c41;
 }
 
-.theme-background-main-dark, .navbar-invert .nav-tabs > li > a:hover, .navbar-invert .nav-pills > li > a:hover {
+.theme-background-main-dark {
   background-color: #212326;
 }
 
 .theme-background-highlight, mark,
 .mark, .button-primary,
-.button-primary:visited, .nav-default > li.active > a, .nav-pills > li.active > a, .navbar-invert .nav-pills > li.active > a, .pagination > li.current a, .pagination > li.current a:hover, .pagination > li.current a:focus {
+.button-primary:visited, .nav-default > li.active > a, .nav-pills > li.active > a, .pagination > li.current a, .pagination > li.current a:hover, .pagination > li.current a:focus {
   background-color: #f79420;
 }
 
@@ -98,7 +99,7 @@
 
 .theme-background-default, .badge.badge-clean, .form-input,
 .input-group-main.form-label, .button,
-.button:visited, .panel-border, .panel-clean, .nav-tabs > li.active > a, .navbar-invert .nav-tabs > li.active > a, .dropdown, .dropdown-menu, .dropdown-menu li, .pagination > li > a {
+.button:visited, .panel-border, .panel-clean, .nav-tabs > li.active > a, .dropdown, .dropdown-menu, .dropdown-menu li, .pagination > li > a {
   background-color: white;
 }
 
@@ -117,7 +118,7 @@
   border-color: transparent;
 }
 
-.theme-border-highlight, .nav-default > li.active > a, .nav-pills > li.active > a, .navbar-invert .button-primary, .navbar-invert .nav-pills > li.active > a {
+.theme-border-highlight, .nav-default > li.active > a, .nav-pills > li.active > a {
   border-color: #f79420;
 }
 
@@ -125,7 +126,7 @@
   border-color: #dc7a08;
 }
 
-.theme-border-gray-dark, .nav-tabs > li.active > a, .nav-tabs.nav-justified > li.active > a, .navbar-invert .nav-tabs > li.active > a {
+.theme-border-gray-dark, .nav-tabs > li.active > a, .nav-tabs.nav-justified > li.active > a {
   border-color: #d4d4d4;
 }
 
@@ -143,11 +144,11 @@
   border-color: #dddbd9 !important;
 }
 
-.theme-border-main, .navbar-invert {
+.theme-border-main {
   border-color: #393c41;
 }
 
-.theme-border-main-dark, .navbar-invert .nav-tabs > li > a:hover, .navbar-invert .nav-pills > li > a:hover {
+.theme-border-main-dark {
   border-color: #212326;
 }
 
@@ -374,36 +375,6 @@ mark,
 }
 
 .navbar {
-  border-width: 1px;
-  border-style: solid;
-}
-
-.navbar-default .nav-tabs > li > a:hover {
-  border-bottom-color: #fff;
-}
-.navbar-default .nav-tabs.nav-justified > li > a:hover {
-  border-bottom-color: #d4d4d4;
-}
-
-.navbar-invert .navbar-brand {
-  color: #c6c3be;
-}
-.navbar-invert .nav-tabs > li > a:hover {
-  border-bottom-color: #393c41;
-}
-.navbar-invert .nav-tabs > li.active > a {
-  border-width: 1px;
-  border-style: solid;
-}
-.navbar-invert .nav-tabs.nav-justified {
-  margin-bottom: -1px;
-}
-.navbar-invert .nav-tabs.nav-justified > li > a {
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #393c41;
-}
-.navbar-invert .nav-pills > li.active > a {
   border-width: 1px;
   border-style: solid;
 }
