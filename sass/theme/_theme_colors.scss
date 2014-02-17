@@ -449,22 +449,27 @@ hr {
 .nav-default,
 .nav .dropdown-menu,
 .nav .dropdown-stripped {
-    /* zomg */
     background-color: $color-default-bck;
     li {
-        > a {
-            color: $color-highlight;
-            &:hover {
+        &:hover {
+            background-color: $color-subtle;
+            a {
                 color: $color-highlight;
-                background-color: $color-subtle;
             }
         }
-        &.active > a {
-            color: #fff;
+
+        a {
+            color: $color-highlight;
+        }
+
+        &.active {
             background-color: $color-highlight;
-            border-color: $color-highlight;
             border-width: 1px;
             border-style: solid;
+            border-color: $color-highlight;
+            > a {
+                color: #fff;
+            }
         }
     }
 }

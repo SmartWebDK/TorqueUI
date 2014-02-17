@@ -80,6 +80,7 @@
         margin: 7px 5px;
     }
 
+
 // ==========================================================================
 // Media Quries
 // ==========================================================================
@@ -98,7 +99,6 @@
             border-radius: 0 !important;
             position: static;
             margin: 0;
-            display: block;
 
             .dropdown-menu {
                 display: none;
@@ -126,9 +126,12 @@
         padding: 0;
         width: 10000000px;
 
-        .nav-default {
+        .nav {
             > li {
                 display: inline-block;
+                > a {
+                    float: left;
+                }
             }
             &.nav-justified > li {
                 @include ui-ie7-table-cell;
@@ -148,9 +151,18 @@
         display: none;
     }
 
-    .nav {
+    .nav .dropdown {
+        position: relative;
+
         .dropdown {
-            position: relative;
+            .dropdown-menu {
+                display: block;
+                opacity: 1;
+                filter: alpha(opacity=100);
+            }
+            .marker {
+                display: none;
+            }
         }
     }
 }
