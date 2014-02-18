@@ -2500,6 +2500,9 @@ img, .form-group, .media {
   .container.with-xlarge .col-xl-pull-0 {
     left: 0;
   }
+  .container.with-xlarge .col-l-12 {
+    clear: none;
+  }
 }
 .container.is-large {
   width: 940px;
