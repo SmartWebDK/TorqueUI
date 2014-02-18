@@ -138,7 +138,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    './dist/js/all.js': ['./js/*.js']
+                    './dist/js/framework.min.js': ['./js/*.js']
                 }
             }
         },
