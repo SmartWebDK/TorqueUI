@@ -38,52 +38,35 @@ dd {
 // List classes
 // ==========================================================================
 
+
 //
-// Unstyled lists
+// Unstyled list
 //
 
-.list-unstyled {
-    @extend .no-icon;
-    @extend .base-reset;
+.t-unstyled {
+    padding: 0;
+    list-style: none;
+}
 
+//
+// Unstyled list for nesting
+//
+
+.list-unstyled-nested {
     ul {
-        @extend .no-icon;
+        padding: 0;
+        list-style: none;
     }
 }
 
 //
-// Easy extend for menu lists
-//
-
-.list-menu {
-    @extend .list-unstyled;
-    @extend .base-reset;
-
-    ul {
-        @extend .reset;
-    }
-}
-
-//
-// Inline lists
+// Inline list
 //
 
 .list-inline {
-    @extend .list-menu;
-
-    & li {
+    li {
         display: inline-block;
-        padding-right: 0.5em;
-        padding-left: 0.5em;
+        padding: 0 0.5em;
     }
 }
 
-//
-// List with spacing
-//
-
-.list-border {
-    > li {
-        border-bottom: 1px solid #eee;
-    }
-}
