@@ -671,7 +671,7 @@ hr {
 // Basic table placeholder class
 //
 
-%table {
+.table {
     th,
     td {
         border-color: $color-border !important;
@@ -683,7 +683,7 @@ hr {
 //
 
 .table-h-striped {
-    @extend %table;
+    @extend .table;
     tbody > tr:nth-child(odd) {
         background-color: rgba(darken($color-subtle, 34%), 0.1);
     }
@@ -694,7 +694,7 @@ hr {
 //
 
 .table-v-striped {
-    @extend %table;
+    @extend .table;
     tbody, thead, tfoot {
         td:nth-child(even),
         th:nth-child(even) {
@@ -708,7 +708,7 @@ hr {
 //
 
 .table-bordered {
-    @extend %table;
+    @extend .table;
     border-color: $color-border !important;
 }
 

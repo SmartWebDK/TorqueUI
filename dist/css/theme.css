@@ -495,7 +495,16 @@ hr {
   background-color: #f5f5f3;
 }
 
-.table-h-striped th, .table-v-striped th, .table-bordered th,
+.t-striped > li:nth-child(odd) {
+  background-color: #f5f5f3;
+}
+
+.t-border-bottom > li {
+  border-bottom: 1px solid #dddbd9;
+}
+
+.table th, .table-h-striped th, .table-v-striped th, .table-bordered th,
+.table td,
 .table-h-striped td,
 .table-v-striped td,
 .table-bordered td {
