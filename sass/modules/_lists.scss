@@ -38,55 +38,35 @@ dd {
 // List classes
 // ==========================================================================
 
-.list {
 
-    //
-    // Inline lists
-    //
+//
+// Unstyled list
+//
 
-    &.l-inline {
+.t-unstyled {
+    padding: 0;
+    list-style: none;
+}
 
-        & li {
-            display: inline-block;
-            padding: 0 0.5em;
-        }
-    }
+//
+// Unstyled list for nesting
+//
 
-    //
-    // Unstyled theme
-    //
-
-    &.t-unstyled {
+.list-unstyled-nested {
+    ul {
         padding: 0;
         list-style: none;
     }
-
-    //
-    // Unstyled theme for nesting
-    //
-
-    &.t-unstyled-nested {
-        ul {
-            padding: 0;
-            list-style: none;
-        }
-    }
-
-    //
-    // Striped theme
-    //
-
-    &.t-striped {
-    }
-
-    //
-    // List with spacing
-    //
-
-    &.t-border-bottom {
-        > li {
-            border-bottom: 1px solid;
-        }
-    }
-
 }
+
+//
+// Inline list
+//
+
+.list-inline {
+    li {
+        display: inline-block;
+        padding: 0 0.5em;
+    }
+}
+

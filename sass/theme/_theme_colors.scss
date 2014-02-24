@@ -645,22 +645,20 @@ hr {
 // Lists
 // ==========================================================================
 
-.list {
 
-    //
-    // Striped theme
-    //
+//
+// Striped theme
+//
 
-    &.t-striped {
-        > li:nth-child(odd) {
-            background-color: $color-subtle;
-        }
+.t-striped {
+    > li:nth-child(odd) {
+        background-color: $color-subtle;
     }
+}
 
-    &.t-border-bottom {
-        > li {
-            border-color: $color-border;
-        }
+.t-border-bottom {
+    > li {
+        border-bottom: 1px solid $color-border;
     }
 }
 
