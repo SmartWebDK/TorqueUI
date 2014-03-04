@@ -515,6 +515,11 @@ hr {
         border-bottom-color: $color-gray-dark;
 
         li {
+            a {
+                border-color: transparent;
+                border-width: 1px;
+                border-style: solid;
+            }
             > a:hover {
                 background-color: $color-subtle;
                 border-color: $color-subtle;
