@@ -32,9 +32,16 @@ h6, .h6 {
 // Hyperlinks
 //
 
-a, a:visited {
+%a {
     text-decoration: none;
     color: $color-highlight;
+}
+
+a:visited {
+    @extend %a;
+}
+a {
+    @extend %a;
 
     &:hover {
         text-decoration: none;
@@ -244,8 +251,6 @@ hr {
 .button-primary,
 .button-primary:visited {
     color: color($color-highlight, #fff, $color-main);
-    text-transform: uppercase;
-    font-weight: bold;
 
     background-color: $color-highlight;
     border-color: $color-border !important;
@@ -438,6 +443,7 @@ hr {
 }
 
 
+
 // ==========================================================================
 // Navs
 // ==========================================================================
@@ -446,11 +452,12 @@ hr {
 // Default
 //
 
-.nav-default,
-.nav .dropdown-menu,
-.nav .dropdown-stripped {
-    background-color: $color-default-bck;
+.nav-default {
     li {
+        border-width: 1px;
+        border-style: solid;
+        border-color: transparent;
+
         &:hover {
             background-color: $color-subtle;
             a {
@@ -464,14 +471,18 @@ hr {
 
         &.active {
             background-color: $color-highlight;
-            border-width: 1px;
-            border-style: solid;
             border-color: $color-highlight;
             > a {
                 color: #fff;
             }
         }
     }
+}
+
+.nav .dropdown-menu,
+.nav .dropdown-stripped {
+    @extend .nav-default;
+    background-color: $color-default-bck;
 }
 
 //
@@ -499,7 +510,6 @@ hr {
 //
 
     .nav-tabs {
-        background-color: $color-default-bck;
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-bottom-color: $color-gray-dark;
@@ -533,6 +543,17 @@ hr {
             }
         }
     }
+
+//
+// Toggle pane
+//
+.t-panel-clean > .pane {
+    background: #fff;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $color-border;
+}
 
 // ==========================================================================
 // Navbar
@@ -707,7 +728,7 @@ hr {
 // Bordered tabled
 //
 
-.table-bordered {
+.table-border {
     @extend .table;
     border-color: $color-border !important;
 }

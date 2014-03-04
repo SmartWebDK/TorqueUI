@@ -83,21 +83,6 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
     small {
         font-size: $font-small-print-size;
     }
-
-    a {
-        color: inherit;
-        text-decoration: inherit;
-    }
-
-    a & {
-        color: inherit;
-        text-decoration: inherit;
-
-        &:hover {
-            color: inherit;
-            text-decoration: inherit;
-        }
-    }
 }
 
 

@@ -184,6 +184,13 @@
     }
 }
 
+//
+// Toggle pane theme
+//
+.t-panel-clean > .pane {
+    padding: $global-padding;
+}
+
 
 // ==========================================================================
 // Sizes
