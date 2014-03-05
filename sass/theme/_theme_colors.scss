@@ -140,7 +140,7 @@ hr {
     @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
 
     &:hover {
-        background-color: $color-default-bck-hover;
+        background-color: $color-gray;
     }
 
     &:focus {
@@ -176,7 +176,7 @@ hr {
 
     .input-group:hover &,
     .input-group:focus & {
-        background-color: $color-gray-dark;
+        background-color: $color-gray;
     }
 }
 
