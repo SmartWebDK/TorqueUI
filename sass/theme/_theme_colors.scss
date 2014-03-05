@@ -35,6 +35,10 @@ h6, .h6 {
 %a {
     text-decoration: none;
     color: $color-highlight;
+
+    span {
+        color: inherit;
+    }
 }
 
 a:visited {
@@ -167,16 +171,23 @@ hr {
 // Commen checkbox and radiobutton styles
 //
 
-.input-group-addon,
-.input-group-image img,
-.input-group-main   {
+%input-group {
     border-color: $color-border !important;
-    background-color: $color-gray;
 
     .input-group:hover &,
     .input-group:focus & {
         background-color: $color-gray-dark;
     }
+}
+
+.input-group-image img,
+.input-group-main   {
+    @extend %input-group;
+}
+
+.input-group-addon {
+    @extend %input-group;
+    background-color: $color-gray;
 }
 
 
