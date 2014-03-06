@@ -9,7 +9,6 @@
 .dropdown {
     @extend .reset;
     @extend .clearfix;
-    @include border-radius($global-border-radius);
 
     position: relative;
 

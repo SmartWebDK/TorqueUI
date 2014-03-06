@@ -468,6 +468,7 @@ hr {
         border-width: 1px;
         border-style: solid;
         border-color: transparent;
+        background: #FFF;
 
         &:hover {
             background-color: $color-subtle;
@@ -585,7 +586,6 @@ hr {
     }
 }
 
-
 // ==========================================================================
 // Dropdowns
 // ==========================================================================
@@ -596,14 +596,12 @@ hr {
 
 .dropdown-menu,
 .dropdown-stripped {
-    background-color: $color-default-bck;
-    border-color: $color-border !important;
-    @include box-shadow(2px 3px 3px rgba(0,0,0,.2));
+    border-color: transparent;
 
 
     .divider,
     .dropdown-footer {
-        border-color: $color-border !important;
+        border-color: transparent;
     }
 
     .dropdown-header,
