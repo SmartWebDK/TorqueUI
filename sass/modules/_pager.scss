@@ -12,14 +12,15 @@
 
 .pager-group {
     @extend .clearfix;
-    @include inline-block;
     @include border-radius($global-border-radius);
+    display: block;
     margin: 0;
     padding: 0;
 
     .button-icon,
     .button,
     .button-primary {
+        width: 50%;
         margin: 0;
         float: left;
         margin-left: -1px;
@@ -36,6 +37,23 @@
         &:last-child {
             border-top-right-radius: $global-border-radius;
             border-bottom-right-radius: $global-border-radius;
+        }
+    }
+}
+
+
+//
+// Media query
+//
+
+@include from(3) {
+    .pager-group {
+        @include inline-block;
+
+        .button-icon,
+        .button,
+        .button-primary {
+            width: auto;
         }
     }
 }
