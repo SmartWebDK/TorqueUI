@@ -100,6 +100,8 @@
     // ==========================================================================
     // Dropdown plugin definition
     // ==========================================================================
+    
+    var old = $.fn.dropdown;
 
     $.fn.dropdown = function (option) {
         return this.each( function () {
@@ -137,4 +139,3 @@
         .on('click.ui.dropdown', toggle, Dropdown.prototype.toggle);
 
 })(jQuery, document);
-

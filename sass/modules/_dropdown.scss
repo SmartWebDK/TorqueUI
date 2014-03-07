@@ -27,12 +27,14 @@
         padding: 6px 0;
     }
 
-    &.open > .dropdown-menu {
-        display: block !important;
-        opacity: 1 !important;
-        filter: alpha(opacity=0) !important;
+    &.open,
+    &:hover {
+        > .dropdown-menu {
+            display: block !important;
+            opacity: 1 !important;
+            filter: alpha(opacity=0) !important;
+        }
     }
-
 }
 
 
