@@ -12,7 +12,7 @@
     // ==========================================================================
 
     var backdrop = '.dropdown-backdrop',
-        toggle   = '[data-toggle="navigation"]';
+        toggle   = '[data-toggle=navigation]';
 
     var Nav = function (element) {
         $(element).on('click.ui.navigation', this.toggle);
@@ -76,6 +76,8 @@
     // Dropdown plugin definition
     // ==========================================================================
 
+    var old = $.fn.nav;
+
     $.fn.nav = function (option) {
         return this.each( function () {
             var $this = $(this),
@@ -83,9 +85,6 @@
 
             // convert dropdown to a prototype of dropdown
             if ( !data ) $this.data("ui.nav", (data = new Nav(this)));
-
-            // option could be 'toggle'
-            if ( typeof option == 'string' ) data[option].call($this);
         });
     };
 
