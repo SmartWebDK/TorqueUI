@@ -22,11 +22,30 @@
 	}
 }
 
+//
+// Default
+//
+
+	.nav-default {
+		> li {
+
+			> a {
+				@extend %default-size;
+			}
+		}
+	}
 
 //
 // Pills
 //
-//
+
+%default-size {
+padding: 7px $global-padding;
+    font-size: 14px;
+    line-height: 1.5;
+    height: 37px;
+    *height: auto;
+}
 
 	.nav-pills {
 		> li {
@@ -34,7 +53,7 @@
 			float: left;
 
 			> a {
-				@extend %size-default;
+				@extend %default-size;
 				@include border-radius($global-border-radius);
 				border: 1px solid transparent;
 
@@ -64,7 +83,7 @@
 			margin-bottom: -1px;
 
 			> a {
-				@extend %size-default;
+				@extend %default-size;
 				@include border-radius($global-border-radius $global-border-radius 0 0);
 				border: 1px solid transparent;
 				border-left: 0px;
@@ -160,6 +179,10 @@
 				}
 			}
 		}
+
+		.seperator {
+			padding: 0 $global-padding;
+		}
 	}
 
 // ==========================================================================
@@ -191,55 +214,3 @@
     padding: $global-padding;
 }
 
-
-// ==========================================================================
-// Sizes
-// ==========================================================================
-
-//
-// Sizes for navs
-//
-
-.nav {
-    > li {
-        > a {
-            @extend %size-default;
-        }
-        &.seperator {
-            @extend %size-default-line-height;
-        }
-    }
-
-    .large > li {
-        > a {
-        	@extend %size-large;
-        }
-        &.seperator {
-        	@extend %size-large-line-height;
-        }
-    }
-    .default > li {
-    	> a {
-        	@extend %size-default;
-    	}
-    	&.seperator {
-    		@extend %size-default-line-height;
-    	}
-    }
-    .small > li {
-    	> a {
-        	@extend %size-small;
-    	}
-    	&.seperator {
-    		@extend %size-small-line-height;
-    	}
-    }
-    .xsmall > li {
-    	> a {
-        	@extend %size-xsmall;
-    	}
-    	&.seperator {
-    		@extend %size-xsmall-line-height;
-    	}
-    }
-}
