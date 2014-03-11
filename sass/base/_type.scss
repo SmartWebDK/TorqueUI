@@ -255,38 +255,6 @@ textarea {
     -moz-osx-font-smoothing: grayscale;
 }
 
-
-// ==========================================================================
-// Smoother font & page loading
-// Resouce: http://www.jonikorpi.com/a-smoother-page-load/
-// ==========================================================================
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6,
-a, p, li, td {
-    opacity: 1;
-    visibility: visible;
-    /* Old IE */
-    -webkit-transition: opacity 0.3s ease-in-out;
-    -moz-transition: opacity 0.3s ease-in-out;
-    transition: opacity 0.3s ease-in-out;
-}
-.wf-loading {
-    h1, h2, h3, h4, h5, h6,
-    .h1, .h2, .h3, .h4, .h5, .h6,
-    a, p, li, td {
-        opacity: 0;
-    }
-    .ie & {
-        h1, h2, h3, h4, h5, h6,
-        .h1, .h2, .h3, .h4, .h5, .h6,
-        a, p, li, td {
-            visibility: hidden;
-            /* Old IE */
-        }
-    }
-}
-
 //
 // Text orientation
 //

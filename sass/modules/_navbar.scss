@@ -107,32 +107,6 @@
     }
 }
 
-/*
-@include to(3) {
-    .navbar .nav .dropdown {
-        position: static;
-
-        .dropdown-menu {
-            float: none;
-            -webkit-box-shadow: none !important;
-            -ms-box-shadow: none !important;
-            -moz-box-shadow: none !important;
-            box-shadow: none !important;
-            border: 0 !important;
-            border-radius: 0 !important;
-            position: static;
-            margin: 0;rker
-            .dropdown-menu {
-                display: none;
-                opacity: 0;
-                filter: alpha(opacity=0);
-            }
-        }
-    }
-}
-
-*/
-
 @include from(4) {
 
     .navbar-pull-right {
