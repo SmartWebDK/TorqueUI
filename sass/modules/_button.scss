@@ -97,7 +97,8 @@
     padding-left: 49px;
 
     > .fa {
-        @extend .fa-fw;
+        width: (18em / $base);
+        text-align: center;
         border-bottom-left-radius: $global-border-radius;
         border-top-left-radius: $global-border-radius;
 

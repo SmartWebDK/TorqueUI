@@ -24,7 +24,7 @@
         left: 0;
         float: left;
         margin: 5px 0;
-        padding: 6px 0;
+        padding: 0;
     }
 
     &.open,
@@ -47,7 +47,7 @@
     border: 1px solid;
     opacity: 0;
 
-    padding: em(6px) 0;
+    padding: 0;
     min-width: 200px;
     max-width: $grid-default - $grid-default-gutter;
 
@@ -86,7 +86,7 @@
     .dropdown,
     .dropdown-menu {
         float: none;
-        margin-left: 0.65em;
+        margin-left: 0;
         -webkit-box-shadow: none !important;
         -ms-box-shadow: none !important;
         -moz-box-shadow: none !important;
@@ -99,7 +99,7 @@
     }
 
     .dropdown-menu {
-        padding-left: 0.75em;
+        padding-left: 0;
     }
 
     //
@@ -112,11 +112,33 @@
         padding: 10px 15px;
     }
 
-    li > a,
+    li > a {
+        text-decoration: none;
+        display: block;
+        padding: 8px 1em;
+
+        &:hover,
+        &:focus {
+            text-decoration: none;
+        }
+    }
+
+    li li > a {
+        padding-left: 2em;
+    }
+
+    li li li > a {
+        padding-left: 3em;
+    }
+
+    li li li li > a {
+        padding-left: 4em;
+    }
+
     li.media {
         text-decoration: none;
         display: block;
-        padding: 8px 15px;
+        padding: 8px 1em;
 
         &:hover,
         &:focus {
