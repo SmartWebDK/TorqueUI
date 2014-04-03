@@ -68,6 +68,7 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
     #{nth($size, 1)}, .#{nth($size, 1)} {
         @extend %hN;
         @include adjust-font-size-to(nth($size, 2));
+        font-weight: normal;
         margin: rhythm(4, nth($size, 2)) auto rhythm(2, nth($size, 2));
     }
 }

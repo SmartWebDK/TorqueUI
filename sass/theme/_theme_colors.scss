@@ -36,7 +36,12 @@ h6, .h6 {
     text-decoration: none;
     color: $color-highlight;
 
-    span {
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6 {
         color: inherit;
     }
 }
@@ -250,7 +255,7 @@ hr {
     &.is-disabled,
     &:disabled {
         > .fa {
-            background-color: lighten($color-subtle, 2%);
+            background-color: $color-info-light;
         }
     }
 }
@@ -259,16 +264,22 @@ hr {
 // Primary button theming
 //
 
+/*
+$color-callout                      : #d6e9c6;
+$color-callout-light                : #dff1d9;
+$color-callout-dark                 : #3c763d;
+*/
+
 .button-primary,
 .button-primary:visited {
     color: color($color-highlight, #fff, $color-main);
 
-    background-color: $color-highlight;
-    border-color: $color-border !important;
+    background-color: $color-callout-dark;
+    border-color: $color-callout-dark !important;
 
     &:hover,
     &:focus {
-        background-color: darken($color-highlight, 5%);
+        background-color: darken($color-callout-dark, 5%);
         color: color($color-highlight, #fff, $color-main);
     }
 
@@ -284,7 +295,7 @@ hr {
     &.is-disabled,
     &:disabled {
         color: color($color-highlight, #fff, $color-main);
-        background-color: lighten($color-highlight, 20%);
+        background-color: lighten($color-callout-dark, 20%);
     }
 }
 
@@ -294,7 +305,7 @@ hr {
 
 .button-primary.button-icon {
     > .fa {
-        background-color: darken($color-highlight, 10%);
+        background-color: darken($color-callout, 10%);
     }
     &:active > .fa {
         background-color: darken($color-highlight, 25%);
@@ -302,7 +313,7 @@ hr {
     }
     &:hover > .fa,
     &:focus > .fa {
-        background-color: darken($color-highlight, 15%);
+        background-color: darken($color-callout, 15%);
     }
 
     //
@@ -311,8 +322,9 @@ hr {
 
     &.is-disabled,
     &:disabled {
+        border-color: lighten($color-callout-dark, 30%) !important;
         > .fa {
-                background-color: lighten($color-highlight, 30%);
+                background-color: lighten($color-callout-dark, 30%);
         }
     }
 }
@@ -468,12 +480,10 @@ hr {
         border-width: 1px;
         border-style: solid;
         border-color: transparent;
-        background: #FFF;
 
         &:hover {
-            background-color: $color-subtle;
             a {
-                color: $color-highlight;
+                color: $color-subtle;
             }
         }
 
@@ -482,10 +492,8 @@ hr {
         }
 
         &.active {
-            background-color: $color-highlight;
-            border-color: $color-highlight;
             > a {
-                color: #fff;
+                color: $color-subtle;
             }
         }
     }
@@ -494,7 +502,6 @@ hr {
 .nav .dropdown-menu,
 .nav .dropdown-stripped {
     @extend .nav-default;
-    background-color: $color-default-bck;
 }
 
 //
@@ -502,17 +509,18 @@ hr {
 //
 
     .nav-pills {
-        background-color: $color-default-bck;
+
         > li {
+            > a {
+                background-color: $color-info-light;
+            }
             > a:hover {
-                background-color: $color-subtle;
+                background-color: $color-info;
+                color: $color-subtle;
             }
             &.active > a {
-                color: #fff;
-                background-color: $color-highlight;
-                border-color: $color-highlight;
-                border-width: 1px;
-                border-style: solid;
+                background-color: $color-subtle;
+                color: #FFF;
             }
         }
     }
@@ -533,8 +541,8 @@ hr {
                 border-style: solid;
             }
             > a:hover {
-                background-color: $color-subtle;
-                border-color: $color-subtle;
+                background-color: $color-info;
+                color: $color-subtle;
                 border-bottom-color: $color-gray-dark;
             }
 
@@ -591,13 +599,12 @@ hr {
 // ==========================================================================
 
 .dropdown {
-    background-color: $color-default-bck;
 }
 
 .dropdown-menu,
 .dropdown-stripped {
     border-color: transparent;
-
+    background-color: $color-default-bck;
 
     .divider,
     .dropdown-footer {

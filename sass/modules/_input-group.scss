@@ -96,6 +96,7 @@ label.input-group-main {
 
 .input-group-addon {
     border: 1px solid;
+    cursor: pointer;
     @extend %size-default;
     @include border-radius($global-border-radius);
 }

@@ -8,6 +8,13 @@
 // ==========================================================================
 
 //
+// input
+//
+input {
+    cursor: pointer;
+}
+
+//
 // All the elements needed in a form
 //
 
@@ -106,7 +113,7 @@ fieldset {
 select {
     align-items: center;
     white-space: pre;
-    cursor: default;
+    cursor: pointer;
     -webkit-rtl-ordering: logical;
     -webkit-appearance: menulist;
     border-image-source: initial;
