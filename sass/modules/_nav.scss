@@ -23,6 +23,24 @@
 }
 
 //
+// Multilevel menu
+//
+
+	.nav-menu {
+
+		ul {
+			list-style: none;
+		}
+		li {
+			a {
+				@extend %default-size;
+				display: block;
+			}
+		}
+	}	
+
+
+//
 // Default
 //
 

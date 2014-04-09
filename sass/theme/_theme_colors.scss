@@ -475,7 +475,8 @@ $color-callout-dark                 : #3c763d;
 // Default
 //
 
-.nav-default {
+.nav-default,
+.nav-menu {
     li {
         border-width: 1px;
         border-style: solid;
@@ -694,7 +695,7 @@ $color-callout-dark                 : #3c763d;
 
 .t-striped {
     > li:nth-child(odd) {
-        background-color: $color-subtle;
+        background-color: $color-info-light;
     }
 }
 
