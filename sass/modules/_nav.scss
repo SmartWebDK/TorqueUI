@@ -13,9 +13,9 @@
 	width: 100%;
 	@extend .clearfix;
 
-	> li {
+	li {
 		position: relative;
-		> a {
+		a {
 			text-decoration: none;
 			display: block;
 		}

@@ -46,7 +46,13 @@ h6, .h6 {
     h3 &, .h3 &,
     h4 &, .h4 &,
     h5 &, .h5 &,
-    h6 &, .h6 & {
+    h6 &, .h6 &,
+    & h1, .h1 &,
+    & h2, & .h2,
+    & h3, & .h3,
+    & h4, & .h4,
+    & h5, & .h5,
+    & h6, & .h6 {
         color: $color-highlight;
         text-decoration: none;
     }
@@ -488,19 +494,17 @@ $color-callout-dark                 : #3c763d;
         border-style: solid;
         border-color: transparent;
 
-        &:hover {
-            a {
-                color: $color-subtle;
-            }
-        }
-
         a {
             color: $color-highlight;
+
+            &:hover {
+                color: darken($color-highlight, 10%);
+            }
         }
 
         &.active {
             > a {
-                color: $color-subtle;
+                color: $color-main;
             }
         }
     }
