@@ -58,7 +58,7 @@
 //
 
 %default-size {
-padding: 7px $global-padding;
+	padding: 7px $global-padding;
     font-size: 14px;
     line-height: 1.5;
     height: 37px;
@@ -69,15 +69,12 @@ padding: 7px $global-padding;
 		> li {
 			@include background-clip(border-box);
 			float: left;
+			margin-right:1px;
 
 			> a {
 				@extend %default-size;
 				@include border-radius($global-border-radius);
 				border: 1px solid transparent;
-
-				@include at(4) {
-					margin-right: 2px;
-				}
 			}
 
 			&.active {
@@ -99,6 +96,7 @@ padding: 7px $global-padding;
 			@include background-clip(border-box);
 			float: left;
 			margin-bottom: -1px;
+			margin-right:1px;
 
 			> a {
 				@extend %default-size;
@@ -106,13 +104,6 @@ padding: 7px $global-padding;
 				border: 1px solid transparent;
 				border-left: 0px;
 				border-right: 0px;
-
-				@include at(4) {
-					margin-right: 2px;
-				}
-
-				&:hover {
-				}
 			}
 
 			&.active {
@@ -131,9 +122,6 @@ padding: 7px $global-padding;
 					@include ui-ie7-table-cell();
 					width: 1%;
 					float: none;
-				}
-
-				> a {
 				}
 
 				&.active {
@@ -173,6 +161,7 @@ padding: 7px $global-padding;
 	.nav-stacked {
 		> li {
 			float: none;
+			margin-right: 0;
 			margin-bottom: -1px;
 
 			+li {
