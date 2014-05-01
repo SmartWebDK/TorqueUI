@@ -170,6 +170,7 @@ hr {
     &.is-disabled,
     &:disabled {
         color: $color-main-light;
+        background-color: $color-gray;
     }
 }
 

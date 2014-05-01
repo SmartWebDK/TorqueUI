@@ -407,6 +407,27 @@
 </fieldset>
 
 <!-- # disabled styles -->
+
+<!-- : radio -->
+<fieldset class="form-group">
+    <label class="form-label" for="notifications">Notifications</label>
+    <div class="input-group">
+        <span class="input-group-addon"><input id="send-email" type="radio" name="notifications" disabled="disabled"/></span>
+        <label for="send-email" class="form-label input-group-main is-disabled">Send me email</label>
+        <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
+    </div>
+</fieldset>
+
+<!-- : asdasd -->
+<fieldset class="form-group" ng-show="filterSettings.showSale">
+    <div class="input-group small">
+        <span class="input-group-addon">
+            <input type="checkbox" id="filter-showsale" ng-model="filterSelected.sale" ng-change="state('sale')" ng-disabled="filterSettings.disabledSale" class="ng-pristine ng-valid" disabled="disabled">
+        </span>
+        <label for="filter-showsale" class="form-label input-group-main ng-binding is-disabled" ng-class="{'is-disabled':filterSettings.disabledSale}" ng-bind="text.PRODUCT_CATALOG_SALE">Tilbud</label>
+    </div>
+</fieldset>
+
 <!-- : text -->
 <fieldset class="form-group">
     <input type="text" class="form-input" disabled="disabled">
