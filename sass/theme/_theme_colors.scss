@@ -491,9 +491,6 @@ $color-callout-dark                 : #3c763d;
 .nav-default,
 .nav-menu {
     li {
-        border-width: 1px;
-        border-style: solid;
-        border-color: transparent;
 
         a {
             color: $color-highlight;
@@ -597,9 +594,6 @@ $color-callout-dark                 : #3c763d;
 // ==========================================================================
 
 .navbar {
-    border-width: 1px;
-    border-style: solid;
-    border-color: transparent;
 
     .navbar-brand {
         color: $color-main;
