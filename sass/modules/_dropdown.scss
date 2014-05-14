@@ -23,8 +23,8 @@
         top: 100%;
         left: 0;
         float: left;
-        margin: 5px 0;
-        padding: 0;
+        padding: 5px 0;
+        margin: 0;
     }
 
     &.open,
@@ -37,17 +37,12 @@
     }
 }
 
-
 .dropdown-menu {
-    @include border-radius($global-border-radius);
-    @include background-clip(padding-box);
     @extend .transition;
 
     filter: alpha(opacity=00);
-    border: 1px solid;
     opacity: 0;
 
-    padding: 0;
     min-width: 200px;
     max-width: $grid-default - $grid-default-gutter;
 
@@ -101,6 +96,13 @@
     .dropdown-menu {
         padding-left: 0;
     }
+}
+.dropdown-container {
+    @include border-radius($global-border-radius);
+    @include background-clip(padding-box);
+    padding: 0;
+    border: 1px solid;
+    
 
     //
     // Font-size on header + footer is smaller, so they need a bit more padding

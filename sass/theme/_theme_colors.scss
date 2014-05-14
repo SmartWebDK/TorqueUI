@@ -607,8 +607,9 @@ $color-callout-dark                 : #3c763d;
 .dropdown {
 }
 
-.dropdown-menu,
-.dropdown-stripped {
+//.dropdown-menu {}
+
+.dropdown-container {
     border-color: transparent;
     background-color: $color-default-bck;
 
@@ -629,16 +630,6 @@ $color-callout-dark                 : #3c763d;
         color: $color-main;
         &:hover {
             color: $color-main-light;
-        }
-    }
-}
-
-.dropdown-stripped {
-    li {
-        background-color: $color-default-bck;
-
-        &:nth-of-type(even):not(.divider) {
-            background-color: $color-subtle;
         }
     }
 }
