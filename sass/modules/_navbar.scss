@@ -80,7 +80,11 @@
         @include inline-block;
         width: auto;
         float: right;
-        margin: 7px 5px;
+        margin: 0 0 0 .5em;
+
+        &.pull-left {
+            margin: 0 .5em 0 0;
+        }
     }
 
 
