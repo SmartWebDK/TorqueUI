@@ -607,10 +607,9 @@ $color-callout-dark                 : #3c763d;
 .dropdown {
 }
 
-//.dropdown-menu {}
-
 .dropdown-container {
-    border-color: transparent;
+    @include border-radius(3px);
+    border-color: $color-info;
     background-color: $color-default-bck;
 
     .divider,
