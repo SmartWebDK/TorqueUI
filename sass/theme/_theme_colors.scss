@@ -398,24 +398,13 @@ $color-callout-dark                 : #3c763d;
 }
 
 .panel-border {
-    border-color: $color-border !important;
+    border-color: $color-border;
     color: $color-main;
     background-color: $color-default-bck;
 
     .panel-heading,
     .panel-footer {
-        border-color: $color-border !important;
-    }
-}
-
-.panel-clean {
-    border-color: $color-info;
-    color: $color-main;
-    background-color: $color-default-bck;
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-info;
+        border-color: $color-border;
     }
 }
 
