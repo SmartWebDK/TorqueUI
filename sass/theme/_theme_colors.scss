@@ -136,7 +136,7 @@ mark,
 //
 
 hr {
-    border-color: $color-border !important;
+    border-color: $color-border;
 }
 
 
@@ -150,7 +150,7 @@ hr {
 
 .form-input,
 .input-group-main.form-label {
-    border-color: $color-border !important;
+    border-color: $color-border;
     background-color: $color-default-bck;
     color: $color-main;
 
@@ -190,7 +190,7 @@ hr {
 //
 
 %input-group {
-    border-color: $color-border !important;
+    border-color: $color-border;
 
     .input-group:hover &,
     .input-group:focus & {
@@ -219,7 +219,7 @@ hr {
 
 .button,
 .button:visited {
-    border-color: $color-border !important;
+    border-color: $color-border;
     color: $color-main;
     background-color: $color-default-bck;
 
@@ -240,7 +240,7 @@ hr {
 
     &.is-disabled,
     &:disabled {
-        color: $color-main-light !important;
+        color: $color-main-light;
     }
 }
 
@@ -288,7 +288,7 @@ $color-callout-dark                 : #3c763d;
     color: color($color-highlight, #fff, $color-main);
 
     background-color: $color-callout-dark;
-    border-color: $color-callout-dark !important;
+    border-color: $color-callout-dark;
 
     &:hover,
     &:focus {
@@ -335,7 +335,7 @@ $color-callout-dark                 : #3c763d;
 
     &.is-disabled,
     &:disabled {
-        border-color: lighten($color-callout-dark, 30%) !important;
+        border-color: lighten($color-callout-dark, 30%);
         > .fa {
                 background-color: lighten($color-callout-dark, 30%);
         }
@@ -630,7 +630,7 @@ $color-callout-dark                 : #3c763d;
     > li {
         > a {
             background-color: $color-default-bck;
-            border-color: $color-border !important;
+            border-color: $color-border;
             color: $color-main;
 
             &:hover,
@@ -701,7 +701,7 @@ $color-callout-dark                 : #3c763d;
 .table {
     th,
     td {
-        border-color: $color-border !important;
+        border-color: $color-border;
     }
 }
 
@@ -736,7 +736,7 @@ $color-callout-dark                 : #3c763d;
 
 .table-border {
     @extend .table;
-    border-color: $color-border !important;
+    border-color: $color-border;
 }
 
 //
@@ -744,7 +744,7 @@ $color-callout-dark                 : #3c763d;
 //
 
 .responsive-table-wrap {
-    border-color: $color-border !important;
+    border-color: $color-border;
 }
 
 
