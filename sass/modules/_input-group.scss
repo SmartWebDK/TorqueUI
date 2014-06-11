@@ -35,6 +35,7 @@
 
     .input-group-main {
         @include ui-ie7-table-cell();
+        font-size: 12px;
     }
 
     //
@@ -50,10 +51,11 @@
         @include ui-rounded-borders("img");
     }
 }
-label.input-group-main {
+.form-label.input-group-main {
     margin: 0;
     width: 100%;
     height: auto !important;
+
     @include ui-ie7-table-cell();
 
     @extend .form-input;

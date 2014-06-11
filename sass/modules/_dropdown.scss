@@ -44,7 +44,7 @@
     opacity: 0;
 
     min-width: 200px;
-    max-width: $grid-default - $grid-default-gutter;
+    max-width: 100%;
 
     @include at(3) {
         max-width: $grid-medium - $grid-medium-gutter;
