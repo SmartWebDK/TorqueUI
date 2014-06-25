@@ -136,7 +136,7 @@ mark,
 //
 
 hr {
-    border-color: $color-border;
+    border-color: $color-border !important;
 }
 
 
@@ -150,7 +150,7 @@ hr {
 
 .form-input,
 .form-label.input-group-main {
-    border-color: $color-border;
+    border-color: $color-border !important;
     background-color: $color-default-bck;
     color: $color-main;
 
@@ -190,7 +190,7 @@ hr {
 //
 
 %input-group {
-    border-color: $color-border;
+    border-color: $color-border !important;
 
     .input-group:hover &,
     .input-group:focus & {
@@ -219,7 +219,7 @@ hr {
 
 .button,
 .button:visited {
-    border-color: $color-border;
+    border-color: $color-border !important;
     color: $color-main;
     background-color: $color-default-bck;
 
@@ -240,7 +240,7 @@ hr {
 
     &.is-disabled,
     &:disabled {
-        color: $color-main-light;
+        color: $color-main-light !important;
     }
 }
 
@@ -288,7 +288,7 @@ $color-callout-dark                 : #3c763d;
     color: color($color-highlight, #fff, $color-main);
 
     background-color: $color-callout-dark;
-    border-color: $color-callout-dark;
+    border-color: $color-callout-dark !important;
 
     &:hover,
     &:focus {
@@ -335,7 +335,7 @@ $color-callout-dark                 : #3c763d;
 
     &.is-disabled,
     &:disabled {
-        border-color: lighten($color-callout-dark, 30%);
+        border-color: lighten($color-callout-dark, 30%) !important;
         > .fa {
                 background-color: lighten($color-callout-dark, 30%);
         }
@@ -630,7 +630,7 @@ $color-callout-dark                 : #3c763d;
     > li {
         > a {
             background-color: $color-default-bck;
-            border-color: $color-border;
+            border-color: $color-border !important;
             color: $color-main;
 
             &:hover,
@@ -701,7 +701,7 @@ $color-callout-dark                 : #3c763d;
 .table {
     th,
     td {
-        border-color: $color-border;
+        border-color: $color-border !important;
     }
 }
 
@@ -736,7 +736,7 @@ $color-callout-dark                 : #3c763d;
 
 .table-border {
     @extend .table;
-    border-color: $color-border;
+    border-color: $color-border !important;
 }
 
 //
@@ -744,7 +744,7 @@ $color-callout-dark                 : #3c763d;
 //
 
 .responsive-table-wrap {
-    border-color: $color-border;
+    border-color: $color-border !important;
 }
 
 
@@ -759,4 +759,5 @@ $color-callout-dark                 : #3c763d;
 %caret-image {
     background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
 }
+
 
