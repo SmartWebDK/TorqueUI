@@ -56,6 +56,19 @@ $color-danger						: #ebccd1;
 $color-danger-light					: #f2dede;
 $color-danger-dark					: #a94442;
 
+
+//
+// INPUTS
+//
+
+$color-input-back                   : #fff !default;
+$color-input-color                  : #656764 !default;
+$color-input-border                 : #eee !default;
+$color-input-back-hover             : #eee !default;
+$color-input-back-disabled          : lighten($color-input-color, 30%) !default;
+$color-input-color-disabled         : $color-input-back-hover !default;
+
+
 //
 // Fonts
 //
