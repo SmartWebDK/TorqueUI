@@ -415,3 +415,113 @@
     }
 }
 
+
+// ==========================================================================
+// Inputs
+// ==========================================================================
+
+@mixin theme-alerts($color: #fff, $panel: true) {
+    $bgc: $color;
+    @if lightness($color) > 90% {
+        /* light: #{lightness($color)} */
+        $color: darken($color, 40%);
+        $color: saturate($color, 40%);
+
+        @if lightness($color) - lightness($bgc) < 20% {
+            $color: darken($color, 20%);
+        }
+    } @else if lightness($color) < 45% {
+        /* dark: #{lightness($color)} */
+        $color: lighten($color, 40%);
+        $color: desaturate($color, 40%);
+
+        @if lightness($color) - lightness($bgc) < 20% {
+            $color: lighten($color, 20%);
+        }
+    } @else {
+        /* midrange: #{lightness($color)} */
+        $color: darken($color, 20%);
+        $color: saturate($color, 20%);
+
+        @if lightness($color) - lightness($bgc) < 20% {
+            $color: darken($color, 20%);
+        }
+    }
+
+    background-color: $bgc;
+    border-color: $color;
+    color: $color;
+
+    @if ($panel) {
+        .panel-footer,
+        .panel-heading {
+            border-color: $color;
+        }
+    }
+
+    a {
+        color: $color;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+@mixin theme-button($color:#000, $font:#fff) {
+    border-color: darkenOrLighten($color);
+    color: $font;
+    background-color: $color;
+
+    &:hover,
+    &:focus {
+        color: $font;
+        background-color: dolp($color,5%);
+    }
+
+    &:active {
+        color: $font;
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+
+    //
+    // Disable styles
+    //
+
+    &.is-disabled,
+    &:disabled {
+        color: desaturate($color, 20%) !important;
+        border-color: desaturate(darkenOrLighten($color), 20%) !important;
+        background-color: desaturate($color, 20%);
+    }
+}
+
+
+@mixin theme-button-icon($color: #000, $font: #fff) {
+    > .fa {
+        color: $font;
+        background-color: dolp($color, 10%);
+    }
+    &:active > .fa {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+    &:hover > .fa,
+    &:focus > .fa {
+        background-color: darken($color, 10%);
+        color: $font;
+    }
+
+    //
+    // Disabled styles
+    //
+
+    &.is-disabled,
+    &:disabled {
+        > .fa {
+            background-color: desaturate($color, 15%) !important;;
+        }
+    }
+}

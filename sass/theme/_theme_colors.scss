@@ -118,16 +118,13 @@ mark,
         color: $color-info-dark;
     }
     &.badge-succes {
-        background-color: $color-callout-light;
-        color: $color-callout-dark;
+        @include theme-alerts($color-callout, false);
     }
     &.badge-warning {
-        background-color: $color-warning-light;
-        color: $color-warning-dark;
+        @include theme-alerts($color-warning, false);
     }
     &.badge-danger {
-        background-color: $color-danger-light;
-        color: $color-danger-dark;
+        @include theme-alerts($color-danger, false);
     }
 }
 
@@ -387,6 +384,18 @@ $color-callout-dark                 : #3c763d;
 
 }
 
+.panel-success {
+    @include theme-alerts($color-callout, true);
+}
+
+.panel-warning {
+    @include theme-alerts($color-warning, true);
+}
+
+.panel-danger {
+    @include theme-alerts($color-danger, true);
+}
+
 .panel-default {
     border-color: transparent;
     color: $color-main;
@@ -410,63 +419,9 @@ $color-callout-dark                 : #3c763d;
 }
 
 .panel-info {
-    border-color: $color-info;
-    color: $color-info-dark;
-    background-color: $color-info-light;
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-info;
-    }
+    @include theme-alerts($color-info, true);
 }
 
-.panel-success {
-    border-color: $color-callout;
-    color: $color-callout-dark;
-    background-color: $color-callout-light;
-
-    h1,h2,h3,h4,h5,h6,
-    .h1,.h2,.h3,.h4,.h5,.h6 {
-        color: $color-callout-dark;
-    }
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-callout;
-    }
-}
-
-.panel-warning {
-    border-color: $color-warning;
-    color: $color-warning-dark;
-    background-color: $color-warning-light;
-
-    h1,h2,h3,h4,h5,h6,
-    .h1,.h2,.h3,.h4,.h5,.h6 {
-        color: $color-warning-dark;
-    }
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-warning;
-    }
-}
-
-.panel-danger {
-    border-color: $color-danger;
-    color: $color-danger-dark;
-    background-color: $color-danger-light;
-
-    h1,h2,h3,h4,h5,h6,
-    .h1,.h2,.h3,.h4,.h5,.h6 {
-        color: $color-danger-dark;
-    }
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-danger;
-    }
-}
 
 
 
