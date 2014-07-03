@@ -232,7 +232,7 @@ hr {
 
 .button-primary,
 .button-primary:visited {
-    @include theme-button($color-highlight, $color-button-primary-font);
+    @include theme-button($color-button-primary, $color-button-primary-font);
 }
 .button-primary.button-icon {
     @include theme-button-icon($color-button-primary, $color-button-primary-font);
@@ -240,19 +240,19 @@ hr {
 
 .button-text,
 .button-text:visited {
-    color: $color-font-hightlight;
+    color: $color-button-text-font;
     text-decoration: none;
     background-color: transparent;
 
     &:hover,
     &:focus {
-        color: dolp($color-font-hightlight, 5%);
+        color: dolp($color-button-text-font, 5%);
         background-color: transparent;
         text-decoration: underline;
         @include box-shadow(none);
     }
     &:active {
-        color: dolp($color-font-hightlight, 10%);
+        color: dolp($color-button-text-font, 10%);
     }
 }
 
@@ -304,9 +304,9 @@ hr {
 }
 
 .panel-border {
-    border-color: $color-panel-border;
-    color: $color-font-base;;
-    background-color: transparent;
+    border-color: $color-panel-border-border;
+    color: $color-font-base;
+    background-color: $color-panel-border;
 
     .panel-heading,
     .panel-footer {
@@ -468,7 +468,7 @@ hr {
     }
 
     li > a {
-        color: $color-font-base;;
+        color: $color-font-base;
         &:hover {
             color: dolp($color-dropdown-font, 10%);
         }
@@ -483,7 +483,7 @@ hr {
     @include theme-button($color-pagination , $color-pagination-font);
 
     &.current a {
-        background-color: dolp($color-pagination, 10%);
+        background-color: dolp($color-pagination, 8%);
     }
 }
 

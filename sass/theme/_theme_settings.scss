@@ -15,7 +15,8 @@
 // Font-face
 //
 
-$font-base-family                   : sans-serif;
+$font-family-base                   : sans-serif;
+$font-family-headline               : serif;
 
 
 // ==========================================================================
@@ -125,7 +126,8 @@ $color-panel-info                   : $color-info !default;
 $color-panel-default                : #fff !default;
 $color-panel-warning                : $color-warning !default;
 $color-panel-danger                 : $color-danger !default;
-$color-panel-border                 : $color-border !default;
+$color-panel-border                 : $color-default-bck !default;
+$color-panel-border-border          : $color-border !default;
 
 
 //
