@@ -2,6 +2,22 @@
 // Mixins
 // -----------------------------------------------------------------------------
 
+
+
+// ==========================================================================
+// Color functions
+// ==========================================================================
+
+@function tint($color, $percent){
+    @return mix(white, $color, $percent);
+}
+
+
+@function shade($color, $percent){
+    @return mix(black, $color, $percent);
+}
+
+
 //
 // Based on the darkness / lightness of the test color, return a dark og light
 // color.
@@ -18,6 +34,41 @@
         @return $dark;
     }
 }
+
+@function darkenOrLighten($color) {
+    @if lightness($color) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+
+        $light: lighten($color, 15%);
+        @return $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+
+        $dark: darken($color, 15%);
+        @return $dark;
+    }
+}
+
+
+@function dolp($color, $pct) {
+    @if lightness($color) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+
+        $light: lighten($color, $pct);
+        @return $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+
+        $dark: darken($color, $pct);
+        @return $dark;
+    }
+}
+
+
 
 //
 // Calculate px to em
