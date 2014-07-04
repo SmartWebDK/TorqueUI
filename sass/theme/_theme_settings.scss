@@ -82,8 +82,8 @@ $color-input-back                   : #fff !default;
 $color-input-color                  : #656764 !default;
 $color-input-border                 : #eee !default;
 $color-input-back-hover             : #eee !default;
-$color-input-back-disabled          : dolp($color-input-color, 30%) !default;
-$color-input-color-disabled         : $color-input-back-hover !default;
+$color-input-back-disabled          : $color-input-back-hover !default;
+$color-input-color-disabled         : dolp($color-input-color, 30%) !default;
 
 
 //
