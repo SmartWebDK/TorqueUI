@@ -403,6 +403,11 @@ hr {
             border-color: $color-border;
             border-width: 1px;
             border-style: solid;
+
+
+            &:hover {
+                border-bottom-color: $color-nav-tabs-pane;
+            }
         }
     }
 
@@ -424,7 +429,7 @@ hr {
 // Toggle pane
 //
 .t-panel-clean > .pane {
-    background: #fff;
+    background: $color-nav-tabs-pane;
     border-right: 1px solid;
     border-left: 1px solid;
     border-bottom: 1px solid;
