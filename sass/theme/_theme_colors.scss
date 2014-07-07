@@ -12,7 +12,7 @@
 //
 
 html {
-    color: $color-main;
+    color: $color-font-base;
 }
 
 //
@@ -25,7 +25,7 @@ h3, .h3,
 h4, .h4,
 h5, .h5,
 h6, .h6 {
-    color: $color-headings;
+    color: $color-font-headings;
 }
 
 //
@@ -33,7 +33,7 @@ h6, .h6 {
 //
 
 %a {
-    color: $color-highlight;
+    color: $color-font-hightlight;
 
     h1, .h1,
     h2, .h2,
@@ -53,7 +53,7 @@ h6, .h6 {
     & h4, & .h4,
     & h5, & .h5,
     & h6, & .h6 {
-        color: $color-highlight;
+        color: $color-font-hightlight;
         text-decoration: none;
     }
 }
@@ -66,7 +66,7 @@ a {
 
     &:hover {
         text-decoration: none;
-        color: darken($color-highlight, 10%);
+        color: dolp($color-font-hightlight, 10%);
     }
     &:focus {
         outline: thin dotted;
@@ -82,7 +82,7 @@ a {
 //
 
 s, del {
-    color: $color-main-light;
+    color: dolp($color-font-base, 30%);
 }
 
 //
@@ -90,7 +90,7 @@ s, del {
 //
 
 small {
-    color: $color-main-light;
+    color: dolp($color-font-base, 30%);;
 }
 
 //
@@ -99,44 +99,17 @@ small {
 
 mark,
 .mark {
-    color: color($color-highlight, #fff, $color-main);       // in _mixins.scss
-    background-color: $color-highlight;
+    color: color($color-font-hightlight, #fff, $color-font-base);       // in _mixins.scss
+    background-color: $color-font-hightlight;
 }
 
-//
-// Badge
-//
-.badge {
-    @include border-radius();
-
-    &.badge-clean {
-        background-color: $color-default-bck;
-        color: $color-main;
-    }
-    &.badge-info {
-        background-color: $color-info-light;
-        color: $color-info-dark;
-    }
-    &.badge-succes {
-        background-color: $color-callout-light;
-        color: $color-callout-dark;
-    }
-    &.badge-warning {
-        background-color: $color-warning-light;
-        color: $color-warning-dark;
-    }
-    &.badge-danger {
-        background-color: $color-danger-light;
-        color: $color-danger-dark;
-    }
-}
 
 //
 // HR
 //
 
 hr {
-    border-color: $color-border;
+    border-color: $color-border !important;
 }
 
 
@@ -150,14 +123,14 @@ hr {
 
 .form-input,
 .form-label.input-group-main {
-    border-color: $color-border;
-    background-color: $color-default-bck;
-    color: $color-main;
+    border-color: $color-input-border !important;
+    background-color: $color-input-back;
+    color: $color-input-color;
 
     @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
 
     &:hover {
-        background-color: $color-gray;
+        background-color: $color-input-back-hover;
     }
 
     &:focus {
@@ -169,8 +142,8 @@ hr {
     //
     &.is-disabled,
     &:disabled {
-        color: $color-main-light;
-        background-color: $color-gray;
+        color: $color-input-color-disabled;
+        background-color: $color-input-back-disabled;
     }
 }
 
@@ -190,11 +163,11 @@ hr {
 //
 
 %input-group {
-    border-color: $color-border;
+    border-color: $color-input-border !important;
 
     .input-group:hover &,
     .input-group:focus & {
-        background-color: $color-gray;
+        background-color: $color-input-back-hover;
     }
 }
 
@@ -205,8 +178,36 @@ hr {
 
 .input-group-addon {
     @extend %input-group;
-    background-color: $color-gray;
+    color: $color-input-color;
+    background-color: $color-input-back-hover;
 }
+
+
+// ==========================================================================
+// Badges
+// ==========================================================================
+
+.badge {
+    @include border-radius();
+
+    &.badge-clean {
+        background-color: $color-badge-clean;
+        color: $color-font-base;
+    }
+    &.badge-info {
+        @include theme-alerts($color-badge-info, false);
+    }
+    &.badge-succes {
+        @include theme-alerts($color-badge-callout, false);
+    }
+    &.badge-warning {
+        @include theme-alerts($color-badge-warning, false);
+    }
+    &.badge-danger {
+        @include theme-alerts($color-badge-danger, false);
+    }
+}
+
 
 
 // ==========================================================================
@@ -214,165 +215,58 @@ hr {
 // ==========================================================================
 
 //
-// Default button theming
+// Button-group
 //
+
+.button-group {
+    border-color: $color-border;
+}
 
 .button,
 .button:visited {
-    border-color: $color-border;
-    color: $color-main;
-    background-color: $color-default-bck;
-
-    &:hover,
-    &:focus {
-        color: $color-main;
-        background-color: $color-default-bck-hover;
-    }
-
-    &:active {
-        color: $color-main;
-        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
-    }
-
-    //
-    // Disable styles
-    //
-
-    &.is-disabled,
-    &:disabled {
-        color: $color-main-light;
-    }
+    @include theme-button($color-button-clean, $color-button-clean-font);
 }
-
-//
-// Button-icon has a font-awesome icon inside which has special styling
-//
-
 .button.button-icon {
-    > .fa {
-        background-color: $color-default-bck-hover;
-    }
-    &:active > .fa {
-        // background-color: darken($color-subtle, 20%);
-        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
-    }
-    &:hover > .fa,
-    &:focus > .fa {
-        // background-color: darken($color-subtle, 10%);
-    }
-
-    //
-    // Disabled styles
-    //
-
-    &.is-disabled,
-    &:disabled {
-        > .fa {
-            background-color: $color-info-light;
-        }
-    }
+    @include theme-button-icon($color-button-clean, $color-button-clean-font);
 }
-
-//
-// Primary button theming
-//
-
-/*
-$color-callout                      : #d6e9c6;
-$color-callout-light                : #dff1d9;
-$color-callout-dark                 : #3c763d;
-*/
 
 .button-primary,
 .button-primary:visited {
-    color: color($color-highlight, #fff, $color-main);
-
-    background-color: $color-callout-dark;
-    border-color: $color-callout-dark;
-
-    &:hover,
-    &:focus {
-        background-color: darken($color-callout-dark, 5%);
-        color: color($color-highlight, #fff, $color-main);
-    }
-
-    &:active {
-        color: color($color-highlight, #fff, $color-main);
-        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
-    }
-
-    //
-    // Disable styles
-    //
-
-    &.is-disabled,
-    &:disabled {
-        color: color($color-highlight, #fff, $color-main);
-        background-color: lighten($color-callout-dark, 20%);
-    }
+    @include theme-button($color-button-primary, $color-button-primary-font);
 }
-
-//
-// Button-icon has a font-awesome icon inside which has special styling
-//
-
 .button-primary.button-icon {
-    > .fa {
-        background-color: darken($color-callout, 10%);
-    }
-    &:active > .fa {
-        background-color: darken($color-highlight, 25%);
-        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
-    }
-    &:hover > .fa,
-    &:focus > .fa {
-        background-color: darken($color-callout, 15%);
-    }
-
-    //
-    // Disabled styles
-    //
-
-    &.is-disabled,
-    &:disabled {
-        border-color: lighten($color-callout-dark, 30%);
-        > .fa {
-                background-color: lighten($color-callout-dark, 30%);
-        }
-    }
+    @include theme-button-icon($color-button-primary, $color-button-primary-font);
 }
-
-//
-// Text button themeing
-//
 
 .button-text,
 .button-text:visited {
-    color: $color-highlight;
+    color: $color-button-text-font;
     text-decoration: none;
     background-color: transparent;
 
     &:hover,
     &:focus {
-        color: darken($color-highlight, 5%);
+        color: dolp($color-button-text-font, 5%);
         background-color: transparent;
         text-decoration: underline;
         @include box-shadow(none);
     }
     &:active {
-        color: darken($color-highlight, 10%);
+        color: dolp($color-button-text-font, 10%);
     }
 }
+
+
 
 // ==========================================================================
 // Symbols
 // ==========================================================================
 .symbol {
     &.symbol-button {
-        color: $color-main-light;
+        color: dolp($color-font-base, 30%);
 
         &:hover {
-            color: $color-main;
+            color: $color-font-base;
         }
     }
 }
@@ -386,9 +280,21 @@ $color-callout-dark                 : #3c763d;
 
 }
 
+.panel-success {
+    @include theme-alerts($color-panel-callout, true);
+}
+
+.panel-warning {
+    @include theme-alerts($color-panel-warning, true);
+}
+
+.panel-danger {
+    @include theme-alerts($color-panel-danger, true);
+}
+
 .panel-default {
     border-color: transparent;
-    color: $color-main;
+    color: $color-font-base;
     background-color: transparent;
 
     .panel-heading,
@@ -398,74 +304,20 @@ $color-callout-dark                 : #3c763d;
 }
 
 .panel-border {
-    border-color: $color-border;
-    color: $color-main;
-    background-color: $color-default-bck;
+    border-color: $color-panel-border-border;
+    color: $color-font-base;
+    background-color: $color-panel-border;
 
     .panel-heading,
     .panel-footer {
-        border-color: $color-border;
+        border-color: $color-panel-border;
     }
 }
 
 .panel-info {
-    border-color: $color-info;
-    color: $color-info-dark;
-    background-color: $color-info-light;
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-info;
-    }
+    @include theme-alerts($color-info, true);
 }
 
-.panel-success {
-    border-color: $color-callout;
-    color: $color-callout-dark;
-    background-color: $color-callout-light;
-
-    h1,h2,h3,h4,h5,h6,
-    .h1,.h2,.h3,.h4,.h5,.h6 {
-        color: $color-callout-dark;
-    }
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-callout;
-    }
-}
-
-.panel-warning {
-    border-color: $color-warning;
-    color: $color-warning-dark;
-    background-color: $color-warning-light;
-
-    h1,h2,h3,h4,h5,h6,
-    .h1,.h2,.h3,.h4,.h5,.h6 {
-        color: $color-warning-dark;
-    }
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-warning;
-    }
-}
-
-.panel-danger {
-    border-color: $color-danger;
-    color: $color-danger-dark;
-    background-color: $color-danger-light;
-
-    h1,h2,h3,h4,h5,h6,
-    .h1,.h2,.h3,.h4,.h5,.h6 {
-        color: $color-danger-dark;
-    }
-
-    .panel-heading,
-    .panel-footer {
-        border-color: $color-danger;
-    }
-}
 
 
 
@@ -482,16 +334,16 @@ $color-callout-dark                 : #3c763d;
     li {
 
         a {
-            color: $color-highlight;
+            color: $color-nav-menu;
 
             &:hover {
-                color: darken($color-highlight, 10%);
+                color: dolp($color-highlight, 15%);
             }
         }
 
         &.active {
             > a {
-                color: $color-main;
+                color: dolp($color-highlight, 10%);
             }
         }
     }
@@ -506,72 +358,78 @@ $color-callout-dark                 : #3c763d;
 // Pills
 //
 
-    .nav-pills {
+.nav-pills {
 
-        > li {
-            > a {
-                background-color: $color-info-light;
-            }
-            > a:hover {
-                background-color: $color-info;
-                color: $color-subtle;
-            }
-            &.active > a {
-                background-color: $color-subtle;
-                color: #FFF;
-            }
+    > li {
+        > a {
+            background-color: transparent;
+        }
+        > a:hover {
+            background-color: dolp($color-nav-pills, 10%);
+            color: $color-nav-pills-font;
+        }
+        &.active > a {
+            background-color: $color-nav-pills;
+            color: $color-nav-pills-font;
         }
     }
+}
+
 
 //
 // Tabs
 //
 
-    .nav-tabs {
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: $color-gray-dark;
+.nav-tabs {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $color-border;
 
-        li {
-            a {
-                border-color: transparent;
-                border-width: 1px;
-                border-style: solid;
-            }
-            > a:hover {
-                background-color: $color-info;
-                color: $color-subtle;
-                border-bottom-color: $color-gray-dark;
-            }
+    li {
+        > a {
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
 
-            &.active > a {
-                color: $color-main;
-                background-color: $color-default-bck;
-                border-color: $color-gray-dark;
-                border-width: 1px;
-                border-style: solid;
+            &:hover {
+                background-color: dolp($color-nav-tabs, 10%);
+                color: $color-nav-tabs-font;
+                border-bottom-color: $color-border;
             }
         }
+        &.active > a {
+            color: $color-font-base;;
+            background-color: $color-nav-tabs;
+            border-color: $color-border;
+            border-width: 1px;
+            border-style: solid;
 
-        &.nav-justified > li {
-            > a {
-                border-bottom-width: 1px;
-                border-bottom-style: solid;
-                border-bottom-color: $color-gray-dark;
-            }
-            &.active > a {
-                border-width: 1px;
-                border-style: solid;
-                border-color: $color-gray-dark;
+
+            &:hover {
+                border-bottom-color: $color-nav-tabs-pane;
             }
         }
     }
+
+    &.nav-justified > li {
+        > a {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: $color-border;
+        }
+        &.active > a {
+            border-width: 1px;
+            border-style: solid;
+            border-color: $color-border;
+        }
+    }
+}
 
 //
 // Toggle pane
 //
 .t-panel-clean > .pane {
-    background: #fff;
+    background: $color-nav-tabs-pane;
     border-right: 1px solid;
     border-left: 1px solid;
     border-bottom: 1px solid;
@@ -585,7 +443,7 @@ $color-callout-dark                 : #3c763d;
 .navbar {
 
     .navbar-brand {
-        color: $color-main;
+        color: $color-font-base;;
     }
 }
 
@@ -598,8 +456,8 @@ $color-callout-dark                 : #3c763d;
 
 .dropdown-container {
     @include border-radius(3px);
-    border-color: $color-info;
-    background-color: $color-default-bck;
+    border-color: $color-dropdown-border;
+    background-color: $color-dropdown;
 
     .divider,
     .dropdown-footer {
@@ -610,14 +468,14 @@ $color-callout-dark                 : #3c763d;
     .dropdown-footer {
         h1, h2, h3, h4, h5, h6,
         .h1, .h2, .h3, .h4, .h5, .h6 {
-            color: lighten($color-main, 5%);
+            color: dolp($color-dropdown-font, 5%);
         }
     }
 
     li > a {
-        color: $color-main;
+        color: $color-font-base;
         &:hover {
-            color: $color-main-light;
+            color: dolp($color-dropdown-font, 10%);
         }
     }
 }
@@ -627,46 +485,16 @@ $color-callout-dark                 : #3c763d;
 // ==========================================================================
 
 .pagination {
-    > li {
-        > a {
-            background-color: $color-default-bck;
-            border-color: $color-border;
-            color: $color-main;
+    @include theme-button($color-pagination , $color-pagination-font);
 
-            &:hover,
-            &:focus {
-                background-color: $color-default-bck-hover;
-                color: $color-main;
-            }
-
-            &:active {
-                @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
-            }
-        }
-
-        &.current a {
-            background-color: $color-highlight;
-            color: #fff;
-
-            &:hover,
-            &:focus {
-                color: #fff;
-                border-color: darken($color-highlight, 10%);
-                background-color: $color-highlight;
-            }
-        }
-
-        &.is-disabled {
-            > a,
-            > a:hover,
-            > a:focus,
-            > a:active {
-                color: $color-main-light;
-                background-color: $color-default-bck-hover;
-            }
-        }
+    &.current a {
+        background-color: dolp($color-pagination, 8%);
     }
 }
+
+
+
+
 
 // ==========================================================================
 // Lists
@@ -679,7 +507,7 @@ $color-callout-dark                 : #3c763d;
 
 .t-striped {
     > li:nth-child(odd) {
-        background-color: $color-info-light;
+        background-color: $color-list-striped;
     }
 }
 
@@ -701,7 +529,7 @@ $color-callout-dark                 : #3c763d;
 .table {
     th,
     td {
-        border-color: $color-border;
+        border-color: $color-border !important;
     }
 }
 
@@ -712,7 +540,7 @@ $color-callout-dark                 : #3c763d;
 .table-h-striped {
     @extend .table;
     tbody > tr:nth-child(odd) {
-        background-color: rgba(darken($color-subtle, 34%), 0.1);
+        background-color: rgba(dolp($color-table-striped, 34%), 0.1);
     }
 }
 
@@ -725,7 +553,7 @@ $color-callout-dark                 : #3c763d;
     tbody, thead, tfoot {
         td:nth-child(even),
         th:nth-child(even) {
-            background-color: rgba(darken($color-subtle, 34%), 0.1);
+            background-color: rgba(dolp($color-table-striped, 34%), 0.1);
         }
     }
 }
@@ -736,7 +564,7 @@ $color-callout-dark                 : #3c763d;
 
 .table-border {
     @extend .table;
-    border-color: $color-border;
+    border-color: $color-border !important;
 }
 
 //
@@ -744,7 +572,7 @@ $color-callout-dark                 : #3c763d;
 //
 
 .responsive-table-wrap {
-    border-color: $color-border;
+    border-color: $color-border !important;
 }
 
 
@@ -760,3 +588,10 @@ $color-callout-dark                 : #3c763d;
     background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
 }
 
+// ==========================================================================
+// FONTAWESOME SPECIFIC
+// ==========================================================================
+
+.fa-border {
+    border-color: $color-border;
+}

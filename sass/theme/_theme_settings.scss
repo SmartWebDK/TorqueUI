@@ -15,16 +15,13 @@
 // Font-face
 //
 
-$font-base-family                   : sans-serif;
+$font-family-base                   : sans-serif;
+$font-family-headline               : serif;
 
 
 // ==========================================================================
-// Colors
-// ==========================================================================
-
-//
 // Swatches
-//
+// ==========================================================================
 
 $color-highlight                    : #88888a;
 $color-main                         : #656764;
@@ -56,16 +53,126 @@ $color-danger						: #ebccd1;
 $color-danger-light					: #f2dede;
 $color-danger-dark					: #a94442;
 
-//
-// Fonts
-//
 
-$color-base                         : $color-main;
-$color-headings                     : $color-main-dark;
-$color-small-caps                   : $color-main-light;
+// ==========================================================================
+// Colors
+// ==========================================================================
 
 //
-// Border color used for elements like buttons, form elements and hr
+// General
 //
 
-$color-border                       : $color-gray-light;
+$color-border                       : $color-gray-light !default;
+
+//
+// Typography
+//
+
+$color-font-base                    : $color-main !default;
+$color-font-headings                : $color-main-dark !default;
+$color-font-small-caps              : $color-main-light !default;
+$color-font-hightlight              : $color-highlight !default;
+
+
+//
+// Inputs
+//
+
+$color-input-back                   : #fff !default;
+$color-input-color                  : #656764 !default;
+$color-input-border                 : #eee !default;
+$color-input-back-hover             : #eee !default;
+$color-input-back-disabled          : $color-input-back-hover !default;
+$color-input-color-disabled         : dolp($color-input-color, 30%) !default;
+
+
+//
+// Badges
+//
+
+$color-badge-callout                : $color-callout !default;
+$color-badge-info                   : $color-info !default;
+$color-badge-clean                  : transparent !default;
+$color-badge-warning                : $color-warning !default;
+$color-badge-danger                 : $color-danger !default;
+
+
+//
+// Buttons
+//
+
+$color-button-clean                 : $color-default-bck !default;
+$color-button-clean-font            : $color-main !default;
+$color-button-primary               : $color-highlight !default;
+$color-button-primary-font          : #fff !default;
+$color-button-text                  : transparent !default;
+$color-button-text-font             : $color-main !default;
+
+
+//
+// Symbols
+//
+
+$color-symbol                       : $color-main-light !default;
+$color-symbol-hover                 : $color-main !default;
+
+
+//
+// Panels
+//
+
+$color-panel-callout                : $color-callout !default;
+$color-panel-info                   : $color-info !default;
+$color-panel-default                : #fff !default;
+$color-panel-warning                : $color-warning !default;
+$color-panel-danger                 : $color-danger !default;
+$color-panel-border                 : $color-default-bck !default;
+$color-panel-border-border          : $color-border !default;
+
+
+//
+// Navs
+//
+
+$color-nav-menu                      : $color-highlight !default;
+
+$color-nav-pills                     : $color-highlight !default;
+$color-nav-pills-font                : $color-subtle !default;
+$color-nav-pills-hover               : $color-info !default;
+
+$color-nav-tabs                      : $color-default-bck !default;
+$color-nav-tabs-font                 : $color-main !default;
+$color-nav-tabs-pane                 : $color-default-bck !default;
+
+$color-navbar                        : $color-main !default;
+
+
+//
+// Dropdowns
+//
+
+$color-dropdown                     : $color-default-bck !default;
+$color-dropdown-border              : $color-info !default;
+$color-dropdown-font                : $color-main !default;
+
+
+//
+// Pagination
+//
+
+$color-pagination                   : $color-default-bck !default;
+$color-pagination-font              : $color-main !default;
+
+
+//
+// Lists
+//
+
+$color-list-striped                 : $color-info-light !default;
+
+
+//
+// Table
+//
+
+$color-table-striped                : $color-subtle !default;

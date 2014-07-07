@@ -30,7 +30,7 @@ $base-line-height: $font-header-line-height;
 html {
     font-size: $font-default-size;
     line-height: $font-line-height;
-    font-family: $font-base-family;
+    font-family: $font-family-base;
     font-weight: $font-weight;
 
     @include at(3) {
@@ -67,7 +67,7 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 @each $size in $sizes {
     #{nth($size, 1)}, .#{nth($size, 1)} {
         @extend %hN;
-        @include adjust-font-size-to(nth($size, 2));
+        @include adjust-font-size-to($to-size: nth($size, 2), $from-size: $font-base);
         font-weight: normal;
         margin: rhythm(4, nth($size, 2)) auto rhythm(2, nth($size, 2));
     }
@@ -75,6 +75,7 @@ $sizes: h1 $h1, h2 $h2, h3 $h3, h4 $h4, h5 $h5, h6 $h6;
 
 %hN {
     text-rendering: optimizeLegibility;
+    font-family: $font-family-headline;
     -moz-osx-font-smoothing: grayscale;
 
     &:first-child {
