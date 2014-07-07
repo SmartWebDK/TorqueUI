@@ -66,8 +66,8 @@ dd {
 //
 
 .list-inline {
-    li {
-        display: inline-block;
+    > li {
+        @include inline-block;
         padding: 0 0.5em;
 
         &:first-child {

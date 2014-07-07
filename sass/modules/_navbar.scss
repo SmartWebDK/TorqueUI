@@ -64,7 +64,7 @@
         padding: 0.5em;
 
         + a {
-            display: inline-block !important;
+            @include inline-block;
         }
     }
 
@@ -128,7 +128,7 @@
 
         .nav {
             > li {
-                display: inline-block;
+                @include inline-block;
                 float: left;
                 > a {
                     float: left;
@@ -216,7 +216,7 @@
 
             .nav {
                 > li {
-                    display: inline-block;
+                    @include inline-block;
                     float: left;
                     > a {
                         float: left;
