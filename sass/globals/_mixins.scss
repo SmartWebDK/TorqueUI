@@ -561,7 +561,7 @@
     }
     &:hover > .fa,
     &:focus > .fa {
-        background-color: darken($color, 10%);
+        background-color: dolp($color, 20%);
         color: $font;
     }
 
