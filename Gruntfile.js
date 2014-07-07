@@ -105,25 +105,11 @@ module.exports = function(grunt) {
             },
             js: {
                 files: ['js/**/*.js'],
-                tasks: ['clean:js','concat:test','copy:js','uglify:test','copy:js']
+                tasks: ['clean:js','copy:js','uglify:test','copy:js']
             },
             sass: {
                 files: ['sass/**/*.scss'],
                 tasks: 'compass:dev'
-            }
-        },
-
-        concat: {
-            options: {
-                separator: ';',
-            },
-            test: {
-                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
-                dest: './test/js/ie.js'
-            },
-            dist: {
-                src: ['./js/lib/respond.matchmedia.addListener.min.js','./js/lib/respond.js/respond.min.js','./js/lib/html5shiv/html5.js'],
-                dest: './dist/js/ie.js'
             }
         },
 
@@ -235,8 +221,7 @@ module.exports = function(grunt) {
     // Distribution related task
     grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-fonts','usebanner']);
     grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin']);
-    //grunt.registerTask('dist-js', ['concat', 'uglify']);
-    grunt.registerTask('dist-js', ['concat:dist','uglify:dist']);
+    grunt.registerTask('dist-js', ['uglify:dist']);
     grunt.registerTask('dist-fonts', ['copy:fonts']);
 
     // server
