@@ -8,7 +8,7 @@
 //
 
 .badge {
-    display: inline-block;
+    @include inline-block;
     padding: 3px 7px;
     font-weight: bold;
     white-space: nowrap;

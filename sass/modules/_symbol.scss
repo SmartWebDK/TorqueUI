@@ -7,7 +7,7 @@
 //
 
 .symbol {
-	display: inline-block;
+	@include inline-block;
 	margin: 0 2px;
 	vertical-align: middle;
 	border-top: 4px solid;

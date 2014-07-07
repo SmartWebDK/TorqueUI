@@ -8,13 +8,6 @@
 @import "./globals/mixins";
 @import "./globals/settings";
 
-
-*,
-:after,
-:before {
-	*behavior: url(boxsizing.htc);
-}
-
 html {
     font-size: $font-large-size;
 }
@@ -42,7 +35,7 @@ html {
 //
 
 @-ms-viewport {
-    width: device-width
+    width: device-width;
 }
 
 // ==========================================================================
@@ -137,7 +130,7 @@ html {
 
     .nav {
         > li {
-            display: inline-block;
+            @include inline-block;
             float: left;
             > a {
                 float: left;
