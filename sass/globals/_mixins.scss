@@ -69,6 +69,24 @@
 }
 
 
+@function lodp($color, $pct) {
+    @if lightness($color) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+
+        $dark: darken($color, $pct);
+        @return $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+
+        $light: lighten($color, $pct);
+        @return $dark;
+    }
+}
+
+
+
 
 //
 // Calculate px to em

@@ -343,7 +343,7 @@ hr {
 
         &.active {
             > a {
-                color: saturate($color-nav-menu, 10%);
+                color: lodp($color-nav-menu, 15%);
             }
         }
     }
