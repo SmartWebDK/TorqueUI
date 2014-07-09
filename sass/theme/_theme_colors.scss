@@ -343,7 +343,7 @@ hr {
 
         &.active {
             > a {
-                color: lodp($color-nav-menu, 15%);
+                color: saturate(darken($color-nav-menu, 20%), 10%);
             }
         }
     }
@@ -404,7 +404,6 @@ hr {
             border-width: 1px;
             border-style: solid;
 
-
             &:hover {
                 border-bottom-color: $color-nav-tabs-pane;
             }
@@ -443,7 +442,7 @@ hr {
 .navbar {
 
     .navbar-brand {
-        color: $color-font-base;;
+        color: $color-font-base;
     }
 }
 
