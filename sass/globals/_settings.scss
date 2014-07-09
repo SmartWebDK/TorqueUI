@@ -44,7 +44,7 @@ $base: 16;                                                          // 1)
 $font-weight                    : normal;
 $font-base-size                 : 100; // in pct                       2)
 $font-base                      : ($font-base-size/100)*$base * 1px;// 3)
-$font-line-height               : 1.5;
+$font-line-height               : 1.35;
 $font-header-line-height        : 8px;                              // 4)
 $font-small-print-size          : 65%;
 $font-small-caps-weight         : 600;

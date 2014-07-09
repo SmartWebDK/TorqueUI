@@ -337,13 +337,13 @@ hr {
             color: $color-nav-menu;
 
             &:hover {
-                color: dolp($color-highlight, 15%);
+                color: dolp($color-nav-menu, 15%);
             }
         }
 
         &.active {
             > a {
-                color: dolp($color-highlight, 10%);
+                color: dolp($color-nav-menu, 10%);
             }
         }
     }
