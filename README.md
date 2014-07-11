@@ -1,4 +1,4 @@
-# furry-octo-ninja # 
+# TorqueUI 
 
 ## Prerequisite ##
 To run the builder and compile the Sass to CSS and run the tests, you need to have 
