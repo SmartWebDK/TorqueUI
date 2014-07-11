@@ -1,20 +1,15 @@
-//
-// Mixins
-// -----------------------------------------------------------------------------
-
-
 
 // ==========================================================================
 // Color functions
 // ==========================================================================
 
 @function tint($color, $percent){
-    @return mix(white, $color, $percent);
+    @return mix(#fff, $color, $percent);
 }
 
 
 @function shade($color, $percent){
-    @return mix(black, $color, $percent);
+    @return mix(#000, $color, $percent);
 }
 
 
@@ -88,443 +83,72 @@
 
 
 
-//
-// Calculate px to em
-// Resource: http://vvv.tobiassjosten.net/css/px-to-em-with-sass/
-//
+// ==========================================================================
+// CSS3 mixins
+// ==========================================================================
 
-@function em($px, $font-base: $font-base) {
-    @return ($px / $font-base) * 1em;
+// Mixin: Border-radius. Emmulates Compass-style.org border-radius mixin.
+@mixin border-radius($radius: 5px) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
 }
 
-//
-// Table-cell ie7 hack, avoid crash in ie7
-//
-
-@mixin ui-ie7-table-cell() {
-    display: table-cell;
-    *width: auto;
-    *display: block;
-    *float: left;
+// Mixin: Box-shadow. Emmulates Compass-style.org box-shadow mixin.
+@mixin box-shadow($top: 0px, $left: 0px, $blur: 5px, $color: #333333, $inset:"") {
+    -webkit-box-shadow: $top $left $blur $color #{$inset};
+       -moz-box-shadow: $top $left $blur $color #{$inset};
+            box-shadow: $top $left $blur $color #{$inset};
 }
 
-//
-// Helper to remove rounded borders on elemenent list with rounded borders
-//
 
-@mixin ui-rounded-borders($nested: "") {
-    @if $nested != "" {
-        $nested: " > #{$nested}";
-    }
 
-    &:first-child#{$nested} {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-right: 0;
-
-        @if $nested != "" {
-        margin-right: -1px;
-        }
-    }
-
-    &:not(:first-child):not(:last-child)#{$nested} {
-        border-right: 0;
-        @if $nested != "" {
-        margin-left: -1px;
-        }
-        @include border-radius(0);
-    }
-
-    &:last-child#{$nested} {
-        border-top-left-radius: 0;
-        border-bottom-left-radius: 0;
-
-        @if $nested != "" {
-        margin-left: -1px;
-        }
-    }
-}
-
-//
-// Disabled shorthand
-// 1) Make unclickable
-//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
-// 2) Make the element unable to select
-//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
-//
-
-@mixin ui-disabled {
-    pointer-events: none;                                   // 1)
-    -moz-user-select: none;                                 // 2)
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    &:hover,
-    &:focus {
-        cursor: not-allowed;
-    }
-}
-
-//
-// DIsplay block
-//
-
-@mixin ui-block {
-    width: 100% !important;
-    float: none;
-    margin: 0;
-    display: block;
-}
 
 
 
 // ==========================================================================
-// Grid helpers
+// Panel and badge module mixin
 // ==========================================================================
 
-//
-// Container helpers
-//
+@mixin theme-alerts($original: #fff, $panel: true) {
+    $color: #000;
+    @if lightness($original) > 90% {
+        $color: darken($original, 40%);
+        $color: saturate($original, 40%);
 
-@mixin ui-grid-container-base() {
-    margin-left: auto;
-    margin-right: auto;
-}
-
-@mixin ui-grid-container($size: "default") {
-    width: ui-grid-width($size);
-    padding-left: ui-grid-gutter-width($size);
-    padding-right: ui-grid-gutter-width($size);
-}
-
-//
-// Row helper
-//
-
-@mixin ui-grid-row($size: "default") {
-    margin-left: -#{ui-grid-gutter-width($size)};
-    margin-right: -#{ui-grid-gutter-width($size)};
-}
-
-//
-// Column helpers
-//
-
-@mixin ui-grid-column-base($size: "default", $include-size: true) {
-    $base:  ".";
-    $selector: '#{$base}col';
-
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    @if not $include-size { $size-selector: '#{$selector}'; }
-
-    $columns-total: ui-grid-total_columns($size);
-    $all-selector:  '';
-
-    @for $col from 1 through $columns-total {
-        @if $all-selector != "" {
-            $all-selector:  '#{$all-selector} ,';
+        @if lightness($color) - lightness($original) < 20% {
+            $color: darken($original, 20%);
         }
-        $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
-    }
+    } @else if lightness($original) < 45% {
+        $color: lighten($original, 40%);
+        $color: desaturate($original, 40%);
 
-    #{$all-selector} {
-        padding-left: #{ui-grid-gutter-width($size)};
-        padding-right: #{ui-grid-gutter-width($size)};
-        float: left;
-    }
-
-    @if $size == "default" {
-        @include to(2) {
-            #{$size-selector}-#{$columns-total} {
-                clear: both;
-            }
-        }
-    } @else {
-        #{$size-selector}-#{$columns-total} {
-            clear: both;
-        }
-    }
-}
-
-@mixin ui-grid-columns($size: "default", $include-size: true) {
-    $base:  ".";
-    $selector: '#{$base}col';
-
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    @if not $include-size { $size-selector: '#{$selector}'; }
-
-    $columns-total: ui-grid-total_columns($size);
-
-    @for $col from 1 through $columns-total {
-        $total-selector: '#{$size-selector}-#{$col}';
-        #{$total-selector} {
-            width: percentage($col / $columns-total);
-        }
-    }
-}
-
-//
-// Offset
-//
-
-@mixin ui-grid-offset($size: "default", $include-size: true) {
-    $base:  ".";
-    $selector: '#{$base}col';
-
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    @if not $include-size { $size-selector: '#{$selector}'; }
-    $offset-selector: '#{$size-selector}-offset';
-
-    $columns-total: ui-grid-total_columns($size);
-
-    @for $col from 1 through $columns-total + 3 {
-        $total-selector: '#{$offset-selector}-#{$col}';
-        #{$total-selector} {
-            margin-left: percentage($col / $columns-total);
-        }
-    }
-
-    #{$offset-selector}-0 {
-        margin-left: 0;
-    }
-}
-
-//
-// Bleed
-//
-
-@mixin ui-grid-bleed($size: "default", $include-size: true) {
-    $base:  ".";
-    $selector: '#{$base}col';
-
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    @if not $include-size { $size-selector: '#{$selector}'; }
-    $bleed-selector: '#{$size-selector}-bleed';
-
-    $columns-total: ui-grid-total_columns($size);
-
-    @for $col from 1 through $columns-total + 3 {
-        $total-selector: '#{$bleed-selector}-#{$col}';
-        #{$total-selector} {
-            margin-left: -#{percentage($col / $columns-total)};
-        }
-    }
-
-    #{$bleed-selector}-0 {
-        margin-left: 0;
-    }
-}
-
-//
-// Push
-//
-
-@mixin ui-grid-push($size: "default", $include-size: true) {
-    $base:  ".";
-    $selector: '#{$base}col';
-
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    @if not $include-size { $size-selector: '#{$selector}'; }
-    $push-selector: '#{$size-selector}-push';
-
-    $columns-total: ui-grid-total_columns($size);
-
-    @for $col from 1 through $columns-total {
-        $total-selector: '#{$push-selector}-#{$col}';
-        #{$total-selector} {
-            left: percentage($col / $columns-total);
-        }
-    }
-
-    #{$push-selector}-0 {
-        left: 0;
-    }
-}
-
-//
-// Pull
-//
-
-@mixin ui-grid-pull($size: "default", $include-size: true) {
-    $base:  ".";
-    $selector: '#{$base}col';
-
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    @if not $include-size { $size-selector: '#{$selector}'; }
-    $pull-selector: '#{$size-selector}-pull';
-
-    $columns-total: ui-grid-total_columns($size);
-
-    @for $col from 1 through $columns-total {
-        $total-selector: '#{$pull-selector}-#{$col}';
-        #{$total-selector} {
-            left: -#{percentage($col / $columns-total)};
-        }
-    }
-
-    #{$pull-selector}-0 {
-        left: 0;
-    }
-}
-
-//
-// Helper functions
-//
-
-@function ui-grid-total_columns($size: "default") {
-    @if $size == "default" {
-        @return $grid-default-columns;
-    }
-
-    @if $size == "medium" {
-        @return $grid-medium-columns;
-    }
-
-    @if $size == "large" {
-        @return $grid-large-columns;
-    }
-
-    @if $size == "xlarge" {
-        @return $grid-xlarge-columns;
-    }
-}
-
-@function ui-grid-gutter-width($size: "default") {
-    @if $size == "default" {
-        @return $grid-default-gutter/2;
-    }
-
-    @if $size == "medium" {
-        @return $grid-medium-gutter/2;
-    }
-
-    @if $size == "large" {
-        @return $grid-large-gutter/2;
-    }
-
-    @if $size == "xlarge" {
-        @return $grid-xlarge-gutter/2;
-    }
-}
-
-@function ui-grid-width($size: "default") {
-    @if $size == "default" {
-        @return $grid-default - $grid-default-gutter;
-    }
-
-    @if $size == "medium" {
-        @return $grid-medium - $grid-medium-gutter;
-    }
-
-    @if $size == "large" {
-        @return $grid-large - $grid-large-gutter;
-    }
-
-    @if $size == "xlarge" {
-        @return $grid-xlarge - $grid-xlarge-gutter;
-    }
-}
-
-
-// ==========================================================================
-// Utility mixin
-// ==========================================================================
-
-@mixin ui-responsive-hide($size: "default", $selector: ".is-visible") {
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    #{$size-selector},
-    table#{$size-selector},
-    tr#{$size-selector},
-    td#{$size-selector},
-    th#{$size-selector} {
-        display: none !important;
-    }
-}
-
-@mixin ui-responsive-show($size: "default", $selector: ".is-visible") {
-    $size-selector: '#{$selector}#{ui-shortsize($size)}';
-    #{$size-selector} {
-        display: block !important;
-    }
-    table#{$size-selector} {
-        display: table;
-    }
-    tr#{$size-selector} {
-        display: table-row !important;
-    }
-    td#{$size-selector},
-    th#{$size-selector} {
-        display: table-cell !important;
-    }
-}
-
-// ==========================================================================
-// Misc helper functions
-// ==========================================================================
-
-//
-// Get short name for sizes
-//
-
-@function ui-shortsize($size: "default") {
-    @if $size == "default" {
-        @return "-s";
-    }
-
-    @if $size == "medium" {
-        @return "-m";
-    }
-
-    @if $size == "large" {
-        @return "-l";
-    }
-
-    @if $size == "xlarge" {
-        @return "-xl";
-    }
-}
-
-
-// ==========================================================================
-// Inputs
-// ==========================================================================
-
-@mixin theme-alerts($color: #fff, $panel: true) {
-    $bgc: $color;
-    @if lightness($color) > 90% {
-        /* light: #{lightness($color)} */
-        $color: darken($color, 40%);
-        $color: saturate($color, 40%);
-
-        @if lightness($color) - lightness($bgc) < 20% {
-            $color: darken($color, 20%);
-        }
-    } @else if lightness($color) < 45% {
-        /* dark: #{lightness($color)} */
-        $color: lighten($color, 40%);
-        $color: desaturate($color, 40%);
-
-        @if lightness($color) - lightness($bgc) < 20% {
+        @if lightness($color) - lightness($original) < 20% {
             $color: lighten($color, 20%);
         }
     } @else {
-        /* midrange: #{lightness($color)} */
-        $color: darken($color, 20%);
-        $color: saturate($color, 20%);
+        $color: darken($original, 20%);
+        $color: saturate($original, 20%);
 
-        @if lightness($color) - lightness($bgc) < 20% {
+        @if lightness($color) - lightness($original) < 20% {
             $color: darken($color, 20%);
         }
     }
 
-    background-color: $bgc;
-    border-color: $color;
+    background-color: $original;
+    border-color: dolp($original, 10%);
     color: $color;
 
     @if ($panel) {
+        h1,h2,h3,h4,h5,h6,
+        .h1,.h2,.h3,.h4,.h5,.h6 {
+            color: $color;
+        }
+
         .panel-footer,
         .panel-heading {
-            border-color: $color;
+            border-color: dolp($original, 10%);
         }
     }
 
@@ -536,8 +160,9 @@
 }
 
 
+
 // ==========================================================================
-// Buttons
+// Button module mixins
 // ==========================================================================
 
 @mixin theme-button($color:#000, $font:#fff) {
@@ -562,9 +187,9 @@
 
     &.is-disabled,
     &:disabled {
-        color: desaturate($color, 20%) !important;
-        border-color: desaturate(darkenOrLighten($color), 20%) !important;
-        background-color: desaturate($color, 20%);
+        color: desaturate($font, 20%) !important;
+        border-color: desaturate($color, 50%);
+        background-color: desaturate($color, 50%);
     }
 }
 
@@ -589,8 +214,11 @@
 
     &.is-disabled,
     &:disabled {
+        border-color: desaturate($color, 50%);
         > .fa {
-            background-color: desaturate($color, 15%) !important;;
+            background-color: desaturate($color, 40%) !important;;
         }
     }
 }
+
+
