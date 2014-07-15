@@ -15,6 +15,7 @@
 
 	li {
 		position: relative;
+		margin: 0 em(10px);
 		a {
 			text-decoration: none;
 			display: block;
@@ -58,7 +59,7 @@
 //
 
 %default-size {
-	padding: em(10px) em(15px);
+	padding: em(10px) 0;
     font-size: em(14px);
     line-height: 1.5;
 }
@@ -92,6 +93,7 @@
 
 		> li {
 			@include background-clip(border-box);
+			margin-left: auto;
 			float: left;
 			margin-bottom: -1px;
 			margin-right:1px;
@@ -99,6 +101,8 @@
 			> a {
 				@extend %default-size;
 				@include border-radius($global-border-radius $global-border-radius 0 0);
+				padding-right: em(10px);
+				padding-left: em(10px);
 				border: 1px solid transparent;
 				border-left: 0px;
 				border-right: 0px;
@@ -176,6 +180,7 @@
 
 		> li {
 			float: left;
+			margin: 0 .25em;
 
 			> a {
 
@@ -186,7 +191,7 @@
 		}
 
 		.seperator {
-			padding: 0 $global-padding;
+			padding: 0;
 		}
 	}
 

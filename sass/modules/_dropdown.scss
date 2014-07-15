@@ -105,17 +105,26 @@
     // Font-size on header + footer is smaller, so they need a bit more padding
     //
 
+    .dropdown-header {
+        margin-bottom: .5em;
+    }
+
     .dropdown-header,
+    .dropdown-body,
     .dropdown-footer {
         display: block;
-        padding: 10px 15px;
+        padding: .5em .75em;
+    }
+
+    li {
+        margin: 0 em(10px);
     }
 
     li > a {
         text-decoration: none;
         display: block;
-        padding: .5em .75em;
-        font-size: em(13px);
+        padding: .5em 0;
+        font-size: .95em;
 
         &:hover,
         &:focus {
@@ -138,7 +147,7 @@
     li.media {
         text-decoration: none;
         display: block;
-        padding: 8px 1em;
+        padding: .5em .75em;
 
         &:hover,
         &:focus {
@@ -147,10 +156,10 @@
     }
 
     .dropdown-header,
+    .dropdown-body,
     .dropdown-footer {
         h1, h2, h3, h4, h5, h6,
         .h1, .h2, .h3, .h4, .h5, .h6 {
-            font-size: em(12px);
             font-weight: normal;
             color: inherit;
             margin: 0;
@@ -158,8 +167,12 @@
         }
     }
 
-    .dropdown-footer {
+    .dropdown-body {
         padding-top: 14px;
+    }
+    
+    .dropdown-body,
+    .dropdown-footer {
         border-top: 1px solid;
     }
 
