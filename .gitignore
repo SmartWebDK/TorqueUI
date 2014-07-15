@@ -5,10 +5,8 @@ _site
 
 ### Compass ###
 .sass-cache
-
-### SASS ###
-### SASS Ignores - "Sassy CSS" http://sass-lang.com/
 *.sass-cache
+
 
 # OS or Editor folders
 .DS_Store
