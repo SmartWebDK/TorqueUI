@@ -114,7 +114,8 @@
     li > a {
         text-decoration: none;
         display: block;
-        padding: 8px 1em;
+        padding: .5em .75em;
+        font-size: em(13px);
 
         &:hover,
         &:focus {

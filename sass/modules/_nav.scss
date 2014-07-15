@@ -58,11 +58,9 @@
 //
 
 %default-size {
-	padding: 7px $global-padding;
-    font-size: 14px;
+	padding: em(10px) em(15px);
+    font-size: em(14px);
     line-height: 1.5;
-    height: 37px;
-    *height: auto;
 }
 
 	.nav-pills {
