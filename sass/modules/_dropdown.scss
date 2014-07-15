@@ -39,12 +39,9 @@
 
 .dropdown-menu {
     @extend .transition;
-
     filter: alpha(opacity=00);
     opacity: 0;
-
     min-width: 200px;
-    max-width: 100%;
 
     @include at(3) {
         max-width: $grid-medium - $grid-medium-gutter;

@@ -236,9 +236,12 @@ dl,
 ol,
 ul,
 table,
-nav,
-img {
+nav {
     @extend .trailing;
+}
+
+img {
+    @extend .trailing-db;
 }
 
 
