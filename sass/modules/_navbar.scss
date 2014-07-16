@@ -25,6 +25,7 @@
 
     .navbar-collapse {
         @extend .transition;
+        padding-top: 1em;
         z-index: 999;
         display: block;
         opacity: 1;
