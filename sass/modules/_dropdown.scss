@@ -32,7 +32,7 @@
         > .dropdown-menu {
             display: block !important;
             opacity: 1 !important;
-            filter: alpha(opacity=0) !important;
+            filter: alpha(opacity=100) !important;
         }
     }
 }
@@ -102,7 +102,7 @@
     @include background-clip(padding-box);
     padding: 0;
     border: 1px solid;
-    
+
 
     //
     // Font-size on header + footer is smaller, so they need a bit more padding
