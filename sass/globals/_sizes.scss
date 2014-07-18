@@ -16,59 +16,33 @@
 
 //
 // Place holders for input sizes
-// 1) ie7 doesnt understand box-sizing, so let padding decide height
 //
 
 %size-large {
-    padding: 11px 12px;
-    font-size: 14px;
+    padding: em(15px);
+    font-size: 1em;
     line-height: 1.5;
-    height: 46px;
-    *height: auto;                                          // 1)
 }
-    %size-large-line-height {
-        padding: 11px 0;
-        font-size: 14px;
-        line-height: 1.5;
-    }
+
 %size-default {
-    padding: 7px 12px;
-    font-size: 14px;
+    padding: em(10px) em(15px);
+    font-size: em(14px);
     line-height: 1.5;
-    height: 37px;
-    *height: auto;                                          // 1)
 }
-    %size-default-line-height {
-        padding: 7px 0;
-        font-size: 14px;
-        line-height: 1.5;
-    }
+
 %size-small {
-    padding: 5px 12px;
-    font-size: 12px;
+    padding: em(10px) em(15px);
+    font-size: em(12px);
     font-weight: normal;
     line-height: 1.5;
-    height: 30px;
-    *height: auto;                                          // 1)
 }
-    %size-small-line-height {
-        padding: 5px 0;
-        font-size: 12px;
-        line-height: 1.5;
-    }
+
 %size-xsmall {
-    padding: 2px 12px;
-    font-size: 12px;
+    padding: em(5px) em(10px);
+    font-size: em(12px);
     font-weight: normal;
     line-height: 1.5;
-    height: 25px;
-    *height: auto;                                          // 1)
 }
-    %size-xsmall-line-height {
-        padding: 2px 0;
-        font-size: 12px;
-        line-height: 1.5;
-    }
 
 // ==========================================================================
 // Sizes
@@ -106,7 +80,8 @@
             padding-left: 12px !important;
         }
         > .fa {
-            line-height: 44px !important;
+            padding: em(15px) !important;
+            line-height: 1.5 !important;
             width: 46px !important;
         }
     }
@@ -140,7 +115,8 @@
             padding-left: 12px !important;
         }
          .fa {
-            line-height: 35px !important;
+            padding: em(10px) em(15px);
+            line-height: 1.5 !important;
             width: 37px !important;
         }
     }
@@ -174,7 +150,8 @@
             padding-left: 12px !important;
         }
         > .fa {
-            line-height: 28px !important;
+            padding: em(10px) em(15px);
+            line-height: 1.5 !important;
             width: 30px !important;
         }
     }
@@ -208,7 +185,8 @@
             padding-left: 12px !important;
         }
         > .fa {
-            line-height: 22px !important;
+            padding: em(5px) em(10px);
+            line-height: 1.5 !important;
             width: 24px !important;
         }
     }

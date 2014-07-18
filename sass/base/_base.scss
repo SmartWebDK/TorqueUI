@@ -38,13 +38,37 @@ body {
 //
 
 .trailing {
-    margin: 0 auto rhythm(2, $font-base);
+    margin: 0 auto rhythm(1, $font-base);
 }
 .trailing-db {
-    margin: 0 auto rhythm(4, $font-base);
+    margin: 0 auto rhythm(2, $font-base);
 }
 .trailing-trip {
-    margin: 0 auto rhythm(6, $font-base);
+    margin: 0 auto rhythm(3, $font-base);
+}
+
+.trailing-mobile {
+    @extend .trailing;
+
+    @include from(3) {
+        margin: auto auto auto auto;
+    }
+}
+
+.trailing-db-mobile {
+    @extend .trailing-db;
+
+    @include from(3) {
+        margin: auto auto auto auto;
+    }
+}
+
+.trailing-trip-mobile {
+    @extend .trailing-trip;
+
+    @include from(3) {
+        margin: auto auto auto auto;
+    }
 }
 
 //
@@ -55,3 +79,4 @@ body {
     margin: 0 auto rhythm(2, $font-base);
     padding: 0;
 }
+
