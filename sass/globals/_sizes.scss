@@ -19,26 +19,26 @@
 //
 
 %size-large {
-    padding: em(15px);
+    padding: 1em;
     font-size: 1em;
     line-height: 1.5;
 }
 
 %size-default {
-    padding: em(10px) em(15px);
+    padding: .5em 1em;
     font-size: em(14px);
     line-height: 1.5;
 }
 
 %size-small {
-    padding: em(10px) em(15px);
+    padding: .5em 1em;
     font-size: em(12px);
     font-weight: normal;
     line-height: 1.5;
 }
 
 %size-xsmall {
-    padding: em(5px) em(10px);
+    padding: .5em .5em;
     font-size: em(12px);
     font-weight: normal;
     line-height: 1.5;
@@ -80,7 +80,7 @@
             padding-left: 12px !important;
         }
         > .fa {
-            padding: em(15px) !important;
+            padding: 1em !important;
             line-height: 1.5 !important;
             width: 46px !important;
         }
@@ -115,7 +115,7 @@
             padding-left: 12px !important;
         }
          .fa {
-            padding: em(10px) em(15px);
+            padding: .5em 1em;
             line-height: 1.5 !important;
             width: 37px !important;
         }
@@ -150,7 +150,7 @@
             padding-left: 12px !important;
         }
         > .fa {
-            padding: em(10px) em(15px);
+            padding: .5em 1em;
             line-height: 1.5 !important;
             width: 30px !important;
         }
@@ -185,7 +185,7 @@
             padding-left: 12px !important;
         }
         > .fa {
-            padding: em(5px) em(10px);
+            padding: .5em;
             line-height: 1.5 !important;
             width: 24px !important;
         }
