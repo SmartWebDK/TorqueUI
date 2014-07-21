@@ -82,7 +82,7 @@ a {
 //
 
 s, del {
-    color: dolp($color-font-base, 30%);
+    color: dolp($color-font-base, 15%);
 }
 
 //
@@ -90,7 +90,7 @@ s, del {
 //
 
 small {
-    color: dolp($color-font-base, 30%);;
+    color: dolp($color-font-base, 15%);;
 }
 
 //
@@ -109,7 +109,7 @@ mark,
 //
 
 hr {
-    border-color: $color-border !important;
+    border-color: $color-border;
 }
 
 
@@ -123,6 +123,7 @@ hr {
 
 .form-input,
 .form-label.input-group-main {
+    @include border-radius($border-radius);
     border-color: $color-input-border !important;
     background-color: $color-input-back;
     color: $color-input-color;
@@ -177,6 +178,8 @@ hr {
 }
 
 .input-group-addon {
+
+    @include border-radius($border-radius);
     @extend %input-group;
     color: $color-input-color;
     background-color: $color-input-back-hover;
@@ -188,7 +191,7 @@ hr {
 // ==========================================================================
 
 .badge {
-    @include border-radius();
+    @include border-radius($border-radius);
 
     &.badge-clean {
         background-color: $color-badge-clean;
@@ -213,6 +216,23 @@ hr {
 // ==========================================================================
 // Buttons
 // ==========================================================================
+
+%button {
+    @include border-radius($border-radius !important);
+}
+
+.button,
+.button-text,
+.button-group,
+.button-default,
+.button-primary,
+.button-icon>.fa {
+    @extend %button;
+}
+
+.button-icon.right.button-primary>.fa,
+.button-icon.right.button-text>.fa,
+.button-icon.right.button>.fa
 
 //
 // Button-group
@@ -308,9 +328,21 @@ hr {
     color: $color-font-base;
     background-color: $color-panel-border;
 
+    .panel-footer,
+    .panel-heading {
+        background-color: dolp($color-panel-border, 5%);
+        border-color: $color-panel-border-border;
+    }
+
+    .t-striped {
+        > li:nth-child(odd) {
+            background-color: dolp($color-panel-border, 10%);
+        }
+    }
+
     .panel-heading,
     .panel-footer {
-        border-color: $color-panel-border;
+        border-color: $color-panel-border-border;
     }
 }
 
@@ -387,6 +419,7 @@ hr {
 
     li {
         > a {
+            @include border-radius($border-radius);
             border-color: transparent;
             border-width: 1px;
             border-style: solid;
@@ -454,7 +487,7 @@ hr {
 }
 
 .dropdown-container {
-    @include border-radius(3px);
+    @include border-radius($border-radius);
     border-color: $color-dropdown-border;
     background-color: $color-dropdown;
 
@@ -463,12 +496,9 @@ hr {
         border-color: transparent;
     }
 
-    .dropdown-header,
-    .dropdown-footer {
-        h1, h2, h3, h4, h5, h6,
-        .h1, .h2, .h3, .h4, .h5, .h6 {
-            color: dolp($color-dropdown-font, 5%);
-        }
+    .dropdown-header {
+        background-color: darken($color-dropdown, 5%);
+        border-color: $color-dropdown-border;
     }
 
     li > a {
@@ -484,16 +514,16 @@ hr {
 // ==========================================================================
 
 .pagination {
-    @include theme-button($color-pagination , $color-pagination-font);
+    li {
+        a {
+            @include theme-button($color-pagination , $color-pagination-font);
+        }
 
-    &.current a {
-        background-color: dolp($color-pagination, 8%);
+        &.current a {
+            background-color: dolp($color-pagination, 8%);
+        }
     }
 }
-
-
-
-
 
 // ==========================================================================
 // Lists
@@ -506,7 +536,6 @@ hr {
 
 .t-striped {
     > li:nth-child(odd) {
-        background-color: $color-list-striped;
     }
 }
 
