@@ -50,6 +50,10 @@
     &:disabled {
         @include ui-disabled;
     }
+
+    .fa {
+        vertical-align: middle;
+    }
 }
 
 //
@@ -140,5 +144,9 @@
             border-top-right-radius: $global-border-radius;
             border-bottom-right-radius: $global-border-radius;
         }
+    }
+
+    .fa {
+        vertical-align: middle;
     }
 }
