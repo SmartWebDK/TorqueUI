@@ -117,7 +117,8 @@
     }
 
     li {
-        margin: 0 em(10px);
+        padding-left: .5em;
+        padding-right: .5em;
     }
 
     li > a {
@@ -179,7 +180,7 @@
     &.padding-double {
         li > a,
         li.media {
-            padding: 16px 15px;
+            padding: 1em 1.5em;
         }
 
         .dropdown-header,
