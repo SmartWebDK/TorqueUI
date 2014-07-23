@@ -3,7 +3,8 @@
 // -----------------------------------------------------------------------------
 
 img.responsive {
-    max-width: 100%;
+	width: 100%; // Firefox needs width 100% to scale (tested in Safari, Chrome & Firefox)
+    max-width: 100%; // Max-width contraints the scaling to a maximum of 100% image size
     height: auto;
     display: block;
 }

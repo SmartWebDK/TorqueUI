@@ -379,6 +379,11 @@ hr {
             }
         }
     }
+    > li {
+        > a {
+            border-color: transparent !important;
+        }
+    }
 }
 
 .nav .dropdown-menu,

@@ -45,14 +45,43 @@
 //
 
 	.nav-default {
+		li {
+            a {
+                padding-left: .5em;
+                padding-right: .5em;
+            }
+        }
 		> li {
+            display: block;
+            float: none;
 
 			> a {
 				@extend %default-size;
+				cursor: pointer;
 			}
 		}
-	}
 
+		@include from(4) {
+            li {
+                a {
+                    padding-left: .5em;
+                    padding-right: .5em;
+                }
+            }
+            > li {
+                padding: 0 .5em;
+                > a {
+                    padding-left: 0px;
+                    padding-right: 0px;
+                }
+            }
+        }
+
+        &.nav-justified > li {
+            width: auto;
+        }
+	}
+	
 //
 // Pills
 //
