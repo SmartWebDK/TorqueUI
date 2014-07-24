@@ -216,7 +216,7 @@
 [data-toggle="collapse"] {
     &.is-closed {
         .icon-open {
-            display: inline-block;
+            @include ui-ie7-table-cell;
         }
         .icon-close {
             display: none;
@@ -227,7 +227,7 @@
         display: none;
     }
     .icon-close {
-        display: inline-block;
+        @include ui-ie7-table-cell;
     }
 }
 
