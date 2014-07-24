@@ -44,10 +44,11 @@
     }
 
     .marker {
-        @extend %size-default;
+        font-size: em(14px);
+        line-height: 1.5;
         cursor: pointer;
         float: right;
-        padding: 0.5em;
+        padding: .5em;
 
         + a {
             @include inline-block;
