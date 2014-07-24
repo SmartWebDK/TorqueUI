@@ -214,6 +214,15 @@
 // ==========================================================================
 
 [data-toggle="collapse"] {
+    &.is-closed {
+        .icon-open {
+            display: inline-block;
+        }
+        .icon-close {
+            display: none;
+        }
+    }
+
     .icon-open {
         display: none;
     }
@@ -221,14 +230,7 @@
         display: inline-block;
     }
 }
-.is-closed {
-    .icon-open {
-        display: inline-block;
-    }
-    .icon-close {
-        display: none;
-    }
-}
+
 
 
 
