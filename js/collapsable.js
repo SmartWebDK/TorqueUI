@@ -54,7 +54,7 @@
             css         = $this.data("class") || "is-collapsed",
             $target = $("[data-group="+selector+"]");
 
-        // $this.removeClass(css);
+        $this.is("button") && $this.removeClass("is-closed");
         $target.removeClass(css);
     };
 
@@ -68,7 +68,7 @@
             css         = $this.data("class") || "is-collapsed",
             $target = $("[data-group="+selector+"]");
 
-        // $this.addClass(css);
+        $this.is("button") && $this.addClass("is-closed");
         $target.addClass(css);
     };
 
