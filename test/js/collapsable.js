@@ -17,6 +17,19 @@
     };
 
     //
+    // Init collapse
+    //
+
+    Collapsable.prototype.init = function () {
+
+        // recall state of element if available
+        var state = this.state();
+        if (state) {
+            this[ state ]();
+        }
+    }
+
+    //
     // Toggle collapse
     //
 
@@ -86,19 +99,25 @@
         if (typeof Storage !== 'undefined') {
 
             // Unique id
-            var id = this.$element.data('saveState');
+            var id = this.$element.data('target');
 
-            // Get mode
-            if (!state) {
-                state = sessionStorage[id];
-                return state ? state : 'open';
-            }
+            if (id !== undefined) {
 
-            // Set mode
-            else {
-                sessionStorage[id] = state;
+                // Get mode
+                if (!state) {
+                    state = sessionStorage[id];
+                    return state ? state : false;
+                }
+
+                // Set mode
+                else {
+                    sessionStorage[id] = state;
+                    return state;
+                }
             }
         }
+
+        return false;
     }
 
 
@@ -117,22 +136,16 @@
 
     $.fn.collapse = function (option) {
         return this.each( function () {
-            var $this       = $(this),
-                data        = $this.data("ui.collapse"),
-                saveState   = $this.data("saveState");
+            var $this   = $(this),
+                data    = $this.data("ui.collapse");
 
             // convert collapse to a prototype of dropdown
             if ( !data ) $this.data("ui.collapse", (data = new Collapsable(this)));
 
-            // option could be 'open' or 'close'
-            if (typeof option == 'string') {
-                data[ option ]();
-            }
+            if ( !option ) option = "init";
 
-            // else recall state of element if available
-            else if ( saveState !== undefined ) {
-                data[ data.state() ]();
-            }
+            // option could be 'init', 'open' or 'close'
+            data[ option ]();
         });
     };
 
