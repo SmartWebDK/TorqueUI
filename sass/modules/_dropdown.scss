@@ -84,7 +84,6 @@
         -moz-box-shadow: none !important;
         box-shadow: none !important;
         border: 0 !important;
-        border-radius: 0 !important;
         position: static;
         margin: 0;
         display: block;
@@ -95,11 +94,10 @@
     }
 }
 .dropdown-container {
-    @include border-radius($global-border-radius);
     @include background-clip(padding-box);
     padding: 0;
     border: 1px solid;
-    
+
 
     //
     // Font-size on header + footer is smaller, so they need a bit more padding
@@ -171,7 +169,7 @@
     .dropdown-body {
         padding-top: 14px;
     }
-    
+
     .dropdown-body,
     .dropdown-footer {
         border-top: 1px solid;

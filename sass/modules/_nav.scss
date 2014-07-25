@@ -42,7 +42,7 @@
 				@extend %nav-default-size;
 			}
 		}
-	}	
+	}
 
 
 //
@@ -61,7 +61,7 @@
             }
         }
 	}
-	
+
 //
 // Pills
 //
@@ -78,7 +78,6 @@
 
 			> a {
 				@extend %nav-default-size;
-				@include border-radius($global-border-radius);
 				border: 1px solid transparent;
 			}
 
@@ -106,7 +105,6 @@
 
 			> a {
 				@extend %nav-default-size;
-				@include border-radius($global-border-radius $global-border-radius 0 0);
 				padding-right: .5em;
 				padding-left: .5em;
 				border: 1px solid transparent;
