@@ -56,6 +56,8 @@
 
         $this.is("button") && $this.removeClass("is-closed");
         $target.removeClass(css);
+
+        this.state('open');
     };
 
     //
@@ -70,7 +72,34 @@
 
         $this.is("button") && $this.addClass("is-closed");
         $target.addClass(css);
+
+        this.state('close');
     };
+
+    //
+    // State collapse
+    //
+
+    Collapsable.prototype.state = function (state) {
+
+        // Validate WebStorage
+        if (typeof Storage !== 'undefined') {
+
+            // Unique id
+            var id = this.$element.data('saveState');
+
+            // Get mode
+            if (!state) {
+                state = sessionStorage[id];
+                return state ? state : 'open';
+            }
+
+            // Set mode
+            else {
+                sessionStorage[id] = state;
+            }
+        }
+    }
 
 
     // ==========================================================================
@@ -88,14 +117,22 @@
 
     $.fn.collapse = function (option) {
         return this.each( function () {
-            var $this = $(this),
-                data  = $this.data("ui.collapse");
+            var $this       = $(this),
+                data        = $this.data("ui.collapse"),
+                saveState   = $this.data("saveState");
 
             // convert collapse to a prototype of dropdown
             if ( !data ) $this.data("ui.collapse", (data = new Collapsable(this)));
 
             // option could be 'open' or 'close'
-            if (typeof option == 'string') data[option]();
+            if (typeof option == 'string') {
+                data[ option ]();
+            }
+
+            // else recall state of element if available
+            else if ( saveState !== undefined ) {
+                data[ data.state() ]();
+            }
         });
     };
 
@@ -120,6 +157,8 @@
         e.stopPropagation();
         $(this).collapse("toggle");
     });
+
+    $(toggle).collapse();
 
 })(jQuery, document);
 
