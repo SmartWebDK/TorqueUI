@@ -39,7 +39,8 @@
         > a {
             text-decoration: none;
             margin-left: -1px;
-            border: 1px solid;
+            border-width: 1px;
+            border-style: solid;
             float: left;
             cursor: pointer;
 
