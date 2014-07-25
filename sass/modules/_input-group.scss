@@ -23,31 +23,8 @@
     *zoom: 1;
     border-collapse: separate;
 
-    //
-    // Remove rounded borders for smooth look
-    //
-
-    .input-group-addon,
-    .input-group-main {
-        @include ui-rounded-borders;
-    }
-
-
     .input-group-main {
         @include ui-ie7-table-cell();
-    }
-
-    //
-    // Has to come again for nested element
-    //
-
-    .input-group-button {
-        @include ui-rounded-borders(".button");
-    }
-
-
-    .input-group-image {
-        @include ui-rounded-borders("img");
     }
 }
 .form-label.input-group-main {
@@ -99,7 +76,6 @@
     border: 1px solid;
     cursor: pointer;
     @extend %size-default;
-    @include border-radius($global-border-radius);
 }
 
 //
@@ -113,9 +89,7 @@
     *display: none;                                             // 1)
 
     > img {
-        @include border-radius($global-border-radius);
         @extend .reset;
-
         display: block;
         height: 100%;
         width: auto;

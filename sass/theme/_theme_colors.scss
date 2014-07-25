@@ -101,6 +101,7 @@ mark,
 .mark {
     color: color($color-font-hightlight, #fff, $color-font-base);       // in _mixins.scss
     background-color: $color-font-hightlight;
+    border-radius: $border-radius;
 }
 
 
@@ -177,12 +178,39 @@ hr {
     @extend %input-group;
 }
 
-.input-group-addon {
+.input-group-image > img {
+    @include border-radius($border-radius);
+}
 
+.input-group-addon {
     @include border-radius($border-radius);
     @extend %input-group;
     color: $color-input-color;
     background-color: $color-input-back-hover;
+}
+
+.input-group {
+    //
+    // Remove rounded borders for smooth look
+    //
+
+    .input-group-addon,
+    .input-group-main {
+        @include ui-rounded-borders;
+    }
+
+    //
+    // Has to come again for nested element
+    //
+
+    .input-group-button {
+        @include ui-rounded-borders(".button");
+    }
+
+
+    .input-group-image {
+        @include ui-rounded-borders("img");
+    }
 }
 
 
@@ -218,7 +246,7 @@ hr {
 // ==========================================================================
 
 %button {
-    @include border-radius($border-radius !important);
+    @include border-radius($border-radius);
 }
 
 .button,
@@ -240,6 +268,19 @@ hr {
 
 .button-group {
     border-color: $color-border;
+    > li {
+        .button {
+            @include border-radius(0);
+        }
+        &:first-child > .button {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+        &:last-child > .button {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
 }
 
 .button,
@@ -248,6 +289,19 @@ hr {
 }
 .button.button-icon {
     @include theme-button-icon($color-button-clean, $color-button-clean-font);
+    > .fa {
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+    }
+
+    &.right {
+        > .fa {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
 }
 
 .button-primary,
@@ -350,6 +404,9 @@ hr {
     @include theme-alerts($color-info, true);
 }
 
+.panel-rounded {
+    @include border-radius($border-radius);
+}
 
 
 
@@ -404,6 +461,7 @@ hr {
         > a:hover {
             background-color: dolp($color-nav-pills, 10%);
             color: $color-nav-pills-font;
+            @include border-radius($border-radius);
         }
         &.active > a {
             background-color: $color-nav-pills;
@@ -424,7 +482,7 @@ hr {
 
     li {
         > a {
-            @include border-radius($border-radius);
+            @include border-radius($border-radius $border-radius 0 0);
             border-color: transparent;
             border-width: 1px;
             border-style: solid;
@@ -489,6 +547,10 @@ hr {
 // ==========================================================================
 
 .dropdown {
+    .dropdown,
+    .dropdown-menu {
+        border-radius: 0 !important;
+    }
 }
 
 .dropdown-container {
@@ -519,13 +581,44 @@ hr {
 // ==========================================================================
 
 .pagination {
-    li {
+    @include border-radius($border-radius);
+    > li {
+
+        &:first-child > a {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &:last-child > a {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
         a {
             @include theme-button($color-pagination , $color-pagination-font);
         }
 
         &.current a {
             background-color: dolp($color-pagination, 8%);
+        }
+    }
+}
+
+.pager-group {
+    @include border-radius($border-radius);
+
+    .button-icon,
+    .button,
+    .button-primary {
+        @include border-radius(0);
+
+        &:first-child {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
         }
     }
 }
