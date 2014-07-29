@@ -196,7 +196,7 @@ hr {
 
     .input-group-addon,
     .input-group-main {
-        @include ui-rounded-borders;
+        @include ui-rounded-borders();
     }
 
     //
