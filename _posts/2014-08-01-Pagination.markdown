@@ -1,5 +1,5 @@
 ---
 layout:     post
 title:      "Pagination"
-categories: components
+categories: Components
 ---

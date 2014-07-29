@@ -70,7 +70,7 @@ $ grunt dist
 		</div>
 		<hr class="separator">
 		<div class="row">
-			<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
+			<!--<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
 				<h1>CSS</h1>
 				<ul class="list-unstyled">
 				{% for post in site.posts %}
@@ -81,8 +81,8 @@ $ grunt dist
 			<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
 				<h1>Components</h1>
 				<ul class="list-unstyled">
-				{% for comp in site.comp %}
-				<li><a href="{{ comp.url }}">{{ comp.title }}</a></li>
+				{% for post in site.posts %}
+				<li><a href="{{ post.url }}">{{ post.title }}</a></li>
 				{% endfor %}
 				</ul>
 			</div>
@@ -93,7 +93,20 @@ $ grunt dist
 				<li><a href="{{ post.url }}">{{ post.title }}</a></li>
 				{% endfor %}
 				</ul>
-			</div>
+				<li><a name="{{ category | first }}">{{ category | first }}</a>
+			</div>-->
+			{% for category in site.categories %}
+				<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
+					<span class="h6">{{ category | first }}</span>
+					<ul>
+						{% for posts in category %}
+						{% for post in posts %}
+							<li><a href="{{ post.url }}">{{ post.title }}</a></li>
+						{% endfor %}
+						{% endfor %}
+					</ul>
+				</div>
+			{% endfor %}
 		</div>
 	</section>
 </div>
