@@ -1,0 +1,6 @@
+---
+layout:     post
+title:      "Comp1"
+categories: components
+---
+
