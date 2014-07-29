@@ -74,10 +74,8 @@ $ grunt dist
 				<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
 					<span class="h6">{{ category | first }}</span>
 					<ul>
-						{% for posts in category %}
 						{% for post in posts %}
 							<li><a href="{{ post.url }}">{{ post.title }}</a></li>
-						{% endfor %}
 						{% endfor %}
 					</ul>
 				</div>
