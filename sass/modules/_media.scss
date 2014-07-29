@@ -1,0 +1,32 @@
+//
+// Media element
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Media element helper
+// ==========================================================================
+
+.media {
+    @extend .trailing;
+}
+
+.media, .media-body {
+    @extend .clearfix;
+    overflow:hidden;
+    _overflow:visible;
+    zoom:1;
+}
+
+.media-image {
+    float: left;
+    margin-right: 15px;
+
+    &.pull-right {
+        float: right;
+        margin-right: 0;
+        margin-left: 15px;
+    }
+}
+
+
+

@@ -1,0 +1,15 @@
+//
+// Badge file
+// -----------------------------------------------------------------------------
+
+
+//
+// Badge
+//
+
+.badge {
+    @include inline-block;
+    padding: 3px 7px;
+    font-weight: bold;
+    white-space: nowrap;
+}

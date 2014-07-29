@@ -1,0 +1,723 @@
+//
+// Theme colors
+// -----------------------------------------------------------------------------
+
+
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+//
+// Base
+//
+
+html {
+    color: $color-font-base;
+}
+
+//
+// Headings
+//
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+    color: $color-font-headings;
+}
+
+//
+// Hyperlinks
+//
+
+%a {
+    color: $color-font-hightlight;
+
+    h1, .h1,
+    h2, .h2,
+    h3, .h3,
+    h4, .h4,
+    h5, .h5,
+    h6, .h6,
+    h1 &, .h1 &,
+    h2 &, .h2 &,
+    h3 &, .h3 &,
+    h4 &, .h4 &,
+    h5 &, .h5 &,
+    h6 &, .h6 &,
+    & h1, .h1 &,
+    & h2, & .h2,
+    & h3, & .h3,
+    & h4, & .h4,
+    & h5, & .h5,
+    & h6, & .h6 {
+        color: $color-font-hightlight;
+        text-decoration: none;
+    }
+}
+
+a:visited {
+    @extend %a;
+}
+a {
+    @extend %a;
+
+    &:hover {
+        text-decoration: none;
+        color: dolp($color-font-hightlight, 10%);
+    }
+    &:focus {
+        outline: thin dotted;
+    }
+    a:hover,
+    a:active {
+        outline: none;
+    }
+}
+
+//
+// Color adjust <del> and <s>
+//
+
+s, del {
+    color: dolp($color-font-base, 15%);
+}
+
+//
+// Small
+//
+
+small {
+    color: dolp($color-font-base, 15%);;
+}
+
+//
+// Marked element
+//
+
+mark,
+.mark {
+    color: color($color-font-hightlight, #fff, $color-font-base);       // in _mixins.scss
+    background-color: $color-font-hightlight;
+    border-radius: $border-radius;
+}
+
+
+//
+// HR
+//
+
+hr {
+    border-color: $color-border;
+}
+
+
+// ==========================================================================
+// Inputs
+// ==========================================================================
+
+//
+// Inputs and selects
+//
+
+.form-input,
+.form-label.input-group-main {
+    @include border-radius($border-radius);
+    border-color: $color-input-border !important;
+    background-color: $color-input-back;
+    color: $color-input-color;
+
+    @include box-shadow(inset 0 1px 5px rgba(0,0,0,.1));
+
+    &:hover {
+        background-color: $color-input-back-hover;
+    }
+
+    &:focus {
+        @include box-shadow(0 0 4px 1px rgba(190,234,255,.75), inset 0 1px 5px rgba(0,0,0,.1));
+    }
+
+    //
+    // Disable styles
+    //
+    &.is-disabled,
+    &:disabled {
+        color: $color-input-color-disabled;
+        background-color: $color-input-back-disabled;
+    }
+}
+
+//
+// Selectbox
+//
+// 1) Arrow on dropdown
+// 2) It's impossible to remove arrow on Firefox, so we just use a background color
+//
+
+.form-select {
+    @extend %caret-image;
+}
+
+//
+// Commen checkbox and radiobutton styles
+//
+
+%input-group {
+    border-color: $color-input-border !important;
+
+    .input-group:hover &,
+    .input-group:focus & {
+        background-color: $color-input-back-hover;
+    }
+}
+
+.input-group-image img,
+.input-group-main   {
+    @extend %input-group;
+}
+
+.input-group-image > img {
+    @include border-radius($border-radius);
+}
+
+.input-group-addon {
+    @include border-radius($border-radius);
+    @extend %input-group;
+    color: $color-input-color;
+    background-color: $color-input-back-hover;
+}
+
+.input-group {
+    //
+    // Remove rounded borders for smooth look
+    //
+
+    .input-group-addon,
+    .input-group-main {
+        @include ui-rounded-borders();
+    }
+
+    //
+    // Has to come again for nested element
+    //
+
+    .input-group-button {
+        @include ui-rounded-borders(".button");
+    }
+
+
+    .input-group-image {
+        @include ui-rounded-borders("img");
+    }
+}
+
+
+// ==========================================================================
+// Badges
+// ==========================================================================
+
+.badge {
+    @include border-radius($border-radius);
+
+    &.badge-clean {
+        background-color: $color-badge-clean;
+        color: $color-font-base;
+    }
+    &.badge-info {
+        @include theme-alerts($color-badge-info, false);
+    }
+    &.badge-succes {
+        @include theme-alerts($color-badge-callout, false);
+    }
+    &.badge-warning {
+        @include theme-alerts($color-badge-warning, false);
+    }
+    &.badge-danger {
+        @include theme-alerts($color-badge-danger, false);
+    }
+}
+
+
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+%button {
+    @include border-radius($border-radius);
+}
+
+.button,
+.button-text,
+.button-group,
+.button-default,
+.button-primary,
+.button-icon>.fa {
+    @extend %button;
+}
+
+.button-icon.right.button-primary>.fa,
+.button-icon.right.button-text>.fa,
+.button-icon.right.button>.fa
+
+//
+// Button-group
+//
+
+.button-group {
+    border-color: $color-border;
+    > li {
+        .button {
+            @include border-radius(0);
+        }
+        &:first-child > .button {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+        &:last-child > .button {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
+}
+
+.button,
+.button:visited {
+    @include theme-button($color-button-clean, $color-button-clean-font);
+}
+.button.button-icon {
+    @include theme-button-icon($color-button-clean, $color-button-clean-font);
+    > .fa {
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+    }
+
+    &.right {
+        > .fa {
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
+}
+
+.button-primary,
+.button-primary:visited {
+    @include theme-button($color-button-primary, $color-button-primary-font);
+}
+.button-primary.button-icon {
+    @include theme-button-icon($color-button-primary, $color-button-primary-font);
+}
+
+.button-text,
+.button-text:visited {
+    color: $color-button-text-font;
+    text-decoration: none;
+    background-color: transparent;
+
+    &:hover,
+    &:focus {
+        color: dolp($color-button-text-font, 5%);
+        background-color: transparent;
+        text-decoration: underline;
+        @include box-shadow(none);
+    }
+    &:active {
+        color: dolp($color-button-text-font, 10%);
+    }
+}
+
+
+
+// ==========================================================================
+// Symbols
+// ==========================================================================
+.symbol {
+    &.symbol-button {
+        color: dolp($color-font-base, 30%);
+
+        &:hover {
+            color: $color-font-base;
+        }
+    }
+}
+
+
+// ==========================================================================
+// Panels
+// ==========================================================================
+
+.panel {
+
+}
+
+.panel-success {
+    @include theme-alerts($color-panel-callout, true);
+}
+
+.panel-warning {
+    @include theme-alerts($color-panel-warning, true);
+}
+
+.panel-danger {
+    @include theme-alerts($color-panel-danger, true);
+}
+
+.panel-default {
+    border-color: transparent;
+    color: $color-font-base;
+    background-color: transparent;
+
+    .panel-heading,
+    .panel-footer {
+        border-color: transparent;
+    }
+}
+
+.panel-border {
+    border-color: $color-panel-border-border;
+    color: $color-font-base;
+    background-color: $color-panel-border;
+
+    .panel-footer,
+    .panel-heading {
+        background-color: dolp($color-panel-border, 5%);
+        border-color: $color-panel-border-border;
+    }
+
+    .t-striped {
+        > li:nth-child(odd) {
+            background-color: dolp($color-panel-border, 10%);
+        }
+    }
+
+    .panel-heading,
+    .panel-footer {
+        border-color: $color-panel-border-border;
+    }
+}
+
+.panel-info {
+    @include theme-alerts($color-info, true);
+}
+
+.panel-rounded {
+    @include border-radius($border-radius);
+}
+
+
+
+// ==========================================================================
+// Navs
+// ==========================================================================
+
+//
+// Default
+//
+
+.nav-default,
+.nav-menu {
+    li {
+
+        a {
+            color: $color-nav-menu;
+
+            &:hover {
+                color: dolp($color-nav-menu, 15%);
+            }
+        }
+
+        &.active {
+            > a {
+                color: saturate(darken($color-nav-menu, 20%), 10%);
+            }
+        }
+    }
+    > li {
+        > a {
+            border-color: transparent !important;
+        }
+    }
+}
+
+.nav .dropdown-menu,
+.nav .dropdown-stripped {
+    @extend .nav-default;
+}
+
+//
+// Pills
+//
+
+.nav-pills {
+
+    > li {
+        > a {
+            background-color: transparent;
+        }
+        > a:hover {
+            background-color: dolp($color-nav-pills, 10%);
+            color: $color-nav-pills-font;
+            @include border-radius($border-radius);
+        }
+        &.active > a {
+            background-color: $color-nav-pills;
+            color: $color-nav-pills-font;
+        }
+    }
+}
+
+
+//
+// Tabs
+//
+
+.nav-tabs {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: $color-border;
+
+    li {
+        > a {
+            @include border-radius($border-radius $border-radius 0 0);
+            border-color: transparent;
+            border-width: 1px;
+            border-style: solid;
+
+            &:hover {
+                background-color: dolp($color-nav-tabs, 10%);
+                color: $color-nav-tabs-font;
+                border-bottom-color: $color-border;
+            }
+        }
+        &.active > a {
+            color: $color-font-base;;
+            background-color: $color-nav-tabs;
+            border-color: $color-border;
+            border-width: 1px;
+            border-style: solid;
+
+            &:hover {
+                border-bottom-color: $color-nav-tabs-pane;
+            }
+        }
+    }
+
+    &.nav-justified > li {
+        > a {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+            border-bottom-color: $color-border;
+        }
+        &.active > a {
+            border-width: 1px;
+            border-style: solid;
+            border-color: $color-border;
+        }
+    }
+}
+
+//
+// Toggle pane
+//
+.t-panel-clean > .pane {
+    background: $color-nav-tabs-pane;
+    border-right: 1px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
+    border-color: $color-border;
+}
+
+// ==========================================================================
+// Navbar
+// ==========================================================================
+
+.navbar {
+
+    .navbar-brand {
+        color: $color-font-base;
+    }
+}
+
+// ==========================================================================
+// Dropdowns
+// ==========================================================================
+
+.dropdown {
+    .dropdown,
+    .dropdown-menu {
+        border-radius: 0 !important;
+    }
+}
+
+.dropdown-container {
+    @include border-radius($border-radius);
+    border-color: $color-dropdown-border;
+    background-color: $color-dropdown;
+
+    .divider,
+    .dropdown-footer {
+        border-color: transparent;
+    }
+
+    .dropdown-header {
+        background-color: darken($color-dropdown, 5%);
+        border-color: $color-dropdown-border;
+    }
+
+    li > a {
+        color: $color-font-base;
+        &:hover {
+            color: dolp($color-dropdown-font, 10%);
+        }
+    }
+}
+
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
+.pagination {
+    @include border-radius($border-radius);
+    > li {
+
+        &:first-child > a {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &:last-child > a {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+        a {
+            @include theme-button($color-pagination , $color-pagination-font);
+        }
+
+        &.current a {
+            background-color: dolp($color-pagination, 8%);
+        }
+    }
+}
+
+.pager-group {
+    @include border-radius($border-radius);
+
+    .button-icon,
+    .button,
+    .button-primary {
+        @include border-radius(0);
+
+        &:first-child {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &:last-child {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
+}
+
+// ==========================================================================
+// Lists
+// ==========================================================================
+
+
+//
+// Striped theme
+//
+
+.t-striped {
+    > li:nth-child(odd) {
+    }
+}
+
+.t-border-bottom {
+    > li {
+        border-bottom: 1px solid $color-border;
+    }
+}
+
+
+// ==========================================================================
+// Tables
+// ==========================================================================
+
+//
+// Basic table placeholder class
+//
+
+.table {
+    th,
+    td {
+        border-color: $color-border !important;
+    }
+}
+
+//
+// horizontally striped table
+//
+
+.table-h-striped {
+    @extend .table;
+    tbody > tr:nth-child(odd) {
+        background-color: rgba(dolp($color-table-striped, 34%), 0.1);
+    }
+}
+
+//
+// Vertically striped table
+//
+
+.table-v-striped {
+    @extend .table;
+    tbody, thead, tfoot {
+        td:nth-child(even),
+        th:nth-child(even) {
+            background-color: rgba(dolp($color-table-striped, 34%), 0.1);
+        }
+    }
+}
+
+//
+// Bordered tabled
+//
+
+.table-border {
+    @extend .table;
+    border-color: $color-border !important;
+}
+
+//
+// Responsive wrapper for tables
+//
+
+.responsive-table-wrap {
+    border-color: $color-border !important;
+}
+
+
+// ==========================================================================
+// Global
+// ==========================================================================
+
+//
+// Caret iamge used on elements like form select
+//
+
+%caret-image {
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjNweCIgdmlld0JveD0iMCAwIDYgMyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNiAzIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBwb2ludHM9IjUuOTkyLDAgMi45OTIsMyAtMC4wMDgsMCAiLz48L3N2Zz4=);
+}
+
+// ==========================================================================
+// FONTAWESOME SPECIFIC
+// ==========================================================================
+
+.fa-border {
+    border-color: $color-border;
+}

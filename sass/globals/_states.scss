@@ -1,0 +1,270 @@
+//
+// State classes
+// -----------------------------------------------------------------------------
+
+
+// ==========================================================================
+// Floats
+// ==========================================================================
+
+//
+// Clearfix: contain floats
+// Credit: HTML5 Boilerplate
+//
+
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+.clearfix:before,
+.clearfix:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+//
+// For IE 6/7 only
+// Include this rule to trigger hasLayout and contain floats.
+//
+.clearfix {
+    *zoom: 1;
+}
+
+.is-center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+
+
+// ==========================================================================
+// Toggeling content
+// ==========================================================================
+
+//
+// Hide from screenreaders and browsers
+//
+// Credit: HTML5 Boilerplate
+//
+
+.is-hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+//
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+//
+// Credit: HTML5 Boilerplate
+//
+
+.is-visuallyhidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+//
+// Extends the .visuallyhidden class to allow the element to be focusable
+// when navigated to via the keyboard: h5bp.com/p
+//
+// Credit: HTML5 Boilerplate
+//
+
+.is-visuallyhidden.focusable:active,
+.is-visuallyhidden.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+}
+.shown {
+    display: block !important;
+}
+.is-invisible {
+    visibility: hidden;
+}
+
+//
+// collapsed classes
+//
+
+.collapse {
+    display: none;
+}
+
+.is-collapsed {
+    display: none;
+}
+
+// ==========================================================================
+// User interaction
+// ==========================================================================
+
+//
+// Disabled styles
+//
+
+.is-disabled {
+    @include ui-disabled;
+}
+
+//
+//  Make unclickable
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+//
+
+.is-unclickable {
+    pointer-events: none;
+}
+
+//
+//  Make the element unable to select
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+//
+
+.is-unselectable {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+
+// ==========================================================================
+// Layout helpers
+// ==========================================================================
+
+//
+// For Affix plugin
+//
+
+.is-fixed {
+    position: fixed;
+}
+
+
+//
+// Change padding behavior
+//
+
+.border-box {
+-webkit-box-sizing: border-box;
+   -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+
+//
+// Make inline block work
+//
+
+.inline-block,
+.is-inline-block,
+.is-i-b {
+    display:-moz-inline-stack;
+    display:inline-block;
+    *zoom:1;
+    *display:inline;
+}
+
+//
+// Full width element
+//
+
+.fullwidth,
+.is-block,
+.is-b {
+    width: 100% !important;
+    float: none;
+    margin: 0;
+    display: block;
+}
+
+
+
+// ==========================================================================
+// Resets
+// ==========================================================================
+
+//
+// Basic reset
+//
+
+.reset {
+    margin: 0;
+    padding: 0;
+}
+
+//
+// no icon
+//
+
+.no-icon {
+    list-style-type: none;
+    list-style-image: none;
+}
+
+
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+[data-toggle="collapse"] {
+    &.is-closed {
+        .icon-open {
+            @include ui-ie7-table-cell;
+        }
+        .icon-close {
+            display: none;
+        }
+    }
+
+    .icon-open {
+        display: none;
+    }
+    .icon-close {
+        @include ui-ie7-table-cell;
+    }
+}
+
+
+
+
+// ==========================================================================
+// Other
+// ==========================================================================
+
+//
+// Base transition
+//
+
+.transition {
+    -webkit-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
+       -moz-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
+         -o-transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
+            transition: all .25s cubic-bezier(0.445,0.05,0.55,0.95);
+}
+
+

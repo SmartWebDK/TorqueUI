@@ -1,0 +1,215 @@
+//
+// SIzes
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Defining the sizes used in the framework:
+//  Large
+//  Default
+//  Small
+//  XSmall
+//
+
+//
+// Place holders for input sizes
+//
+
+%size-large {
+    padding: 1em;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+%size-default {
+    padding: .5em 1em;
+    font-size: em(14px);
+    line-height: 1.5;
+}
+
+%size-small {
+    padding: .5em 1em;
+    font-size: em(12px);
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+%size-xsmall {
+    padding: .5em .5em;
+    font-size: em(12px);
+    font-weight: normal;
+    line-height: 1.5;
+}
+
+// ==========================================================================
+// Sizes
+// ==========================================================================
+
+//
+// Sizes for input groups and addons
+//
+
+//
+// Large sizes
+//
+
+.large {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
+    &%button {
+        @extend %size-large;
+    }
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 58px !important;
+        &.left {
+            padding-left: 58px !important;
+        }
+        &.button-icon.right {
+            padding-right: 58px !important;
+            padding-left: 12px !important;
+        }
+        > .fa {
+            padding: 1em !important;
+            line-height: 1.5 !important;
+            width: 46px !important;
+        }
+    }
+}
+
+//
+// Default sizes
+//
+
+.default {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
+    &%button {
+        @extend %size-default;
+    }
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 49px !important;
+        &.left {
+            padding-left: 49px !important;
+        }
+        &.button-icon.right {
+            padding-right: 49px !important;
+            padding-left: 12px !important;
+        }
+        .fa {
+            padding: .5em 1em;
+            line-height: 1.5 !important;
+            width: 37px !important;
+        }
+    }
+}
+
+//
+// Small sizes
+//
+
+.small {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
+    &%button {
+        @extend %size-small;
+    }
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 42px !important;
+        &.left {
+            padding-left: 42px !important;
+        }
+        &.right {
+            padding-right: 42px !important;
+            padding-left: 12px !important;
+        }
+        > .fa {
+            padding: .5em 1em;
+            line-height: 1.5 !important;
+            width: 30px !important;
+        }
+    }
+}
+
+//
+// Xsmall sizes
+//
+
+.xsmall {
+    &.form-input,
+    &.form-label,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > %button,
+    &.pager-group > %button,
+    &.pagination > li > a,
+    &%button {
+        @extend %size-xsmall;
+    }
+
+    &.pager-group > .button-icon,
+    &.button-icon {
+        padding-left: 36px !important;
+        &.left {
+            padding-left: 36px !important;
+        }
+        &.right {
+            padding-right: 36px !important;
+            padding-left: 12px !important;
+        }
+        > .fa {
+            padding: .5em;
+            line-height: 1.5 !important;
+            width: 24px !important;
+        }
+    }
+}
+
+
+
+//
+// Classes for seletc sizes
+//
+
+select {
+    &.large {
+        line-height: 46px;
+    }
+    &.default {
+        line-height: 37px;
+    }
+    &.small {
+        line-height: 30px;
+    }
+    &.xsmall {
+        line-height: 24px;
+    }
+}
+

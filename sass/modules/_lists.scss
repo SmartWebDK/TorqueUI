@@ -1,0 +1,80 @@
+//
+// Lists
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Base
+// ==========================================================================
+
+//
+// Basic setup of lists
+//
+ol,
+ul,
+dl {
+    ol,
+    ul,
+    dl {
+        margin-bottom: 0;
+    }
+}
+ol,
+ul {
+    padding-left: 1.25em;
+}
+ol {}
+ul {}
+dl {
+    @include definition-list-style;
+}
+dt {
+    font-weight: bold;
+}
+dd {
+    margin-left: 0;
+}
+
+// ==========================================================================
+// List classes
+// ==========================================================================
+
+
+//
+// Unstyled list
+//
+
+.list-unstyled {
+    padding: 0;
+    list-style: none;
+}
+
+//
+// Unstyled list for nesting
+//
+
+.list-unstyled-nested {
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+}
+
+//
+// Inline list
+//
+
+.list-inline {
+    > li {
+        @include inline-block;
+        padding: 0 0.5em;
+
+        &:first-child {
+            padding-left: 0;
+        }
+
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
