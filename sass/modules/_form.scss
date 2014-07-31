@@ -63,7 +63,6 @@ fieldset {
 //
 //  1) Remove all styling webkit select
 //     Resource: http://css-tricks.com/almanac/properties/a/appearance/
-//  2) Em based borders for nicer responsive borders
 //
 
 .form-input {
@@ -72,7 +71,6 @@ fieldset {
     border: 1px solid;
     vertical-align: middle;
 
-    @include border-radius($global-border-radius);              // 2)
     @include background-clip(padding-box);
     @include inline-block();
     @extend %size-default;
@@ -107,7 +105,7 @@ fieldset {
 
 .form-select {
     background-repeat: no-repeat;
-    background-position: 97% center;
+    background-position: right center;
     padding-right: em(25px) !important;
 }
 select {

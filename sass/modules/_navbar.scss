@@ -41,28 +41,14 @@
         .input-group {
             margin: 0;
         }
-
-        .nav-default {
-            > li {
-                display: block;
-                float: none;
-
-                > a {
-                    border-color: transparent !important;
-                    cursor: pointer;
-                }
-            }
-            &.nav-justified > li {
-                width: auto;
-            }
-        }
     }
 
     .marker {
-        @extend %size-default;
+        font-size: em(14px);
+        line-height: 1.5;
         cursor: pointer;
         float: right;
-        padding: 0.5em;
+        padding: .5em;
 
         + a {
             @include inline-block;

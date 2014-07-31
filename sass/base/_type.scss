@@ -27,7 +27,10 @@ $base-line-height: $font-header-line-height;
 // Font-size is set to a % of 16px (which is default).
 //
 
-html {
+html,
+input,
+textarea,
+button {
     font-size: $font-default-size;
     line-height: $font-line-height;
     font-family: $font-family-base;
@@ -157,11 +160,14 @@ hr {
     }
 }
 
+//
+// Mark
+//
+
 mark,
 .mark {
     display: inline-block;
     padding: 0 3px;
-    border-radius: 3px;
 }
 
 //

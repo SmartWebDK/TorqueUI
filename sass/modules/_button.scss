@@ -23,7 +23,6 @@
     cursor: pointer;
     background-image: none;
 
-    @include border-radius($global-border-radius);
     @include background-clip(padding-box);
     @extend %size-default;
 
@@ -49,6 +48,10 @@
     &.is-disabled,
     &:disabled {
         @include ui-disabled;
+    }
+
+    .fa {
+        vertical-align: middle;
     }
 }
 
@@ -92,16 +95,12 @@
 
 %button.button-icon {
     position: relative;
-    padding-left: 49px;
+    padding-left: 4em;
 
     > .fa {
-        width: (18em / $base);
         text-align: center;
-        border-bottom-left-radius: $global-border-radius;
-        border-top-left-radius: $global-border-radius;
-
         vertical-align: middle;
-        width: 37px;
+        width: 3em;
         position: absolute;
         top: 0;
         left: 0;
@@ -111,13 +110,9 @@
     }
 
     &.right {
-        padding-right: 49px;
-        padding-left: 12px;
+        padding-right: 4em;
+        padding-left: 1em;
         > .fa {
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-            border-top-right-radius: $global-border-radius;
-            border-bottom-right-radius: $global-border-radius;
             right: 0;
             left: auto;
         }
@@ -128,17 +123,14 @@
     @extend .pagination;
     > li {
         .button {
-            @include border-radius(0);
             width: auto;
         }
         &:first-child > .button {
             margin-left: 0;
-            border-top-left-radius: $global-border-radius;
-            border-bottom-left-radius: $global-border-radius;
         }
-        &:last-child > .button {
-            border-top-right-radius: $global-border-radius;
-            border-bottom-right-radius: $global-border-radius;
-        }
+    }
+
+    .fa {
+        vertical-align: middle;
     }
 }

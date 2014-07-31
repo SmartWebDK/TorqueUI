@@ -6,14 +6,14 @@
     "js",
     "css"
   ],
-  "homepage": "http://www.smartweb.dk",
-  "author": "SmartWeb",
+  "homepage": "http://www.torqueui.com",
+  "author": "TorqueUI",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SmartWebDK/furry-octo-ninja.git"
+    "url": "https://github.com/SmartWebDK/torqueui.git"
   },
   "bugs": {
-    "url": "https://github.com/SmartWebDK/furry-octo-ninja/issues"
+    "url": "https://github.com/SmartWebDK/torqueui/issues"
   },
   "licenses": [
     {

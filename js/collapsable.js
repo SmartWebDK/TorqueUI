@@ -17,6 +17,19 @@
     };
 
     //
+    // Init collapse
+    //
+
+    Collapsable.prototype.init = function () {
+
+        // recall state of element if available
+        var state = this.state();
+        if (state) {
+            this[ state ]();
+        }
+    }
+
+    //
     // Toggle collapse
     //
 
@@ -54,8 +67,10 @@
             css         = $this.data("class") || "is-collapsed",
             $target = $("[data-group="+selector+"]");
 
-        // $this.removeClass(css);
+        $this.is("button") && $this.removeClass("is-closed");
         $target.removeClass(css);
+
+        this.state('open');
     };
 
     //
@@ -68,9 +83,42 @@
             css         = $this.data("class") || "is-collapsed",
             $target = $("[data-group="+selector+"]");
 
-        // $this.addClass(css);
+        $this.is("button") && $this.addClass("is-closed");
         $target.addClass(css);
+
+        this.state('close');
     };
+
+    //
+    // State collapse
+    //
+
+    Collapsable.prototype.state = function (state) {
+
+        // Validate WebStorage
+        if (typeof Storage !== 'undefined') {
+
+            // Unique id
+            var id = this.$element.data('target');
+
+            if (id !== undefined) {
+
+                // Get mode
+                if (!state) {
+                    state = sessionStorage[id];
+                    return state ? state : false;
+                }
+
+                // Set mode
+                else {
+                    sessionStorage[id] = state;
+                    return state;
+                }
+            }
+        }
+
+        return false;
+    }
 
 
     // ==========================================================================
@@ -88,14 +136,16 @@
 
     $.fn.collapse = function (option) {
         return this.each( function () {
-            var $this = $(this),
-                data  = $this.data("ui.collapse");
+            var $this   = $(this),
+                data    = $this.data("ui.collapse");
 
             // convert collapse to a prototype of dropdown
             if ( !data ) $this.data("ui.collapse", (data = new Collapsable(this)));
 
-            // option could be 'open' or 'close'
-            if (typeof option == 'string') data[option]();
+            if ( !option ) option = "init";
+
+            // option could be 'init', 'open' or 'close'
+            data[ option ]();
         });
     };
 
@@ -120,6 +170,8 @@
         e.stopPropagation();
         $(this).collapse("toggle");
     });
+
+    $(toggle).collapse();
 
 })(jQuery, document);
 

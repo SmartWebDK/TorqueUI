@@ -19,6 +19,10 @@
 //
 
 @function color($test, $light, $dark) {
+    @if $test == "transparent" {
+        @return $test;
+    }
+
     @if lightness($test) < 60% {
         // if the text colour is a dark colour
         // we need a light text color
@@ -31,6 +35,10 @@
 }
 
 @function darkenOrLighten($color) {
+    @if $color == "transparent" {
+        @return $color;
+    }
+
     @if lightness($color) < 60% {
         // if the text colour is a dark colour
         // we need a light text color
@@ -48,6 +56,10 @@
 
 
 @function dolp($color, $pct) {
+    @if $color == "transparent" {
+        @return $color;
+    }
+
     @if lightness($color) < 60% {
         // if the text colour is a dark colour
         // we need a light text color
@@ -65,6 +77,10 @@
 
 
 @function lodp($color, $pct) {
+    @if $color == "transparent" {
+        @return $color;
+    }
+
     @if lightness($color) < 60% {
         // if the text colour is a dark colour
         // we need a light text color
@@ -490,28 +506,31 @@
 // Panel and badge module mixin
 // ==========================================================================
 
-@mixin theme-alerts($original: #fff, $panel: true) {
-    $color: #000;
-    @if lightness($original) > 90% {
-        $color: darken($original, 40%);
-        $color: saturate($original, 40%);
+@mixin theme-alerts($color: #fff, $panel: true) {
+    $bgc: $color;
 
-        @if lightness($color) - lightness($original) < 20% {
-            $color: darken($original, 20%);
-        }
-    } @else if lightness($original) < 45% {
-        $color: lighten($original, 40%);
-        $color: desaturate($original, 40%);
+    @if $color != "transparent" {
+        @if lightness($color) > 90% {
+            $color: darken($color, 40%);
+            $color: saturate($color, 40%);
 
-        @if lightness($color) - lightness($original) < 20% {
-            $color: lighten($color, 20%);
-        }
-    } @else {
-        $color: darken($original, 20%);
-        $color: saturate($original, 20%);
+            @if lightness($color) - lightness($bgc) < 20% {
+                $color: darken($color, 20%);
+            }
+        } @else if lightness($color) < 45% {
+            $color: lighten($color, 40%);
+            $color: desaturate($color, 40%);
 
-        @if lightness($color) - lightness($original) < 20% {
+            @if lightness($color) - lightness($bgc) < 20% {
+                $color: lighten($color, 20%);
+            }
+        } @else {
             $color: darken($color, 20%);
+            $color: saturate($color, 20%);
+
+            @if lightness($color) - lightness($bgc) < 20% {
+                $color: darken($color, 20%);
+            }
         }
     }
 

@@ -19,26 +19,26 @@
 //
 
 %size-large {
-    padding: em(15px);
+    padding: 1em;
     font-size: 1em;
     line-height: 1.5;
 }
 
 %size-default {
-    padding: em(10px) em(15px);
+    padding: .5em 1em;
     font-size: em(14px);
     line-height: 1.5;
 }
 
 %size-small {
-    padding: em(10px) em(15px);
+    padding: .5em 1em;
     font-size: em(12px);
     font-weight: normal;
     line-height: 1.5;
 }
 
 %size-xsmall {
-    padding: em(5px) em(10px);
+    padding: .5em .5em;
     font-size: em(12px);
     font-weight: normal;
     line-height: 1.5;
@@ -80,10 +80,20 @@
             padding-left: 12px !important;
         }
         > .fa {
-            padding: em(15px) !important;
+            padding: 1em !important;
             line-height: 1.5 !important;
             width: 46px !important;
         }
+    }
+
+    &.form-input,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button,
+    .input-group-button > %button {
+        height: 51px;
+        *line-height: 1;
     }
 }
 
@@ -114,13 +124,36 @@
             padding-right: 49px !important;
             padding-left: 12px !important;
         }
-         .fa {
-            padding: em(10px) em(15px);
+        .fa {
+            padding: .5em 1em;
             line-height: 1.5 !important;
             width: 37px !important;
         }
     }
+
+    &.form-input,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button,
+    .input-group-button > %button {
+        height: 32px;
+        *line-height: 1;
+    }
 }
+
+.form-input,
+.input-group-main,
+.input-group-addon,
+.input-group-image,
+.input-group-button,
+.input-group-button > %button {
+    height: 32px;
+    *line-height: 1;
+    *padding-top: 0;
+    *padding-bottom: 0;
+}
+
 
 //
 // Small sizes
@@ -150,10 +183,20 @@
             padding-left: 12px !important;
         }
         > .fa {
-            padding: em(10px) em(15px);
+            padding: .5em 1em;
             line-height: 1.5 !important;
             width: 30px !important;
         }
+    }
+
+    &.form-input,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button,
+    .input-group-button > %button {
+        height: 30px;
+        *line-height: 1;
     }
 }
 
@@ -185,10 +228,20 @@
             padding-left: 12px !important;
         }
         > .fa {
-            padding: em(5px) em(10px);
+            padding: .5em;
             line-height: 1.5 !important;
             width: 24px !important;
         }
+    }
+
+    &.form-input,
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button,
+    .input-group-button > %button {
+        height: 28px;
+        *line-height: 1;
     }
 }
 

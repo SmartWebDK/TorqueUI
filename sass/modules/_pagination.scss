@@ -13,7 +13,6 @@
 .pagination {
     @extend .clearfix;
     @include inline-block;
-    @include border-radius($global-border-radius);
     margin: 0;
     padding: 0;
 
@@ -22,13 +21,6 @@
 
         &:first-child > a {
             margin-left: 0;
-            border-top-left-radius: $global-border-radius;
-            border-bottom-left-radius: $global-border-radius;
-        }
-
-        &:last-child > a {
-            border-top-right-radius: $global-border-radius;
-            border-bottom-right-radius: $global-border-radius;
         }
 
         &.is-disabled,
@@ -39,7 +31,8 @@
         > a {
             text-decoration: none;
             margin-left: -1px;
-            border: 1px solid;
+            border-width: 1px;
+            border-style: solid;
             float: left;
             cursor: pointer;
 

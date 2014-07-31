@@ -2,6 +2,12 @@
 // Navs
 // -----------------------------------------------------------------------------
 
+%nav-default-size {
+	padding: .5em 0;
+    font-size: em(14px);
+    line-height: 1.5;
+}
+
 // ==========================================================================
 // Nav
 // ==========================================================================
@@ -15,7 +21,6 @@
 
 	li {
 		position: relative;
-		margin: 0 em(10px);
 		a {
 			text-decoration: none;
 			display: block;
@@ -34,11 +39,10 @@
 		}
 		li {
 			a {
-				@extend %default-size;
-				display: block;
+				@extend %nav-default-size;
 			}
 		}
-	}	
+	}
 
 
 //
@@ -46,33 +50,34 @@
 //
 
 	.nav-default {
-		> li {
+		li {
+            padding-left: .5em;
+            padding-right: .5em;
 
-			> a {
-				@extend %default-size;
-			}
-		}
+            a {
+				@extend %nav-default-size;
+				display: block;
+            	padding: .5em 0;
+            }
+        }
 	}
 
 //
 // Pills
 //
 
-%default-size {
-	padding: em(10px) 0;
-    font-size: em(14px);
-    line-height: 1.5;
-}
-
 	.nav-pills {
+		li {
+            padding-left: .5em;
+            padding-right: .5em;
+		}
 		> li {
 			@include background-clip(border-box);
 			float: left;
 			margin-right:1px;
 
 			> a {
-				@extend %default-size;
-				@include border-radius($global-border-radius);
+				@extend %nav-default-size;
 				border: 1px solid transparent;
 			}
 
@@ -99,10 +104,9 @@
 			margin-right:1px;
 
 			> a {
-				@extend %default-size;
-				@include border-radius($global-border-radius $global-border-radius 0 0);
-				padding-right: em(10px);
-				padding-left: em(10px);
+				@extend %nav-default-size;
+				padding-right: .5em;
+				padding-left: .5em;
 				border: 1px solid transparent;
 				border-left: 0px;
 				border-right: 0px;

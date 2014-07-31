@@ -82,7 +82,7 @@ a {
 //
 
 s, del {
-    color: dolp($color-font-base, 30%);
+    color: dolp($color-font-base, 15%);
 }
 
 //
@@ -90,7 +90,7 @@ s, del {
 //
 
 small {
-    color: dolp($color-font-base, 30%);;
+    color: dolp($color-font-base, 15%);;
 }
 
 //
@@ -101,6 +101,7 @@ mark,
 .mark {
     color: color($color-font-hightlight, #fff, $color-font-base);       // in _mixins.scss
     background-color: $color-font-hightlight;
+    border-radius: $border-radius;
 }
 
 
@@ -109,7 +110,7 @@ mark,
 //
 
 hr {
-    border-color: $color-border !important;
+    border-color: $color-border;
 }
 
 
@@ -123,6 +124,7 @@ hr {
 
 .form-input,
 .form-label.input-group-main {
+    @include border-radius($border-radius);
     border-color: $color-input-border !important;
     background-color: $color-input-back;
     color: $color-input-color;
@@ -176,10 +178,39 @@ hr {
     @extend %input-group;
 }
 
+.input-group-image > img {
+    @include border-radius($border-radius);
+}
+
 .input-group-addon {
+    @include border-radius($border-radius);
     @extend %input-group;
     color: $color-input-color;
     background-color: $color-input-back-hover;
+}
+
+.input-group {
+    //
+    // Remove rounded borders for smooth look
+    //
+
+    .input-group-addon,
+    .input-group-main {
+        @include ui-rounded-borders();
+    }
+
+    //
+    // Has to come again for nested element
+    //
+
+    .input-group-button {
+        @include ui-rounded-borders(".button");
+    }
+
+
+    .input-group-image {
+        @include ui-rounded-borders("img");
+    }
 }
 
 
@@ -188,7 +219,7 @@ hr {
 // ==========================================================================
 
 .badge {
-    @include border-radius();
+    @include border-radius($border-radius);
 
     &.badge-clean {
         background-color: $color-badge-clean;
@@ -214,12 +245,38 @@ hr {
 // Buttons
 // ==========================================================================
 
+%button {
+    @include border-radius($border-radius);
+}
+
+.button,
+.button-text,
+.button-group,
+.button-default,
+.button-primary {
+    @extend %button;
+}
+
+
 //
 // Button-group
 //
 
 .button-group {
     border-color: $color-border;
+    > li {
+        .button {
+            @include border-radius(0);
+        }
+        &:first-child > .button {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+        &:last-child > .button {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
 }
 
 .button,
@@ -228,6 +285,23 @@ hr {
 }
 .button.button-icon {
     @include theme-button-icon($color-button-clean, $color-button-clean-font);
+    > .fa {
+        @include border-radius(0);
+        border-bottom-left-radius: $border-radius;
+        border-top-left-radius: $border-radius;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+
+    &.right {
+        > .fa {
+            @include border-radius(0);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
 }
 
 .button-primary,
@@ -308,9 +382,21 @@ hr {
     color: $color-font-base;
     background-color: $color-panel-border;
 
+    .panel-footer,
+    .panel-heading {
+        background-color: dolp($color-panel-border, 5%);
+        border-color: $color-panel-border-border;
+    }
+
+    .t-striped {
+        > li:nth-child(odd) {
+            background-color: dolp($color-panel-border, 10%);
+        }
+    }
+
     .panel-heading,
     .panel-footer {
-        border-color: $color-panel-border;
+        border-color: $color-panel-border-border;
     }
 }
 
@@ -318,6 +404,9 @@ hr {
     @include theme-alerts($color-info, true);
 }
 
+.panel-rounded {
+    @include border-radius($border-radius);
+}
 
 
 
@@ -347,6 +436,11 @@ hr {
             }
         }
     }
+    > li {
+        > a {
+            border-color: transparent !important;
+        }
+    }
 }
 
 .nav .dropdown-menu,
@@ -367,6 +461,7 @@ hr {
         > a:hover {
             background-color: dolp($color-nav-pills, 10%);
             color: $color-nav-pills-font;
+            @include border-radius($border-radius);
         }
         &.active > a {
             background-color: $color-nav-pills;
@@ -387,6 +482,7 @@ hr {
 
     li {
         > a {
+            @include border-radius($border-radius $border-radius 0 0);
             border-color: transparent;
             border-width: 1px;
             border-style: solid;
@@ -451,10 +547,14 @@ hr {
 // ==========================================================================
 
 .dropdown {
+    .dropdown,
+    .dropdown-menu {
+        border-radius: 0 !important;
+    }
 }
 
 .dropdown-container {
-    @include border-radius(3px);
+    @include border-radius($border-radius);
     border-color: $color-dropdown-border;
     background-color: $color-dropdown;
 
@@ -463,12 +563,9 @@ hr {
         border-color: transparent;
     }
 
-    .dropdown-header,
-    .dropdown-footer {
-        h1, h2, h3, h4, h5, h6,
-        .h1, .h2, .h3, .h4, .h5, .h6 {
-            color: dolp($color-dropdown-font, 5%);
-        }
+    .dropdown-header {
+        background-color: darken($color-dropdown, 5%);
+        border-color: $color-dropdown-border;
     }
 
     li > a {
@@ -484,16 +581,47 @@ hr {
 // ==========================================================================
 
 .pagination {
-    @include theme-button($color-pagination , $color-pagination-font);
+    @include border-radius($border-radius);
+    > li {
 
-    &.current a {
-        background-color: dolp($color-pagination, 8%);
+        &:first-child > a {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
+
+        &:last-child > a {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+        a {
+            @include theme-button($color-pagination , $color-pagination-font);
+        }
+
+        &.current a {
+            background-color: dolp($color-pagination, 8%);
+        }
     }
 }
 
+.pager-group {
+    @include border-radius($border-radius);
 
+    .button-icon,
+    .button,
+    .button-primary {
+        @include border-radius(0);
 
+        &:first-child {
+            border-top-left-radius: $border-radius;
+            border-bottom-left-radius: $border-radius;
+        }
 
+        &:last-child {
+            border-top-right-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+    }
+}
 
 // ==========================================================================
 // Lists
@@ -506,7 +634,6 @@ hr {
 
 .t-striped {
     > li:nth-child(odd) {
-        background-color: $color-list-striped;
     }
 }
 
@@ -584,7 +711,7 @@ hr {
 //
 
 %caret-image {
-    background-image: url('data:image/svg+xml;base64, PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iM3B4IiB2aWV3Qm94PSIwIDAgNiAzIiBlbmFibGUtYmFja2dyb3VuZD0ibmV3IDAgMCA2IDMiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxwb2x5Z29uIHBvaW50cz0iNS45OTIsMCAyLjk5MiwzIC0wLjAwOCwwICIvPjwvc3ZnPg==');
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSIzMHB4IiBoZWlnaHQ9IjNweCIgdmlld0JveD0iMCAwIDYgMyIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNiAzIiB4bWw6c3BhY2U9InByZXNlcnZlIj48cG9seWdvbiBwb2ludHM9IjUuOTkyLDAgMi45OTIsMyAtMC4wMDgsMCAiLz48L3N2Zz4=);
 }
 
 // ==========================================================================
