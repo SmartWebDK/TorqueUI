@@ -253,8 +253,7 @@ hr {
 .button-text,
 .button-group,
 .button-default,
-.button-primary,
-.button-icon>.fa {
+.button-primary {
     @extend %button;
 }
 
@@ -286,6 +285,7 @@ hr {
 .button.button-icon {
     @include theme-button-icon($color-button-clean, $color-button-clean-font);
     > .fa {
+        @include border-radius(0);
         border-bottom-left-radius: $border-radius;
         border-top-left-radius: $border-radius;
         border-top-right-radius: 0;
@@ -294,6 +294,7 @@ hr {
 
     &.right {
         > .fa {
+            @include border-radius(0);
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-top-right-radius: $border-radius;
