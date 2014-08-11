@@ -21,28 +21,60 @@
 %size-large {
     padding: 1em;
     font-size: 1em;
-    line-height: 1.5;
+    line-height: 1.5em;
 }
 
+    %size-large-height {
+        height: (1em + 1em + 1.5em);
+    }
+
+    %size-large-lineheight {
+        line-height: (1em + 1em + 1.5em);
+    }
+
 %size-default {
-    padding: .5em 1em;
+    padding: .75em 1em;
     font-size: em(14px);
-    line-height: 1.5;
+    line-height: 1.5em;
 }
+
+    %size-default-height {
+        height: (.75em + .75em + 1.5em);
+    }
+
+    %size-default-lineheight {
+        line-height: (.75em + .75em + 1.5em);
+    }
 
 %size-small {
     padding: .5em 1em;
     font-size: em(12px);
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.5em;
 }
 
+    %size-small-height {
+        height: (.5em + .5em + 1.5em);
+    }
+
+    %size-small-lineheight {
+        line-height: (.5em + .5em + 1.5em);
+    }
+
 %size-xsmall {
-    padding: .5em .5em;
+    padding: .25em .5em;
     font-size: em(12px);
     font-weight: normal;
-    line-height: 1.5;
+    line-height: 1.5em;
 }
+    
+    %size-xsmall-height {
+        height: (.25em + .25em + 1.5em);
+    }
+
+    %size-xsmall-lineheight {
+        line-height: (.25em + .25em + 1.5em);
+    }
 
 // ==========================================================================
 // Sizes
@@ -59,14 +91,20 @@
 .large {
     &.form-input,
     &.form-label,
-    .input-group-main,
-    .input-group-addon,
-    .input-group-image,
-    .input-group-button > %button,
     &.pager-group > %button,
     &.pagination > li > a,
     &%button {
+        @extend %size-large-height;
         @extend %size-large;
+    }
+
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > %button {
+        @extend %size-large-height;
+        font-size: 1em;
+        line-height: 1.5em;
     }
 
     &.pager-group > .button-icon,
@@ -92,7 +130,7 @@
     .input-group-image,
     .input-group-button,
     .input-group-button > %button {
-        height: 51px;
+        @extend %size-large-height;
         *line-height: 1;
     }
 }
@@ -104,14 +142,20 @@
 .default {
     &.form-input,
     &.form-label,
-    .input-group-main,
-    .input-group-addon,
-    .input-group-image,
-    .input-group-button > %button,
     &.pager-group > %button,
     &.pagination > li > a,
     &%button {
+        @extend %size-default-height;
         @extend %size-default;
+    }
+
+    .input-group-main,
+    .input-group-addon,
+    .input-group-image,
+    .input-group-button > %button {
+        @extend %size-default-height;
+        font-size: em(14px);
+        line-height: 1.5em;
     }
 
     &.pager-group > .button-icon,
@@ -137,7 +181,7 @@
     .input-group-image,
     .input-group-button,
     .input-group-button > %button {
-        height: 32px;
+        @extend %size-default-height;
         *line-height: 1;
     }
 }
@@ -148,7 +192,7 @@
 .input-group-image,
 .input-group-button,
 .input-group-button > %button {
-    height: 32px;
+    @extend %size-default-height;
     *line-height: 1;
     *padding-top: 0;
     *padding-bottom: 0;
@@ -169,6 +213,7 @@
     &.pager-group > %button,
     &.pagination > li > a,
     &%button {
+        @extend %size-small-height;
         @extend %size-small;
     }
 
@@ -195,7 +240,7 @@
     .input-group-image,
     .input-group-button,
     .input-group-button > %button {
-        height: 30px;
+        @extend %size-small-height;
         *line-height: 1;
     }
 }
@@ -214,6 +259,7 @@
     &.pager-group > %button,
     &.pagination > li > a,
     &%button {
+        @extend %size-xsmall-height;
         @extend %size-xsmall;
     }
 
@@ -240,7 +286,7 @@
     .input-group-image,
     .input-group-button,
     .input-group-button > %button {
-        height: 28px;
+        @extend %size-xsmall-height;
         *line-height: 1;
     }
 }
@@ -253,16 +299,16 @@
 
 select {
     &.large {
-        line-height: 46px;
+        @extend %size-large-lineheight;
     }
     &.default {
-        line-height: 37px;
+        @extend %size-default-lineheight;
     }
     &.small {
-        line-height: 30px;
+        @extend %size-small-lineheight;
     }
     &.xsmall {
-        line-height: 24px;
+        @extend %size-xsmall-lineheight;
     }
 }
 
