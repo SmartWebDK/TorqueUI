@@ -4,10 +4,7 @@ title: TorqueUI, the new awesome UI pack available for free!!
 ---
 <div class="row">
 	<aside class="col-s-4 col-m-3 col-l-3 col-xl-6">
-		<span class="h6 is-block">Changelog</span>
-		<ul>
-			<li>Stable: <a href="#">v1.0</a></li>
-		</ul>
+		{% include change-log.html %}
 	</aside>
 	<section class="col-s-4 col-m-9 col-l-9 col-xl-18">
 
@@ -58,7 +55,7 @@ $ grunt dist
 				<hr class="separator">
 			</div>
 			<div class="col-s-4 col-m-6 col-l-6 col-xl-12">
-				<h1>Why use Furry-octo-ninja?</h1>
+				<h1>Why use Torque?</h1>
 				<p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source.</p>
 				<hr class="separator">
 			</div>
@@ -73,7 +70,7 @@ $ grunt dist
 			{% for category in site.categories %}
 				<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
 					<span class="h6">{{ category | first }}</span>
-					<ul>
+					<ul class="l-list-inline">
 						{% for posts in category %}
 							{% for post in posts %}
 								{% if post.url %}
@@ -87,5 +84,3 @@ $ grunt dist
 		</div>
 	</section>
 </div>
-
-{% include head.html %}

@@ -1,38 +1,29 @@
-<div class="hero">
-	<div class="container">
-	  <div class="row">
-	    <header class="post-header col-s-4 col-m-10 col-l-10 col-xl-20">
-	      <h1 class="post-title">14 Different Ways of Product Design</h1>
-	      <h2 class="post-field subtitle post-subtitle">What I have learned during my 2-year journey of a Product Designer</h2>
-	      <ul class="post-item-meta">
-	        <li class="post-item-meta-item">
-	          <a href="/@JanLosert" class="post-item-author link link-secondary" title="Go to the profile of Jan Losert"><img src="https://d262ilb51hltx0.cloudfront.net/fit/c/64/64/0*2Vxko1HYj6MwEbb8.jpeg" class="avatar-icon post-item-meta-avatar" title="Jan Losert"><span>Jan Losert</span></a> in <a href="/best-thing-i-found-online-today" title="Go to Best thing I found online today" data-collection-slug="best-thing-i-found-online-today" data-id="df474ac67c85" class="post-item-collection link link-secondary">Best thing I found online today</a>
-	        </li>
-	      </ul>
-	    </header>
-	  </div>
-	</div>
-</div>
-<div class="body">
-	<div class="container">
-		<div class="row">
-			<aside class="col-s-4 col-m-3 col-l-3 col-xl-6">
-				<ul class="list-menu">
-					<li>test</li>
-				</ul>
-			</aside>
-		    <div class="post col-s-4 col-m-9 col-l-9 col-xl-18">
+<!DOCTYPE html>
+<html>
 
-				<div class="post-article">
-					<header>
-						<h1><a name="#{{ page.title }}">{{ page.title }}</a></h1>
-					</header>
-					<div class="body">
-						{{ content }}
-					</div>
-				</div>
+    {% include head.html %}
+
+    <body>
+
+        {% include navigation.html %}
+
+		<div class="hero">
+			<div class="container">
+			  <div class="row">
+			    <header class="post-header col-s-4 col-m-10 col-l-10 col-xl-20">
+			      <h1 class="post-title">14 Different Ways of Product Design</h1>
+			      <h2 class="post-field subtitle post-subtitle">What I have learned during my 2-year journey of a Product Designer</h2>
+			      <ul class="post-item-meta">
+			        <li class="post-item-meta-item">
+			          <a href="/@JanLosert" class="post-item-author link link-secondary" title="Go to the profile of Jan Losert"><img src="https://d262ilb51hltx0.cloudfront.net/fit/c/64/64/0*2Vxko1HYj6MwEbb8.jpeg" class="avatar-icon post-item-meta-avatar" title="Jan Losert"><span>Jan Losert</span></a> in <a href="/best-thing-i-found-online-today" title="Go to Best thing I found online today" data-collection-slug="best-thing-i-found-online-today" data-id="df474ac67c85" class="post-item-collection link link-secondary">Best thing I found online today</a>
+			        </li>
+			      </ul>
+			    </header>
+			  </div>
 			</div>
 		</div>
-	</div>
-</div>
 
+		{% include body-post.html %}
+		
+    </body>
+</html>
