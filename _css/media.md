@@ -2,7 +2,6 @@
 layout:		post
 title:		"Media"
 source:		modules/_media.scss
-categories: CSS
 ---
 
 
