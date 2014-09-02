@@ -1,18 +1,17 @@
 name: torqueui
-markdown: redcarpet
 timezone: Europe/Copenhagen
 exclude: [Gemfile, .DS_Store, .git, .gitignore, .sass-cache, node_modules]
 
 category-list: [CSS, Components, Navigation]
 collections:
     css:
+        output: true
         title: CSS
-        output: true
     components:
-        title: Components
         output: true
+        title: 'Components'
     javascript:
-        title: JavaScript
         output: true
+        title: Javascript
 
 

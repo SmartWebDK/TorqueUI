@@ -2,52 +2,237 @@
 layout:		post
 title:		"Media"
 source:		modules/_media.scss
+order:    2
 ---
 
 
-<p class="lead">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
+<p class="lead">The media element is a very versatile element, it can be used for structuring comments and posts, articles you name it. We have decided to build a simple version of the media element. It can be nested, and it can have the media image on the left side. The media element works well in conjunction with lists. See the code examples below, to see how this can be achieved.</p>
 
-### Media
+### Simple
 
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+Simple list of media elements, nicely aligned and listed.
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#tabNav1" data-toggle="content">Example</a></li>
-  <li><a href="#tabNav2" data-toggle="content">Source</a></li>
-</ul>
-
-<div class="toggle-content t-panel-clean">
-  <div id="tabNav1" class="pane active">
-
-<ul class="nav nav-default">
-    <li class="active"><a href="#">Frontpage</a></li>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">News</a></li>
-    <li><a href="#">About us</a></li>
-    <li><a href="#">Contact</a></li>
-</ul>
-
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+      <div class="content">
+        <ul class="list-unstyled">
+          <li class="media">
+            <img class="media-image" src="http://placehold.it/50x50&amp;text=1" alt="Avatar">
+            <div class="media-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+            </div>
+          </li> 
+          <li class="media">
+            <img class="media-image" src="http://placehold.it/50x50&amp;text=2" alt="Avatar">
+            <div class="media-body">
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+            </div>
+          </li>           
+          <li class="media">
+            <img class="media-image" src="http://placehold.it/50x50&amp;text=3" alt="Avatar">
+            <div class="media-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+            </div>
+          </li>           
+        </ul>
+      </div>
+    </div>
   </div>
-
-  <div id="tabNav2" class="pane">
 {% highlight html %}
-<ul class="nav nav-default">
-    <li class="active"><a href="...">Frontpage</a></li>
-    <li><a href="...">Products</a></li>
-    <li><a href="...">News</a></li>
-    <li><a href="...">About us</a></li>
-    <li><a href="...">Contact</a></li>
+<ul class="list-unstyled">
+  <li class="media">
+    <img class="media-image" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+      <p>Voluptatum in recusandae asperiores? …</p>
+    </div>
+  </li> 
+  <li class="media">
+    <img class="media-image" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Voluptatum in recusandae asperiores? …</p>
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+    </div>
+  </li>           
+  <li class="media">
+    <img class="media-image" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+      <p>Voluptatum in recusandae asperiores? …</p>
+    </div>
+  </li>           
 </ul>
 {% endhighlight %}
-  </div>
 </div>
 
 
+### Nested
+
+It is also possible, to nest the media element. This has to be done inside the `.media` element. See the example below. 
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+      <div class="content">
+        <ul class="list-unstyled">
+          <li class="media">
+            <img class="media-image" src="http://placehold.it/50x50&amp;text=1" alt="Avatar">
+            <div class="media-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+            </div>
+          </li> 
+          <li class="media">
+            <img class="media-image" src="http://placehold.it/50x50&amp;text=2" alt="Avatar">
+            <div class="media-body">
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>         
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+            </div>
+            <ul>
+              <li class="media">
+                <img class="media-image" src="http://placehold.it/50x50&amp;text=2.1" alt="Avatar">
+                <div class="media-body">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+                  <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+                </div>
+              </li> 
+              <li class="media">
+                <img class="media-image" src="http://placehold.it/50x50&amp;text=2.2" alt="Avatar">
+                <div class="media-body">
+                  <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>          
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+                </div>
+                <ul>
+                  <li class="media">
+                    <img class="media-image" src="http://placehold.it/50x50&amp;text=2.2.1" alt="Avatar">
+                    <div class="media-body">
+                      <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+                    </div>
+                  </li>                
+                </ul>        
+              </li>                   
+            </ul>
+          </li>                   
+        </ul>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<ul class="list-unstyled">
+  <li class="media">
+    <img class="media-image" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+      <p>Voluptatum in recusandae asperiores?…</p>    
+    </div>
+  </li> 
+  <li class="media">
+    <img class="media-image" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Voluptatum in recusandae asperiores?…</p>         
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+    </div>
+    <ul>
+      <li class="media">
+        <img class="media-image" src="…" alt="Avatar">
+        <div class="media-body">
+          <p>Lorem ipsum dolor sit amet, consectetur…</p>
+          <p>Voluptatum in recusandae asperiores? …</p>
+        </div>
+      </li> 
+      <li class="media">
+        <img class="media-image" src="…" alt="Avatar">
+        <div class="media-body">
+          <p>Voluptatum in recusandae asperiores? …</p>          
+          <p>Lorem ipsum dolor sit amet, consectetur…</p>
+        </div>
+        <ul>
+          <li class="media">
+            <img class="media-image" src="…" alt="Avatar">
+            <div class="media-body">
+              <p>Voluptatum in recusandae asperiores? …</p>
+              <p>Lorem ipsum dolor sit amet, consectetur…</p>
+            </div>
+          </li>                
+        </ul>        
+      </li>                   
+    </ul>
+  </li>                   
+</ul>
+{% endhighlight %}
+</div>
+
+### Pulled right
+
+With the `.pull-right` utility class, it's possible to move the image from the left, to the right side of the `.media` element.
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+      <div class="content">
+        <ul class="list-unstyled">
+          <li class="media">
+            <img class="media-image" src="http://placehold.it/50x50&amp;text=1" alt="Avatar">
+            <div class="media-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+            </div>
+          </li> 
+          <li class="media">
+            <img class="media-image pull-right" src="http://placehold.it/50x50&amp;text=2" alt="Avatar">
+            <div class="media-body">
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+            </div>
+          </li>           
+          <li class="media">
+            <img class="media-image" src="http://placehold.it/50x50&amp;text=3" alt="Avatar">
+            <div class="media-body">
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus pariatur omnis deserunt porro corporis. Quibusdam non facere ipsa dolorem molestias.</p>
+              <p>Voluptatum in recusandae asperiores? Rem deserunt tempora maxime error ipsa cum iure. Voluptas.</p>
+            </div>
+          </li>           
+        </ul>
+      </div>
+    </div>
+  </div>
+{% highlight html %}
+<ul class="list-unstyled">
+  <li class="media">
+    <img class="media-image" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+      <p>Voluptatum in recusandae asperiores? …</p>
+    </div>
+  </li> 
+  <li class="media">
+    <img class="media-image pull-right" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Voluptatum in recusandae asperiores? …</p>
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+    </div>
+  </li>           
+  <li class="media">
+    <img class="media-image" src="…" alt="Avatar">
+    <div class="media-body">
+      <p>Lorem ipsum dolor sit amet, consectetur…</p>
+      <p>Voluptatum in recusandae asperiores? …</p>
+    </div>
+  </li>           
+</ul>
+{% endhighlight %}
+</div>
 
 Source: `modules/_media.scss`
 
 Dependencies
 
 `compass`
+`sass`
 
 ---
