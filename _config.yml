@@ -1,3 +1,6 @@
 name: torqueui
 markdown: redcarpet
 category-list: [CSS, Components, Navigation]
+
+
+exclude: [Gemfile, .DS_Store, .git, .gitignore, .sass-cache, node_modules]
