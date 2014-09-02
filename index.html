@@ -68,27 +68,27 @@ $ grunt dist
 		<hr class="separator">
 		<div class="row">
 			<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
-				<span class="h6">{% if site.css.title %}{{ site.css.title }}{% else %}CSS{% endif %}</span>
+				<span class="h6">{{ site.collections.css.title }}</span>
 				<ul class="l-list-inline">
-				{% assign cssPages = site.css | sort: 'order' %}
+				{% assign cssPages = site.collections.css.docs | sort: 'order' %}
 				{% for link in cssPages %}
 					<li><a href="{{ link.url }}">{{ link.title }}</a></li>
 				{% endfor %}
 				</ul>
 			</div>
 			<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
-				<span class="h6">{% if site.javascript.title %}{{ site.javascript.title }}{% else %}Components{% endif %}</span>
+				<span class="h6">{{ site.collections.components.title }}</span>
 				<ul class="l-list-inline">
-				{% assign componentsPages = site.components | sort: 'order' %}
+				{% assign componentsPages = site.collections.components.docs | sort: 'order' %}
 				{% for link in componentsPages %}
 					<li><a href="{{ link.url }}">{{ link.title }}</a></li>
 				{% endfor %}
 				</ul>
 			</div>
 			<div class="col-s-4 col-m-4 col-l-4 col-xl-8">
-				<span class="h6">{% if site.javascript.title %}{{ site.javascript.title }}{% else %}Javascript{% endif %}</span>
+				<span class="h6">{{ site.collections.javascript.title }}</span>
 				<ul class="l-list-inline">
-				{% assign javascriptPages = site.javascript | sort: 'order' %}
+				{% assign javascriptPages = site.collections.javascript.docs | sort: 'order' %}
 				{% for link in javascriptPages %}
 					<li><a href="{{ link.url }}">{{ link.title }}</a></li>
 				{% endfor %}

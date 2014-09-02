@@ -1,15 +1,13 @@
 name: torqueui
 timezone: Europe/Copenhagen
 exclude: [Gemfile, .DS_Store, .git, .gitignore, .sass-cache, node_modules]
-
-category-list: [CSS, Components, Navigation]
 collections:
     css:
         output: true
         title: CSS
     components:
         output: true
-        title: 'Components'
+        title: Components
     javascript:
         output: true
         title: Javascript
