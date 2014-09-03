@@ -29,26 +29,26 @@ Below are examples of how to work with the grid.
 ## Grid setup
 Below is a table that gives a quick overview of the TorqueUI grid system.
 
-<div class="table-responsive">
+<div class="responsive-table-wrap">
     <table class="table-h-striped">
         <thead>
             <tr>
                 <th></th>
                 <th>
                     Small devices
-                    <small>Phones (&lt;768px)</small>
+                    <small class="is-block">Phones (&lt;768px)</small>
                 </th>
                 <th>
                     Medium devices
-                    <small>Tablets (≥768px)</small>
+                    <small class="is-block">Tablets (≥768px)</small>
                 </th>
                 <th>
                     Large devices
-                    <small>Desktops (≥960px)</small>
+                    <small class="is-block">Desktops (≥960px)</small>
                 </th>
                 <th>
                     XLarge devices
-                    <small>Desktops (≥1280px)</small>
+                    <small class="is-block">Desktops (≥1280px)</small>
                 </th>
             </tr>
         </thead>
@@ -94,26 +94,26 @@ Below is a table that gives a quick overview of the TorqueUI grid system.
 
 The `.container` has some advanced classes that modifies, the classes are state classes, that modifies how responsive the `.container` and therefore the grid system is: 
 
-<div class="table-responsive">
+<div class="responsive-table-wrap">
     <table class="table-h-striped">
         <thead>
             <tr>
                 <th style="width: 100px;"></th>
                 <th>
                     Small devices
-                    <small>Phones (&lt;768px)</small>
+                    <small class="is-block">Phones (&lt;768px)</small>
                 </th>
                 <th>
                     Medium devices
-                    <small>Tablets (≥768px)</small>
+                    <small class="is-block">Tablets (≥768px)</small>
                 </th>
                 <th>
                     Large devices
-                    <small>Desktops (≥960px)</small>
+                    <small class="is-block">Desktops (≥960px)</small>
                 </th>
                 <th>
                     XLarge devices
-                    <small>Desktops (≥1280px)</small>
+                    <small class="is-block">Desktops (≥1280px)</small>
                 </th>
             </tr>
         </thead>
@@ -167,73 +167,73 @@ The `.container` has some advanced classes that modifies, the classes are state 
 Using a set of grid classes, we can create a very basic grid, that stacks rows of columns on top of each other. Note that a row should contain a amount of columns that equal the maximum amount of columns allowed for that breakpoint. Or they should atleast contain a set of columns, that have a sum, that is equal to the maximum allowed for the breakpoint. 
 
 <div class="row example">
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div> 
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
         <div class="box is-visible-xl">2</div>
     </div>
-    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
         <div class="box is-visible-m">1</div>
         <div class="box is-visible-l">1</div>
@@ -242,9 +242,37 @@ Using a set of grid classes, we can create a very basic grid, that stacks rows o
 </div>
 
 <div class="row example">
-    
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">4</div>
+        <div class="box is-visible-l">4</div>
+        <div class="box is-visible-xl">8</div>
+    </div> 
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">4</div>
+        <div class="box is-visible-l">4</div>
+        <div class="box is-visible-xl">8</div>
+    </div>     
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">4</div>
+        <div class="box is-visible-l">4</div>
+        <div class="box is-visible-xl">8</div>
+    </div> 
 </div>
 
 <div class="row example">
-    
+    <div class="col-s-2 col-m-9 col-l-9 col-xl-18">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">9</div>
+        <div class="box is-visible-l">9</div>
+        <div class="box is-visible-xl">18</div>
+    </div>     
+    <div class="col-s-2 col-m-3 col-l-3 col-xl-6">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">3</div>
+        <div class="box is-visible-l">3</div>
+        <div class="box is-visible-xl">6</div>
+    </div>         
 </div>
