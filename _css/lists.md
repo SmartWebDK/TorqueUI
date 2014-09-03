@@ -1,8 +1,8 @@
 ---
 layout:		post
-title:		"Lists"
+title:		Lists
 source:		modules/_lists.scss
-order:      0
+order:      1
 ---
 
 
