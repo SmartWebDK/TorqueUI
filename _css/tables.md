@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Tables"
+title:      Tables
 source:     modules/_tables.scss
 ---
 

@@ -1,7 +1,8 @@
 ---
 layout:		post
-title:		"Dropdown"
+title:		Dropdown
 source:		modules/_dropdown.scss
+order:      1
 ---
 
 

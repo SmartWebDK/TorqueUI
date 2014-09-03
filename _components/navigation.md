@@ -1,7 +1,8 @@
 ---
 layout:		post
-title:		"Navigation"
+title:		Navigation
 source:		modules/_nav.scss
+order:    1
 ---
 
 <div class="m-browser">

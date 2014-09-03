@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Button"
+title:      Button
 source:     modules/_button.scss
+order:      1
 ---
 
 

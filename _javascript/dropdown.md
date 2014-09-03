@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Dropdown"
+title:      Dropdown
 source:     modules/app.js
+order:      1
 ---
 
 

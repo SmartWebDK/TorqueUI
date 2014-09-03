@@ -1,8 +1,8 @@
 ---
 layout:		post
-title:		"Badge"
+title:		Badge
 source:		modules/_badge.scss
-order:      3
+order:      1
 ---
 
 

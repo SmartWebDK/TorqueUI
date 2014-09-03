@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Typography"
+title:      Typography
 source:     modules/_typography.scss
 ---
 

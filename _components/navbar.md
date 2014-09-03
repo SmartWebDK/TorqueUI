@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Navbar"
+title:      Navbar
 source:     modules/_navbar.scss
+order:      1
 ---
 
 

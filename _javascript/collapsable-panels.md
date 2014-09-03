@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Collapsable panels"
+title:      Collapsable panels
 source:     modules/app.js
+order:      1
 ---
 
 

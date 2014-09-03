@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Tabs"
+title:      Tabs
 source:     modules/app.js
+order:      1
 ---
 
 

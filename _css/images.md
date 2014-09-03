@@ -1,6 +1,6 @@
 ---
 layout:		post
-title:		"Images"
+title:		Images
 source:		modules/_images.scss
 order:      1
 ---

@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Pager"
+title:      Pager
 source:     modules/_pager.scss
+order:      1
 ---
 
 

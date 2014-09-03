@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Panels"
+title:      Panels
 source:     modules/_panels.scss
 ---
 
