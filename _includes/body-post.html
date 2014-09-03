@@ -5,7 +5,7 @@
             {% if page.order and page.url | remove_first:"/" contains "/" %}
                 {% assign parts = page.url | split:"/" %}
                 {% assign collection = parts[1] %}
-                <span class="h6">{{ site.collections[collection].title }}</span>
+                <span class="h3">{{ site.collections[collection].title }}</span>
                 <ul class="list-menu">
                     {% for docs in site.collections[collection].docs | sort:"order" %}
                         <li><a href="{{ docs.url }}" title="{{ docs.title }}">{{ docs.title }}</a></li>
@@ -14,7 +14,6 @@
             {% endif %}
             </aside>
             <div class="post col-s-4 col-m-9 col-l-9 col-xl-18">
-
                 <div class="post-article">
                     <header>
                         <h1><a name="#{{ page.title }}">{{ page.title }}</a></h1>
