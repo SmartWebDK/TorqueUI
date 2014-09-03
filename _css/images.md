@@ -5,10 +5,7 @@ source:		modules/_images.scss
 order:      1
 ---
 
-
-### Image
-
-A simple class that makes sure that images doesn't exceeds its parent's boundaries
+A simple class that makes sure that images don't exceed their parent's boundaries
 
 <div class="m-browser">
   <div class="browser">
