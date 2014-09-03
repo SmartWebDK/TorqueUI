@@ -6,6 +6,10 @@ body {
   color: #333;
 }
 
+a, a:visited {
+  color: #000;
+}
+
 /*****************************************************************************/
 /*
 /* Home
@@ -471,7 +475,7 @@ aside .nav-menu ul li:hover:before {
   top: 0px;
   bottom: 0px;
   font-family: FontAwesome;
-  content: "";
+  content: "x";
   height: 37px;
   padding: 7px 1em;
   font-size: 14px;
