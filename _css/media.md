@@ -5,7 +5,6 @@ source:		modules/_media.scss
 order:    1
 ---
 
-
 <p class="lead">
   The media element is a very versatile element, it can be used for structuring comments and posts, articles you name it. We have decided to build a simple version of the media element. It can be nested, and it can have the media image on the left side. The media element works well in conjunction with lists. See the code examples below, to see how this can be achieved.
 </p>
