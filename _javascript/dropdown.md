@@ -1,8 +1,9 @@
 ---
 layout:     post
-title:      Pagination
-source:     modules/_pagination.scss
+title:      Dropdown
+source:     modules/app.js
 order:      1
 ---
+
 
 <p class="lead">Documentation will come soon!!</p>

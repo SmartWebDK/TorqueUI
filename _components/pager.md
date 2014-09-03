@@ -1,8 +1,9 @@
 ---
 layout:     post
-title:      Pagination
-source:     modules/_pagination.scss
+title:      Pager
+source:     modules/_pager.scss
 order:      1
 ---
+
 
 <p class="lead">Documentation will come soon!!</p>
