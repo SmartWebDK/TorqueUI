@@ -1,4 +1,4 @@
-name: torqueui
+name: TorqueUI
 timezone: Europe/Copenhagen
 exclude: [Gemfile, .DS_Store, .git, .gitignore, .sass-cache, node_modules]
 collections:
