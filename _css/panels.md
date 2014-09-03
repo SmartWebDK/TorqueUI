@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Pagination"
-source:     modules:_pagination.scss
+title:      "Panels"
+source:     modules/_panels.scss
 ---
+
 
 <p class="lead">Documentation will come soon!!</p>

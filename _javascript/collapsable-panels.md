@@ -1,7 +1,8 @@
 ---
 layout:     post
-title:      "Pagination"
-source:     modules:_pagination.scss
+title:      "Collapsable panels"
+source:     modules/app.js
 ---
+
 
 <p class="lead">Documentation will come soon!!</p>

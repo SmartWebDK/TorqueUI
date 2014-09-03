@@ -2,7 +2,6 @@
 layout:		post
 title:		"Navigation"
 source:		modules/_nav.scss
-categories: Navigation
 ---
 
 <div class="m-browser">
