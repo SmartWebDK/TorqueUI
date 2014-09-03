@@ -1,6 +1,12 @@
 name: TorqueUI
+
 timezone: Europe/Copenhagen
 exclude: [Gemfile, .DS_Store, .git, .gitignore, .sass-cache, node_modules]
+
+sass:
+    sass_dir: _sass
+    style: :compressed
+
 collections:
     css:
         output: true

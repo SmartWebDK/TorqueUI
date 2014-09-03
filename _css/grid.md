@@ -62,10 +62,10 @@ Below is a table that gives a quick overview of the TorqueUI grid system.
         </tr>
         <tr>
             <td><strong>Column class</strong></td>
-            <td><code>.col-s-x</code></td>
-            <td><code>.col-m-x</code></td>
-            <td><code>.col-l-x</code></td>
-            <td><code>.col-xl-x</code></td>
+            <td><code>.col-s-*</code></td>
+            <td><code>.col-m-*</code></td>
+            <td><code>.col-l-*</code></td>
+            <td><code>.col-xl-*</code></td>
         </tr>
         <tr>
             <td><strong># of columns</strong></td>
@@ -152,10 +152,99 @@ The `.container` has some advanced classes that modifies, the classes are state 
 
 <br>
 
-
 <div class="panel">
     <div class="panel-heading"><span class="h4"><i class="fa fa-exclamation-circle"></i> Note</span></div>
     <div class="panel-body">
-        For the two state class <code>.is-small</code> and <code>.is-large</code> are speciel in the way that they lock down the grid system, so it stays at a specific size. They are also special in the way that they neglect the need for the breakpoint definition in the column classes. So the columns are simply <code>.col-1, .col-2, .col-3</code> and so forth.
+        The two state class <code>.is-small</code> and <code>.is-large</code> are speciel in the way that they lock down the grid system, so it stays at a specific size. They are also special in the way that they neglect the need for the breakpoint definition in the column classes. So the columns are simply <code>.col-1, .col-2, .col-3</code> and so forth.
     </div>
+</div>
+
+<br>
+
+## Examples of how to use the grid system
+
+### Example: Stacking grids
+Using a set of grid classes, we can create a very basic grid, that stacks rows of columns on top of each other. Note that a row should contain a amount of columns that equal the maximum amount of columns allowed for that breakpoint. Or they should atleast contain a set of columns, that have a sum, that is equal to the maximum allowed for the breakpoint. 
+
+<div class="row example">
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div> 
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>
+    <div class="col-s 1 col-m-1 col-l-1 col-xl-2">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">1</div>
+        <div class="box is-visible-l">1</div>
+        <div class="box is-visible-xl">2</div>
+    </div>    
+</div>
+
+<div class="row example">
+    
+</div>
+
+<div class="row example">
+    
 </div>
