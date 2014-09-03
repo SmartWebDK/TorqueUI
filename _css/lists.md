@@ -334,7 +334,7 @@ Removes styling from list items
     <div class="browser">
         <div class="image">
             <div class="content">
-                <ul class="l-list-unstyled">
+                <ul class="list-unstyled">
                     <li>Lorem ipsum dolor sit amet</li>
                     <li>Consectetur adipiscing elit</li>
                     <li>Integer molestie lorem at massa</li>
@@ -355,56 +355,7 @@ Removes styling from list items
         </div>
     </div>
 {% highlight html %}
-<ul class="l-list-unstyled">
-    <li>Lorem ipsum dolor sit amet</li>
-    <li>Consectetur adipiscing elit</li>
-    <li>Integer molestie lorem at massa</li>
-    <li>Facilisis in pretium nisl aliquet</li>
-    <li>Nulla volutpat aliquam velit
-        <ul>
-            <li>Phasellus iaculis neque</li>
-            <li>Purus sodales ultricies</li>
-            <li>Vestibulum laoreet porttitor sem</li>
-            <li>Ac tristique libero volutpat at</li>
-        </ul>
-    </li>
-    <li>Faucibus porta lacus fringilla vel</li>
-    <li>Aenean sit amet erat nunc</li>
-    <li>Eget porttitor lorem</li>
-</ul>
-{% endhighlight %}
-</div>
-
-### Menu
-
-Removes all list item icons and images + removes margin
-
-<div class="m-browser">
-    <div class="browser">
-        <div class="image">
-            <div class="content">
-                <ul class="l-list-menu">
-                    <li>Lorem ipsum dolor sit amet</li>
-                    <li>Consectetur adipiscing elit</li>
-                    <li>Integer molestie lorem at massa</li>
-                    <li>Facilisis in pretium nisl aliquet</li>
-                    <li>Nulla volutpat aliquam velit
-                        <ul>
-                            <li>Phasellus iaculis neque</li>
-                            <li>Purus sodales ultricies</li>
-                            <li>Vestibulum laoreet porttitor sem</li>
-                            <li>Ac tristique libero volutpat at</li>
-                        </ul>
-                    </li>
-                    <li>Faucibus porta lacus fringilla vel</li>
-                    <li>Aenean sit amet erat nunc</li>
-                    <li>Eget porttitor lorem</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-{% highlight html %}
-<ul class="l-list-menu">
+<ul class="list-unstyled">
     <li>Lorem ipsum dolor sit amet</li>
     <li>Consectetur adipiscing elit</li>
     <li>Integer molestie lorem at massa</li>
@@ -432,7 +383,7 @@ All list items are setup with display: inline-block
     <div class="browser">
         <div class="image">
             <div class="content">
-                <ul class="l-list-inline">
+                <ul class="list-inline">
                     <li>Lorem ipsum dolor sit amet</li>
                     <li>Consectetur adipiscing elit</li>
                     <li>Integer molestie lorem at massa</li>
@@ -441,7 +392,7 @@ All list items are setup with display: inline-block
         </div>
     </div>
 {% highlight html %}
-<ul class="l-list-inline">
+<ul class="list-inline">
     <li>Lorem ipsum dolor sit amet</li>
     <li>Consectetur adipiscing elit</li>
     <li>Integer molestie lorem at massa</li>
