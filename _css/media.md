@@ -43,7 +43,7 @@ Simple list of media elements, nicely aligned and listed.
       </div>
     </div>
   </div>
-{% highlight html %}
+  {% highlight html %}
 <ul class="list-unstyled">
   <li class="media">
     <img class="media-image" src="…" alt="Avatar">
@@ -67,7 +67,7 @@ Simple list of media elements, nicely aligned and listed.
     </div>
   </li>           
 </ul>
-{% endhighlight %}
+  {% endhighlight %}
 </div>
 
 
@@ -123,7 +123,7 @@ It is also possible, to nest the media element. This has to be done inside the `
       </div>
     </div>
   </div>
-{% highlight html %}
+  {% highlight html %}
 <ul class="list-unstyled">
   <li class="media">
     <img class="media-image" src="…" alt="Avatar">
@@ -165,7 +165,7 @@ It is also possible, to nest the media element. This has to be done inside the `
     </ul>
   </li>                   
 </ul>
-{% endhighlight %}
+  {% endhighlight %}
 </div>
 
 ### Pulled right
@@ -202,7 +202,7 @@ With the `.pull-right` utility class, it's possible to move the image from the l
       </div>
     </div>
   </div>
-{% highlight html %}
+  {% highlight html %}
 <ul class="list-unstyled">
   <li class="media">
     <img class="media-image" src="…" alt="Avatar">
@@ -226,7 +226,7 @@ With the `.pull-right` utility class, it's possible to move the image from the l
     </div>
   </li>           
 </ul>
-{% endhighlight %}
+  {% endhighlight %}
 </div>
 
 Source: `modules/_media.scss`

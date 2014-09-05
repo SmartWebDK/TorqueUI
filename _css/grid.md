@@ -166,6 +166,8 @@ The `.container` has some advanced classes that modifies, the classes are state 
 ### Example: Stacking grids
 Using a set of grid classes, we can create a very basic grid, that stacks rows of columns on top of each other. Note that a row should contain a amount of columns that equal the maximum amount of columns allowed for that breakpoint. Or they should atleast contain a set of columns, that have a sum, that is equal to the maximum allowed for the breakpoint. 
 
+`.row` is visualized with a <span class="row-color">red</span> border.
+
 <div class="row example">
     <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
         <div class="box is-visible-s">1</div>
@@ -275,4 +277,312 @@ Using a set of grid classes, we can create a very basic grid, that stacks rows o
         <div class="box is-visible-l">3</div>
         <div class="box is-visible-xl">6</div>
     </div>         
+</div>
+
+The example above shows the use of all breakpoint sizes (small to xlarge) by using all the prefix and classes: `col-s-*, col-m-*, col-l-*, col-xl-*`. See the code below. If you resize your browser window, you will see how the example changes.
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+    {% highlight html %}
+<div class="row">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2"></div>
+</div>
+
+<div class="row">
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8"></div>
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8"></div>
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8"></div>
+</div>
+
+<div class="row">
+    <div class="col-s-2 col-m-9 col-l-9 col-xl-18"></div>
+    <div class="col-s-2 col-m-3 col-l-3 col-xl-6"></div>
+</div>
+    {% endhighlight %}
+</div>
+
+
+### Example: Column overflow
+When using the grid, it is important to think about the width you give your columns. If you wan't a even and aligned grid. The count / sum of columns should always add up or match the breakpoint maximum count. Check the table above to see the info about the grid. It is possible to put more columns / higher sum of columns into a row, but then the row will overflow and wrap. This can be used if you wan't to make a long list of elements, within the same row. See the to examples below, to see what happens when the columns overflow, with a matching and unmatching column count:
+
+`.row` is visualized with a <span class="row-color">red</span> border.
+
+<div class="row example">
+    <div class="col-s-2 col-m-8 col-l-8 col-xl-16">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">8</div>
+        <div class="box is-visible-l">8</div>
+        <div class="box is-visible-xl">16</div>
+    </div>         
+    <div class="col-s-3 col-m-6 col-l-6 col-xl-12">
+        <div class="box is-visible-s">3</div>
+        <div class="box is-visible-m">6</div>
+        <div class="box is-visible-l">6</div>
+        <div class="box is-visible-xl">12</div>
+    </div> 
+    <div class="col-s-1 col-m-4 col-l-4 col-xl-8">
+        <div class="box is-visible-s">1</div>
+        <div class="box is-visible-m">4</div>
+        <div class="box is-visible-l">4</div>
+        <div class="box is-visible-xl">8</div>
+    </div>      
+</div>
+
+<div class="row example">
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">6</div>
+        <div class="box is-visible-l">6</div>
+        <div class="box is-visible-xl">12</div>
+    </div>
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">6</div>
+        <div class="box is-visible-l">6</div>
+        <div class="box is-visible-xl">12</div>
+    </div>
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">6</div>
+        <div class="box is-visible-l">6</div>
+        <div class="box is-visible-xl">12</div>
+    </div>
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+        <div class="box is-visible-s">2</div>
+        <div class="box is-visible-m">6</div>
+        <div class="box is-visible-l">6</div>
+        <div class="box is-visible-xl">12</div>
+    </div>
+</div>
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+    {% highlight html %}
+<div class="row">
+    <div class="col-s-2 col-m-8 col-l-8 col-xl-16"></div>     
+    <div class="col-s-3 col-m-6 col-l-6 col-xl-12"></div>
+    <div class="col-s-1 col-m-4 col-l-4 col-xl-8"></div>
+</div>
+
+<div class="row">
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12"></div>
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12"></div>
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12"></div>
+    <div class="col-s-2 col-m-6 col-l-6 col-xl-12"></div>
+</div>        
+    {% endhighlight %}
+</div>
+
+
+
+### Example: Bleed and offset
+It is possible to bleed and offset columns with the bleed (`.col-s-bleed-*, .col-m-bleed-*, .col-l-bleed-*, .col-xl-bleed-*`) and offset (`.col-s-offset-*, .col-m-offset-*, .col-l-offset-*, .col-xl-offset-*`) classes. Offsetting columns effects the following columns in the same `.row`.
+
+`.row` is visualized with a <span class="row-color">red</span> border.
+
+<div class="row example">
+    <div class="col-s-1 col-s-bleed-3 col-m-1 col-m-bleed-3 col-l-1 col-l-bleed-3 col-xl-2 col-xl-bleed-3">
+        <div class="box">-3</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-s-bleed-2 col-m-1 col-m-bleed-2 col-l-1 col-l-bleed-2 col-xl-2 col-xl-bleed-2">
+        <div class="box">-2</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-s-bleed-1 col-m-1 col-m-bleed-1 col-l-1 col-l-bleed-1 col-xl-2 col-xl-bleed-1">
+        <div class="box">-1</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-2">
+        <div class="box">0</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-s-offset-1 col-m-1 col-m-offset-1 col-l-1 col-l-offset-1 col-xl-2 col-xl-offset-1">
+        <div class="box">+1</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-s-offset-3 col-m-1 col-m-offset-5 col-l-1 col-l-offset-5 col-xl-2 col-xl-offset-5">
+        <div class="box is-visible-s">+3</div>
+        <div class="box is-hidden-s">+5</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-s-offset-4 col-m-1 col-m-offset-8 col-l-1 col-l-offset-8 col-xl-2 col-xl-offset-16">
+        <div class="box is-visible-s">+4</div>
+        <div class="box is-hidden-s is-hidden-xl">+8</div>
+        <div class="box is-visible-xl">+16</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-s-offset-5 col-m-1 col-m-offset-12 col-l-1 col-l-offset-12 col-xl-2 col-xl-offset-25">
+        <div class="box is-visible-s">+5</div>
+        <div class="box is-hidden-s is-hidden-xl">+12</div>
+        <div class="box is-visible-xl">+25</div>
+    </div>
+</div>
+<div class="row example">
+    <div class="col-s-1 col-s-offset-6 col-m-1 col-m-offset-15 col-l-1 col-l-offset-15 col-xl-2 col-xl-offset-27">
+        <div class="box is-visible-s">+6</div>
+        <div class="box is-hidden-s is-hidden-xl">+15</div>
+        <div class="box is-visible-xl">+27</div>
+    </div>
+</div>
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+    {% highlight html %}
+<div class="row">
+    <div class="col-s-1 col-s-bleed-3 
+                col-m-1 col-m-bleed-3 
+                col-l-1 col-l-bleed-3 
+                col-xl-1 col-xl-bleed-3">-3</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-bleed-2 
+                col-m-1 col-m-bleed-2 
+                col-l-1 col-l-bleed-2 
+                col-xl-1 col-xl-bleed-2">-2</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-bleed-1 
+                col-m-1 col-m-bleed-1 
+                col-l-1 col-l-bleed-1 
+                col-xl-1 col-xl-bleed-1">-1</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-m-1 col-l-1 col-xl-1">0</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-offset-1 
+                col-m-1 col-m-offset-1 
+                col-l-1 col-l-offset-1 
+                col-xl-1 col-xl-offset-1">+1</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-offset-2 
+                col-m-1 col-m-offset-2 
+                col-l-1 col-l-offset-2 
+                col-xl-1 col-xl-offset-2">+2</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-offset-4 
+                col-m-1 col-m-offset-5 
+                col-l-1 col-l-offset-5 
+                col-xl-1 col-xl-offset-5">+5</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-offset-4 
+                col-m-1 col-m-offset-8 
+                col-l-1 col-l-offset-8 
+                col-xl-1 col-xl-offset-16">+8</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-offset-4 
+                col-m-1 col-m-offset-12 
+                col-l-1 col-l-offset-12 
+                col-xl-1 col-xl-offset-25">+12</div>
+</div>
+<div class="row">
+    <div class="col-s-1 col-s-offset-4 
+                col-m-1 col-m-offset-15 
+                col-l-1 col-l-offset-15 
+                col-xl-1 col-xl-offset-27">+15</div>
+</div>    
+    {% endhighlight %}
+</div>
+
+
+
+### Example: Column ordering (Pull and push)
+It is possible to move columns between eachother and switch positions with the pull (`.col-s-pull-*, .col-m-pull-*, .col-l-pull-*, .col-xl-pull-*`) and push (`.col-s-push-*, .col-m-push-*, .col-l-push-*, .col-xl-push-*`) classes, . Pushing and pulling columns does not effects the following columns in the same `.row`.
+
+`.row` is visualized with a <span class="row-color">red</span> border.
+
+<div class="row example">
+    <div class="col-s-2
+                col-m-8 col-m-push-4
+                col-l-8 col-l-push-4
+                col-xl-17 col-xl-push-7">
+        <div class="box is-visible-s">col-2 push-2</div>
+        <div class="box is-hidden-s is-hidden-xl">.col-8 .push-4</div>
+        <div class="box is-visible-xl">.col-xl-17 .col-xl-push-7</div>
+    </div>
+    <div class="col-s-2
+                col-m-4 col-m-pull-8
+                col-l-4 col-l-pull-8
+                col-xl-7 col-xl-pull-17">
+        <div class="box is-visible-s">col-2 pull-2</div>
+        <div class="box is-hidden-s is-hidden-xl">.col-4 .pull-8</div>
+        <div class="box is-visible-xl">col-xl-7 .col-xl-pull-17</div>
+    </div>
+</div>
+
+<div class="row example">
+    <div class="col-s-3 col-s-push-1
+                col-m-10 col-m-push-2
+                col-l-10 col-l-push-2
+                col-xl-9 col-xl-push-15">
+        <div class="box is-visible-s">col-3 push-1</div>
+        <div class="box is-hidden-s is-hidden-xl">col-10 push-2</div>
+        <div class="box is-visible-xl">.col-xl-9 .col-xl-push-15</div>
+    </div>
+    <div class="col-s-1 col-s-pull-3
+                col-m-2 col-m-pull-10
+                col-l-2 col-l-pull-10
+                col-xl-15 col-xl-pull-9">
+        <div class="box is-visible-s">c1 p2</div>
+        <div class="box is-hidden-s is-hidden-xl">c2 p10</div>
+        <div class="box is-visible-xl">col-xl-15 .col-xl-pull-9</div>
+    </div>
+</div>
+
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+    {% highlight html %}
+<div class="row">
+    <div class="col-s-1 col-s-push-3
+                col-m-1 col-m-push-11
+                col-l-1 col-l-push-11
+                col-xl-1 col-xl-push-11">p-11</div>
+    <div class="col-s-3 col-s-pull-1
+                col-m-11 col-m-pull-1
+                col-l-11 col-l-pull-1
+                col-xl-11 col-xl-pull-1">pull-1</div>
+</div>
+<div class="row">
+    <div class="col-s-2 col-s-push-2
+                col-m-2 col-m-push-10
+                col-l-2 col-l-push-10
+                col-xl-2 col-xl-push-10">push-10</div>
+    <div class="col-s-2 col-s-pull-2
+                col-m-10 col-m-pull-2
+                col-l-10 col-l-pull-2
+                col-xl-10 col-xl-pull-2">pull-2</div>
+</div>
+    {% endhighlight %}
 </div>
