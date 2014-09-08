@@ -13,6 +13,24 @@
         margin-top: 0.5em;
         margin-bottom: 0.5em;
     }
+
+    &.level1 {
+        > [class^="col"] > .box {
+            margin-top: 2em;
+        }
+    }
+
+    &.level2 {
+        > [class^="col"] > .box {
+            margin-top: 1.5em;
+        }
+    }
+
+    &.level3 {
+        > [class^="col"] > .box {
+            margin-top: 1em;
+        }
+    }
 }
 
 .row-color {

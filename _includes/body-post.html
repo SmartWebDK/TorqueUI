@@ -6,9 +6,10 @@
                 {% assign parts = page.url | split:"/" %}
                 {% assign collection = parts[1] %}
                 <span class="h3">{{ site.collections[collection].title }}</span>
-                <ul class="list-menu">
+                <ul class="list-unstyled">
                     {% for docs in site.collections[collection].docs | sort:"order" %}
-                        <li><a href="{{ docs.url }}" title="{{ docs.title }}">{{ docs.title }}</a></li>
+                        {% assign lcaseTitle = docs.title | downcase %}
+                        <li><a href="{{ docs.url }}" title="{{ docs.title }}" class="{% if page.url contains lcaseTitle %}button{% else %}button-text{% endif %}">{{ docs.title }}</a></li>
                     {% endfor %}
                 </ul>
             {% endif %}

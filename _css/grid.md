@@ -558,6 +558,17 @@ It is possible to move columns between eachother and switch positions with the p
     </div>
 </div>
 
+<div class="row example">
+    <div class="col-s-2 col-s-push-1
+                col-m-6 col-m-push-3
+                col-l-6 col-l-push-3
+                col-xl-12 col-xl-push-6">
+        <div class="box is-visible-s">col-2 push-1</div>
+        <div class="box is-hidden-s is-hidden-xl">col-6 push-3</div>
+        <div class="box is-visible-xl">.col-xl-12 .col-xl-push-6</div>
+    </div>
+</div>
+
 
 <div class="m-browser">
     <div class="browser">
@@ -583,6 +594,149 @@ It is possible to move columns between eachother and switch positions with the p
                 col-m-10 col-m-pull-2
                 col-l-10 col-l-pull-2
                 col-xl-10 col-xl-pull-2">pull-2</div>
+</div>
+<div class="row">
+    <div class="col-s-2 col-s-push-1
+                col-m-6 col-m-push-3
+                col-l-6 col-l-push-3
+                col-xl-12 col-xl-push-6">push-6</div>
+</div>
+    {% endhighlight %}
+</div>
+
+
+
+### Example: Grid nesting
+To nest the grid system, you have to add a new `.row` inside the column, where you want to place a new grid. Nested grids are much like using the grid normally. Execpt the grid is inside a `.row`. The same rules still apply; Nested `.row`'s should include a set of columns that add up to maximum of the breakpoint count or less (it is not required that you use all available columns).
+
+`.row` is visualized with a <span class="row-color">red</span> border.
+
+<div class="row example level1">
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8">
+        <div class="box">level 1</div>
+    </div>
+    <div class="col-s-2 col-m-8 col-l-8 col-xl-16">
+        <div class="row example level2">
+            <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+                <div class="box">level 2</div>
+            </div>                
+            <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+                <div class="row example level3">
+                    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+                        <div class="box">level 3</div>
+                    </div>                
+                    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+                        <div class="row example level4">
+                            <div class="col-s-4 col-m-12 col-l-12 col-xl-24">
+                                <div class="box">level 4</div>
+                            </div>                
+                        </div>
+                    </div>                            
+                </div>
+            </div>                            
+        </div>
+    </div>
+</div>
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+    {% highlight html %}
+<div class="row">
+    <div class="col-s-2 col-m-4 col-l-4 col-xl-8">level1</div>
+    <div class="col-s-2 col-m-8 col-l-8 col-xl-16">
+        <div class="row">
+            <div class="col-s-2 col-m-6 col-l-6 col-xl-12">level2</div>
+            <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+                <div class="row">
+                    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">level3</div>
+                    <div class="col-s-2 col-m-6 col-l-6 col-xl-12">
+                        <div class="row">
+                            <div class="col-s-4 col-m-12 col-l-12 col-xl-24">level4</div>
+                        </div>                        
+                    </div>
+                </div>
+            </div>                            
+        </div>
+    </div>
+</div>
+</div>
+    {% endhighlight %}
+</div>
+
+
+### Example: Complete example (website wireframe)
+Below is a complete example that shows how you could wireframe a simple website. Resize the browser, and see how the example behaves. 
+
+<div class="panel">
+    <div class="panel-heading"><span class="h4"><i class="fa fa-exclamation-circle"></i> Note</span></div>
+    <div class="panel-body">Note how the sidebar is pushed and the productlist is pulled. What we have done is, that we have placed the sidebar first in the DOM. So that when we are on the mobile breakpoint, the sidebar comes before the productlist. But on all the other breakpoints we reorder the columns with push and pull classes, so that the sidebar is on right side of the productlist. 
+    </div>
+</div>
+
+
+<div class="row example">
+    <div class="col-s-4 col-m-12 col-l-12 col-xl-24">
+        <div class="box">Header</div>
+    </div>
+    <div class="col-s-4 col-m-3 col-l-3 col-xl-5">
+        <div class="box">Navigation</div>
+    </div>
+    <div class="col-s-4 
+        col-m-3 col-m-push-6
+        col-l-3 col-l-push-6
+        col-xl-5 col-xl-push-14">
+        <div class="box">Sidebar</div>
+    </div>        
+    <div class="col-s-4 
+        col-m-6 col-m-pull-3
+        col-l-6 col-l-pull-3
+        col-xl-14 col-xl-pull-5">
+        <div class="row example">
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8"><div class="box">Product</div></div>             
+        </div>
+    </div>
+    <div class="col-s-4 col-m-12 col-l-12 col-xl-24">
+        <div class="box">Footer</div>
+    </div>    
+</div>
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+    {% highlight html %}
+<div class="row">
+    <div class="col-s-4 col-m-12 col-l-12 col-xl-24">Header</div>
+    <div class="col-s-4 col-m-3 col-l-3 col-xl-5">Navigation</div>
+    <div class="col-s-4 
+        col-m-3 col-m-push-6
+        col-l-3 col-l-push-6
+        col-xl-5 col-xl-push-14">Sidebar</div>
+    <div class="col-s-4 
+        col-m-6 col-m-pull-3
+        col-l-6 col-l-pull-3
+        col-xl-14 col-xl-pull-5">
+        <div class="row">
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8">Product</div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8">Product</div>
+             <div class="col-s-2 col-m-4 col-l-4 col-xl-8">Product</div>
+             …
+        </div>
+    </div>
+    <div class="col-s-4 col-m-12 col-l-12 col-xl-24">Footer</div>
 </div>
     {% endhighlight %}
 </div>
