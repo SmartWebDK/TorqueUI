@@ -534,8 +534,8 @@
         }
     }
 
-    background-color: $original;
-    border-color: dolp($original, 10%);
+    background-color: $bgc;
+    border-color: dolp($bgc, 10%);
     color: $color;
 
     @if ($panel) {
@@ -546,7 +546,7 @@
 
         .panel-footer,
         .panel-heading {
-            border-color: dolp($original, 10%);
+            border-color: dolp($bgc, 10%);
         }
     }
 
