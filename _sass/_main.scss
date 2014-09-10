@@ -305,8 +305,15 @@ pre.terminal code {
     border-radius: 100%;
 }
 .post-header {
-    padding: 4em 0 4em;
+    padding: 1em 0 1em;
 }
+
+@media (min-width: 768px) {
+  .post-header {
+    padding: 4em 0 4em;
+  }
+}
+
 .post-title {
     letter-spacing: -0.02em;
     font-style: normal;

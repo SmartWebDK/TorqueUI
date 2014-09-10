@@ -6,7 +6,9 @@ order:      0
 ---
 
 <p class="lead">
-    TorqueUI includes a responsive grid system. The grid system is a mobil first fluid system. This implies that the grid follows the width of the device or the viewport that is currently viewing the grid, scaling up or down, and increasing or decreasing the amount of columns available on each breakpoint.<br>
+    TorqueUI includes a responsive grid system. The grid system is a mobil first fluid system. This implies that the grid follows the width of the device or the viewport that is currently viewing the grid, scaling up or down, and increasing or decreasing the amount of columns available on each breakpoint.
+</p>
+<p class="lead">
     The grid system is built around several predefined classes that control the column with on each breakpoint.
 </p>
 

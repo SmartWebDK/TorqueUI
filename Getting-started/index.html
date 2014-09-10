@@ -1,6 +1,6 @@
 ---
 layout: default
-title: TorqueUI, Get startet with TorqueUI, it's easier than you think!!
+title: Getting started
 ---
 
 <div class="row">
@@ -8,47 +8,84 @@ title: TorqueUI, Get startet with TorqueUI, it's easier than you think!!
         {% include change-log.html %}
     </aside>
     <section class="col-s-4 col-m-9 col-l-9 col-xl-18">
-
+        <h1>Download</h1>
         <div class="row">
-            <div class="col-s-4 col-m-12 col-l-12 col-xl-12">
-                <h1>Getting started</h1>
-                <p class="lead">Grunt and Grunt plugins are installed and managed via npm, the Node.js package manager.
-                Grunt 0.4.x requires stable Node.js versions >= 0.8.0. Odd version numbers of Node.js are considered unstable development versions.</p>
+            <div class="col-s-4 col-m-6 col col-l-6 col-xl-12">
+                <h3>TorqueUI</h3>
             </div>
-            <div class="col-s-4 col-m-12 col-l-12 col-xl-12">
-                <h1>Installing the CLI</h1>
-                <p>If you're upgrading from Grunt 0.3, please see Grunt 0.3 Notes</p>
-                <p>In order to get started, you'll want to install Grunt's command line interface (CLI) globally. You may need to use sudo (for OSX, *nix, BSD etc) or run your command shell as Administrator (for Windows) to do this.</p>
+            <div class="col-s-4 col-m-6 col col-l-6 col-xl-12">
+                <h3>Source</h3>
+            </div>
+        </div>
+
+       <hr class="separator">
+
+       <h1>Installation</h1>
+{% highlight html %}
+<!-- Compiled and minified framework CSS -->
+<link href="assets/css/framework.min.css" rel="stylesheet">
+
+<!-- Compiled and minified theme CSS -->
+<link href="assets/css/theme.min.css" rel="stylesheet" >
+
+<!-- Compiled and minified framework JavaScript -->
+<script src="assets/js/framework.min.js"></script>
+{% endhighlight %}
+
+       <hr class="separator">
+
+       <h1>Local development</h1>
+
+       <h3>Prerequisite</h3>
+       <p>To run the builder and compile the Sass to CSS and run the tests, you need to have <a href="https://www.ruby-lang.org/en/">Ruby</a> and <a href="http://nodejs.org/">Nodejs</a> installed.</p>
+       <p>Ruby is required to install and run Sass and Compass. Nodejs is required to run the task management and build tool Grunt.</p>
+
+       <p>When or if you have both installed, you are now able to download the source code from the link above. And with the terminal navigation into the folder where you have extracted the contents of the zip file.</p>
+
+       <p>In the folder you will need to run some commands, that will install the last required tools and bundles.</p>
+       <br>
+       <p>First install bundler, a depency manager and installer for Ruby.</p>
 {% highlight ruby %}
 $ gem install bundler
 {% endhighlight %}
 
+       <p>Secondly tell bundler to install. Bundler uses the supplied <code>Gemfile</code> to install all required Ruby dependencies.</p>
+{% highlight ruby %}
+$ bundler install
+{% endhighlight %}
+
+       <p>Then tell Nodejs to install a global version of the Grunt commandline tool.</p>
 {% highlight ruby %}
 $ npm install -g grunt-cli
 {% endhighlight %}
 
+       <p>And lastly tell Nodejs to install. Nodejs uses the supplied <code>pacage.json</code> to install all the required Nodejs dependencies.</p>
 {% highlight ruby %}
-$ bundler install
 $ npm install
 {% endhighlight %}
+       <p>Your system is now ready to develop locally.</p>
 
-Start the test server
+       <hr class="separator">
+
+       <h3>Local development commands.</h3>
+       <p>Below is a list of Grunt commands that can be typed into your terminal, in the folder where you extracted the source code.</p>
+       <br>
+       <p>Start the test server</p>
 {% highlight ruby %}
 $ grunt server
 {% endhighlight %}
 
-Watch the CSS files
+       <p>Watch the CSS files.</p>
 {% highlight ruby %}
 $ grunt
 {% endhighlight %}
 
-Build the CSS files
+       <p>Build all the files for distribution.</p>
 {% highlight ruby %}
 $ grunt dist
 {% endhighlight %}
-            </div>
-        </div>
 
         <hr class="separator">
+
     </section>
 </div>
