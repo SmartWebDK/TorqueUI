@@ -1,0 +1,157 @@
+---
+layout: default
+title: Getting started
+---
+
+<div class="row">
+    <aside class="col-s-4 col-m-3 col-l-3 col-xl-6">
+        {% include change-log.html %}
+    </aside>
+    <section class="col-s-4 col-m-9 col-l-9 col-xl-18">
+        <h1>Download</h1>
+        <div class="row">
+            <div class="col-s-4 col-m-6 col col-l-6 col-xl-12">
+                <h3>TorqueUI</h3>
+                <a href="https://github.com/SmartWebDK/TorqueUI/archive/v1.0.0.zip">DOWNLOAD</a>
+            </div>
+            <div class="col-s-4 col-m-6 col col-l-6 col-xl-12">
+                <h3>Source</h3>
+            </div>
+        </div>
+
+       <hr class="separator">
+
+       <h1>The package</h1>
+       <p>When you download the contents from Github, you will recive a zip file that contains the precompiled version of the framework. Look at the list below to see the contents for the file:</p>
+
+<div class="panel">
+    <div class="panel-heading"><span class="h4"><i class="fa fa-exclamation-circle"></i> Note</span></div>
+    <div class="panel-body">
+        Note that jQuery is a requirement for <strong>all Javascript files</strong>, for them to function.
+    </div>
+</div>
+
+
+{% highlight bash %}
+torqueui
+├── css
+│   ├── framework.css
+│   ├── framework.min.css
+│   ├── ie.css
+│   ├── ie.min.css
+│   ├── theme.css
+│   └── theme.min.css
+├── fonts
+│   ├── FontAwesome.otf
+│   ├── fontawesome-webfont.eot
+│   ├── fontawesome-webfont.svg
+│   ├── fontawesome-webfont.ttf
+│   └── fontawesome-webfont.woff
+└── js
+    ├── framework.js
+    └── framework.min.js
+{% endhighlight %}
+
+        <p>The <code>css</code> folder, is all the CSS that is required for the framework to function. There are minified an unminified version of the code, so it is possible for you to use the uniminified versions during development for easy debugging. The framework is split into two primary files; <code>framework.css</code> files that contain all the structure of the framework. Things like floats, heights, margin and padding. And <code>theme.css</code> files that contain all the coloring and general theming of the framework. The reason for this is to make it easy for you to customize and build your own theme. The <code>ie.css</code> files are files for ie8 and ie7, so the components can function.</p>
+
+        <p>The <code>fonts</code> folder and files are the files required for <a href="http://fontawesome.io/">FontAwesome</a> to function. These files are the files that make up the icon font. And should therefor not be deleted.</p>
+
+        <p>The last folder <code>js</code> is the Javascript required for some of the components to function. It is things like tabs and dropdowns. The file are available in a minifined and unminified version, for production and development, just like the CSS files.</p>
+
+       <h1>Installation</h1>
+       <p>After unzipping the files, place the folder inside your project and link to them like the examples below show. The examples below show how to link correctly if all your files are placed inside the <code>torqueui</code> folder in the root of you website.</p>
+       <p>Note again that jQuery is a requirement.</p>
+{% highlight html %}
+<!-- Compiled and minified framework CSS -->
+<link href="torqueui/css/framework.min.css" rel="stylesheet">
+
+<!-- Compiled and minified theme CSS -->
+<link href="torqueui/css/theme.min.css" rel="stylesheet" >
+
+<!-- jQuery is required for Javascript to work -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- Compiled and minified framework JavaScript -->
+<script src="torqueui/js/framework.min.js"></script>
+{% endhighlight %}
+
+       <h3>Installation with ie8 and ie7 support</h3>
+       <p>The example below shows how to add partial support for ie8 and ie8. <code>html5shiv.min.js</code> is a Javascript library, that enables the use of HTML5 semantic elements. Like <code>&lt;section&gt;&lt;/section&gt;</code> and <code>&lt;header&gt;&lt;/header&gt;</code>. The <code>respond.min.js</code> file is a Javascript library, that enables media queries in older browsers that don't support media queries. Read more about <a href="https://github.com/aFarkas/html5shiv">html5shiv</a> and <a href="https://github.com/scottjehl/Respond" title="Respond.js">respond.js</a>.</p>
+       <p>Note again that jQuery is a requirement.</p>
+{% highlight html %}
+<!-- Compiled and minified framework CSS -->
+<link href="torqueui/css/framework.min.css" rel="stylesheet">
+
+<!-- Compiled and minified theme CSS -->
+<link href="torqueui/css/theme.min.css" rel="stylesheet" >
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<!-- jQuery is required for Javascript to work -->
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<!-- Compiled and minified framework JavaScript -->
+<script src="torqueui/js/framework.min.js"></script>
+{% endhighlight %}
+
+       <hr class="separator">
+
+       <h1>Local development</h1>
+
+       <h3>Prerequisite</h3>
+       <p>To run the builder and compile the Sass to CSS and run the tests, you need to have <a href="https://www.ruby-lang.org/en/">Ruby</a> and <a href="http://nodejs.org/">Nodejs</a> installed.</p>
+       <p>Ruby is required to install and run Sass and Compass. Nodejs is required to run the task management and build tool Grunt.</p>
+
+       <p>When or if you have both installed, you are now able to download the source code from the link above. And with the terminal navigation into the folder where you have extracted the contents of the zip file.</p>
+
+       <p>In the folder you will need to run some commands, that will install the last required tools and bundles.</p>
+       <br>
+       <p>First install bundler, a depency manager and installer for Ruby.</p>
+{% highlight ruby %}
+$ gem install bundler
+{% endhighlight %}
+
+       <p>Secondly tell bundler to install. Bundler uses the supplied <code>Gemfile</code> to install all required Ruby dependencies.</p>
+{% highlight ruby %}
+$ bundler install
+{% endhighlight %}
+
+       <p>Then tell Nodejs to install a global version of the Grunt commandline tool.</p>
+{% highlight ruby %}
+$ npm install -g grunt-cli
+{% endhighlight %}
+
+       <p>And lastly tell Nodejs to install. Nodejs uses the supplied <code>pacage.json</code> to install all the required Nodejs dependencies.</p>
+{% highlight ruby %}
+$ npm install
+{% endhighlight %}
+       <p>Your system is now ready to develop locally.</p>
+
+
+       <h3>Local development commands.</h3>
+       <p>Below is a list of Grunt commands that can be typed into your terminal, in the folder where you extracted the source code.</p>
+       <br>
+       <p>Start the test server</p>
+{% highlight ruby %}
+$ grunt server
+{% endhighlight %}
+
+       <p>Watch the CSS files.</p>
+{% highlight ruby %}
+$ grunt
+{% endhighlight %}
+
+       <p>Build all the files for distribution.</p>
+{% highlight ruby %}
+$ grunt dist
+{% endhighlight %}
+
+        <hr class="separator">
+
+    </section>
+</div>
