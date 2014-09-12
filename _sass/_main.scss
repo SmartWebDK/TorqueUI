@@ -83,8 +83,12 @@ body {
 }
 
 .header a.extra {
-  color: #aaa;
+  color: #888;
   margin-left: 1em;
+}
+
+.header .active a a.extra {
+  text-decoration: underline;
 }
 
 .header a.extra:hover {
