@@ -2,12 +2,11 @@
     <div class="container with-xlarge">
         <div class="row">
             <aside class="col-s-4 col-m-3 col-l-3 col-xl-6">
-            {% if page.order and page.url | remove_first:"/" contains "/" %}
-                {% assign parts = page.url | split:"/" %}
-                {% assign collection = parts[1] %}
-                <span class="h3">{{ site.collections[collection].title }}</span>
+            {% if page.order and site.collections[page.path].docs %}
+                <span class="h3">{{ page.title }}</span>
                 <ul class="list-unstyled">
-                    {% for docs in site.collections[collection].docs | sort:"order" %}
+                    {% assign ordered = site.collections[page.path].docs | sort:"order" %}
+                    {% for docs in ordered %}
                         {% assign lcaseTitle = docs.title | downcase %}
                         <li><a href="{{ docs.url }}" title="{{ docs.title }}" class="{% if page.url contains lcaseTitle %}button{% else %}button-text{% endif %}">{{ docs.title }}</a></li>
                     {% endfor %}
