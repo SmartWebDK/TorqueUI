@@ -11,7 +11,7 @@
                         <ul class="nav nav-default navbar-pull-left">
                         {% assign ordered = site.pages | sort:"order" %}
                         {% for p in ordered | reverse %}
-                            {% if p.path != 'index.html' %}
+                            {% if p.path != 'index.html' and p.order %}
                                 <li {% if page.url == p.url %}class="active"{% endif %}>
                                     <a class="extra" href="/{{ p.path }}/">{{ p.title }}</a>
                                 </li>
