@@ -3,6 +3,7 @@ layout:     post
 title:      Dropdown
 source:     modules/app.js
 order:      1
+component:  javascript
 ---
 
 

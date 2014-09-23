@@ -2,7 +2,8 @@
 layout:		post
 title:		Navigation
 source:		modules/_nav.scss
-order:    1
+order:      1
+component:  components
 ---
 
 <div class="m-browser">

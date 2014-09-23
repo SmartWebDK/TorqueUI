@@ -3,6 +3,7 @@ layout:     post
 title:      Grid
 source:     layout/_grid.scss
 order:      0
+component:  css
 ---
 
 <p class="lead">

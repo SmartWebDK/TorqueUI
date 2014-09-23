@@ -2,7 +2,8 @@
 layout:		post
 title:		Media
 source:		modules/_media.scss
-order:    1
+order:      1
+component:  css
 ---
 
 <p class="lead">

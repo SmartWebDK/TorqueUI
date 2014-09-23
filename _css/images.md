@@ -3,6 +3,7 @@ layout:		post
 title:		Images
 source:		modules/_images.scss
 order:      1
+component:  css
 ---
 
 A simple class that makes sure that images don't exceed their parent's boundaries
