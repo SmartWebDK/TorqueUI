@@ -6,4 +6,6 @@ order:      1
 ---
 
 
-<p class="lead">Documentation will come soon!!</p>
+<p class="lead">Different button types</p>
+
+
