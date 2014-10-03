@@ -13,7 +13,7 @@ component:  components
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Prev</button>
+                <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                 <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
@@ -28,14 +28,14 @@ component:  components
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                <button class="button-icon button-primary right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                <button class="button-icon button-primary right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-<button class="button-icon button-primary right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+<button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+<button class="button-icon button-primary right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 {% endhighlight %}
 </div>
 
@@ -46,16 +46,16 @@ component:  components
         <div class="image">
             <div class="content">
                 <div class="pager-group">
-                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </div>
 {% highlight html %}
 <div class="pager-group">
-    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 </div>
 {% endhighlight %}
 </div>
@@ -65,16 +65,16 @@ component:  components
         <div class="image">
             <div class="content">
                 <div class="pager-group">
-                    <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                    <button class="button-icon button-primary right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                    <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                    <button class="button-icon button-primary right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </div>
 {% highlight html %}
 <div class="pager-group">
-    <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-    <button class="button-icon button-primary right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+    <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+    <button class="button-icon button-primary right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 </div>
 {% endhighlight %}
 </div>
@@ -85,14 +85,14 @@ component:  components
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-icon button left large" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                <button class="button-icon button right large" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                <button class="button-icon button left large" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                <button class="button-icon button right large" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-icon button left large" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-<button class="button-icon button right large" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+<button class="button-icon button left large" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+<button class="button-icon button right large" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 {% endhighlight %}
 </div>
 
@@ -101,16 +101,16 @@ component:  components
         <div class="image">
             <div class="content">
                 <div class="pager-group large">
-                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </div>
 {% highlight html %}
 <div class="pager-group large">
-    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 </div>
 {% endhighlight %}
 </div>
@@ -119,14 +119,14 @@ component:  components
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-icon button left default" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                <button class="button-icon button right default" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                <button class="button-icon button left default" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                <button class="button-icon button right default" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-icon button left default" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-<button class="button-icon button right default" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+<button class="button-icon button left default" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+<button class="button-icon button right default" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 {% endhighlight %}
 </div>
 
@@ -135,16 +135,16 @@ component:  components
         <div class="image">
             <div class="content">
                 <div class="pager-group default">
-                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </div>
 {% highlight html %}
 <div class="pager-group default">
-    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 </div>
 {% endhighlight %}
 </div>
@@ -153,14 +153,14 @@ component:  components
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-icon button left small" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                <button class="button-icon button right small" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                <button class="button-icon button left small" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                <button class="button-icon button right small" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-icon button left small" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-<button class="button-icon button right small" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+<button class="button-icon button left small" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+<button class="button-icon button right small" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 {% endhighlight %}
 </div>
 
@@ -169,16 +169,16 @@ component:  components
         <div class="image">
             <div class="content">
                 <div class="pager-group small">
-                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </div>
 {% highlight html %}
 <div class="pager-group small">
-    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 </div>
 {% endhighlight %}
 </div>
@@ -187,14 +187,14 @@ component:  components
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-icon button left xsmall" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                <button class="button-icon button right xsmall" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                <button class="button-icon button left xsmall" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                <button class="button-icon button right xsmall" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-icon button left xsmall" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-<button class="button-icon button right xsmall" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+<button class="button-icon button left xsmall" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+<button class="button-icon button right xsmall" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 {% endhighlight %}
 </div>
 
@@ -203,16 +203,16 @@ component:  components
         <div class="image">
             <div class="content">
                 <div class="pager-group xsmall">
-                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-                    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+                    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+                    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
                 </div>
             </div>
         </div>
     </div>
 {% highlight html %}
 <div class="pager-group xsmall">
-    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Forrige</button>
-    <button class="button-icon button right" type="submit">Næste<i class="fa fa-arrow-right"></i></button>
+    <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
+    <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
 </div>
 {% endhighlight %}
 </div>
