@@ -13,12 +13,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit">G&aring; til betaling</button>
+                <button type="submit">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit">G&aring; til betaling</button>
+<button type="submit">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -26,12 +26,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button">G&aring; til betaling</button>
+                <button type="submit" class="button">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button">G&aring; til betaling</button>
+<button type="submit" class="button">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -39,12 +39,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary">G&aring; til betaling</button>
+                <button type="submit" class="button-primary">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary">G&aring; til betaling</button>
+<button type="submit" class="button-primary">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -52,12 +52,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-text">G&aring; til betaling</button>
+                <button type="submit" class="button-text">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-text">G&aring; til betaling</button>
+<button type="submit" class="button-text">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -78,12 +78,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</button>
+                <button type="submit" class="button-primary"><i class="fa fa-check"></i> Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</button>
+<button type="submit" class="button-primary"><i class="fa fa-check"></i> Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -91,12 +91,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary is-block">G&aring; til betaling</button>
+                <button type="submit" class="button-primary is-block">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary is-block">G&aring; til betaling</button>
+<button type="submit" class="button-primary is-block">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -117,12 +117,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary is-block"><i class="fa fa-check"></i> G&aring; til betaling</button>
+                <button type="submit" class="button-primary is-block"><i class="fa fa-check"></i> Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary is-block"><i class="fa fa-check"></i> G&aring; til betaling</button>
+<button type="submit" class="button-primary is-block"><i class="fa fa-check"></i> Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -130,12 +130,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -143,12 +143,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>      
+                <button class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</button>      
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -158,12 +158,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a href="#" class="button">G&aring; til betaling</a>
+                <a href="#" class="button">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a href="#" class="button">G&aring; til betaling</a>
+<a href="#" class="button">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -171,12 +171,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a href="#" class="button-primary">G&aring; til betaling</a>
+                <a href="#" class="button-primary">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a href="#" class="button-primary">G&aring; til betaling</a>
+<a href="#" class="button-primary">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -184,12 +184,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a href="#" class="button-text">G&aring; til betaling</a>
+                <a href="#" class="button-text">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a href="#" class="button-text">G&aring; til betaling</a>
+<a href="#" class="button-text">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -210,12 +210,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a href="#" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</a>
+                <a href="#" class="button-primary"><i class="fa fa-check"></i> Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a href="#" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</a>
+<a href="#" class="button-primary"><i class="fa fa-check"></i> Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -223,12 +223,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a href="#" class="button-primary is-block">G&aring; til betaling</a>
+                <a href="#" class="button-primary is-block">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a href="#" class="button-primary is-block">G&aring; til betaling</a>
+<a href="#" class="button-primary is-block">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -249,12 +249,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a href="#" class="button-primary is-block"><i class="fa fa-check"></i> G&aring; til betaling</a>
+                <a href="#" class="button-primary is-block"><i class="fa fa-check"></i> Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a href="#" class="button-primary is-block"><i class="fa fa-check"></i> G&aring; til betaling</a>
+<a href="#" class="button-primary is-block"><i class="fa fa-check"></i> Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -262,12 +262,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+                <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-    <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+    <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -280,7 +280,7 @@ component:  css
                         <input type="text" class="form-input">
                     </div>
                     <div style="width: 50%; float: left;">
-                        <a href="#" class="button-primary">G&aring; til betaling</a>
+                        <a href="#" class="button-primary">Go to checkout</a>
                     </div>
                 </fieldset>
             </div>
@@ -292,7 +292,7 @@ component:  css
         <input type="text" class="form-input">
     </div>
     <div style="width: 50%; float: left;">
-        <a href="#" class="button-primary">G&aring; til betaling</a>
+        <a href="#" class="button-primary">Go to checkout</a>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -307,7 +307,7 @@ component:  css
                         <input type="text" class="form-input">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <a href="#" class="button-primary is-block">G&aring; til betaling</a>
+                        <a href="#" class="button-primary is-block">Go to checkout</a>
                     </div>
                 </fieldset>
             </div>
@@ -319,7 +319,7 @@ component:  css
         <input type="text" class="form-input">
     </div>
     <div style="width: 25%; float: left;">
-        <a href="#" class="button-primary is-block">G&aring; til betaling</a>
+        <a href="#" class="button-primary is-block">Go to checkout</a>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -334,7 +334,7 @@ component:  css
                         <input type="text" class="form-input">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+                        <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
                     </div>
                 </fieldset>
             </div>
@@ -346,7 +346,7 @@ component:  css
         <input type="text" class="form-input">
     </div>
     <div style="width: 25%; float: left;">
-        <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+        <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -358,12 +358,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button disabled="disabled" type="submit">G&aring; til betaling</button>
+                <button disabled="disabled" type="submit">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button disabled="disabled" type="submit">G&aring; til betaling</button>
+<button disabled="disabled" type="submit">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -371,12 +371,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -384,12 +384,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-primary button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button-primary button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-primary button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button-primary button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -397,12 +397,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a class="is-disabled button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+                <a class="is-disabled button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a class="is-disabled button-primary button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+<a class="is-disabled button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -410,12 +410,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a class="is-disabled button button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+                <a class="is-disabled button button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a class="is-disabled button button-icon"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</a>
+<a class="is-disabled button button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -425,12 +425,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="large">G&aring; til betaling</button>
+                <button type="submit" class="large">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="large">G&aring; til betaling</button>
+<button type="submit" class="large">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -438,12 +438,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button large">G&aring; til betaling</button>
+                <button type="submit" class="button large">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button large">G&aring; til betaling</button>
+<button type="submit" class="button large">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -451,12 +451,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary large">G&aring; til betaling</button>
+                <button type="submit" class="button-primary large">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary large">G&aring; til betaling</button>
+<button type="submit" class="button-primary large">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -464,12 +464,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a type="submit" class="button-primary large">G&aring; til betaling</a>
+                <a type="submit" class="button-primary large">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a type="submit" class="button-primary large">G&aring; til betaling</a>
+<a type="submit" class="button-primary large">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -477,12 +477,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-text large">G&aring; til betaling</button>
+                <button type="submit" class="button-text large">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-text large">G&aring; til betaling</button>
+<button type="submit" class="button-text large">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -490,12 +490,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -503,12 +503,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button button-icon large"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button button-icon large"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -521,7 +521,7 @@ component:  css
                         <input type="text" class="form-input large">
                     </div>
                     <div style="width: 50%; float: left;">
-                        <button type="submit" class="button-primary large">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary large">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -533,7 +533,7 @@ component:  css
         <input type="text" class="form-input large">
     </div>
     <div style="width: 50%; float: left;">
-        <button type="submit" class="button-primary large">G&aring; til betaling</button>
+        <button type="submit" class="button-primary large">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -548,7 +548,7 @@ component:  css
                         <input type="text" class="form-input large">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button type="submit" class="button-primary large is-block">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary large is-block">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -560,7 +560,7 @@ component:  css
         <input type="text" class="form-input large">
     </div>
     <div style="width: 25%; float: left;">
-        <button type="submit" class="button-primary large is-block">G&aring; til betaling</button>
+        <button type="submit" class="button-primary large is-block">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -575,7 +575,7 @@ component:  css
                         <input type="text" class="form-input large">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                        <button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -587,7 +587,7 @@ component:  css
         <input type="text" class="form-input large">
     </div>
     <div style="width: 25%; float: left;">
-        <button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+        <button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -599,12 +599,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="default">G&aring; til betaling</button>
+                <button type="submit" class="default">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="default">G&aring; til betaling</button>
+<button type="submit" class="default">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -612,12 +612,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button default">G&aring; til betaling</button>
+                <button type="submit" class="button default">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button default">G&aring; til betaling</button>
+<button type="submit" class="button default">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -625,12 +625,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary default">G&aring; til betaling</button>
+                <button type="submit" class="button-primary default">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary default">G&aring; til betaling</button>
+<button type="submit" class="button-primary default">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -638,12 +638,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a type="submit" class="button-primary default">G&aring; til betaling</a>
+                <a type="submit" class="button-primary default">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a type="submit" class="button-primary default">G&aring; til betaling</a>
+<a type="submit" class="button-primary default">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -651,12 +651,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-text default">G&aring; til betaling</button>
+                <button type="submit" class="button-text default">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-text default">G&aring; til betaling</button>
+<button type="submit" class="button-text default">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -664,12 +664,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -677,12 +677,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button button-icon default"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button button-icon default"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -695,7 +695,7 @@ component:  css
                         <input type="text" class="form-input default">
                     </div>
                     <div style="width: 50%; float: left;">
-                        <button type="submit" class="button-primary default">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary default">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -707,7 +707,7 @@ component:  css
         <input type="text" class="form-input default">
     </div>
     <div style="width: 50%; float: left;">
-        <button type="submit" class="button-primary default">G&aring; til betaling</button>
+        <button type="submit" class="button-primary default">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -722,7 +722,7 @@ component:  css
                         <input type="text" class="form-input default">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button type="submit" class="button-primary default is-block">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary default is-block">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -734,7 +734,7 @@ component:  css
         <input type="text" class="form-input default">
     </div>
     <div style="width: 25%; float: left;">
-        <button type="submit" class="button-primary default is-block">G&aring; til betaling</button>
+        <button type="submit" class="button-primary default is-block">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -749,7 +749,7 @@ component:  css
                         <input type="text" class="form-input default">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                        <button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -761,7 +761,7 @@ component:  css
         <input type="text" class="form-input default">
     </div>
     <div style="width: 25%; float: left;">
-        <button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+        <button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -773,12 +773,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="small">G&aring; til betaling</button>
+                <button type="submit" class="small">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="small">G&aring; til betaling</button>
+<button type="submit" class="small">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -786,12 +786,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button small">G&aring; til betaling</button>
+                <button type="submit" class="button small">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button small">G&aring; til betaling</button>
+<button type="submit" class="button small">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -799,12 +799,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary small">G&aring; til betaling</button>
+                <button type="submit" class="button-primary small">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary small">G&aring; til betaling</button>
+<button type="submit" class="button-primary small">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -812,12 +812,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a type="submit" class="button-primary small">G&aring; til betaling</a>
+                <a type="submit" class="button-primary small">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a type="submit" class="button-primary small">G&aring; til betaling</a>
+<a type="submit" class="button-primary small">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -825,12 +825,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-text small">G&aring; til betaling</button>
+                <button type="submit" class="button-text small">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-text small">G&aring; til betaling</button>
+<button type="submit" class="button-text small">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -838,12 +838,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -851,12 +851,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button button-icon small"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button button-icon small"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -869,7 +869,7 @@ component:  css
                         <input type="text" class="form-input small">
                     </div>
                     <div style="width: 50%; float: left;">
-                        <button type="submit" class="button-primary small">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary small">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -881,7 +881,7 @@ component:  css
         <input type="text" class="form-input small">
     </div>
     <div style="width: 50%; float: left;">
-        <button type="submit" class="button-primary small">G&aring; til betaling</button>
+        <button type="submit" class="button-primary small">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -896,7 +896,7 @@ component:  css
                         <input type="text" class="form-input small">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button type="submit" class="button-primary small is-block">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary small is-block">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -908,7 +908,7 @@ component:  css
         <input type="text" class="form-input small">
     </div>
     <div style="width: 25%; float: left;">
-        <button type="submit" class="button-primary small is-block">G&aring; til betaling</button>
+        <button type="submit" class="button-primary small is-block">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -923,7 +923,7 @@ component:  css
                         <input type="text" class="form-input small">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                        <button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -935,7 +935,7 @@ component:  css
         <input type="text" class="form-input small">
     </div>
     <div style="width: 25%; float: left;">
-        <button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+        <button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -947,12 +947,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="xsmall">G&aring; til betaling</button>
+                <button type="submit" class="xsmall">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="xsmall">G&aring; til betaling</button>
+<button type="submit" class="xsmall">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -960,12 +960,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button xsmall">G&aring; til betaling</button>
+                <button type="submit" class="button xsmall">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button xsmall">G&aring; til betaling</button>
+<button type="submit" class="button xsmall">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -973,12 +973,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-primary xsmall">G&aring; til betaling</button>
+                <button type="submit" class="button-primary xsmall">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-primary xsmall">G&aring; til betaling</button>
+<button type="submit" class="button-primary xsmall">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -986,12 +986,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <a type="submit" class="button-primary xsmall">G&aring; til betaling</a>
+                <a type="submit" class="button-primary xsmall">Go to checkout</a>
             </div>
         </div>
     </div>
 {% highlight html %}
-<a type="submit" class="button-primary xsmall">G&aring; til betaling</a>
+<a type="submit" class="button-primary xsmall">Go to checkout</a>
 {% endhighlight %}
 </div>
 
@@ -999,12 +999,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button type="submit" class="button-text xsmall">G&aring; til betaling</button>
+                <button type="submit" class="button-text xsmall">Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button type="submit" class="button-text xsmall">G&aring; til betaling</button>
+<button type="submit" class="button-text xsmall">Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -1012,12 +1012,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -1025,12 +1025,12 @@ component:  css
     <div class="browser">
         <div class="image">
             <div class="content">
-                <button class="button button-icon xsmall"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                <button class="button button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
     </div>
 {% highlight html %}
-<button class="button button-icon xsmall"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+<button class="button button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
 {% endhighlight %}
 </div>
 
@@ -1043,7 +1043,7 @@ component:  css
                         <input type="text" class="form-input xsmall">
                     </div>
                     <div style="width: 50%; float: left;">
-                        <button type="submit" class="button-primary xsmall">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary xsmall">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -1055,7 +1055,7 @@ component:  css
         <input type="text" class="form-input xsmall">
     </div>
     <div style="width: 50%; float: left;">
-        <button type="submit" class="button-primary xsmall">G&aring; til betaling</button>
+        <button type="submit" class="button-primary xsmall">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -1070,7 +1070,7 @@ component:  css
                         <input type="text" class="form-input xsmall">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button type="submit" class="button-primary xsmall is-block">G&aring; til betaling</button>
+                        <button type="submit" class="button-primary xsmall is-block">Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -1082,7 +1082,7 @@ component:  css
         <input type="text" class="form-input xsmall">
     </div>
     <div style="width: 25%; float: left;">
-        <button type="submit" class="button-primary xsmall is-block">G&aring; til betaling</button>
+        <button type="submit" class="button-primary xsmall is-block">Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -1097,7 +1097,7 @@ component:  css
                         <input type="text" class="form-input xsmall">
                     </div>
                     <div style="width: 25%; float: left;">
-                        <button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+                        <button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
                     </div>
                 </fieldset>
             </div>
@@ -1109,7 +1109,7 @@ component:  css
         <input type="text" class="form-input xsmall">
     </div>
     <div style="width: 25%; float: left;">
-        <button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>G&aring; til betaling</button>
+        <button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
     </div>
 </fieldset>
 {% endhighlight %}
@@ -1123,13 +1123,13 @@ component:  css
             <div class="content">
                 <ul class="button-group">
                     <li>
-                        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Opdat&eacute;r kurv</button>
+                        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Update cart</button>
                     </li>
                     <li>
-                        <button type="submit" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</button>
+                        <button type="submit" class="button-primary"><i class="fa fa-plus-square-o"></i> Continue shopping</button>
                     </li>
                     <li>
-                        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> G&aring; til bestilling</button>
+                        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> Go to checkout</button>
                     </li>
                 </ul>
             </div>
@@ -1138,13 +1138,13 @@ component:  css
 {% highlight html %}
 <ul class="button-group">
     <li>
-        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Opdat&eacute;r kurv</button>
+        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Update cart</button>
     </li>
     <li>
-        <button type="submit" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</button>
+        <button type="submit" class="button-primary"><i class="fa fa-plus-square-o"></i> Continue shopping</button>
     </li>
     <li>
-        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> G&aring; til bestilling</button>
+        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> Go to checkout</button>
     </li>
 </ul>
 {% endhighlight %}
