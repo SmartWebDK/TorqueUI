@@ -3,6 +3,7 @@ layout:		post
 title:		Lists
 source:		modules/_lists.scss
 order:      1
+component:  css
 ---
 
 <p class="lead">

@@ -3,6 +3,7 @@ layout:		post
 title:		Form
 source:		modules/_form.scss
 order:      1
+component:  css
 ---
 
 <p class="lead">
