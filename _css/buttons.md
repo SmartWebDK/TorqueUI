@@ -1114,3 +1114,38 @@ component:  css
 </fieldset>
 {% endhighlight %}
 </div>
+
+<p>Button group in ul</p>
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image">
+            <div class="content">
+                <ul class="button-group">
+                    <li>
+                        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Opdat&eacute;r kurv</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</button>
+                    </li>
+                    <li>
+                        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> G&aring; til bestilling</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% highlight html %}
+<ul class="button-group">
+    <li>
+        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Opdat&eacute;r kurv</button>
+    </li>
+    <li>
+        <button type="submit" class="button-primary"><i class="fa fa-check"></i> G&aring; til betaling</button>
+    </li>
+    <li>
+        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> G&aring; til bestilling</button>
+    </li>
+</ul>
+{% endhighlight %}
+</div>
