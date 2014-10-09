@@ -2,7 +2,7 @@
 _gh_pages
 _site
 .ruby-version
-.Gemfile.lock
+Gemfile.lock
 
 ### Compass ###
 .sass-cache
