@@ -5,16 +5,98 @@ order: 2
 path: css
 ---
 
-<h1>Important to know</h1>
+<p class="lead">Before you start working with TorqueUI, there are some things that you need to be aware of.</p>
+<h1>HTML5 Doctype</h1>
+<p>
+    We use certain markup elements and CSS styling properties, that require your document to be written with the HTML5 doctype. To do this check out the code below. The code snippet is a short code seqment, that should be at the beginning of all the HTML files on which you wish to use TorqueUI. It is a HTML5 dokument declaration, that tells the browser how to render a page.
+</p>
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+{% highlight html %}
+<!doctype html>
+<html>
+...
+</html>
+{% endhighlight %}
+</div>
 
 <h1>Mobile first</h1>
+<p>TorqueUI is built with the primary focus on mobile devices. So instead of mobile styles beeing a extra addon of the framework, they are the core concept and focus of the project.</p>
+
+<p>TorqueUI is in other words built around the design concept called <strong>Mobile first</strong>.</p>
+
+<p>To ensure the correct rendering and touch zooming or pinching as we know it from multi touch devices, it is important to add the viewport meta tag to the page that use TorqueUI. The code below shows the code you should add to the <code>head</code> part of your HTML documents.</p>
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% endhighlight %}
+</div>
+
+<p>With TorqueUI it is possible to disable user zooming. We how ever do <strong>not</strong> recommend doing this. The example below shows the same meta tag as above, but with the zomming disabled by adding <code>user-scalable=no</code>.</p>
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+{% highlight html %}
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+{% endhighlight %}
+</div>
+
 
 <h1>Breakpoints</h1>
+<p>With the TorqueUI we have decided to work with 4 breakpoints. The breakpoints are based around the major device sizes; Phone, tablets, desktop and wide desktops with HD (or better) quality screens.</p>
+
+<div class="responsive-table-wrap">
+    <table class="table-h-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>
+                    Small devices
+                    <small class="is-block">Phones (&lt;767px)</small>
+                </th>
+                <th>
+                    Medium devices
+                    <small class="is-block">Tablets (≥768px)</small>
+                </th>
+                <th>
+                    Large devices
+                    <small class="is-block">Desktops (≥960px)</small>
+                </th>
+                <th>
+                    XLarge devices
+                    <small class="is-block">Desktops (≥1280px)</small>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Identifier</strong></td>
+                <td>s</td>
+                <td>m</td>
+                <td>l</td>
+                <td>xl</td>
+            </tr>
+            <tr>
+                <td><strong>Screen width</strong></td>
+                <td>300px - 767px</td>
+                <td>768px - 959px</td>
+                <td>960px - 1279px</td>
+                <td>1280px and above</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
 
 <h1>breakpoint slicer</h1>
 
 <h1>Normalize</h1>
 
-<h1>HTML5 Doctype</h1>
 
 <h1>CSS elements</h1>

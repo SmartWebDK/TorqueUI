@@ -104,7 +104,7 @@ The `.container` has some advanced classes that modifies, the classes are state 
                 <th style="width: 100px;"></th>
                 <th>
                     Small devices
-                    <small class="is-block">Phones (&lt;768px)</small>
+                    <small class="is-block">Phones (&lt;767px)</small>
                 </th>
                 <th>
                     Medium devices
