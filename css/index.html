@@ -92,11 +92,86 @@ path: css
         </tbody>
     </table>
 </div>
+<p>We have implemented the breakpoints in CSS using the excellent Sass library called Breakpoint Slicer, read more about it in the section below.
 
 
-<h1>breakpoint slicer</h1>
+<h1>Breakpoint Slicer</h1>
+<p>Breapoint Slicer is a great tool build with Sass, and it has a great and simple readme that makes it really easy to follow. You can see the readme and the library here: <a href="https://github.com/lolmaus/breakpoint-slicer">Breakpoint Slicer on Github</a>. Below is a small snippet, that shows how we have setup Breakpoint Slicer in TorqueUI.<p>
 
-<h1>Normalize</h1>
+<p>We have setup 4 breakpoints that give 5 breakpoint slices.</p>
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+{% highlight sass %}
+$slicer-breakpoints:  0                 320px      768px     960px      1280px;
+//                    ├───────────────────┼─────────┼─────────┼───────────┼─────────>
+//Slice #:                      1              2         3          4          5
+{% endhighlight %}
+</div>
+<p>To use the slices we use the build in funktions in breakpoint slicer; <code>at</code>, <code>from</code>, <code>to</code> and <code>between</code>.</p>
+<div class="responsive-table-wrap">
+    <table class="table-h-striped">
+        <thead><tr>
+            <th></th>
+            <th>Slicer usage</th>
+            <th>Breakpoint equivalent</th>
+            <th>The resulting media query</th>
+        </tr></thead>
+        <tbody>
+            <tr>
+                <td><strong>at</strong></td>
+                <td>at(2)</td>
+                <td>breakpoint(321px 768px)</td>
+                <td>(min-width: 321px) and (max-width: 768px)</td>
+            </tr>
+            <tr>
+                <td><strong>from</strong></td>
+                <td>from(2)</td>
+                <td>breakpoint(321px)</td>
+                <td>(min-width: 321px)</td>
+            </tr>
+            <tr>
+                <td><strong>to</strong></td>
+                <td>to(2)</td>
+                <td>breakpoint(max-width 768px)</td>
+                <td>(max-width: 768px)</td>
+            </tr>
+            <tr>
+                <td><strong>between</strong></td>
+                <td>between(2, 4)</td>
+                <td>breakpoint(321px 1280px)</td>
+                <td>(min-width: 321px) and (max-width: 1280px)</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<p>Below is a simple usage example:</p>
+<div class="m-browser">
+    <div class="browser">
+        <div class="image"></div>
+    </div>
+{% highlight sass %}
+.example {
+    display: inline-block;
+    @include at(3) {
+        display: block;
+    }
+}
 
 
-<h1>CSS elements</h1>
+// The resulting CSS code is
+.example {
+    display: inline-block;
+}
+@media (min-width: 769px) and (max-width: 960px) {
+    .example {
+        display: block;
+    }
+}
+{% endhighlight %}
+</div>
+
+<h1>Normalize.css</h1>
+<p>For improved cross-browser rendering, we use <a href="http://necolas.github.io/normalize.css/" target="_blank">Normalize.css</a>, a project by <a href="http://twitter.com/necolas" target="_blank">Nicolas Gallagher</a> and <a href="http://twitter.com/jon_neal" target="_blank">Jonathan Neal</a>.</p>
