@@ -11,10 +11,12 @@ order: 4
 <p>TorqueUI only contains one Javascript file, which is a prepacked version. This file is a Javascript file, that is minified and concatinated. If you wish to tinker with the individual files, you need to check the full source version on Github.</p>
 
 <h1>Dependencies</h1>
-
+<p>Some of the the CSS components depend other components, and Javascript plugins. If you wan't to use individual components, you need to make sure to check for these dependencies. Besides that all plugins relay on jQuery. In other words, jQuery must be included in all your HTML files <strong>before</strong> the plugin files.</p>
 
 <h1>Data attributes</h1>
+<p>All throughout the framework, we use data attributes to initiate Javascript components. </p>
 
 <h1>No fallback</h1>
+<p>With TorqueUI plugins we do not provide a gracefull fall back if the client has Javascript disabled. If you care about user experience and accessibility when it comes to ths case. You should use a <code>&lt;noscript&gt;</code> element, with a descriptive text, that explains how to re-enable Javascript. So the user can get the full experience of your site.</p>
 
 <h1>Disclaimer</h1>
