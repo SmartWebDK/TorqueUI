@@ -15,13 +15,13 @@ component:  components
             <div class="content">
                 <ul class="button-group">
                     <li>
-                        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Update cart</button>
+                        <a class="button"><i class="fa fa-refresh"></i> Update cart</a>
                     </li>
                     <li>
-                        <button type="submit" class="button-primary"><i class="fa fa-plus-square-o"></i> Continue shopping</button>
+                        <a class="button"><i class="fa fa-plus-square-o"></i> Continue shopping</a>
                     </li>
                     <li>
-                        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> Go to checkout</button>
+                        <a class="button"><i class="fa fa-credit-card"></i> Go to checkout</a>
                     </li>
                 </ul>
             </div>
@@ -30,13 +30,13 @@ component:  components
 {% highlight html %}
 <ul class="button-group">
     <li>
-        <button type="submit" class="button-primary"><i class="fa fa-refresh"></i> Update cart</button>
+        <a class="button"><i class="fa fa-refresh"></i> Update cart</a>
     </li>
     <li>
-        <button type="submit" class="button-primary"><i class="fa fa-plus-square-o"></i> Continue shopping</button>
+        <a class="button"><i class="fa fa-plus-square-o"></i> Continue shopping</a>
     </li>
     <li>
-        <button type="submit" class="button-primary"><i class="fa fa-credit-card"></i> Go to checkout</button>
+        <a class="button"><i class="fa fa-credit-card"></i> Go to checkout</a>
     </li>
 </ul>
 {% endhighlight %}
