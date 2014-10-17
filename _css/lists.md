@@ -400,3 +400,29 @@ All list items are setup with display: inline-block
 </ul>
 {% endhighlight %}
 </div>
+
+
+### No icon
+
+Remove the icon for a list
+
+<div class="m-browser">
+    <div class="browser">
+        <div class="image">
+            <div class="content">
+                <ul class="no-icon">
+                    <li>Lorem ipsum dolor sit amet</li>
+                    <li>Consectetur adipiscing elit</li>
+                    <li>Integer molestie lorem at massa</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+{% highlight html %}
+<ul class="no-icon">
+    <li>Lorem ipsum dolor sit amet</li>
+    <li>Consectetur adipiscing elit</li>
+    <li>Integer molestie lorem at massa</li>
+</ul>
+{% endhighlight %}
+</div>

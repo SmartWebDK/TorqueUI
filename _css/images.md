@@ -6,7 +6,7 @@ order:      1
 component:  css
 ---
 
-A simple class that makes sure that images don't exceed their parent's boundaries
+<p class="lead">A simple class that makes sure that images don't exceed their parent's boundaries.</p>
 
 <div class="m-browser">
   <div class="browser">
