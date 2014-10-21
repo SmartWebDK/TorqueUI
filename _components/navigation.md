@@ -356,9 +356,13 @@ component:  components
       <div class="content">
         <ul class="nav nav-breadcrumbs">
           <li class="active"><a href="#">Frontpage</a></li>
+          <li class="seperator">/</li>
           <li><a href="#">Products</a></li>
+          <li class="seperator">/</li>
           <li><a href="#">News</a></li>
+          <li class="seperator">/</li>
           <li><a href="#">About us</a></li>
+          <li class="seperator">/</li>
           <li><a href="#">Contact</a></li>
       </ul>
       </div>
@@ -367,9 +371,13 @@ component:  components
 {% highlight html %}
 <ul class="nav nav-breadcrumbs">
     <li class="active"><a href="#">Frontpage</a></li>
+    <li class="seperator">/</li>
     <li><a href="#">Products</a></li>
+    <li class="seperator">/</li>
     <li><a href="#">News</a></li>
+    <li class="seperator">/</li>
     <li><a href="#">About us</a></li>
+    <li class="seperator">/</li>
     <li><a href="#">Contact</a></li>
 </ul>
 {% endhighlight %}

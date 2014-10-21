@@ -257,7 +257,7 @@ An example of a dropdown with mixed content.
 {% highlight html %}
 <div class="dropdown">
     <button class="button" style="float:left;">Dropdown</button>
-    <div class="dropdown-menu" style="display: block; opacity:1; position:static; margin-bottom: 10px; clear: left;">
+    <div class="dropdown-menu">
         <div class="dropdown-container">        
             <ul>
                 <li class="media">
@@ -291,6 +291,92 @@ An example of a dropdown with mixed content.
 {% endhighlight %}
 </div>  
 
+
+# Dropdown placement
+It is possible to place the dropdown with the helper classes supplied in the [helper class section](/css/helper.html). Specifically the CSS classes ```.pull-right``` and ```.pull-left```. Note that extra finetuning of the element placement might be necessary.
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content">
+            <div class="dropdown pull-left">
+                <button class="button" style="float:left;">Dropdown left</button>
+                <div class="dropdown-menu pull-left" style="display: block; opacity:1; position:static; margin-bottom: 10px; clear: left;">
+                    <div class="dropdown-container">        
+                        <ul>
+                            <li><a href="...">Link 1</a></li>
+                            <li><a href="...">Link 2</a></li>
+                            <li><a href="...">Link 3</a></li>
+                            <li><a href="...">Link 4</a></li>
+                            <li><a href="...">Link 5</a></li>
+                            <li><a href="...">Link 6</a></li>
+                            <li><a href="...">Link 7</a></li>
+                            <li><a href="...">Link 8</a></li>
+                            <li><a href="...">Link 9</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="dropdown pull-right">
+                <button class="button" style="float:right;">Dropdown right</button>
+                <div class="dropdown-menu pull-right" style="display: block; opacity:1; position:static; margin-bottom: 10px; clear: right;">
+                    <div class="dropdown-container">        
+                        <ul>
+                            <li><a href="...">Link 1</a></li>
+                            <li><a href="...">Link 2</a></li>
+                            <li><a href="...">Link 3</a></li>
+                            <li><a href="...">Link 4</a></li>
+                            <li><a href="...">Link 5</a></li>
+                            <li><a href="...">Link 6</a></li>
+                            <li><a href="...">Link 7</a></li>
+                            <li><a href="...">Link 8</a></li>
+                            <li><a href="...">Link 9</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+  </div>            
+{% highlight html %}
+<div class="dropdown">
+    <button class="button">Dropdown left</button>
+    <div class="dropdown-menu pull-left">
+        <div class="dropdown-container">        
+            <ul>
+                <li><a href="...">Link 1</a></li>
+                <li><a href="...">Link 2</a></li>
+                <li><a href="...">Link 3</a></li>
+                <li><a href="...">Link 4</a></li>
+                <li><a href="...">Link 5</a></li>
+                <li><a href="...">Link 6</a></li>
+                <li><a href="...">Link 7</a></li>
+                <li><a href="...">Link 8</a></li>
+                <li><a href="...">Link 9</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="dropdown">
+    <button class="button">Dropdown right</button>
+    <div class="dropdown-menu pull-right">
+        <div class="dropdown-container">        
+            <ul>
+                <li><a href="...">Link 1</a></li>
+                <li><a href="...">Link 2</a></li>
+                <li><a href="...">Link 3</a></li>
+                <li><a href="...">Link 4</a></li>
+                <li><a href="...">Link 5</a></li>
+                <li><a href="...">Link 6</a></li>
+                <li><a href="...">Link 7</a></li>
+                <li><a href="...">Link 8</a></li>
+                <li><a href="...">Link 9</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+</div>  
 
 
 
