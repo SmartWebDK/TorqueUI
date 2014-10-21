@@ -361,3 +361,75 @@ UI helpers are ment to be used mainly on interactable elments, like forms and bu
 <p class="is-unselectable">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique repellat illum reprehenderit aspernatur quod consectetur quibusdam soluta numquam, consequatur esse. Eos molestias, reiciendis recusandae. Quia quam, eaque voluptas tempore inventore.</p>
 {% endhighlight %}
 </div>
+
+
+# Text helpers
+We have provide some simple text helpers, in case you have some text that need to be adjusted. The helpers are listed below. 
+
+
+## Text left
+```.text-left``` set text vertical alignment to left.
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content clearfix">
+            <p class="text-left">This text is set to be left</p>
+        </div>
+    </div>
+  </div>
+{% highlight html %}
+<p class="text-left">This text is set to be left.</p>
+{% endhighlight %}
+</div>
+
+
+
+## Text right
+```.text-right``` set text vertical alignment to right.
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content clearfix">
+            <p class="text-right">This text is set to be right.</p>
+        </div>
+    </div>
+  </div>
+{% highlight html %}
+<p class="text-right">This text is set to be right.</p>
+{% endhighlight %}
+</div>
+
+## Text center
+```.text-center``` centers the text inside the element.
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content clearfix">
+            <p class="text-center">This text is centered.</p>
+        </div>
+    </div>
+  </div>
+{% highlight html %}
+<p class="text-center">This text is centered.</p>
+{% endhighlight %}
+</div>
+
+## Text justify
+```.text-justify``` centers the text inside the element.
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content clearfix">
+            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ducimus porro consectetur. Accusantium velit quis vitae. Asperiores, commodi minima illum sequi debitis ut sit suscipit dicta, repellendus, sed quae incidunt?</p>
+        </div>
+    </div>
+  </div>
+{% highlight html %}
+<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, ducimus porro consectetur. Accusantium velit quis vitae. Asperiores, commodi minima illum sequi debitis ut sit suscipit dicta, repellendus, sed quae incidunt?</p>
+{% endhighlight %}
+</div>
+
