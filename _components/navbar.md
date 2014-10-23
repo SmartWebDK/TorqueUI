@@ -51,11 +51,11 @@ The navbar is a component that is made to work across all breakpoints, from larg
 <nav class="navbar navbar-default">
 
   <div class="navbar-header">
-    <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar-1"><i class="fa fw fa-bars"></i></button>
+    <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar"><i class="fa fw fa-bars"></i></button>
     <a class="navbar-brand large" href="#">Brand</a>
   </div>
 
-  <div class="navbar-collapse is-collapsed" data-group="navbar-1">
+  <div class="navbar-collapse is-collapsed" data-group="navbar">
     <ul class="nav nav-default large">
       <li class="active"><a href="...">Home</a></li>
       <li><a href="...">Profile</a></li>
@@ -76,11 +76,11 @@ The navbar is a component that is made to work across all breakpoints, from larg
             <nav class="navbar navbar-default">
 
               <div class="navbar-header">
-                <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar-1"><i class="fa fw fa-bars"></i></button>
+                <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar-2"><i class="fa fw fa-bars"></i></button>
                 <a class="navbar-brand" href="#">Brand</a>
               </div>
 
-              <div class="navbar-collapse is-collapsed" data-group="navbar-1">
+              <div class="navbar-collapse is-collapsed" data-group="navbar-2">
                   <ul class="list-unstyled">
                     <li><button class="button">Log in</button></li>
                   </ul>
@@ -94,16 +94,61 @@ The navbar is a component that is made to work across all breakpoints, from larg
 <nav class="navbar navbar-default">
 
   <div class="navbar-header">
-    <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar-1"><i class="fa fw fa-bars"></i></button>
+    <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar"><i class="fa fw fa-bars"></i></button>
     <a class="navbar-brand large" href="#">Brand</a>
   </div>
 
-  <div class="navbar-collapse is-collapsed" data-group="navbar-1">
+  <div class="navbar-collapse is-collapsed" data-group="navbar">
     <ul class="nav nav-default large">
       <li class="active"><a href="...">Home</a></li>
       <li><a href="...">Profile</a></li>
       <li><a href="...">Messages</a></li>
     </ul>
+  </div>
+
+</nav>
+{% endhighlight %}
+</div>
+
+
+# Navbar with button 
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content clearfix">
+            <nav class="navbar navbar-default">
+
+              <div class="navbar-header">
+                <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar-3"><i class="fa fw fa-bars"></i></button>
+                <a class="navbar-brand" href="#">Brand</a>
+              </div>
+
+              <div class="navbar-collapse is-collapsed" data-group="navbar-3">
+                <fieldset class="form-group">
+                    <input type="text" class="form-input" placeholder="Search">
+                </fieldset>
+              </div>
+
+            </nav>
+        </div>
+    </div>
+  </div>
+{% highlight html %}
+<nav class="navbar navbar-default">
+
+  <div class="navbar-header">
+    <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="navbar"><i class="fa fw fa-bars"></i></button>
+    <a class="navbar-brand large" href="#">Brand</a>
+  </div>
+
+  <div class="navbar-collapse is-collapsed" data-group="navbar">
+    <fieldset class="form-group">
+        <div class="input-group">
+            <input type="text" class="form-input input-group-main">
+            <span class="input-group-button"><button class="button" type="button">Søg</button></span>
+        </div>
+    </fieldset>
   </div>
 
 </nav>
