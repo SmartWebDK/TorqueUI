@@ -23,7 +23,7 @@ We have also build some responsive versions. The CSS classes are ```.is-visible-
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="row">
                 <div class="col-s-4 col-m-3 col-l-3 col-xl-6 trailing-mobile">
                     <div class="badge badge-warning is-hidden-s">.is-hidden-s</div>
@@ -95,7 +95,7 @@ The clearfix helper is a great tool when you experience issues with floated elem
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="row">
                 <div class="col-s-4 col-m-6 col-l-6 col-xl-12 trailing-db-mobile">        
                     <div class="wrap" style="background-color: #f3f3f3;">
@@ -138,13 +138,13 @@ The clearfix helper is a great tool when you experience issues with floated elem
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <a href="#" class="transition">Transition example</a> <a href="#" >Normal example</a>
         </div>
     </div>
   </div>
 {% highlight html %}
-<div class="content">
+<div class="content clearfix">
     <a href="#" class="transition">Transition example</a> <a href="#" >Normal example</a>
 </div>
 {% endhighlight %}
@@ -161,13 +161,13 @@ Layout helpers are as set of small helpers, general shortcuts to CSS properties,
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="is-center-block badge badge-warning" style="width: 300px;">.is-center-block</div>
         </div>
     </div>
   </div>
 {% highlight html %}
-<div class="content">
+<div class="content clearfix">
     <div class="is-center-block badge badge-warning" style="width: 300px;">.is-center-block</div>
 </div>
 {% endhighlight %}
@@ -188,7 +188,7 @@ The float helper classes are ```.pull-right``` and ```.pull-left``` and are basi
     </div>
   </div>
 {% highlight html %}
-<div class="content">
+<div class="content clearfix">
     <div class="pull-left badge badge-warning" style="width: 80px;">.pull-left</div>
     <div class="pull-right badge badge-warning" style="width: 80px;">.pull-right</div>
 </div>

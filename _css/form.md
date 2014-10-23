@@ -15,7 +15,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="text">
                 </fieldset>
@@ -32,7 +32,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="text" class="form-input">
                 </fieldset>
@@ -49,7 +49,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-input input-group-main">
@@ -72,7 +72,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-input input-group-main">
@@ -95,7 +95,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -118,7 +118,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -141,7 +141,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -166,7 +166,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -191,7 +191,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -222,7 +222,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="number" pattern="[0-9]*">
                 </fieldset>
@@ -239,7 +239,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="number" pattern="[0-9]*" class="form-input">
                 </fieldset>
@@ -256,7 +256,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="number" pattern="[0-9]*" class="form-input input-group-main">
@@ -279,7 +279,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="number" pattern="[0-9]*" class="form-input input-group-main">
@@ -302,7 +302,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -325,7 +325,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -348,7 +348,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -373,7 +373,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -398,7 +398,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -427,7 +427,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="number" pattern="[0-9]*" class="form-input input-group-main">
@@ -454,7 +454,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="radio">
                 </fieldset>
@@ -471,7 +471,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="radio-test1" type="radio" name="notifications"></span>
@@ -494,7 +494,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <label for="radio-test2" class="form-label input-group-main">Checkbox test 2</label>
@@ -517,7 +517,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="radio-test3" type="radio" name="notifications"></span>
@@ -542,7 +542,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="radio-test4" type="radio" name="notifications"></span>
@@ -567,7 +567,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -592,7 +592,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -619,7 +619,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="checkbox">
                 </fieldset>
@@ -636,7 +636,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="check-test1" type="checkbox" name="notifications"></span>
@@ -659,7 +659,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <label for="check-test2" class="form-label input-group-main">Checkbox test 2</label>
@@ -682,7 +682,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="check-test3" type="checkbox" name="notifications"></span>
@@ -707,7 +707,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="check-test4" type="checkbox" name="notifications"></span>
@@ -732,7 +732,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -757,7 +757,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -784,7 +784,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <select>
                         <option>Male</option>
@@ -809,7 +809,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <select class="form-input form-select">
                         <option>Male</option>
@@ -834,7 +834,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <select class="form-input input-group-main form-select">
@@ -865,7 +865,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <select class="form-input input-group-main form-select">
@@ -896,7 +896,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -927,7 +927,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -958,7 +958,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -991,7 +991,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon">www.</span>
@@ -1024,7 +1024,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><i class="fa fa-check"></i></span>
@@ -1063,7 +1063,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="text" class="form-input" disabled="disabled">
                 </fieldset>
@@ -1080,7 +1080,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="number" class="form-input" disabled="disabled">
                 </fieldset>
@@ -1097,7 +1097,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <textarea class="form-input" disabled="disabled"></textarea>
                 </fieldset>
@@ -1114,7 +1114,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <select class="form-input form-select" disabled="disabled">
                         <option>Male</option>
@@ -1141,7 +1141,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="lorem-short" type="checkbox"></span>
@@ -1164,7 +1164,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="lorem" type="checkbox"></span>
@@ -1187,7 +1187,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="lorem-long" type="checkbox"></span>
@@ -1210,7 +1210,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-addon"><input id="lorem-longer" type="radio"></span>
@@ -1235,7 +1235,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <form class="form" action="/">
                     <fieldset class="form-group">
                         <label class="form-label" for="name">Name</label>
@@ -1418,7 +1418,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <form class="form" action="/">
                     <fieldset class="form-group">
                         <label class="form-label" for="name">Name</label>
@@ -1653,7 +1653,7 @@ large
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="text" class="form-input large">
                 </fieldset>
@@ -1672,7 +1672,7 @@ small
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="text" class="form-input small">
                 </fieldset>
@@ -1691,7 +1691,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <input type="text" class="form-input xsmall">
                 </fieldset>
@@ -1710,7 +1710,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-input input-group-main">
@@ -1733,7 +1733,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-button"><button class="button" type="button">Søg</button></span>
@@ -1756,7 +1756,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-button"><button class="button" type="button">Søg</button></span>
@@ -1781,7 +1781,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-input input-group-main">
@@ -1806,7 +1806,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-input input-group-main">
@@ -1833,7 +1833,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <input type="text" class="form-input input-group-main">
@@ -1856,7 +1856,7 @@ xsmall
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div class="input-group">
                         <span class="input-group-image"><img src="http://placekitten.com/300/150" alt=""></span>

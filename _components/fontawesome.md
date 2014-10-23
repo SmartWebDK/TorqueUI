@@ -20,7 +20,7 @@ The example below shows a simple glyph inside text.
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <p>A simple icon <i class="fa fa-area-chart"></i> inside text</p>
             </div>
         </div>
@@ -36,7 +36,7 @@ Examples of icons i different sizes.
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <p><i class="fa fa-camera-retro fa-lg"></i> fa-camera-retro</p>
                 <p><i class="fa fa-fighter-jet fa-2x"></i> fa-fighter-jet</p>
                 <p><i class="fa fa-shopping-cart fa-3x"></i> fa-shopping-cart</p>
@@ -60,7 +60,7 @@ It can sometimes be a problem to align icons if they are not the same size, this
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
     <ul class="nav nav-pills nav-stacked">
       <li class="active"><a href="#"><i class="fa fa-home fa-fw"></i> Home</a></li>
       <li><a href="#"><i class="fa fa-book fa-fw"></i> Library</a></li>
@@ -86,7 +86,7 @@ List icons (like these) can be used to replace default bullets in lists using ``
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
     <ul class="fa-ul">
       <li><i class="fa-li fa fa-check-square"></i>List icons (like these)</li>
       <li><i class="fa-li fa fa-check-square"></i>can be used</li>
@@ -113,7 +113,7 @@ Use a few styles together and you'll have easy pull quotes or a great introducto
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
 <p>    
     <i class="fa fa-quote-left fa-2x pull-left fa-border"></i>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem amet, facere, culpa adipisci fugiat fugit quidem dolores consectetur, eos ipsam necessitatibus impedit similique ullam asperiores. Maiores quaerat libero molestiae dolor?</p>
@@ -143,7 +143,7 @@ It is possible to make spinning icons, with the ```.fa-spin``` class. The spinni
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
     <i class="fa fa-spinner fa-spin"></i>
     <i class="fa fa-refresh fa-spin"></i>
     <i class="fa fa-cog fa-spin"></i>
@@ -166,7 +166,7 @@ It is possible to make rotate icons, the example below, shows how this can be do
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">        
+            <div class="content clearfix">        
     <i class="fa fa-shield"></i>&nbsp; normal<br>
     <i class="fa fa-shield fa-rotate-90"></i>&nbsp; fa-rotate-90<br>
     <i class="fa fa-shield fa-rotate-180"></i>&nbsp; fa-rotate-180<br>
@@ -195,7 +195,7 @@ It is possible to place icons on top of eachother, by using the ```fa-stack``` c
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">        
+            <div class="content clearfix">        
 <span class="fa-stack fa-lg">
   <i class="fa fa-square-o fa-stack-2x"></i>
   <i class="fa fa-twitter fa-stack-1x"></i>
@@ -250,7 +250,7 @@ It is possible to make rotate icons, the example below, shows how this can be do
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">        
+            <div class="content clearfix">        
 <p style="background-color: #bada55">
     <i class="fa fa-shopping-cart"></i>&nbsp; normal<br>
     <i class="fa fa-shopping-cart fa-inverse"></i>&nbsp; inverse<br>    
@@ -274,7 +274,7 @@ Icons work perfectly together with buttons:
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">        
+            <div class="content clearfix">        
                 <button class="button"><i class="fa fa-close"></i> Close</button>
                 <button class="button button-icon"><i class="fa fa-close"></i> Close</button>
             </div>

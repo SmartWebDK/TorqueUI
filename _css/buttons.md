@@ -12,7 +12,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit">Go to checkout</button>
             </div>
         </div>
@@ -25,7 +25,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button">Go to checkout</button>
             </div>
         </div>
@@ -38,7 +38,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary">Go to checkout</button>
             </div>
         </div>
@@ -51,7 +51,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-text">Go to checkout</button>
             </div>
         </div>
@@ -64,7 +64,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary"><i class="fa fa-check"></i></button>
             </div>
         </div>
@@ -77,7 +77,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary"><i class="fa fa-check"></i> Go to checkout</button>
             </div>
         </div>
@@ -90,7 +90,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary is-block">Go to checkout</button>
             </div>
         </div>
@@ -103,7 +103,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary is-block"><i class="fa fa-check"></i></button>
             </div>
         </div>
@@ -116,7 +116,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary is-block"><i class="fa fa-check"></i> Go to checkout</button>
             </div>
         </div>
@@ -129,7 +129,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -142,7 +142,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</button>      
             </div>
         </div>
@@ -157,7 +157,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button">Go to checkout</a>
             </div>
         </div>
@@ -170,7 +170,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button-primary">Go to checkout</a>
             </div>
         </div>
@@ -183,7 +183,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button-text">Go to checkout</a>
             </div>
         </div>
@@ -196,7 +196,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button-primary"><i class="fa fa-check"></i></a>
             </div>
         </div>
@@ -209,7 +209,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button-primary"><i class="fa fa-check"></i> Go to checkout</a>
             </div>
         </div>
@@ -222,7 +222,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button-primary is-block">Go to checkout</a>
             </div>
         </div>
@@ -235,7 +235,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button-primary is-block"><i class="fa fa-check"></i></a>
             </div>
         </div>
@@ -248,7 +248,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a href="#" class="button-primary is-block"><i class="fa fa-check"></i> Go to checkout</a>
             </div>
         </div>
@@ -261,7 +261,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a class="button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
             </div>
         </div>
@@ -274,7 +274,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 40%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input">
@@ -301,7 +301,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input">
@@ -328,7 +328,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input">
@@ -357,7 +357,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button disabled="disabled" type="submit">Go to checkout</button>
             </div>
         </div>
@@ -370,7 +370,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -383,7 +383,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-primary button-icon" disabled="disabled"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -396,7 +396,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a class="is-disabled button-primary button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
             </div>
         </div>
@@ -409,7 +409,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a class="is-disabled button button-icon"><i class="fa fa-shopping-cart"></i>Go to checkout</a>
             </div>
         </div>
@@ -424,7 +424,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="large">Go to checkout</button>
             </div>
         </div>
@@ -437,7 +437,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button large">Go to checkout</button>
             </div>
         </div>
@@ -450,7 +450,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary large">Go to checkout</button>
             </div>
         </div>
@@ -463,7 +463,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a type="submit" class="button-primary large">Go to checkout</a>
             </div>
         </div>
@@ -476,7 +476,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-text large">Go to checkout</button>
             </div>
         </div>
@@ -489,7 +489,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-primary button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -502,7 +502,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button button-icon large"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -515,7 +515,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 40%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input large">
@@ -542,7 +542,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input large">
@@ -569,7 +569,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input large">
@@ -598,7 +598,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="default">Go to checkout</button>
             </div>
         </div>
@@ -611,7 +611,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button default">Go to checkout</button>
             </div>
         </div>
@@ -624,7 +624,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary default">Go to checkout</button>
             </div>
         </div>
@@ -637,7 +637,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a type="submit" class="button-primary default">Go to checkout</a>
             </div>
         </div>
@@ -650,7 +650,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-text default">Go to checkout</button>
             </div>
         </div>
@@ -663,7 +663,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-primary button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -676,7 +676,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button button-icon default"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -689,7 +689,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 40%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input default">
@@ -716,7 +716,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input default">
@@ -743,7 +743,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input default">
@@ -772,7 +772,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="small">Go to checkout</button>
             </div>
         </div>
@@ -785,7 +785,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button small">Go to checkout</button>
             </div>
         </div>
@@ -798,7 +798,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary small">Go to checkout</button>
             </div>
         </div>
@@ -811,7 +811,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a type="submit" class="button-primary small">Go to checkout</a>
             </div>
         </div>
@@ -824,7 +824,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-text small">Go to checkout</button>
             </div>
         </div>
@@ -837,7 +837,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-primary button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -850,7 +850,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button button-icon small"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -863,7 +863,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 40%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input small">
@@ -890,7 +890,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input small">
@@ -917,7 +917,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input small">
@@ -946,7 +946,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="xsmall">Go to checkout</button>
             </div>
         </div>
@@ -959,7 +959,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button xsmall">Go to checkout</button>
             </div>
         </div>
@@ -972,7 +972,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-primary xsmall">Go to checkout</button>
             </div>
         </div>
@@ -985,7 +985,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <a type="submit" class="button-primary xsmall">Go to checkout</a>
             </div>
         </div>
@@ -998,7 +998,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button type="submit" class="button-text xsmall">Go to checkout</button>
             </div>
         </div>
@@ -1011,7 +1011,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-primary button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -1024,7 +1024,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button button-icon xsmall"><i class="fa fa-shopping-cart"></i>Go to checkout</button>
             </div>
         </div>
@@ -1037,7 +1037,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 40%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input xsmall">
@@ -1064,7 +1064,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input xsmall">
@@ -1091,7 +1091,7 @@ component:  css
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <fieldset class="form-group">
                     <div style="width: 70%; float: left; margin-right: 10px;">
                         <input type="text" class="form-input xsmall">

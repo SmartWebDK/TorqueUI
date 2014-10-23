@@ -10,13 +10,13 @@ component:  components
 
 <p class="lead">Toggleable, contextual menu for displaying lists of links. Made interactive with the <a href="/javascript/dropdown.html">dropdown JavaScript plugin</a>.</p>
 
-# Simple dropdown
+#  dropdown
 The example below is a example of how a dropdown would work using the primary classes: ```.dropdown```, ```.dropdown-menu``` and ```.dropdown-container```.
 
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="dropdown">
                 <button class="button" style="float:left;">Dropdown</button>
                 <div class="dropdown-menu" style="display: block; opacity:1; position:static; margin-bottom: 10px; clear: left;">
@@ -67,7 +67,7 @@ This example is much like the example above, but here we have split the dropdown
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="dropdown">
                 <button class="button" style="float:left;">Dropdown</button>         
                 <div class="dropdown-menu padding-double" style="display: block; opacity:1; position:static; margin-bottom: 10px; clear: left;">
@@ -139,7 +139,7 @@ An example of dropdowns nested.
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="dropdown">
                 <button class="button" style="float:left;">Dropdown</button>
                 <div class="dropdown-menu" style="display: block; opacity:1; position:static; margin-bottom: 10px; clear: left;">
@@ -217,7 +217,7 @@ An example of a dropdown with mixed content.
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="dropdown">
                 <button class="button" style="float:left;">Dropdown</button>
                 <div class="dropdown-menu" style="width: 300px; display: block; opacity:1; position:static; margin-bottom: 10px; clear: left;">
@@ -298,7 +298,7 @@ It is possible to place the dropdown with the helper classes supplied in the [he
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="dropdown pull-left">
                 <button class="button" style="float:left;">Dropdown left</button>
                 <div class="dropdown-menu pull-left" style="display: block; opacity:1; position:static; margin-bottom: 10px; clear: left;">

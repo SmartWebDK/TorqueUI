@@ -16,7 +16,7 @@ All the HTML headings from ```h1``` to ```h6```. We have also made heading class
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <h1>&lt;h1&gt; Heading</h1>
             <h2>&lt;h2&gt; Heading</h2>
             <h3>&lt;h3&gt; Heading</h3>
@@ -56,7 +56,7 @@ Body text in TorqueUI has a ```font-size``` of **14px**. The ```font-size``` is 
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ipsum soluta nemo facilis magni iste, nulla voluptatum dolorem, vel. Quae maxime, aliquam adipisci. Voluptatibus laborum inventore, molestias minima earum voluptates!</p>
         <p>Beatae at illum quas, asperiores cum officia itaque perferendis nisi assumenda provident dignissimos fugiat error, reiciendis unde, dolore quisquam dolores quod, atque incidunt suscipit impedit maiores magni quia? Ipsam, quis.</p>
         <p>Ea minus aperiam atque quis nisi amet, iste exercitationem dolor perspiciatis quae distinctio neque culpa quasi ipsum doloremque vel nihil. Quis iste tempore et possimus, ratione nemo, sit numquam perspiciatis!</p>
@@ -76,7 +76,7 @@ Body text in TorqueUI has a ```font-size``` of **14px**. The ```font-size``` is 
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <blockquote>
               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem
               itaque in harum similique laborum pariatur ex ullam reprehenderit dolorum
@@ -111,7 +111,7 @@ Inline elements are a way to style or emphasize text found in headlines or parag
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
         <small>This text is small</small>
         <h1>.h1 heading with <small>small</small> or <small>secondary text</small></h1>
         <p>This text is <small>small</small></p>
@@ -131,7 +131,7 @@ Inline elements are a way to style or emphasize text found in headlines or parag
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <em>This text is emphasized</em>
         </div>
     </div>
@@ -147,7 +147,7 @@ Inline elements are a way to style or emphasize text found in headlines or parag
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <strong>This text is important</strong>
         </div>
     </div>
@@ -163,7 +163,7 @@ Inline elements are a way to style or emphasize text found in headlines or parag
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <u>This text is underlined</u>
         </div>
     </div>
@@ -179,7 +179,7 @@ Strikethrough text or striking text with a line through.
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
         <s>This text is strikethrough</s>
         <del>This text is deleted / strikethrough</del>
         </div>
@@ -198,7 +198,7 @@ Strikethrough text or striking text with a line through.
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <ins>This text is inserted</ins>
         </div>
     </div>
@@ -216,7 +216,7 @@ Strikethrough text or striking text with a line through.
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <mark>This text is marked/highlighted</mark>
         </div>
     </div>
@@ -235,7 +235,7 @@ Strikethrough text or striking text with a line through.
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <a href="#">This text is a link</a>
             <p>This text is a <a href="#">link</a> inside a paragraph</p>
             <h1><a href="#">Heading as a link</a></h1>

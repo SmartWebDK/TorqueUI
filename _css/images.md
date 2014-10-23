@@ -11,7 +11,7 @@ component:  css
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <img src="http://placehold.it/500x150" class="responsive"/>
         </div>
     </div>

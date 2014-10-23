@@ -11,7 +11,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination">
                   <li><a href="#">«</a></li>
                   <li><a href="#">1</a></li>
@@ -40,7 +40,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination">
                   <li><a href="#"><i class="fa fa-angle-double-left"></i></a></li>
                   <li><a href="#">1</a></li>
@@ -69,7 +69,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination">
                   <li><a href="#"><i class="fa fa-angle-left"></i></a></li>
                   <li><a href="#">1</a></li>
@@ -98,7 +98,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination">
                   <li><a href="#">«</a></li>
                   <li class="current"><a href="#">1</a></li>
@@ -127,7 +127,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination">
                   <li><a href="#">«</a></li>
                   <li class="is-disabled"><a href="#">1</a></li>
@@ -158,7 +158,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination large">
                   <li><a href="#">«</a></li>
                   <li class="is-disabled"><a href="#">1</a></li>
@@ -187,7 +187,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination default">
                   <li><a href="#">«</a></li>
                   <li class="is-disabled"><a href="#">1</a></li>
@@ -216,7 +216,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination small">
                   <li><a href="#">«</a></li>
                   <li class="is-disabled"><a href="#">1</a></li>
@@ -245,7 +245,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="pagination xsmall">
                   <li><a href="#">«</a></li>
                   <li class="is-disabled"><a href="#">1</a></li>

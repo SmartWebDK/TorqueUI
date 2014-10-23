@@ -12,7 +12,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                 <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
@@ -27,7 +27,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                 <button class="button-icon button-primary right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
@@ -44,7 +44,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="pager-group">
                     <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                     <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
@@ -63,7 +63,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="pager-group">
                     <button class="button-icon button-primary left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                     <button class="button-icon button-primary right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
@@ -84,7 +84,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-icon button left large" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                 <button class="button-icon button right large" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
@@ -99,7 +99,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="pager-group large">
                     <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                     <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
@@ -118,7 +118,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-icon button left default" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                 <button class="button-icon button right default" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
@@ -133,7 +133,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="pager-group default">
                     <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                     <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
@@ -152,7 +152,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-icon button left small" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                 <button class="button-icon button right small" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
@@ -167,7 +167,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="pager-group small">
                     <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                     <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>
@@ -186,7 +186,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <button class="button-icon button left xsmall" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                 <button class="button-icon button right xsmall" type="submit">Next<i class="fa fa-arrow-right"></i></button>
             </div>
@@ -201,7 +201,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="pager-group xsmall">
                     <button class="button-icon button left" type="submit"><i class="fa fa-arrow-left"></i>Previous</button>
                     <button class="button-icon button right" type="submit">Next<i class="fa fa-arrow-right"></i></button>

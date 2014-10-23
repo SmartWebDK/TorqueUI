@@ -16,7 +16,7 @@ It is possible to make rotate icons, the example below, shows how this can be do
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">        
+            <div class="content clearfix">        
 <span class="badge">Badge</span>
 <span class="badge badge-clean"><i class="fa fa-bolt"></i></span>
 <span class="badge badge-warning"><i class="fa fa-warning"></i></span>

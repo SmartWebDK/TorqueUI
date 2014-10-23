@@ -7,17 +7,19 @@ component:  javascript
 ---
 
 
-<p class="lead">Documentation will come soon!!</p>
+<p class="lead">Toggleable, contextual menu for displaying lists of links. The <a href="/component/dropdown.html">dropdown component</a> made interactive with JavaScript.</p>
 
-# Simple dropdown
-The example below is a example of how a dropdown would work using the primary classes: ```.dropdown```, ```.dropdown-menu``` and ```.dropdown-container```.
 
-### Dropdown in a navbar
+# Usage examples.
+It is easy to add Javascript functionality to a dropdown with the Javascript dropdown plugin included in the main Javascript file.
+
+
+#Dropdown in a navbar
 
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
           <nav class="navbar-collapse in">
             <ul class="nav nav-default">
               <li class="dropdown">
@@ -67,11 +69,11 @@ The example below is a example of how a dropdown would work using the primary cl
 {% endhighlight %}
 </div>  
 
-### Dropdown on a button
+# Dropdown on a button
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
             <div class="dropdown pull-left">
                 <button class="button" data-toggle="dropdown" style="float:left;">Dropdown</button>
                 <div class="dropdown-menu">

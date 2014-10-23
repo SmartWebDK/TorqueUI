@@ -17,7 +17,7 @@ Simple list of media elements, nicely aligned and listed.
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="list-unstyled">
           <li class="media">
             <img class="media-image" src="http://placehold.it/50x50&amp;text=1" alt="Avatar">
@@ -79,7 +79,7 @@ It is also possible, to nest the media element. This has to be done inside the `
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="list-unstyled">
           <li class="media">
             <img class="media-image" src="http://placehold.it/50x50&amp;text=1" alt="Avatar">
@@ -176,7 +176,7 @@ With the `.pull-right` utility class, it's possible to move the image from the l
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="list-unstyled">
           <li class="media">
             <img class="media-image" src="http://placehold.it/50x50&amp;text=1" alt="Avatar">

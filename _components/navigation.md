@@ -12,7 +12,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-        <div class="content">
+        <div class="content clearfix">
           <ul class="nav nav-default">
               <li class="active"><a href="#">Frontpage</a></li>
               <li><a href="#">Products</a></li>
@@ -40,7 +40,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="nav nav-pills">
           <li class="active"><a href="#">Frontpage</a></li>
           <li><a href="#">Products</a></li>
@@ -67,7 +67,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="nav nav-pills nav-justified">
           <li class="active"><a href="#">Frontpage</a></li>
           <li><a href="#">Products</a></li>
@@ -94,7 +94,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="nav nav-pills nav-stacked">
           <li class="active"><a href="#">Frontpage</a></li>
           <li><a href="#">Products</a></li>
@@ -124,7 +124,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="nav nav-tabs">
           <li class="active"><a href="#tabNav1" data-toggle="content">Frontpage</a></li>
           <li><a href="#tabNav2" data-toggle="content">Products</a></li>
@@ -185,7 +185,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="nav nav-tabs nav-justified">
           <li class="active"><a href="#tabNav1" data-toggle="content">Frontpage</a></li>
           <li><a href="#tabNav2" data-toggle="content">Products</a></li>
@@ -247,7 +247,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="nav nav-tabs nav-stacked">
           <li class="active"><a href="#tabNav1" data-toggle="content">Frontpage</a></li>
           <li><a href="#tabNav2" data-toggle="content">Products</a></li>
@@ -307,7 +307,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
 
 
       <ul class="nav nav-menu">
@@ -353,7 +353,7 @@ component:  components
 <div class="m-browser">
   <div class="browser">
     <div class="image">
-      <div class="content">
+      <div class="content clearfix">
         <ul class="nav nav-breadcrumbs">
           <li class="active"><a href="#">Frontpage</a></li>
           <li class="seperator">/</li>

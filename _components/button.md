@@ -12,7 +12,7 @@ component:  components
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="button-group">
                     <li>
                         <a class="button"><i class="fa fa-refresh"></i> Update cart</a>

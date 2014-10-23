@@ -17,7 +17,7 @@ A bulleted list of unordered items
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul>
                     <li>Lorem ipsum dolor sit amet</li>
                     <li>Consectetur adipiscing elit</li>
@@ -66,7 +66,7 @@ A ordered list of items
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ol>
                     <li>Lorem ipsum dolor sit amet</li>
                     <li>Consectetur adipiscing elit
@@ -109,7 +109,7 @@ Example of combining ordered list elements
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="row">
                     <div class="col-s-2 col-m-6 col-l-6 col-xl-6">
                         <ol>
@@ -194,7 +194,7 @@ A list of terms with their associated descriptions
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <dl>
                     <dt>Definition 1</dt>
                     <dd>Pellentesque habitant morbi tristique senectus et netus et malesuada fames</dd>
@@ -227,7 +227,7 @@ Test of lists with paragraphs
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <div class="wrap-for-example">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magni, facilis, recusandae, consequatur, tempora mollitia porro quos corporis odit impedit odio magnam libero tempore animi a incidunt laudantium eum. Nostrum, natus?</p>
                     <ul>
@@ -334,7 +334,7 @@ Removes styling from list items
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="list-unstyled">
                     <li>Lorem ipsum dolor sit amet</li>
                     <li>Consectetur adipiscing elit</li>
@@ -383,7 +383,7 @@ All list items are setup with display: inline-block
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="list-inline">
                     <li>Lorem ipsum dolor sit amet</li>
                     <li>Consectetur adipiscing elit</li>
@@ -409,7 +409,7 @@ Remove the icon for a list
 <div class="m-browser">
     <div class="browser">
         <div class="image">
-            <div class="content">
+            <div class="content clearfix">
                 <ul class="no-icon">
                     <li>Lorem ipsum dolor sit amet</li>
                     <li>Consectetur adipiscing elit</li>
