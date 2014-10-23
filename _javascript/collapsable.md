@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Collapsable panels
+title:      Collapsable 
 source:     modules/app.js
 order:      1
 component:  javascript

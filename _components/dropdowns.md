@@ -10,7 +10,8 @@ component:  components
 
 <p class="lead">Toggleable, contextual menu for displaying lists of links. Made interactive with the <a href="/javascript/dropdown.html">dropdown JavaScript plugin</a>.</p>
 
-#  dropdown
+
+# Simple dropdown
 The example below is a example of how a dropdown would work using the primary classes: ```.dropdown```, ```.dropdown-menu``` and ```.dropdown-container```.
 
 <div class="m-browser">
@@ -246,7 +247,7 @@ An example of a dropdown with mixed content.
                             </li>
                         </ul>
                         <footer class="dropdown-footer">
-                            <button type="submit" class="is-block button-primary">Button-primary</button>
+                            <button type="submit" class="is-block button">Button</button>
                         </footer>
                     </div>
                 </div>
