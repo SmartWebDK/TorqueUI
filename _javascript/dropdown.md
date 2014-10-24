@@ -20,27 +20,29 @@ It is easy to add Javascript functionality to a dropdown with the Javascript dro
   <div class="browser">
     <div class="image">
         <div class="content clearfix">
-          <nav class="navbar-collapse in">
-            <ul class="nav nav-default">
-              <li class="dropdown">
-                <span data-toggle="navigation" class="marker"><i class="fa fa-fw fa-caret-down"></i></span>
-                <a href="...">Home</a>
-                <div class="dropdown-menu">
-                    <div class="dropdown-container">        
-                        <ul>
-                            <li><a href="...">Link 1</a></li>
-                            <li><a href="...">Link 2</a></li>
-                            <li><a href="...">Link 3</a></li>
-                            <li><a href="...">Link 4</a></li>
-                            <li><a href="...">Link 5</a></li>
-                        </ul>
-                    </div>
-                </div>                    
-               </li>
-              <li class="active"><a href="...">Profile</a></li>
-              <li><a href="...">Messages</a></li>
-            </ul>
-          </nav>
+            <nav class="navbar">
+              <div class="navbar-collapse in">
+                <ul class="nav nav-default">
+                  <li class="dropdown">
+                    <span data-toggle="navigation" class="marker"><i class="fa fa-fw fa-caret-down"></i></span>
+                    <a href="...">Home</a>
+                    <div class="dropdown-menu">
+                        <div class="dropdown-container">        
+                            <ul>
+                                <li><a href="...">Link 1</a></li>
+                                <li><a href="...">Link 2</a></li>
+                                <li><a href="...">Link 3</a></li>
+                                <li><a href="...">Link 4</a></li>
+                                <li><a href="...">Link 5</a></li>
+                            </ul>
+                        </div>
+                    </div>                    
+                   </li>
+                  <li class="active"><a href="...">Profile</a></li>
+                  <li><a href="...">Messages</a></li>
+                </ul>
+              </div>
+            </nav>
         </div>
     </div>
   </div>            

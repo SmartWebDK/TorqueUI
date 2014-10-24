@@ -11,6 +11,14 @@ component:  components
 <p class="lead">Toggleable, contextual menu for displaying lists of links. Made interactive with the <a href="/javascript/dropdown.html">dropdown JavaScript plugin</a>.</p>
 
 
+# Introduction
+The dropdown compontent primarily consists of 3 elements and CSS classes.
+
+* ```.dropdown``` a wrapper for the dropdown.
+* ```.dropdown-menu``` a wrapper for visibile section.
+* ```.dropdown-container``` the container that is toggled.
+
+
 # Simple dropdown
 The example below is a example of how a dropdown would work using the primary classes: ```.dropdown```, ```.dropdown-menu``` and ```.dropdown-container```.
 

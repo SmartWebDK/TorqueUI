@@ -4,10 +4,10 @@
             <div class="col-s-4 col-m-12 col-l-12 col-xl-24">
                 <nav class="navbar">
                     <div class="navbar-header">
-                        <button type="button" class="button-primary navbar-toggle" data-toggle="collapse" data-target="main-navbar">Menu</button>
+                        <button type="button" class="button navbar-toggle" data-toggle="collapse" data-target="main-navbar">Menu</button>
                         <a class="navbar-brand" href="/"><span>{{ site.name }}</span></a>
                     </div>
-                    <div class="navbar-collapse">
+                    <div class="navbar-collapse is-collapsed" data-group="main-navbar">
                         <ul class="nav nav-default navbar-pull-left">
                         {% assign ordered = site.pages | sort:"order" %}
                         {% for p in ordered | reverse %}
