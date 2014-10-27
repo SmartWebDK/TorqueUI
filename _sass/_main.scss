@@ -6,10 +6,17 @@ body {
   color: #333;
 }
 
-a, a:visited {
+a:not(.button), a:visited:not(.button) {
   color: #000;
 }
 
+.body {
+  > p,
+  > li,
+  > code {
+    font-size: 15px;
+  }
+}
 
 /******************************************************************************/
 /*

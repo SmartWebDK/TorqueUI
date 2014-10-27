@@ -78,6 +78,8 @@ To trigger the tabbed content you can use either a ```data-target``` attribute o
 
 # Trigger tab from button
 
+It is possible to trigger tabs from all the place in the document. Your button will just need to have the ```data-toggle="content"``` data attribute. And besides that, it will need a target, either in form of the ```data-target``` attribute or the ```href``` of the element (if it is a link).
+
 <div class="m-browser">
   <div class="browser">
     <div class="image">
