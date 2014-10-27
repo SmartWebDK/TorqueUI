@@ -8,7 +8,7 @@ component:  components
 
 
 
-<p class="lead">Toggleable, contextual menu for displaying lists of links. Made interactive with the <a href="/javascript/dropdown.html">dropdown JavaScript plugin</a>.</p>
+<p class="lead">Toggleable, contextual menu for displaying lists of links. Made interactive with the <a href="/javascript/dropdown.html">Dropdown JavaScript plugin</a>.</p>
 
 
 # Introduction

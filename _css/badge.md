@@ -7,11 +7,19 @@ component:  css
 ---
 
 
-<p class="lead">Documentation will come soon!!</p>
+<p class="lead">Badges are a simple way to mark icons or make inline text highlightning.</p>
 
 
-# Invert icons
-It is possible to make rotate icons, the example below, shows how this can be done. The rotating and and flipping is done using CSS3, so your browser needs to support this, before you will see this.
+# Introduction
+The badge primarily is ```.badge``` class with different theming possibilities:
+
+* ```.badge-clean```
+* ```.badge-warning```
+* ```.badge-info```
+* ```.badge-danger```
+* ```.badge-succes```
+
+Checkout the code example below, that shows how text and icons can be interchanged.
 
 <div class="m-browser">
     <div class="browser">
