@@ -10,6 +10,38 @@ component:  javascript
 <p class="lead">Toggleable, contextual menu for displaying lists of links. The <a href="/component/dropdown.html">dropdown component</a> made interactive with JavaScript.</p>
 
 
+# Usage
+Using the JavaScript dropdown plugin it is possible to **click** toggle the dropdown menus by switching the visibility class ```.open```. To enable the toggle functionality TorqueUI uses the data-attribute ```data-toggle``` with the property ```data-toggle='dropdown'```. The plugin is build around two data attributes:
+
+* ```data-toggle="dropdown"``` the initiator.
+* ```data-target``` the target of the toggle.
+
+
+To use the Javascript plugin add the ```data-toggle="dropdown"``` to a link or a button.
+{% highlight html %}
+<div class="dropdown">
+    <button class="button" data-toggle="dropdown">Dropdown toggle</button>
+    <div class="dropdown-menu">
+        <div class="dropdown-container">        
+            <ul> ... </ul>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+
+It is also possible to place the trigger or toggle button outside the dropdow the dropdown by using the ```data-target``` data attribute. The property inside the target attribute is a CSS selector to the dropdown you want to toggle ```data-target="#mydropdown"```.
+
+{% highlight html %}
+<button class="button" data-toggle="dropdown" data-target="#dropdown-example">Dropdown toggle</button>
+<div id="dropdown-example" class="dropdown">
+    <div class="dropdown-menu">
+        <div class="dropdown-container">        
+            <ul> ... </ul>
+        </div>
+    </div>
+</div>
+{% endhighlight %}
+
 # Usage examples.
 It is easy to add Javascript functionality to a dropdown with the Javascript dropdown plugin included in the main Javascript file.
 
