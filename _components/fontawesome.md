@@ -117,7 +117,7 @@ Use a few styles together and you'll have easy pull quotes or a great introducto
 <p>    
     <i class="fa fa-quote-left fa-2x pull-left fa-border"></i>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem amet, facere, culpa adipisci fugiat fugit quidem dolores consectetur, eos ipsam necessitatibus impedit similique ullam asperiores. Maiores quaerat libero molestiae dolor?</p>
-
+<hr>
 <p>    
     <i class="fa fa-quote-right fa-2x pull-right fa-border"></i>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem amet, facere, culpa adipisci fugiat fugit quidem dolores consectetur, eos ipsam necessitatibus impedit similique ullam asperiores. Maiores quaerat libero molestiae dolor?</p>
@@ -129,6 +129,7 @@ Use a few styles together and you'll have easy pull quotes or a great introducto
     <i class="fa fa-quote-left fa-2x pull-left fa-border"></i>
     Lorem ipsum ...   
 </p>
+<hr>
 <p>
     <i class="fa fa-quote-right fa-2x pull-right fa-border"></i>
     Lorem ipsum ...       

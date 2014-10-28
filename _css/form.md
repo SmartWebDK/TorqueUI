@@ -1265,18 +1265,18 @@ component:  css
                         <div class="input-group">
                             <span class="input-group-addon"><input id="send-email" type="radio" name="notifications"></span>
                             <label for="send-email" class="form-label input-group-main">Send me email</label>
-                            <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
                         </div>
                         <div class="input-group">
                             <span class="input-group-addon"><input id="dont-email" type="radio" name="notifications"></span>
                             <label for="dont-email" class="form-label input-group-main">Don't send me email</label>
-                            <span class="input-group-addon"><i class="fa fa-thumbs-o-down"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-down"></i></span>
                         </div>
 
                         <div class="input-group">
                             <span class="input-group-addon"><input id="flowers" type="radio" name="notifications"></span>
                             <label for="flowers" class="form-label input-group-main">Send me flowers</label>
-                            <span class="input-group-addon"><i class="fa fa-leaf"></i></span>
+                            <span class="input-group-addon"><i class="fa fa-fw fa-leaf"></i></span>
                         </div>
                     </fieldset>
 
@@ -1354,18 +1354,18 @@ component:  css
         <div class="input-group">
             <span class="input-group-addon"><input id="send-email" type="radio" name="notifications"></span>
             <label for="send-email" class="form-label input-group-main">Send me email</label>
-            <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
+            <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
         </div>
         <div class="input-group">
             <span class="input-group-addon"><input id="dont-email" type="radio" name="notifications"></span>
             <label for="dont-email" class="form-label input-group-main">Don't send me email</label>
-            <span class="input-group-addon"><i class="fa fa-thumbs-o-down"></i></span>
+            <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-down"></i></span>
         </div>
 
         <div class="input-group">
             <span class="input-group-addon"><input id="flowers" type="radio" name="notifications"></span>
             <label for="flowers" class="form-label input-group-main">Send me flowers</label>
-            <span class="input-group-addon"><i class="fa fa-leaf"></i></span>
+            <span class="input-group-addon"><i class="fa fa-fw fa-leaf"></i></span>
         </div>
     </fieldset>
 
@@ -1459,18 +1459,18 @@ component:  css
                             <div class="input-group">
                                 <span class="input-group-addon"><input id="send-email" type="radio" name="notifications"></span>
                                 <label for="send-email" class="form-label input-group-main">Send me email</label>
-                                <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
+                                <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
                             </div>
                             <div class="input-group">
                                 <span class="input-group-addon"><input id="dont-email" type="radio" name="notifications"></span>
                                 <label for="dont-email" class="form-label input-group-main">Don't send me email</label>
-                                <span class="input-group-addon"><i class="fa fa-thumbs-o-down"></i></span>
+                                <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-down"></i></span>
                             </div>
 
                             <div class="input-group">
                                 <span class="input-group-addon"><input id="flowers" type="radio" name="notifications"></span>
                                 <label for="flowers" class="form-label input-group-main">Send me flowers</label>
-                                <span class="input-group-addon"><i class="fa fa-leaf"></i></span>
+                                <span class="input-group-addon"><i class="fa fa-fw fa-leaf"></i></span>
                             </div>
                         </div>
                     </fieldset>
@@ -1572,18 +1572,18 @@ component:  css
             <div class="input-group">
                 <span class="input-group-addon"><input id="send-email" type="radio" name="notifications"></span>
                 <label for="send-email" class="form-label input-group-main">Send me email</label>
-                <span class="input-group-addon"><i class="fa fa-thumbs-o-up"></i></span>
+                <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-up"></i></span>
             </div>
             <div class="input-group">
                 <span class="input-group-addon"><input id="dont-email" type="radio" name="notifications"></span>
                 <label for="dont-email" class="form-label input-group-main">Don't send me email</label>
-                <span class="input-group-addon"><i class="fa fa-thumbs-o-down"></i></span>
+                <span class="input-group-addon"><i class="fa fa-fw fa-thumbs-o-down"></i></span>
             </div>
 
             <div class="input-group">
                 <span class="input-group-addon"><input id="flowers" type="radio" name="notifications"></span>
                 <label for="flowers" class="form-label input-group-main">Send me flowers</label>
-                <span class="input-group-addon"><i class="fa fa-leaf"></i></span>
+                <span class="input-group-addon"><i class="fa fa-fw fa-leaf"></i></span>
             </div>
         </div>
     </fieldset>
