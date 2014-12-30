@@ -445,4 +445,42 @@ Spacing helpers are spacing classes used to define a consistent bottom spacing. 
 * ```.trailing-db-mobile```
 * ```.trailing-trip-mobile```
 
-The classes with the postfix ```-mobile`` are only applied on the ```S``` and ```M``` breakpoints.
+The classes with the postfix ```-mobile``` are only applied on the ```S``` and ```M``` breakpoints. And are usefull when you are stacking grid items on lower resolution screens.
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content clearfix">
+            <div class="row">
+                <div class="col-xl-12 col-l-6 col-m-6 col-s-4"><div class="box">Without .trailing-trip-mobile</div></div>
+                <div class="col-xl-12 col-l-6 col-m-6 col-s-4"><div class="box">Without .trailing-trip-mobile</div></div>
+            </div>
+        </div>
+    </div>
+  </div>
+{% highlight html %}
+<div class="row">
+    <div class="col-xl-12 col-l-6 col-m-6 col-s-4">Without .trailing-trip-mobile</div>
+    <div class="col-xl-12 col-l-6 col-m-6 col-s-4">Without .trailing-trip-mobile</div>
+</div>
+{% endhighlight %}
+</div>
+
+<div class="m-browser">
+  <div class="browser">
+    <div class="image">
+        <div class="content clearfix">
+            <div class="row">
+                <div class="col-xl-12 col-l-6 col-m-6 col-s-4 trailing-trip-mobile"><div class="box">With .trailing-trip-mobile</div></div>
+                <div class="col-xl-12 col-l-6 col-m-6 col-s-4"><div class="box">With .trailing-trip-mobile</div></div>
+            </div>
+        </div>
+    </div>
+  </div>  
+{% highlight html %}
+<div class="row">
+    <div class="col-xl-12 col-l-6 col-m-6 col-s-4 trailing-trip-mobile">With .trailing-trip-mobile</div>
+    <div class="col-xl-12 col-l-6 col-m-6 col-s-4">With .trailing-trip-mobile</div>
+</div>
+{% endhighlight %}
+</div>
