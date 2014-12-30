@@ -433,3 +433,16 @@ We have provide some simple text helpers, in case you have some text that need t
 {% endhighlight %}
 </div>
 
+
+# Spacing helpers
+Spacing helpers are spacing classes used to define a consistent bottom spacing. We supply 3 types of spacing with TorqueUI. A single spacing equal to ```margin: 0 auto 0.5em```, a doube spacing equal to ```margin: 0 auto 1em``` and a tripple spacing equal to ```margin: 0 auto 1.5em```. They are available as the css classes show below and can be used on any item: 
+
+* ```.trailing``` 
+* ```.trailing-db```
+* ```.trailing-trip```
+
+* ```.trailing-mobile```
+* ```.trailing-db-mobile```
+* ```.trailing-trip-mobile```
+
+The classes with the postfix ```-mobile`` are only applied on the ```S``` and ```M``` breakpoints.
