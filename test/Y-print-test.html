@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Grid resolution test</title>
+        <meta content="width=device-width,user-scalable=no" name="viewport">
+        <link rel="stylesheet" href="css/framework.css" type="text/css">
+        <link rel="stylesheet" href="css/theme.css" type="text/css">
+        <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
+        <style type="text/css">
+            [class*="is-visible"] {
+              background-color: #bad;
+              color: #563d7c;
+            }
+
+            [class*="is-hidden"] {
+                background-color: #cecece;
+                color: #111;
+            }
+
+            [class*="col-"] {
+              text-align: center;
+              line-height: 60px;
+              font-size: 1.1em;
+              font-weight: bold;
+              min-height: 60px;
+              border-radius: 0.25em;
+              margin-top: 5px;
+              margin-bottom: 5px;
+            }
+
+            [class*="col-"] [class*="col-"] {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            [class*="col-"] .row {
+                margin-top: 8px;
+                margin-bottom: 8px;
+            }
+
+            .part2 [class*="col-"] {
+              font-size: 0.5em;
+              font-weight: normal;
+            }
+        </style>
+    </head>
+    <body class="grid">
+        <div class="container with-xlarge">
+            <div class="row">
+                <div class="col-s-4 col-m-6 col-l-3 col-xl-3">
+                    <div class="row">
+                        <div class="is-hidden-s">Small</div>
+                        <div class="is-visible-s">Visible on small</div>
+                    </div>
+                </div>
+                <div class="col-s-4 col-m-6 col-l-3 col-xl-3">
+                    <div class="row">
+                        <div class="is-hidden-m">Medium</div>
+                        <div class="is-visible-m">Visible on medium</div>
+                    </div>
+                </div>
+                <div class="col-s-4 col-m-6 col-l-3 col-xl-3">
+                    <div class="row">
+                        <div class="is-hidden-l">Large</div>
+                        <div class="is-visible-l">Visible on large</div>
+                    </div>
+                </div>
+                <div class="col-s-4 col-m-6 col-l-3 col-xl-3">
+                    <div class="row">
+                        <div class="is-hidden-l is-hidden-xl">Xlarge</div>
+                        <div class="is-visible-l is-visible-xl">Visible on xlarge</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-s-4 col-m-12 col-l-12 col-xl-24">
+                    Print test:
+                    <span class="is-visible-print">Visible on print</span>
+                    <span class="is-hidden-print">Visible on screen (not print)</span>
+                </div>
+            </div>
+            <div class="row is-visible-print">
+                <div class="col-m-2 col-print-6">
+                    6 cols print
+                </div>
+                <div class="col-m-2 col-print-6">
+                    6 cols print
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="container with-xlarge">
+            <hr>
+            <h3>Menu</h3>
+            <nav class="navbar">
+
+              <div class="navbar-header">
+                <button type="button" class="button-primary navbar-toggle" data-toggle="collapse" data-target="#navbar-1-collapse"><i class="fa fa-shopping-cart"></i></button>
+                <button type="button" class="button-primary navbar-toggle" data-toggle="collapse" data-target="#navbar-1-collapse"><i class="fa fa-bars"></i></button>
+                <a class="navbar-brand" href="#"><span>My Super Brand</span></a>
+              </div>
+
+              <div class="navbar-collapse">
+                <div class="dropdown navbar-pull-right">
+                    <button class="button-primary button-icon right" data-toggle="dropdown">499,- DKK (1)<i class="fa fa-shopping-cart"></i></button>
+                    <div class="dropdown-menu pull-right">
+                        <ul>
+                            <li class="media">
+                                <img src="http://placehold.it/75x75/" class="media-image" alt="">
+                                <div class="media-body">
+                                    <h4>En overskrift</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, iusto beatae culpa eritatis fugiat vero nemo reiciendis mollitia!</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <img src="http://placehold.it/75x75/" class="media-image" alt="">
+                                <div class="media-body">
+                                    <h4>En overskrift</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, iusto beatae culpa eritatis fugiat vero nemo reiciendis mollitia!</p>
+                                </div>
+                            </li>
+                            <li class="media">
+                                <img src="http://placehold.it/75x75/" class="media-image" alt="">
+                                <div class="media-body">
+                                    <h4>En overskrift</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos, iusto beatae culpa eritatis fugiat vero nemo reiciendis mollitia!</p>
+                                </div>
+                            </li>
+                        </ul>
+                        <footer class="dropdown-footer">
+                            <button class="button-primary button-icon right center-block" data-toggle="dropdown">Gå til betaling<i class="fa fa-shopping-cart"></i></button>
+                        </footer>
+                    </div>
+                </div>
+                <ul class="nav nav-default">
+                  <li class="active"><a href="http://placehold.it/75x75/"><span>Home</span></a></li>
+                  <li><a href="http://placehold.it/75x75/"><span>Profile</span></a></li>
+                  <li class="dropdown"><span data-toggle="dropdown" class="marker"><i class="fa fa-border fa-caret-down"></i></span><a href="http://www.google.dk"><span>Messages</span></a>
+                    <div class="dropdown-menu">
+                      <ul>
+                          <li><a href="..."><span>Link 1</span></a></li>
+                          <li><a href="..."><span>Link 2</span></a></li>
+                          <li><a href="..."><span>Link 3</span></a></li>
+                          <li><a href="..."><span>Link 4</span></a></li>
+                          <li class="dropdown"><a data-toggle="dropdown"><span>Link 5</span></a>
+                            <div class="dropdown-menu">
+                              <ul>
+                                  <li><a href="..."><span>Sublink 1</span></a></li>
+                                  <li><a href="..."><span>Sublink 2</span></a></li>
+                                  <li><a href="..."><span>Sublink 3</span></a></li>
+                                  <li><a href="..."><span>Sublink 4</span></a></li>
+                              </ul>
+                            </div>
+                          </li>
+                          <li><a href="..."><span>Link 6</span></a></li>
+                          <li><a href="..."><span>Link 7</span></a></li>
+                          <li><a href="..."><span>Link 8</span></a></li>
+                          <li><a href="..."><span>Link 9</span></a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+            </nav>
+        </div>
+
+        <br><br>
+        <div class="container with-xlarge">
+            <hr>
+            <h3>Responsive table</h3>
+            <div class="responsive-table-wrap">
+                <table class="table-border">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Username</th>
+                            <th>Misc info #1</th>
+                            <th>Misc info #2</th>
+                            <th>Misc info #3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                    </tbody>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Username</th>
+                            <th>Misc info #1</th>
+                            <th>Misc info #2</th>
+                            <th>Misc info #3</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                         <tr>
+                            <td>4</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                         <tr>
+                            <td>5</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>Anonymous</td>
+                            <td>Likes cats</td>
+                            <td>Likes cheese</td>
+                            <td>Likes hats</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>#</th>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Username</th>
+                            <th>Misc info #1</th>
+                            <th>Misc info #2</th>
+                            <th>Misc info #3</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+
+        <br><br>
+        <div class="container with-xlarge">
+            <hr>
+            <h3>Form</h3>
+
+            <fieldset class="form-group">
+
+                <div class="row">
+                    <div class="col-s-2 col-m-6 col-l-6 col-xl-6">
+                        <div class="input-group">
+                            <span class="input-group-addon">www.</span>
+                            <select id="gender" class="form-input input-group-main form-select">
+                                <option>Male</option>
+                                <option>Female</option>
+                                <option>Cylon</option>
+                            </select>
+                            <span class="input-group-addon">.com</span>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><input id="check-test1" type="checkbox" name="notifications" /></span>
+                            <label for="check-test1" class="form-label input-group-main">Checkbox test 1</label>
+                        </div>
+                    </div>
+                    <div class="col-s-2 col-m-6 col-l-6 col-xl-6 input-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><input id="check-test1" type="checkbox" name="notifications" /></span>
+                            <label for="check-test1" class="form-label input-group-main">Checkbox test 2</label>
+                        </div>
+                        <div class="input-group">
+                            <span class="input-group-addon"><input id="check-test1" type="checkbox" name="notifications" /></span>
+                            <label for="check-test1" class="form-label input-group-main">Checkbox test 3</label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+    </body>
+</html>
