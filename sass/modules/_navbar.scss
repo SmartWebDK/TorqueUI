@@ -33,11 +33,11 @@
 
         &.is-collapsed {
             @extend .transition;
-            display: none;
+            display: none !important;
             opacity: 0;
             filter: alpha(opacity=0);
         }
-        
+
         .input-group {
             margin: 0;
         }

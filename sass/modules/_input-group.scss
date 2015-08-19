@@ -26,6 +26,10 @@
     .input-group-main {
         @include ui-ie7-table-cell();
     }
+
+    img {
+        margin: 0;
+    }
 }
 .form-label.input-group-main {
     margin: 0;

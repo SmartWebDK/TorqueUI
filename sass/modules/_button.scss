@@ -95,14 +95,12 @@
 
 %button.button-icon {
     position: relative;
-    padding-left: 49px;
+    padding-left: 4em;
 
     > .fa {
-        width: (18em / $base);
         text-align: center;
-
         vertical-align: middle;
-        width: 37px;
+        width: 3em;
         position: absolute;
         top: 0;
         left: 0;
@@ -112,8 +110,8 @@
     }
 
     &.right {
-        padding-right: 49px;
-        padding-left: 12px;
+        padding-right: 4em;
+        padding-left: 1em;
         > .fa {
             right: 0;
             left: auto;

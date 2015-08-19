@@ -55,7 +55,7 @@
             @include ui-grid-push("xlarge");
             @include ui-grid-pull("xlarge");
 
-            .col-l-12 {
+            .col-l-#{$grid-large-columns} {
                 clear: none;
             }
         }
