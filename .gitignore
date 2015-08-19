@@ -9,6 +9,7 @@ _site
 ### SASS ###
 ### SASS Ignores - "Sassy CSS" http://sass-lang.com/
 *.sass-cache
+Gemfile.lock
 
 # OS or Editor folders
 .DS_Store
@@ -34,6 +35,7 @@ validation-report.json
 dev
 dist
 test/css
+test/js
 node_modules
 bower_components
 
