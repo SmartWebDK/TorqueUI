@@ -13,6 +13,7 @@ $visible-selector: ".is-visible";
 @include ui-responsive-hide("medium", $visible-selector);
 @include ui-responsive-hide("large", $visible-selector);
 @include ui-responsive-hide("xlarge", $visible-selector);
+@include ui-responsive-hide("print", $visible-selector);
 
 //
 // Show classes for small

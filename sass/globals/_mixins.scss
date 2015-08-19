@@ -409,6 +409,10 @@
     @if $size == "xlarge" {
         @return $grid-xlarge-columns;
     }
+
+    @if $size == "print" {
+        @return $grid-print-columns;
+    }
 }
 
 @function ui-grid-gutter-width($size: "default") {
@@ -426,6 +430,10 @@
 
     @if $size == "xlarge" {
         @return $grid-xlarge-gutter/2;
+    }
+
+    @if $size == "print" {
+        @return $grid-print-gutter/2;
     }
 }
 
@@ -445,6 +453,10 @@
     @if $size == "xlarge" {
         @return $grid-xlarge - $grid-xlarge-gutter;
     }
+
+    @if $size == "print" {
+        @return 100%;
+    }
 }
 
 
@@ -454,6 +466,16 @@
 
 @mixin ui-responsive-hide($size: "default", $selector: ".is-visible") {
     $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{elements-of-type(block)} {
+        &#{$size-selector} {
+            display: none !important;
+        }
+    }
+    #{elements-of-type(inline)} {
+        &#{$size-selector} {
+            display: none !important;
+        }
+    }
     #{$size-selector},
     table#{$size-selector},
     tr#{$size-selector},
@@ -467,6 +489,16 @@
     $size-selector: '#{$selector}#{ui-shortsize($size)}';
     #{$size-selector} {
         display: block !important;
+    }
+    #{elements-of-type(block)} {
+        &#{$size-selector} {
+            display: block !important;
+        }
+    }
+    #{elements-of-type(inline)} {
+        &#{$size-selector} {
+            display: inline !important;
+        }
     }
     table#{$size-selector} {
         display: table;
@@ -503,6 +535,10 @@
 
     @if $size == "xlarge" {
         @return "-xl";
+    }
+
+    @if $size == "print" {
+        @return "-print";
     }
 }
 
