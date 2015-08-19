@@ -104,6 +104,7 @@
 
 
 
+
 //
 // Calculate px to em
 // Resource: http://vvv.tobiassjosten.net/css/px-to-em-with-sass/
@@ -118,10 +119,15 @@
 //
 
 @mixin ui-ie7-table-cell() {
-    display: table-cell;
+    display: table-cell !important;
     *width: auto;
-    *display: block;
+    *display: block !important;
     *float: left;
+    .ielt9 & {
+        width: auto;
+        display: block !important;
+        float: left;
+    }
 }
 
 //
@@ -502,7 +508,7 @@
 
 
 // ==========================================================================
-// Inputs
+// Panel and badge module mixin
 // ==========================================================================
 
 @mixin theme-alerts($color: #fff, $panel: true) {
@@ -510,7 +516,6 @@
 
     @if $color != "transparent" {
         @if lightness($color) > 90% {
-            /* light: #{lightness($color)} */
             $color: darken($color, 40%);
             $color: saturate($color, 40%);
 
@@ -518,7 +523,6 @@
                 $color: darken($color, 20%);
             }
         } @else if lightness($color) < 45% {
-            /* dark: #{lightness($color)} */
             $color: lighten($color, 40%);
             $color: desaturate($color, 40%);
 
@@ -526,7 +530,6 @@
                 $color: lighten($color, 20%);
             }
         } @else {
-            /* midrange: #{lightness($color)} */
             $color: darken($color, 20%);
             $color: saturate($color, 20%);
 
@@ -537,13 +540,18 @@
     }
 
     background-color: $bgc;
-    border-color: $color;
+    border-color: dolp($bgc, 10%);
     color: $color;
 
     @if ($panel) {
+        h1,h2,h3,h4,h5,h6,
+        .h1,.h2,.h3,.h4,.h5,.h6 {
+            color: $color;
+        }
+
         .panel-footer,
         .panel-heading {
-            border-color: $color;
+            border-color: dolp($bgc, 10%);
         }
     }
 
@@ -555,8 +563,9 @@
 }
 
 
+
 // ==========================================================================
-// Buttons
+// Button module mixins
 // ==========================================================================
 
 @mixin theme-button($color:#000, $font:#fff) {
@@ -581,9 +590,9 @@
 
     &.is-disabled,
     &:disabled {
-        color: desaturate($color, 20%) !important;
-        border-color: desaturate(darkenOrLighten($color), 20%) !important;
-        background-color: desaturate($color, 20%);
+        color: desaturate($font, 20%) !important;
+        border-color: desaturate($color, 50%);
+        background-color: desaturate($color, 50%);
     }
 }
 
@@ -608,8 +617,11 @@
 
     &.is-disabled,
     &:disabled {
+        border-color: desaturate($color, 50%);
         > .fa {
-            background-color: desaturate($color, 15%) !important;;
+            background-color: desaturate($color, 40%) !important;;
         }
     }
 }
+
+

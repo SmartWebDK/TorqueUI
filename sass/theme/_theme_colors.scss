@@ -253,14 +253,10 @@ hr {
 .button-text,
 .button-group,
 .button-default,
-.button-primary,
-.button-icon>.fa {
+.button-primary {
     @extend %button;
 }
 
-.button-icon.right.button-primary>.fa,
-.button-icon.right.button-text>.fa,
-.button-icon.right.button>.fa
 
 //
 // Button-group
@@ -290,12 +286,16 @@ hr {
 .button.button-icon {
     @include theme-button-icon($color-button-clean, $color-button-clean-font);
     > .fa {
+        @include border-radius(0);
         border-bottom-left-radius: $border-radius;
         border-top-left-radius: $border-radius;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
     }
 
     &.right {
         > .fa {
+            @include border-radius(0);
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
             border-top-right-radius: $border-radius;
