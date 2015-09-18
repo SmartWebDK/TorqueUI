@@ -237,12 +237,12 @@
             @include ui-ie7-table-cell;
         }
         .icon-close {
-            display: none;
+            display: none !important;
         }
     }
 
     .icon-open {
-        display: none;
+        display: none !important;
     }
     .icon-close {
         @include ui-ie7-table-cell;
