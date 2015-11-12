@@ -172,11 +172,6 @@ module.exports = function(grunt) {
         },
 
         copy: {
-            fonts: {
-                expand: true,
-                src: ['./fonts/*'],
-                dest: './dist/'
-            },
             js: {
                 expand: true,
                 src: ['./js/*.js'],
@@ -219,10 +214,9 @@ module.exports = function(grunt) {
     require('load-grunt-tasks')(grunt, {scope: 'devDependencies'});
 
     // Distribution related task
-    grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js', 'dist-fonts','usebanner']);
+    grunt.registerTask('dist', ['clean:dist', 'dist-css', 'dist-js','usebanner']);
     grunt.registerTask('dist-css', ['compass:dist', 'csscomb', 'cssmin']);
     grunt.registerTask('dist-js', ['uglify:dist']);
-    grunt.registerTask('dist-fonts', ['copy:fonts']);
 
     // server
     grunt.registerTask("server", ['connect:server']);
