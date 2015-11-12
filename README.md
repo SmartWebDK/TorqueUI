@@ -43,3 +43,21 @@ $ grunt server
 
 [Ruby website]: https://www.ruby-lang.org/en/ "A PROGRAMMER'S BEST FRIEND"
 [Node website]: http://nodejs.org/ "Javascript on the server side"
+
+<br>
+
+### Usage ###
+```
+<!-- TorqueUI -->
+<link rel="stylesheet" href="/assets/css/framework.min.css">
+<link rel="stylesheet" href="/assets/css/theme.min.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+<!-- Custom Javascript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="/assets/javascripts/framework.min.js"></script>
+<script src="/assets/javascripts/ie.js"></script>
+```
