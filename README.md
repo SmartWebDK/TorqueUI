@@ -52,13 +52,15 @@ $ grunt server
 <link rel="stylesheet" href="/assets/css/framework.min.css">
 <link rel="stylesheet" href="/assets/css/theme.min.css">
 <link rel="stylesheet" href="/assets/css/print.min.css" media="print">
-<link rel="stylesheet" href="/assets/css/style.css">
+
+<!--[if lte IE 9]>
+<link rel="stylesheet" href="/assets/css/ie.min.css">
+<![endif]-->
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <!-- Custom Javascript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="/assets/javascripts/framework.min.js"></script>
-<script src="/assets/javascripts/ie.js"></script>
+<script src="/assets/js/framework.min.js"></script>
 ```
