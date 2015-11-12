@@ -38,16 +38,13 @@ $ grunt dist
 ### Start the test server ###
 ```
 $ grunt server
-```<small>and visit localhost:8000/ in your favorit browser</small>
-
-
-[Ruby website]: https://www.ruby-lang.org/en/ "A PROGRAMMER'S BEST FRIEND"
-[Node website]: http://nodejs.org/ "Javascript on the server side"
+```
+<small>and visit localhost:8000/ in your favorit browser</small>
 
 <br>
 
 ### Usage ###
-```
+```html
 <!-- TorqueUI -->
 <link rel="stylesheet" href="/assets/css/framework.min.css">
 <link rel="stylesheet" href="/assets/css/theme.min.css">
@@ -64,3 +61,6 @@ $ grunt server
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <script src="/assets/js/framework.min.js"></script>
 ```
+
+[Ruby website]: https://www.ruby-lang.org/en/ "A PROGRAMMER'S BEST FRIEND"
+[Node website]: http://nodejs.org/ "Javascript on the server side"
