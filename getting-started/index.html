@@ -23,7 +23,7 @@ order: 1
         </div>
         <div class="row">
             <div class="col-s-4 col-m-6 col col-l-6 col-xl-12 trailing-db-mobile">
-                <a class="button large" href="https://github.com/SmartWebDK/TorqueUI/archive/v1.0.0.zip">Download TorquiUI</a>
+                <a class="button large" href="https://github.com/SmartWebDK/TorqueUI/archive/v1.1.0.zip">Download TorquiUI</a>
             </div>
             <div class="col-s-4 col-m-6 col col-l-6 col-xl-12">
                 <a class="button large" href="https://github.com/SmartWebDK/TorqueUI/archive/master.zip">Download source</a>
@@ -38,7 +38,11 @@ order: 1
 <div class="panel">
     <div class="panel-heading"><span class="h4"><i class="fa fa-exclamation-circle"></i> Note</span></div>
     <div class="panel-body">
-        Note that jQuery is a requirement for <strong>all Javascript files</strong>, for them to function.
+        Dependencies:<br>
+        <ul>
+          <li>Font-Awesome (latest)</li>
+          <li>jQuery is a requirement for <strong>all Javascript files</strong>, for them to function.</li>
+        </ul>
     </div>
 </div>
 
@@ -49,14 +53,10 @@ torqueui
 │   ├── framework.min.css
 │   ├── ie.css
 │   ├── ie.min.css
+│   ├── print.css
+│   ├── print.min.css
 │   ├── theme.css
 │   └── theme.min.css
-├── fonts
-│   ├── FontAwesome.otf
-│   ├── fontawesome-webfont.eot
-│   ├── fontawesome-webfont.svg
-│   ├── fontawesome-webfont.ttf
-│   └── fontawesome-webfont.woff
 └── js
     ├── framework.js
     └── framework.min.js
@@ -78,16 +78,22 @@ torqueui
     </div>
 {% highlight html %}
 <!-- Compiled and minified framework CSS -->
-<link href="torqueui/css/framework.min.css" rel="stylesheet">
+<link href="/css/framework.min.css" rel="stylesheet">
 
 <!-- Compiled and minified theme CSS -->
-<link href="torqueui/css/theme.min.css" rel="stylesheet" >
+<link href="/css/theme.min.css" rel="stylesheet">
+
+<!-- Compiled and minified print CSS -->
+<link href="/assets/css/print.min.css" rel="stylesheet" media="print">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
 <!-- jQuery is required for Javascript to work -->
-<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
 <!-- Compiled and minified framework JavaScript -->
-<script src="torqueui/js/framework.min.js"></script>
+<script src="/js/framework.min.js"></script>
 {% endhighlight %}
 </div>
 
@@ -101,14 +107,18 @@ torqueui
     </div>
 {% highlight html %}
 <!-- Compiled and minified framework CSS -->
-<link href="torqueui/css/framework.min.css" rel="stylesheet">
+<link href="/css/framework.min.css" rel="stylesheet">
 
 <!-- Compiled and minified theme CSS -->
-<link href="torqueui/css/theme.min.css" rel="stylesheet" >
+<link href="/css/theme.min.css" rel="stylesheet">
+
+<!-- Compiled and minified print CSS -->
+<link href="/assets/css/print.min.css" rel="stylesheet" media="print">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
+    <link rel="stylesheet" href="/assets/css/ie.min.css">
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
@@ -117,7 +127,7 @@ torqueui
 <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
 
 <!-- Compiled and minified framework JavaScript -->
-<script src="torqueui/js/framework.min.js"></script>
+<script src="/js/framework.min.js"></script>
 {% endhighlight %}
 </div>
 
