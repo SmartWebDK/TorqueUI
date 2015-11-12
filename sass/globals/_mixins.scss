@@ -1,0 +1,663 @@
+//
+// Mixins
+// -----------------------------------------------------------------------------
+
+
+
+// ==========================================================================
+// Color functions
+// ==========================================================================
+
+@function tint($color, $percent){
+    @return mix(#fff, $color, $percent);
+}
+
+
+@function shade($color, $percent){
+    @return mix(#000, $color, $percent);
+}
+
+
+//
+// Based on the darkness / lightness of the test color, return a dark og light
+// color.
+//
+
+@function color($test, $light, $dark) {
+    @if $test == "transparent" {
+        @return $test;
+    }
+
+    @if lightness($test) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+        @return $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+        @return $dark;
+    }
+}
+
+@function darkenOrLighten($color) {
+    @if $color == "transparent" {
+        @return $color;
+    }
+
+    @if lightness($color) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+
+        $light: lighten($color, 15%);
+        @return $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+
+        $dark: darken($color, 15%);
+        @return $dark;
+    }
+}
+
+
+@function dolp($color, $pct) {
+    @if $color == "transparent" {
+        @return $color;
+    }
+
+    @if lightness($color) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+
+        $light: lighten($color, $pct);
+        @return $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+
+        $dark: darken($color, $pct);
+        @return $dark;
+    }
+}
+
+
+@function lodp($color, $pct) {
+    @if $color == "transparent" {
+        @return $color;
+    }
+
+    @if lightness($color) < 60% {
+        // if the text colour is a dark colour
+        // we need a light text color
+
+        $dark: darken($color, $pct);
+        @return $light;
+    } @else {
+        // else it must be light so we need
+        // a darker text color
+
+        $light: lighten($color, $pct);
+        @return $dark;
+    }
+}
+
+
+
+
+
+//
+// Calculate px to em
+// Resource: http://vvv.tobiassjosten.net/css/px-to-em-with-sass/
+//
+
+@function em($px, $font-base: $font-base) {
+    @return ($px / $font-base) * 1em;
+}
+
+//
+// Table-cell ie7 hack, avoid crash in ie7
+//
+
+@mixin ui-ie7-table-cell() {
+    display: table-cell !important;
+    *width: auto;
+    *display: block !important;
+    *float: left;
+    .ielt9 & {
+        width: auto;
+        display: block !important;
+        float: left;
+    }
+}
+
+//
+// Helper to remove rounded borders on elemenent list with rounded borders
+//
+
+@mixin ui-rounded-borders($nested: "") {
+    @if $nested != "" {
+        $nested: " > #{$nested}";
+    }
+
+    &:first-child#{$nested} {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-right: 0;
+
+        @if $nested != "" {
+        margin-right: -1px;
+        }
+    }
+
+    &:not(:first-child):not(:last-child)#{$nested} {
+        border-right: 0;
+        @if $nested != "" {
+        margin-left: -1px;
+        }
+        @include border-radius(0);
+    }
+
+    &:last-child#{$nested} {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+
+        @if $nested != "" {
+        margin-left: -1px;
+        }
+    }
+}
+
+//
+// Disabled shorthand
+// 1) Make unclickable
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/pointer-events
+// 2) Make the element unable to select
+//  Resource: https://developer.mozilla.org/en-US/docs/Web/CSS/user-select
+//
+
+@mixin ui-disabled {
+    pointer-events: none;                                   // 1)
+    -moz-user-select: none;                                 // 2)
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:hover,
+    &:focus {
+        cursor: not-allowed;
+    }
+}
+
+//
+// DIsplay block
+//
+
+@mixin ui-block {
+    width: 100% !important;
+    float: none;
+    margin: 0;
+    display: block;
+}
+
+
+
+// ==========================================================================
+// Grid helpers
+// ==========================================================================
+
+//
+// Container helpers
+//
+
+@mixin ui-grid-container-base() {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin ui-grid-container($size: "default") {
+    width: ui-grid-width($size);
+    padding-left: ui-grid-gutter-width($size);
+    padding-right: ui-grid-gutter-width($size);
+}
+
+//
+// Row helper
+//
+
+@mixin ui-grid-row($size: "default") {
+    margin-left: -#{ui-grid-gutter-width($size)};
+    margin-right: -#{ui-grid-gutter-width($size)};
+}
+
+//
+// Column helpers
+//
+
+@mixin ui-grid-column-base($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+
+    $columns-total: ui-grid-total_columns($size);
+    $all-selector:  '';
+
+    @for $col from 1 through $columns-total {
+        @if $all-selector != "" {
+            $all-selector:  '#{$all-selector} ,';
+        }
+        $all-selector: '#{$all-selector} #{$size-selector}-#{$col}';
+    }
+
+    #{$all-selector} {
+        padding-left: #{ui-grid-gutter-width($size)};
+        padding-right: #{ui-grid-gutter-width($size)};
+        float: left;
+    }
+
+    @if $size == "default" {
+        @include to(2) {
+            #{$size-selector}-#{$columns-total} {
+                clear: both;
+            }
+        }
+    } @else {
+        #{$size-selector}-#{$columns-total} {
+            clear: both;
+        }
+    }
+}
+
+@mixin ui-grid-columns($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$size-selector}-#{$col}';
+        #{$total-selector} {
+            width: percentage($col / $columns-total);
+        }
+    }
+}
+
+//
+// Offset
+//
+
+@mixin ui-grid-offset($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $offset-selector: '#{$size-selector}-offset';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total + 3 {
+        $total-selector: '#{$offset-selector}-#{$col}';
+        #{$total-selector} {
+            margin-left: percentage($col / $columns-total);
+        }
+    }
+
+    #{$offset-selector}-0 {
+        margin-left: 0;
+    }
+}
+
+//
+// Bleed
+//
+
+@mixin ui-grid-bleed($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $bleed-selector: '#{$size-selector}-bleed';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total + 3 {
+        $total-selector: '#{$bleed-selector}-#{$col}';
+        #{$total-selector} {
+            margin-left: -#{percentage($col / $columns-total)};
+        }
+    }
+
+    #{$bleed-selector}-0 {
+        margin-left: 0;
+    }
+}
+
+//
+// Push
+//
+
+@mixin ui-grid-push($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $push-selector: '#{$size-selector}-push';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$push-selector}-#{$col}';
+        #{$total-selector} {
+            left: percentage($col / $columns-total);
+        }
+    }
+
+    #{$push-selector}-0 {
+        left: 0;
+    }
+}
+
+//
+// Pull
+//
+
+@mixin ui-grid-pull($size: "default", $include-size: true) {
+    $base:  ".";
+    $selector: '#{$base}col';
+
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    @if not $include-size { $size-selector: '#{$selector}'; }
+    $pull-selector: '#{$size-selector}-pull';
+
+    $columns-total: ui-grid-total_columns($size);
+
+    @for $col from 1 through $columns-total {
+        $total-selector: '#{$pull-selector}-#{$col}';
+        #{$total-selector} {
+            left: -#{percentage($col / $columns-total)};
+        }
+    }
+
+    #{$pull-selector}-0 {
+        left: 0;
+    }
+}
+
+//
+// Helper functions
+//
+
+@function ui-grid-total_columns($size: "default") {
+    @if $size == "default" {
+        @return $grid-default-columns;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium-columns;
+    }
+
+    @if $size == "large" {
+        @return $grid-large-columns;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge-columns;
+    }
+
+    @if $size == "print" {
+        @return $grid-print-columns;
+    }
+}
+
+@function ui-grid-gutter-width($size: "default") {
+    @if $size == "default" {
+        @return $grid-default-gutter/2;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium-gutter/2;
+    }
+
+    @if $size == "large" {
+        @return $grid-large-gutter/2;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge-gutter/2;
+    }
+
+    @if $size == "print" {
+        @return $grid-print-gutter/2;
+    }
+}
+
+@function ui-grid-width($size: "default") {
+    @if $size == "default" {
+        @return $grid-default - $grid-default-gutter;
+    }
+
+    @if $size == "medium" {
+        @return $grid-medium - $grid-medium-gutter;
+    }
+
+    @if $size == "large" {
+        @return $grid-large - $grid-large-gutter;
+    }
+
+    @if $size == "xlarge" {
+        @return $grid-xlarge - $grid-xlarge-gutter;
+    }
+
+    @if $size == "print" {
+        @return 100%;
+    }
+}
+
+
+// ==========================================================================
+// Utility mixin
+// ==========================================================================
+
+@mixin ui-responsive-hide($size: "default", $selector: ".is-visible") {
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{elements-of-type(block)} {
+        &#{$size-selector} {
+            display: none !important;
+        }
+    }
+    #{elements-of-type(inline)} {
+        &#{$size-selector} {
+            display: none !important;
+        }
+    }
+    #{$size-selector},
+    table#{$size-selector},
+    tr#{$size-selector},
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: none !important;
+    }
+}
+
+@mixin ui-responsive-show($size: "default", $selector: ".is-visible") {
+    $size-selector: '#{$selector}#{ui-shortsize($size)}';
+    #{$size-selector} {
+        display: block !important;
+    }
+    #{elements-of-type(block)} {
+        &#{$size-selector} {
+            display: block !important;
+        }
+    }
+    #{elements-of-type(inline)} {
+        &#{$size-selector} {
+            display: inline !important;
+        }
+    }
+    table#{$size-selector} {
+        display: table;
+    }
+    tr#{$size-selector} {
+        display: table-row !important;
+    }
+    td#{$size-selector},
+    th#{$size-selector} {
+        display: table-cell !important;
+    }
+}
+
+// ==========================================================================
+// Misc helper functions
+// ==========================================================================
+
+//
+// Get short name for sizes
+//
+
+@function ui-shortsize($size: "default") {
+    @if $size == "default" {
+        @return "-s";
+    }
+
+    @if $size == "medium" {
+        @return "-m";
+    }
+
+    @if $size == "large" {
+        @return "-l";
+    }
+
+    @if $size == "xlarge" {
+        @return "-xl";
+    }
+
+    @if $size == "print" {
+        @return "-print";
+    }
+}
+
+
+// ==========================================================================
+// Panel and badge module mixin
+// ==========================================================================
+
+@mixin theme-alerts($color: #fff, $panel: true) {
+    $bgc: $color;
+
+    @if $color != "transparent" {
+        @if lightness($color) > 90% {
+            $color: darken($color, 40%);
+            $color: saturate($color, 40%);
+
+            @if lightness($color) - lightness($bgc) < 20% {
+                $color: darken($color, 20%);
+            }
+        } @else if lightness($color) < 45% {
+            $color: lighten($color, 40%);
+            $color: desaturate($color, 40%);
+
+            @if lightness($color) - lightness($bgc) < 20% {
+                $color: lighten($color, 20%);
+            }
+        } @else {
+            $color: darken($color, 20%);
+            $color: saturate($color, 20%);
+
+            @if lightness($color) - lightness($bgc) < 20% {
+                $color: darken($color, 20%);
+            }
+        }
+    }
+
+    background-color: $bgc;
+    border-color: dolp($bgc, 10%);
+    color: $color;
+
+    @if ($panel) {
+        h1,h2,h3,h4,h5,h6,
+        .h1,.h2,.h3,.h4,.h5,.h6 {
+            color: $color;
+        }
+
+        .panel-footer,
+        .panel-heading {
+            border-color: dolp($bgc, 10%);
+        }
+    }
+
+    a {
+        color: $color;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+}
+
+
+
+// ==========================================================================
+// Button module mixins
+// ==========================================================================
+
+@mixin theme-button($color:#000, $font:#fff) {
+    border-color: darkenOrLighten($color);
+    color: $font;
+    background-color: $color;
+
+    &:hover,
+    &:focus {
+        color: $font;
+        background-color: dolp($color,5%);
+    }
+
+    &:active {
+        color: $font;
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+
+    //
+    // Disable styles
+    //
+
+    &.is-disabled,
+    &:disabled {
+        color: desaturate($font, 20%) !important;
+        border-color: desaturate($color, 50%);
+        background-color: desaturate($color, 50%);
+    }
+}
+
+
+@mixin theme-button-icon($color: #000, $font: #fff) {
+    > .fa {
+        color: $font;
+        background-color: dolp($color, 10%);
+    }
+    &:active > .fa {
+        @include box-shadow(inset 0 2px 3px rgba(0,0,0,.15));
+    }
+    &:hover > .fa,
+    &:focus > .fa {
+        background-color: dolp($color, 20%);
+        color: $font;
+    }
+
+    //
+    // Disabled styles
+    //
+
+    &.is-disabled,
+    &:disabled {
+        border-color: desaturate($color, 50%);
+        > .fa {
+            background-color: desaturate($color, 40%) !important;;
+        }
+    }
+}
+
+

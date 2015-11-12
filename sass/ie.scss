@@ -1,0 +1,251 @@
+@charset "UTF-8";
+
+// Module dependencies
+@import "compass";
+@import "breakpoint-slicer";
+
+// Global variables and mixins
+@import "./globals/mixins";
+@import "./globals/settings";
+
+html {
+    font-size: $font-large-size;
+}
+
+//
+// Clearfix: contain floats
+// Credit: HTML5 Boilerplate
+//
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";       // 1
+    display: table;     // 2
+}
+.clearfix:after {
+    clear: both;
+}
+
+//
+// Grid
+// -----------------------------------------------------------------------------
+
+//
+// Set correct MS viewport
+//
+
+@-ms-viewport {
+    width: device-width;
+}
+
+// ==========================================================================
+// Grid
+// ==========================================================================
+
+//
+// Container for the a grid
+//
+
+.container {
+    @extend .clearfix;
+    @include ui-grid-container-base;
+    @include ui-grid-container("large");
+}
+
+//
+// Row element
+//
+
+.row {
+    @extend .clearfix;
+    @include ui-grid-row("large");
+}
+
+[class*="col-"] {
+    position: relative;
+    min-height: 1px;
+}
+
+// ==========================================================================
+// Default columns
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+// ==========================================================================
+
+@include ui-grid-column-base("large");
+@include ui-grid-columns("large");
+@include ui-grid-offset("large");
+@include ui-grid-bleed("large");
+@include ui-grid-push("large");
+@include ui-grid-pull("large");
+
+%button {
+    width: 100%;
+    display: block;
+}
+
+//
+// Default button styling
+//  1) Theme in theme/_theme.scss
+//
+
+.button {
+    @extend %button;
+}
+
+//
+// Primary button
+//
+
+.button-primary {
+    @extend %button;
+}
+
+//
+// Text button
+//
+
+.button-text {
+    @extend %button;
+}
+
+.dropdown-menu {
+    max-width: $grid-large - $grid-large-gutter;
+}
+
+.navbar-pull-right {
+    float: right;
+}
+.navbar-pull-left {
+    float: left;
+}
+
+.navbar-collapse,
+.navbar-collapse.is-collapsed {
+    @include ui-ie7-table-cell;
+    opacity: 1;
+    padding: 0;
+    width: 10000000px;
+
+    .nav {
+        > li {
+            @include inline-block;
+            float: left;
+            > a {
+                float: left;
+            }
+        }
+        &.nav-justified > li {
+            @include ui-ie7-table-cell;
+            width: 1%;
+            float: none;
+        }
+    }
+
+    > .dropdown,
+    > .button {
+        margin: 1px 0;
+    }
+}
+
+
+.navbar-header {
+    float: left;
+}
+.navbar-toggle {
+    display: none;
+}
+
+.navbar-brand {
+    margin: 1px 0;
+}
+
+.navbar .nav > .dropdown > .dropdown-menu {
+    margin: 0;
+    padding: 11px 0;
+}
+
+.nav .dropdown {
+    position: relative;
+
+    .dropdown {
+        .dropdown-menu {
+            display: block;
+            opacity: 1;
+            filter: alpha(opacity=100);
+        }
+        .marker {
+            display: none;
+        }
+    }
+}
+
+.pager-group {
+    @include inline-block;
+
+    .button-icon,
+    .button,
+    .button-primary {
+        width: auto;
+    }
+}
+
+// ==========================================================================
+// Show classes
+// ==========================================================================
+
+//
+// Selector for visible classes
+//
+
+$visible-selector: ".is-visible";
+
+@include ui-responsive-hide("large", $visible-selector);
+//
+// Show classes for large
+//
+
+@include ui-responsive-show("large", $visible-selector);
+
+
+// ==========================================================================
+// Hide classes
+// ==========================================================================
+
+//
+// Selector for Hide classes
+//
+
+$hidden-selector: ".is-hidden";
+
+//
+// Show all hidden when not on breakpoint
+//
+
+@include ui-responsive-show("large", $hidden-selector);
+//
+// Hide classes for large
+//
+
+@include ui-responsive-hide("large", $hidden-selector);
+
+
+// ==========================================================================
+// Box-mode helpers
+// ==========================================================================
+
+//
+// For large
+//
+.inline-block-l,
+.is-inline-block-l,
+.is-i-b-l {
+    @include inline-block;
+}
+
+.fullwidth-l,
+.is-block-l,
+.is-b-l {
+    @include ui-block;
+}

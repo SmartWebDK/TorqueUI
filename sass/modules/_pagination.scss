@@ -1,0 +1,48 @@
+//
+// Pagination
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
+//
+// Default pagination
+//
+
+.pagination {
+    @extend .clearfix;
+    @include inline-block;
+    margin: 0;
+    padding: 0;
+
+    > li {
+        display: inline;
+
+        &:first-child > a {
+            margin-left: 0;
+        }
+
+        &.is-disabled,
+        &.is-disabled > a {
+            @include ui-disabled;
+        }
+
+        > a {
+            text-decoration: none;
+            margin-left: -1px;
+            border-width: 1px;
+            border-style: solid;
+            float: left;
+            cursor: pointer;
+
+            @extend %size-default;
+            @include background-clip(border-box);
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,231 @@
+//
+// Navs
+// -----------------------------------------------------------------------------
+
+%nav-default-size {
+	padding: .5em 0;
+    font-size: em(14px);
+    line-height: 1.5;
+}
+
+// ==========================================================================
+// Nav
+// ==========================================================================
+
+.nav {
+	padding-left: 0;
+	margin-bottom: 0;
+	list-style: none;
+	width: 100%;
+	@extend .clearfix;
+
+	li {
+		position: relative;
+		a {
+			text-decoration: none;
+			display: block;
+		}
+	}
+}
+
+//
+// Multilevel menu
+//
+
+	.nav-menu {
+
+		ul {
+			list-style: none;
+		}
+		li {
+			a {
+				@extend %nav-default-size;
+			}
+		}
+	}
+
+
+//
+// Default
+//
+
+	.nav-default {
+		li {
+            padding-left: .5em;
+            padding-right: .5em;
+
+            a {
+				@extend %nav-default-size;
+				display: block;
+            	padding: .5em 0;
+            }
+        }
+	}
+
+//
+// Pills
+//
+
+	.nav-pills {
+		li {
+            padding-left: .5em;
+            padding-right: .5em;
+		}
+		> li {
+			@include background-clip(border-box);
+			float: left;
+			margin-right:1px;
+
+			> a {
+				@extend %nav-default-size;
+				border: 1px solid transparent;
+			}
+
+			&.active {
+				> a {
+					cursor: default;
+					border-bottom-color: transparent;
+				}
+			}
+		}
+	}
+
+//
+// Tabs
+//
+
+	.nav-tabs {
+
+		> li {
+			@include background-clip(border-box);
+			margin-left: auto;
+			float: left;
+			margin-bottom: -1px;
+			margin-right:1px;
+
+			> a {
+				@extend %nav-default-size;
+				padding-right: .5em;
+				padding-left: .5em;
+				border: 1px solid transparent;
+				border-left: 0px;
+				border-right: 0px;
+			}
+
+			&.active {
+				> a {
+					cursor: default;
+					border-bottom-color: transparent !important;
+				}
+			}
+		}
+
+		&.nav-justified {
+			border-bottom: 1px solid transparent;
+
+			> li {
+				@include at(4) {
+					@include ui-ie7-table-cell();
+					width: 1%;
+					float: none;
+				}
+
+				&.active {
+					> a {
+						border-bottom-color: transparent !important;
+					}
+				}
+			}
+		}
+	}
+
+//
+// Orientations
+//
+
+	.nav-justified {
+		border-bottom: 0;
+
+		> li {
+			display: table-cell;
+			width: 1%;
+			float: none;
+
+			> a {
+				margin: 0;
+				text-align: center;
+			}
+
+			&.active {
+				> a {
+				}
+			}
+		}
+
+	}
+
+	.nav-stacked {
+		> li {
+			float: none;
+			margin-right: 0;
+			margin-bottom: -1px;
+
+			+li {
+				margin-top: 2px;
+			}
+		}
+	}
+
+//
+// Breadcrumb
+//
+
+	.nav-breadcrumbs {
+
+		> li {
+			float: left;
+			margin: 0 .25em;
+
+			> a {
+
+				&:hover {
+
+				}
+			}
+		}
+
+		.seperator {
+			padding: 0;
+		}
+	}
+
+// ==========================================================================
+// Toggle-content
+// ==========================================================================
+
+//
+// Toggle content is used for content on tabs / plls
+//
+
+.toggle-content {
+    @extend .clearfix;
+    > .pane {
+    	@extend .trailing;
+        @extend .transition;
+        display: none;
+        opacity: 0;
+
+        &.active {
+            display: block;
+            opacity: 1;
+        }
+    }
+}
+
+//
+// Toggle pane theme
+//
+.t-panel-clean > .pane {
+    padding: $global-padding;
+}
+

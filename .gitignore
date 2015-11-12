@@ -1,0 +1,43 @@
+# Ignore docs files
+_gh_pages
+_site
+.ruby-version
+
+### Compass ###
+.sass-cache
+
+### SASS ###
+### SASS Ignores - "Sassy CSS" http://sass-lang.com/
+*.sass-cache
+Gemfile.lock
+
+# OS or Editor folders
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.sublime-project
+*.sublime-workspace
+.idea
+.Spotlight-V100
+.Trashes
+
+# grunt-html-validation
+validation-status.json
+validation-report.json
+
+# Folders to ignore
+dev
+dist
+test/css
+test/js
+node_modules
+bower_components
+
+# Framework files
+/test/index.html

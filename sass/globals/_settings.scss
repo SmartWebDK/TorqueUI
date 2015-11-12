@@ -1,0 +1,145 @@
+//
+// Settings
+// -----------------------------------------------------------------------------
+
+// ==========================================================================
+// Font
+// ==========================================================================
+
+//
+// General
+//
+
+$font-family-base                   : sans-serif !default;
+$font-family-headline               : serif !default;
+
+
+//
+// Sizes
+//
+// 1)   Default font-size for all browsers is 16px, just set for reference and
+//      calculation
+//
+// 2)   Baseline is setup for desktop, not quite mobile but gives the best
+//      baseline grid.
+//      Font-size = % of 16px (93.75 = 15px, 87.5 = 14px, 81.25 = 13px, 75 = 12px)
+//
+// 3)   Calculation of 2)
+//
+// 4)   Setting our line-height variable to 8px helps avoid the awkwardly
+//      large line-heights at certain (large) font-sizes.
+//
+// 5)   Responsive sizes in %
+//
+
+
+//
+// Resource:
+//  http://compass-style.org/reference/compass/typography/vertical_rhythm/
+//  http://atendesigngroup.com/blog/vertical-rhythm-compass
+//
+
+$base: 16;                                                          // 1)
+
+$font-weight                    : normal;
+$font-base-size                 : 100; // in pct                       2)
+$font-base                      : ($font-base-size/100)*$base * 1px;// 3)
+$font-line-height               : 1.25;
+$font-header-line-height        : 8px;                              // 4)
+$font-small-print-size          : 65%;
+$font-small-caps-weight         : 600;
+
+$font-default-size              : 87.5%;                            // 14px
+$font-medium-size               : 87.5%;                            // 15px
+$font-large-size                : 87.5%;                            // 15px
+$font-xlarge-size               : 87.5%;                            // 15px
+$font-print-size				: 87.5%;							// 15px
+
+
+//
+// Headings at large desktop (scaled up / down via responsive sizes)
+//
+
+$h1                             : 30px;
+$h2                             : 28px;
+$h3                             : 24px;
+$h4                             : 22px;
+$h5                             : 20px;
+$h6                             : 18px;
+
+
+// ==========================================================================
+// Responsive
+// ==========================================================================
+
+//
+// Responsive breakpoints
+//
+
+$grid-default                       : 320px;
+$grid-default-columns               : 4;
+$grid-default-gutter                : 20px;
+
+$grid-medium                        : 768px;
+$grid-medium-columns                : 12;
+$grid-medium-gutter                 : 20px;
+
+$grid-large                         : 960px;
+$grid-large-columns                 : 12;
+$grid-large-gutter                  : 20px;
+
+$grid-xlarge                        : 1280px;
+$grid-xlarge-columns                : 24;
+$grid-xlarge-gutter                 : 20px;
+
+$grid-print							: 100%;
+$grid-print-columns					: 12;
+$grid-print-gutter					: 20px;
+
+
+// ==========================================================================
+// Breakpoint slicer
+// Resource: https://github.com/lolmaus/breakpoint-slicer
+// ==========================================================================
+
+//
+// Config
+//
+
+$slicer-anti-overlap-corrections: -1px;
+
+//
+// Slices
+//
+
+$slicer-breakpoints: 0 $grid-default $grid-medium $grid-large $grid-xlarge;
+
+// Breakpoint:   0                 480px     768px     960px       1280px
+//				 |-------------------|---------|---------|-----------|--------->
+// Slice #:                1              2         3          4          5
+
+
+// ==========================================================================
+// Font Awesome
+// ==========================================================================
+
+//
+// Font Awesome is a iconic font designed for Bootstrap
+// Resource: http://fontawesome.io/
+//
+
+$fa-font-path                       : "../fonts";
+$fa-border-color                    : #eee;
+$fa-inverse                         : #fff;
+$fa-li-width                        : (30em / $base) !default;
+
+
+// ==========================================================================
+// Misc
+// ==========================================================================
+
+//
+// Global paddings
+//
+
+$global-padding                     : 1em;
