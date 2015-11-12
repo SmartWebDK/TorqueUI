@@ -51,6 +51,7 @@ $ grunt server
 <!-- TorqueUI -->
 <link rel="stylesheet" href="/assets/css/framework.min.css">
 <link rel="stylesheet" href="/assets/css/theme.min.css">
+<link rel="stylesheet" href="/assets/css/print.min.css" media="print">
 <link rel="stylesheet" href="/assets/css/style.css">
 
 <!-- Font Awesome -->
