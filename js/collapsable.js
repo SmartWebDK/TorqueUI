@@ -96,12 +96,8 @@
     Collapsable.prototype.state = function (state) {
         var override = this.$element.data('state');
 
-        if (override && state === undefined) {
-            return override;
-        }
-
         // Validate WebStorage
-        if (typeof Storage !== 'undefined') {
+        if (typeof Storage !== 'undefined' && override) {
 
             // Unique id
             var id = this.$element.data('target');
