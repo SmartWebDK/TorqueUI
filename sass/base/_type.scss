@@ -52,7 +52,6 @@ button {
 }
 
 body {
-    @include css-hyphens(auto);
     @extend %breakword;
 }
 
