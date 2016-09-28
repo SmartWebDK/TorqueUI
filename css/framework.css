@@ -1,6 +1,6 @@
 /*!
  * framework v1.0.2 (http://www.torqueui.com)
- * Copyright 2016 TorqueUI
+ * Copyright 2015 TorqueUI
  * Licensed under http://www.apache.org/licenses/LICENSE-2.0
  */
 
@@ -247,6 +247,14 @@ button {
   button {
     font-size: 87.5%;
   }
+}
+
+body {
+  -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+      -ms-hyphens: auto;
+       -o-hyphens: auto;
+          hyphens: auto;
 }
 
 h1, .h1 {
