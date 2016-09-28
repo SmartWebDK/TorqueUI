@@ -158,6 +158,10 @@ hr {
 
 .form-select {
     @extend %caret-image;
+
+    option:disabled {
+        color: lodp($color-input-color, 20%);
+    }
 }
 
 //
