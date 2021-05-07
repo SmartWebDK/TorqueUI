@@ -39,9 +39,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-csscomb": "^3.1.1",
     "grunt-notify": "^0.4.5",
-    "load-grunt-tasks": "^5.1.0"
-  },
-  "dependencies": {
+    "load-grunt-tasks": "^5.1.0",
     "time-grunt": "~0.2.9"
   }
 }
