@@ -86,6 +86,12 @@
         }
     }
 
+    .input-group-main[type=number],
+    .input-group-main[type=tel],
+    .input-group-main[type=text] {
+        min-width: 35px;
+    }
+
     &.form-input,
     .input-group-main,
     .input-group-addon,
@@ -93,7 +99,6 @@
     .input-group-button,
     .input-group-button > %button {
         height: 51px;
-        min-width: 32px;
         *line-height: 1;
     }
 }
@@ -131,6 +136,12 @@
             width: 37px !important;
         }
     }
+    
+    .input-group-main[type=number],
+    .input-group-main[type=tel],
+    .input-group-main[type=text] {
+        min-width: 30px;
+    }
 
     &.form-input,
     .input-group-main,
@@ -139,9 +150,14 @@
     .input-group-button,
     .input-group-button > %button {
         height: 32px;
-        min-width: 28px;
         *line-height: 1;
     }
+}
+
+.input-group-main[type=number],
+.input-group-main[type=tel],
+.input-group-main[type=text] {
+    min-width: 30px;
 }
 
 .form-input,
@@ -191,6 +207,12 @@
         }
     }
 
+    .input-group-main[type=number],
+    .input-group-main[type=tel],
+    .input-group-main[type=text] {
+        min-width: 28px;
+    }
+
     &.form-input,
     .input-group-main,
     .input-group-addon,
@@ -198,7 +220,6 @@
     .input-group-button,
     .input-group-button > %button {
         height: 30px;
-        min-width: 25px;
         *line-height: 1;
     }
 }
@@ -237,6 +258,12 @@
         }
     }
 
+    .input-group-main[type=number],
+    .input-group-main[type=tel],
+    .input-group-main[type=text] {
+        min-width: 18px;
+    }
+
     &.form-input,
     .input-group-main,
     .input-group-addon,
@@ -244,7 +271,6 @@
     .input-group-button,
     .input-group-button > %button {
         height: 28px;
-        min-width: 15px;
         *line-height: 1;
     }
 }
