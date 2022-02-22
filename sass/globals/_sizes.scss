@@ -93,6 +93,7 @@
     .input-group-button,
     .input-group-button > %button {
         height: 51px;
+        min-width: 32px;
         *line-height: 1;
     }
 }
@@ -138,6 +139,7 @@
     .input-group-button,
     .input-group-button > %button {
         height: 32px;
+        min-width: 28px;
         *line-height: 1;
     }
 }
@@ -196,6 +198,7 @@
     .input-group-button,
     .input-group-button > %button {
         height: 30px;
+        min-width: 25px;
         *line-height: 1;
     }
 }
@@ -241,6 +244,7 @@
     .input-group-button,
     .input-group-button > %button {
         height: 28px;
+        min-width: 15px;
         *line-height: 1;
     }
 }
